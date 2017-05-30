@@ -6,11 +6,11 @@
 
         <brick control="\QUI\PresentationBricks\Controls\WallpaperTextAndArrow">
             <title>
-                <locale group="quiqqer/template-bricks"
+                <locale group="quiqqer/presentation-bricks"
                         var="control.WallpaperTextAndArrow.title"/>
             </title>
             <description>
-                <locale group="quiqqer/template-bricks"
+                <locale group="quiqqer/presentation-bricks"
                         var="control.WallpaperTextAndArrow.description"/>
             </description>
 
@@ -21,15 +21,15 @@
                 </setting>
 
                 <setting name="arrow-type" type="select">
-                    <locale group="quiqqer/template-bricks"
+                    <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperTextAndArrow.arrow-type"/>
 
                     <option value="standard">
-                        <locale group="quiqqer/template-bricks"
+                        <locale group="quiqqer/presentation-bricks"
                                 var="control.WallpaperTextAndArrow.arrow-type.standard"/>
                     </option>
                     <option value="super">
-                        <locale group="quiqqer/template-bricks"
+                        <locale group="quiqqer/presentation-bricks"
                                 var="control.WallpaperTextAndArrow.arrow-type.super"/>
                     </option>
                 </setting>

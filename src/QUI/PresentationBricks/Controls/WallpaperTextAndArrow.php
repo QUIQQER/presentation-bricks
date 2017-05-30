@@ -44,10 +44,10 @@ class WallpaperTextAndArrow extends QUI\Control
         $Engine     = QUI::getTemplateManager()->getEngine();
         $arrowType = $this->getAttribute('arrow-type');
 
-        $Engine->assign(array(
+        /*$Engine->assign(array(
             'this'       => $this,
             'arrowType' => $arrowType
-        ));
+        ));*/
 
         return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextAndArrow.html');
     }
