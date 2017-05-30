@@ -1,0 +1,130 @@
+.wallpaper-text {
+
+    height: 100vh;
+    min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.wallpaper-text .grid-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.wallpaper-text-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.wallpaper-text-content-left,
+.wallpaper-text-content-right {
+    /*outline: 2px solid rgba(0,0,0,0.5);*/
+}
+
+.wallpaper-text-arrow {
+    text-align: center;
+}
+
+.wallpaper-text-arrow .fa {
+    font-size: 3em;
+    color: #fff;
+    padding: 20px;
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    position: absolute;
+    bottom: 0;
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* effect: scale bounce */
+.wallpaper-text-arrow .fa-effect-scale:hover {
+    transform: scale(1.2);
+}
+
+/* effect: scale bounce */
+.wallpaper-text-arrow .fa-effect-scale-bounce:hover {
+    animation: scaleBounce 1.2s ;
+}
+
+/* effect: ball bounce after hover */
+.wallpaper-text-arrow .fa-effect-ball-bounce-hover:hover {
+    -moz-animation: ballBounce 2s infinite;
+    -webkit-animation: ballBounce 2s infinite;
+    animation: ballBounce 2s infinite;
+}
+
+/* effect: ball bounce always */
+.wallpaper-text-arrow .fa-effect-ball-bounce-always {
+    padding-bottom: 2px;
+    -moz-animation: ballBounce 2s infinite;
+    -webkit-animation: ballBounce 2s infinite;
+    animation: ballBounce 2s infinite;
+}
+
+/* opacity to transparent */
+.wallpaper-text-arrow .fa-effect-opacity-to-transparent:hover {
+    opacity: 0.4;
+}
+
+/* opacity from transparent */
+.wallpaper-text-arrow .fa-effect-opacity-from-transparent {
+    opacity: 0.5;
+}
+.wallpaper-text-arrow .fa-effect-opacity-from-transparent:hover {
+    opacity: 1;
+}
+
+
+/* ball bounce */
+@keyframes ballBounce {
+    0%, 20%, 50%, 70%, 85%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+/* scale bounce */
+@keyframes scaleBounce {
+    0%, 20%, 30%, 50%, 70%, 100% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    20% {
+        /*-moz-transform: scale(1.2);
+        -ms-transform: scale(-30px);
+        -webkit-transform: scale(-30px);*/
+        transform: scale(1.5);
+    }
+    40% {
+        transform: scale(1.2);
+    }
+    60% {
+        /*-moz-transform: scale(-15px);
+        -ms-transform: scale(-15px);
+        -webkit-transform: scale(-15px);*/
+        transform: scale(1.1);
+    }
+}

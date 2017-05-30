@@ -14,25 +14,102 @@
             <pl><![CDATA[...]]></pl>
         </locale>
         <locale name="control.WallpaperTextAndArrow.image">
-            <de><![CDATA[Bild]]></de>
-            <en><![CDATA[Image]]></en>
-            <pl><![CDATA[Zdjecie]]></pl>
+            <de><![CDATA[Hintergrundbild]]></de>
+            <en><![CDATA[Background image]]></en>
+            <pl><![CDATA[Zdjecie tla]]></pl>
         </locale>
         <locale name="control.WallpaperTextAndArrow.arrow-type">
             <de><![CDATA[Pfeiltype]]></de>
             <en><![CDATA[Arrow type]]></en>
             <pl><![CDATA[Rodzaj strzalki]]></pl>
         </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.standard">
-                <de><![CDATA[Standard]]></de>
-                <en><![CDATA[Standard]]></en>
-                <pl><![CDATA[Standardowa]]></pl>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-down">
+                <de><![CDATA[Arrow Down]]></de>
+                <en><![CDATA[Arrow Down]]></en>
+                <pl><![CDATA[Arrow Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.super">
-                <de><![CDATA[Super]]></de>
-                <en><![CDATA[...]]></en>
-                <pl><![CDATA[...]]></pl>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-circle-down">
+                <de><![CDATA[Arrow Circle Down]]></de>
+                <en><![CDATA[Arrow Circle Down]]></en>
+                <pl><![CDATA[Arrow Circle Down]]></pl>
             </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-circle-o-down">
+                <de><![CDATA[Arrow Circle O Down]]></de>
+                <en><![CDATA[Arrow Circle O Down]]></en>
+                <pl><![CDATA[Arrow Circle O Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.angle-down">
+                <de><![CDATA[Angle Down]]></de>
+                <en><![CDATA[Angle Down]]></en>
+                <pl><![CDATA[Angle Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.long-arrow-down">
+                <de><![CDATA[Long Arrow Down]]></de>
+                <en><![CDATA[Long Arrow Down]]></en>
+                <pl><![CDATA[Long Arrow Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.caret-down">
+                <de><![CDATA[Caret Down]]></de>
+                <en><![CDATA[Caret Down]]></en>
+                <pl><![CDATA[Caret Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.chevron-down">
+                <de><![CDATA[Chevron Down]]></de>
+                <en><![CDATA[Chevron Down]]></en>
+                <pl><![CDATA[Chevron Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.chevron-circle-down">
+                <de><![CDATA[Chevron Circle Down]]></de>
+                <en><![CDATA[Chevron Circle Down]]></en>
+                <pl><![CDATA[Chevron Circle Down]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.angle-double-down">
+                <de><![CDATA[Angle Double Down]]></de>
+                <en><![CDATA[Angle Double Down]]></en>
+                <pl><![CDATA[Angle Double Down]]></pl>
+            </locale>
+        <locale name="control.WallpaperTextAndArrow.effect">
+            <de><![CDATA[Pfeileffect]]></de>
+            <en><![CDATA[Arrow effect]]></en>
+            <pl><![CDATA[Efekt strzalki]]></pl>
+        </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.scale">
+                <de><![CDATA[Scale]]></de>
+                <en><![CDATA[Scale]]></en>
+                <pl><![CDATA[Scale]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.scale-bounce">
+                <de><![CDATA[Scale bounce]]></de>
+                <en><![CDATA[Scale bounce]]></en>
+                <pl><![CDATA[Scale bounce]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.ball-bounce-hover">
+                <de><![CDATA[Ball bounce (erst nach maus over)]]></de>
+                <en><![CDATA[Ball bounce (after mouse hover)]]></en>
+                <pl><![CDATA[Ball bounce (po najechaniu myszka)]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.ball-bounce-always">
+                <de><![CDATA[Ball bounce (immer)]]></de>
+                <en><![CDATA[Ball bounce (always)]]></en>
+                <pl><![CDATA[Ball bounce (ciagle)]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.opacity-to-transparent">
+                <de><![CDATA[Durchsichtig]]></de>
+                <en><![CDATA[Transparent]]></en>
+                <pl><![CDATA[Przezroczysty]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.opacity-from-transparent">
+                <de><![CDATA[Undurchsichtig]]></de>
+                <en><![CDATA[Non-transparent]]></en>
+                <pl><![CDATA[Nieprzezroczysty]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.effect.no-effect">
+                <de><![CDATA[Kein Effekt]]></de>
+                <en><![CDATA[No effect]]></en>
+                <pl><![CDATA[Bez efektu]]></pl>
+            </locale>
+
+
 
     </groups>
 </locales>

@@ -24,7 +24,8 @@ class WallpaperTextAndArrow extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'arrow-type' => 'standard'
+            'arrowType' => 'arrow-down',
+            'effect'    => 'scale'
         ));
 
         parent::__construct($attributes);
@@ -32,6 +33,12 @@ class WallpaperTextAndArrow extends QUI\Control
         $this->addCSSFile(
             dirname(__FILE__) . '/WallpaperTextAndArrow.css'
         );
+
+        $this->setAttribute(
+            'qui-class',
+            "package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextAndArrow"
+        );
+
     }
 
     /**
@@ -41,13 +48,15 @@ class WallpaperTextAndArrow extends QUI\Control
      */
     public function getBody()
     {
-        $Engine     = QUI::getTemplateManager()->getEngine();
-        $arrowType = $this->getAttribute('arrow-type');
+        $Engine = QUI::getTemplateManager()->getEngine();
 
-        /*$Engine->assign(array(
-            'this'       => $this,
-            'arrowType' => $arrowType
-        ));*/
+        $Engine->assign(array(
+            'this'            => $this,
+            'imageBackground' => $this->getAttribute('image-background'),
+            'image'           => $this->getAttribute('image'),
+            'arrowType'       => $this->getAttribute('arrow-type'),
+            'effect'          => $this->getAttribute('effect')
+        ));
 
         return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextAndArrow.html');
     }
