@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/presentation-bricks" datatype="php,js">
+
+        <!-- text with image and arrow -->
+        <locale name="control.WallpaperTextAndArrow.title">
+            <de><![CDATA[Präsentation: Wallpaper Text mit Pfeil]]></de>
+            <en><![CDATA[Presentatino: Wallpaper text with arrow]]></en>
+            <pl><![CDATA[Presentation: Wallpaper text with arrow]]></pl>
+        </locale>
+        <locale name="control.WallpaperTextAndArrow.description">
+            <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
+            <en><![CDATA[...]]></en>
+            <pl><![CDATA[...]]></pl>
+        </locale>
+        <locale name="control.WallpaperTextAndArrow.image">
+            <de><![CDATA[Bild]]></de>
+            <en><![CDATA[Image]]></en>
+            <pl><![CDATA[Zdjecie]]></pl>
+        </locale>
+        <locale name="control.WallpaperTextAndArrow.arrow-type">
+            <de><![CDATA[Pfeiltype]]></de>
+            <en><![CDATA[Arrow type]]></en>
+            <pl><![CDATA[Rodzaj strzalki]]></pl>
+        </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.standard">
+                <de><![CDATA[Standard]]></de>
+                <en><![CDATA[Standard]]></en>
+                <pl><![CDATA[Standardowa]]></pl>
+            </locale>
+            <locale name="control.WallpaperTextAndArrow.arrow-type.super">
+                <de><![CDATA[Super]]></de>
+                <en><![CDATA[...]]></en>
+                <pl><![CDATA[...]]></pl>
+            </locale>
+
+    </groups>
+</locales>

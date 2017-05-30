@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+
+        <!-- text with image and arrow -->
+
+        <brick control="\QUI\PresentationBricks\Controls\WallpaperTextAndArrow">
+            <title>
+                <locale group="quiqqer/template-bricks"
+                        var="control.WallpaperTextAndArrow.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-bricks"
+                        var="control.WallpaperTextAndArrow.description"/>
+            </description>
+
+            <settings>
+                <setting name="image" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperTextAndArrow.image"/>
+                </setting>
+
+                <setting name="arrow-type" type="select">
+                    <locale group="quiqqer/template-bricks"
+                            var="control.WallpaperTextAndArrow.arrow-type"/>
+
+                    <option value="standard">
+                        <locale group="quiqqer/template-bricks"
+                                var="control.WallpaperTextAndArrow.arrow-type.standard"/>
+                    </option>
+                    <option value="super">
+                        <locale group="quiqqer/template-bricks"
+                                var="control.WallpaperTextAndArrow.arrow-type.super"/>
+                    </option>
+                </setting>
+            </settings>
+        </brick>
+
+    </bricks>
+</quiqqer>
