@@ -1,5 +1,5 @@
 /**
- * QUIQQER Wallapper with text and arrow
+ * QUIQQER Wallapper with text and an arrow
  *
  * @author www.pcsg.de (Michael Danielczok)
  * @module Bricks\Controls\SimpleContact
@@ -7,7 +7,7 @@
  * @require qui/QUI
  * @require qui/controls/Control
  */
-define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextAndArrow', [
+define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
 
     'qui/QUI',
     'qui/controls/Control'
@@ -18,7 +18,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextAndArrow',
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'Controls/WallpaperTextAndArrow',
+        Type   : 'Controls/WallpaperTextArrow',
 
         Binds: [
             '$onImport'
@@ -44,8 +44,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextAndArrow',
         $onImport: function () {
 
             this.$Brick    = document.getElement('div[data-quiid="' + this.$uid + '"]');
-            this.$Arrow    = this.$Brick.getElement('.wallpaper-text-arrow-fa');
-            this.$ScrollTo = this.$Brick.getElement('.wallpaper-text-scrollTo');
+            this.$Arrow    = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
+            this.$ScrollTo = this.$Brick.getElement('.wallpaperTextArrow-scrollTo');
 
             this.$Arrow.addEvent('click', function () {
                 new Fx.Scroll(window).toElement(this.$ScrollTo);

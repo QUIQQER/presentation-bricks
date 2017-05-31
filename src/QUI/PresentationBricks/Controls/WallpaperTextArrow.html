@@ -1,0 +1,17 @@
+
+<div class="wallpaperTextArrow"
+     style="background-image: url({image src=$imageBackground  onlysrc='true'});"
+>
+    <div class="grid-container">
+        <div class="wallpaperTextArrow-content-left grid-50 mobile-grid-100 grid-parent">
+            {$this->getAttribute('content')}
+        </div>
+        <div class="wallpaperTextArrow-content-right grid-50 mobile-grid-100 grid-parent">
+            {image src=$image class="wallpaperTextArrow-content-image"}
+        </div>
+    </div>
+    <div class="wallpaperTextArrow-arrow">
+        <span class="fa fa-{$arrowType} fa-effect-{$effect} wallpaperTextArrow-arrow-fa"></span>
+    </div>
+</div>
+<div class="wallpaperTextArrow-scrollTo"></div>

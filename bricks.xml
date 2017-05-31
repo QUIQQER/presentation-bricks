@@ -2,109 +2,147 @@
 <quiqqer>
     <bricks>
 
-        <!-- text with image and arrow -->
-
-        <brick control="\QUI\PresentationBricks\Controls\WallpaperTextAndArrow">
+        <!-- wallpaper with text and an arrow -->
+        <brick control="\QUI\PresentationBricks\Controls\WallpaperTextArrow">
             <title>
                 <locale group="quiqqer/presentation-bricks"
-                        var="control.WallpaperTextAndArrow.title"/>
+                        var="control.WallpaperTextArrow.title"/>
             </title>
             <description>
                 <locale group="quiqqer/presentation-bricks"
-                        var="control.WallpaperTextAndArrow.description"/>
+                        var="control.WallpaperTextArrow.description"/>
             </description>
 
             <settings>
                 <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextAndArrow.image-background"/>
-                </setting>
-
-                <setting name="title">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextAndArrow.title"/>
+                            var="control.WallpaperTextArrow.image-background"/>
                 </setting>
 
                 <setting name="image" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextAndArrow.image"/>
+                            var="control.WallpaperTextArrow.image"/>
                 </setting>
 
                 <setting name="arrow-type" type="select">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextAndArrow.arrow-type"/>
+                            var="control.WallpaperTextArrow.arrow-type"/>
 
                     <option value="arrow-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.arrow-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.arrow-down"/>
                     </option>
                     <option value="arrow-circle-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.arrow-circle-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.arrow-circle-down"/>
                     </option>
                     <option value="arrow-circle-o-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.arrow-circle-o-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.arrow-circle-o-down"/>
                     </option>
                     <option value="angle-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.angle-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.angle-down"/>
                     </option>
                     <option value="long-arrow-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.long-arrow-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.long-arrow-down"/>
                     </option>
                     <option value="caret-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.caret-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.caret-down"/>
                     </option>
                     <option value="chevron-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.chevron-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.chevron-down"/>
                     </option>
                     <option value="chevron-circle-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.chevron-circle-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.chevron-circle-down"/>
                     </option>
                     <option value="angle-double-down">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.arrow-type.angle-double-down"/>
+                                var="control.WallpaperTextArrow.arrow-type.angle-double-down"/>
                     </option>
                 </setting>
 
                 <setting name="effect" type="select">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextAndArrow.effect"/>
+                            var="control.WallpaperTextArrow.effect"/>
 
                     <option value="scale">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.scale"/>
+                                var="control.WallpaperTextArrow.effect.scale"/>
                     </option>
                     <option value="scale-bounce">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.scale-bounce"/>
+                                var="control.WallpaperTextArrow.effect.scale-bounce"/>
                     </option>
                     <option value="ball-bounce-hover">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.ball-bounce-hover"/>
+                                var="control.WallpaperTextArrow.effect.ball-bounce-hover"/>
                     </option>
                     <option value="ball-bounce-always">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.ball-bounce-always"/>
+                                var="control.WallpaperTextArrow.effect.ball-bounce-always"/>
                     </option>
                     <option value="opacity-to-transparent">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.opacity-to-transparent"/>
+                                var="control.WallpaperTextArrow.effect.opacity-to-transparent"/>
                     </option>
                     <option value="opacity-from-transparent">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.opacity-from-transparent"/>
+                                var="control.WallpaperTextArrow.effect.opacity-from-transparent"/>
                     </option>
                     <option value="no-effect">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperTextAndArrow.effect.no-effect"/>
+                                var="control.WallpaperTextArrow.effect.no-effect"/>
                     </option>
                 </setting>
+
+            </settings>
+        </brick>
+
+        <!-- wallpaper with text -->
+        <brick control="\QUI\PresentationBricks\Controls\WallpaperText">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.WallpaperText.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.WallpaperText.description"/>
+            </description>
+
+            <settings>
+                <setting name="image-background" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.image-background"/>
+                </setting>
+
+                <!--<setting name="height" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.height"/>
+                </setting>-->
+
+                <setting name="content-position" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.content-position"/>
+
+                    <option value="flex-start">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.content-position.left"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.content-position.center"/>
+                    </option>
+                    <option value="flex-end">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.content-position.right"/>
+                    </option>
+                </setting>
+
 
             </settings>
         </brick>

@@ -1,5 +1,4 @@
-.wallpaper-text {
-
+.wallpaperTextArrow {
     height: 100vh;
     min-height: 400px;
     background-position: center;
@@ -7,28 +6,24 @@
     position: relative;
 }
 
-.wallpaper-text .grid-container {
+.wallpaperTextArrow .grid-container {
+    height: 100%;
     display: flex;
     align-items: center;
-    height: 100%;
 }
 
-.wallpaper-text-content {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 100%;
+.wallpaperTextArrow-content-left {
+    padding-right: 20px;
 }
 
-.wallpaper-text-content-left,
-.wallpaper-text-content-right {
-    /*outline: 2px solid rgba(0,0,0,0.5);*/
+.wallpaperTextArrow-content-right {
 }
 
-.wallpaper-text-arrow {
+.wallpaperTextArrow-arrow {
     text-align: center;
 }
 
-.wallpaper-text-arrow .fa {
+.wallpaperTextArrow-arrow .fa {
     font-size: 3em;
     color: #fff;
     padding: 20px;
@@ -41,24 +36,24 @@
 }
 
 /* effect: scale bounce */
-.wallpaper-text-arrow .fa-effect-scale:hover {
+.wallpaperTextArrow-arrow .fa-effect-scale:hover {
     transform: scale(1.2);
 }
 
 /* effect: scale bounce */
-.wallpaper-text-arrow .fa-effect-scale-bounce:hover {
+.wallpaperTextArrow-arrow .fa-effect-scale-bounce:hover {
     animation: scaleBounce 1.2s ;
 }
 
 /* effect: ball bounce after hover */
-.wallpaper-text-arrow .fa-effect-ball-bounce-hover:hover {
+.wallpaperTextArrow-arrow .fa-effect-ball-bounce-hover:hover {
     -moz-animation: ballBounce 2s infinite;
     -webkit-animation: ballBounce 2s infinite;
     animation: ballBounce 2s infinite;
 }
 
 /* effect: ball bounce always */
-.wallpaper-text-arrow .fa-effect-ball-bounce-always {
+.wallpaperTextArrow-arrow .fa-effect-ball-bounce-always {
     padding-bottom: 2px;
     -moz-animation: ballBounce 2s infinite;
     -webkit-animation: ballBounce 2s infinite;
@@ -66,15 +61,15 @@
 }
 
 /* opacity to transparent */
-.wallpaper-text-arrow .fa-effect-opacity-to-transparent:hover {
+.wallpaperTextArrow-arrow .fa-effect-opacity-to-transparent:hover {
     opacity: 0.4;
 }
 
 /* opacity from transparent */
-.wallpaper-text-arrow .fa-effect-opacity-from-transparent {
+.wallpaperTextArrow-arrow .fa-effect-opacity-from-transparent {
     opacity: 0.5;
 }
-.wallpaper-text-arrow .fa-effect-opacity-from-transparent:hover {
+.wallpaperTextArrow-arrow .fa-effect-opacity-from-transparent:hover {
     opacity: 1;
 }
 
@@ -126,5 +121,12 @@
         -ms-transform: scale(-15px);
         -webkit-transform: scale(-15px);*/
         transform: scale(1.1);
+    }
+}
+
+
+@media (max-width: 767px) {
+    .wallpaperTextArrow .grid-container {
+        display: block;
     }
 }

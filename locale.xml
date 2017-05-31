@@ -2,114 +2,160 @@
 <locales>
     <groups name="quiqqer/presentation-bricks" datatype="php,js">
 
-        <!-- text with image and arrow -->
-        <locale name="control.WallpaperTextAndArrow.title">
-            <de><![CDATA[Präsentation: Wallpaper Text mit Pfeil]]></de>
-            <en><![CDATA[Presentatino: Wallpaper text with arrow]]></en>
-            <pl><![CDATA[Presentation: Wallpaper text with arrow]]></pl>
+        <!-- wallpaper with text and an arrow -->
+        <locale name="control.WallpaperTextArrow.title">
+            <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
+            <en><![CDATA[Presentatino: Wallpaper with text and arrow]]></en>
+            <pl><![CDATA[Presentation: Zdjecie w tle z tekstem i strzalka]]></pl>
         </locale>
-        <locale name="control.WallpaperTextAndArrow.description">
+        <locale name="control.WallpaperTextArrow.description">
             <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
             <en><![CDATA[...]]></en>
             <pl><![CDATA[...]]></pl>
         </locale>
-        <locale name="control.WallpaperTextAndArrow.image">
+        <locale name="control.WallpaperTextArrow.image-background">
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
             <pl><![CDATA[Zdjecie tla]]></pl>
         </locale>
-        <locale name="control.WallpaperTextAndArrow.arrow-type">
+        <locale name="control.WallpaperTextArrow.image">
+            <de><![CDATA[Bild auf der rechten Seite]]></de>
+            <en><![CDATA[Image on the right]]></en>
+            <pl><![CDATA[Zdjecie po lewej]]></pl>
+        </locale>
+
+        <locale name="control.WallpaperTextArrow.arrow-type">
             <de><![CDATA[Pfeiltype]]></de>
             <en><![CDATA[Arrow type]]></en>
             <pl><![CDATA[Rodzaj strzalki]]></pl>
         </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-down">
                 <de><![CDATA[Arrow Down]]></de>
                 <en><![CDATA[Arrow Down]]></en>
                 <pl><![CDATA[Arrow Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-circle-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-down">
                 <de><![CDATA[Arrow Circle Down]]></de>
                 <en><![CDATA[Arrow Circle Down]]></en>
                 <pl><![CDATA[Arrow Circle Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.arrow-circle-o-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-o-down">
                 <de><![CDATA[Arrow Circle O Down]]></de>
                 <en><![CDATA[Arrow Circle O Down]]></en>
                 <pl><![CDATA[Arrow Circle O Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.angle-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.angle-down">
                 <de><![CDATA[Angle Down]]></de>
                 <en><![CDATA[Angle Down]]></en>
                 <pl><![CDATA[Angle Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.long-arrow-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.long-arrow-down">
                 <de><![CDATA[Long Arrow Down]]></de>
                 <en><![CDATA[Long Arrow Down]]></en>
                 <pl><![CDATA[Long Arrow Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.caret-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.caret-down">
                 <de><![CDATA[Caret Down]]></de>
                 <en><![CDATA[Caret Down]]></en>
                 <pl><![CDATA[Caret Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.chevron-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.chevron-down">
                 <de><![CDATA[Chevron Down]]></de>
                 <en><![CDATA[Chevron Down]]></en>
                 <pl><![CDATA[Chevron Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.chevron-circle-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.chevron-circle-down">
                 <de><![CDATA[Chevron Circle Down]]></de>
                 <en><![CDATA[Chevron Circle Down]]></en>
                 <pl><![CDATA[Chevron Circle Down]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.arrow-type.angle-double-down">
+            <locale name="control.WallpaperTextArrow.arrow-type.angle-double-down">
                 <de><![CDATA[Angle Double Down]]></de>
                 <en><![CDATA[Angle Double Down]]></en>
                 <pl><![CDATA[Angle Double Down]]></pl>
             </locale>
-        <locale name="control.WallpaperTextAndArrow.effect">
+        <locale name="control.WallpaperTextArrow.effect">
             <de><![CDATA[Pfeileffect]]></de>
             <en><![CDATA[Arrow effect]]></en>
             <pl><![CDATA[Efekt strzalki]]></pl>
         </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.scale">
+            <locale name="control.WallpaperTextArrow.effect.scale">
                 <de><![CDATA[Scale]]></de>
                 <en><![CDATA[Scale]]></en>
                 <pl><![CDATA[Scale]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.scale-bounce">
+            <locale name="control.WallpaperTextArrow.effect.scale-bounce">
                 <de><![CDATA[Scale bounce]]></de>
                 <en><![CDATA[Scale bounce]]></en>
                 <pl><![CDATA[Scale bounce]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.ball-bounce-hover">
+            <locale name="control.WallpaperTextArrow.effect.ball-bounce-hover">
                 <de><![CDATA[Ball bounce (erst nach maus over)]]></de>
                 <en><![CDATA[Ball bounce (after mouse hover)]]></en>
                 <pl><![CDATA[Ball bounce (po najechaniu myszka)]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.ball-bounce-always">
+            <locale name="control.WallpaperTextArrow.effect.ball-bounce-always">
                 <de><![CDATA[Ball bounce (immer)]]></de>
                 <en><![CDATA[Ball bounce (always)]]></en>
                 <pl><![CDATA[Ball bounce (ciagle)]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.opacity-to-transparent">
+            <locale name="control.WallpaperTextArrow.effect.opacity-to-transparent">
                 <de><![CDATA[Durchsichtig]]></de>
                 <en><![CDATA[Transparent]]></en>
                 <pl><![CDATA[Przezroczysty]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.opacity-from-transparent">
+            <locale name="control.WallpaperTextArrow.effect.opacity-from-transparent">
                 <de><![CDATA[Undurchsichtig]]></de>
                 <en><![CDATA[Non-transparent]]></en>
                 <pl><![CDATA[Nieprzezroczysty]]></pl>
             </locale>
-            <locale name="control.WallpaperTextAndArrow.effect.no-effect">
+            <locale name="control.WallpaperTextArrow.effect.no-effect">
                 <de><![CDATA[Kein Effekt]]></de>
                 <en><![CDATA[No effect]]></en>
                 <pl><![CDATA[Bez efektu]]></pl>
             </locale>
 
-
+        <!-- wallpaper with text -->
+        <locale name="control.WallpaperText.title">
+            <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
+            <en><![CDATA[Presentatino: Wallpaper with text ]]></en>
+            <pl><![CDATA[Presentation: Zdjecie w tle z tekstem]]></pl>
+        </locale>
+        <locale name="control.WallpaperText.description">
+            <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
+            <en><![CDATA[...]]></en>
+            <pl><![CDATA[...]]></pl>
+        </locale>
+        <locale name="control.WallpaperText.image-background">
+            <de><![CDATA[Hintergrundbild]]></de>
+            <en><![CDATA[Background image]]></en>
+            <pl><![CDATA[Zdjecie tla]]></pl>
+        </locale>
+        <locale name="control.WallpaperText.height">
+            <de><![CDATA[Bausteinhöhe]]></de>
+            <en><![CDATA[Height of the brick]]></en>
+            <pl><![CDATA[Wysokosc widgetu]]></pl>
+        </locale>
+        <locale name="control.WallpaperText.content-position">
+            <de><![CDATA[Ausrichtung]]></de>
+            <en><![CDATA[Position]]></en>
+            <pl><![CDATA[Ulozenie]]></pl>
+        </locale>
+            <locale name="control.WallpaperText.content-position.left">
+                <de><![CDATA[links]]></de>
+                <en><![CDATA[left]]></en>
+                <pl><![CDATA[lewa strona]]></pl>
+            </locale>
+            <locale name="control.WallpaperText.content-position.center">
+                <de><![CDATA[zentriert]]></de>
+                <en><![CDATA[center]]></en>
+                <pl><![CDATA[na srodku]]></pl>
+            </locale>
+            <locale name="control.WallpaperText.content-position.right">
+                <de><![CDATA[rechts]]></de>
+                <en><![CDATA[right]]></en>
+                <pl><![CDATA[prawa strona]]></pl>
+            </locale>
 
     </groups>
 </locales>

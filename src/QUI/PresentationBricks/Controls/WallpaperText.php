@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file contains QUI\PresentationBricks\Controls\WallpaperTextAndArrow
+ * This file contains QUI\PresentationBricks\Controls\WallpaperText
  */
 
 namespace QUI\PresentationBricks\Controls;
@@ -9,11 +9,11 @@ namespace QUI\PresentationBricks\Controls;
 use QUI;
 
 /**
- * Class WallpaperTextAndArrow
+ * Class WallpaperText
  *
  * @package quiqqer/presentation-bricks
  */
-class WallpaperTextAndArrow extends QUI\Control
+class WallpaperText extends QUI\Control
 {
     /**
      * constructor
@@ -24,19 +24,13 @@ class WallpaperTextAndArrow extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'arrowType' => 'arrow-down',
-            'effect'    => 'scale'
+            'contentPosition' => 'left'
         ));
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__) . '/WallpaperTextAndArrow.css'
-        );
-
-        $this->setAttribute(
-            'qui-class',
-            "package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextAndArrow"
+            dirname(__FILE__) . '/WallpaperText.css'
         );
 
     }
@@ -53,11 +47,10 @@ class WallpaperTextAndArrow extends QUI\Control
         $Engine->assign(array(
             'this'            => $this,
             'imageBackground' => $this->getAttribute('image-background'),
-            'image'           => $this->getAttribute('image'),
-            'arrowType'       => $this->getAttribute('arrow-type'),
-            'effect'          => $this->getAttribute('effect')
+            'contentPosition' => $this->getAttribute('content-position'),
+//            'height'          => $this->getAttribute('height')
         ));
 
-        return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextAndArrow.html');
+        return $Engine->fetch(dirname(__FILE__) . '/WallpaperText.html');
     }
 }
