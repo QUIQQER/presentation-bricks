@@ -4,6 +4,12 @@
 >
     <div class="wallpaperText-container grid-container" style="justify-content: {$contentPosition}">
         <div class="grid-50 mobile-grid-100 grid-parent wallpaperText-container-content">
+            {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+            <header class="">
+                <h1>{$this->getAttribute('frontendTitle')}</h1>
+            </header>
+            {/if}
+
             {$this->getAttribute('content')}
         </div>
     </div>

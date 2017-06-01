@@ -120,10 +120,10 @@
                             var="control.WallpaperText.image-background"/>
                 </setting>
 
-                <!--<setting name="height" type="number">
+                <setting name="bg-color" type="color">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperText.height"/>
-                </setting>-->
+                            var="control.WallpaperText.bg-color"/>
+                </setting>
 
                 <setting name="content-position" type="select">
                     <locale group="quiqqer/presentation-bricks"
