@@ -2,6 +2,14 @@
 QUIQQER Präsentation Bausteine
 ========
 
+Das Paket beinhaltet Bausteine, mit denen Sie schnell und einfach Ihre Produkte 
+(Apps, Web Lösungen, usw.) im Internet presäntieren können. Sie sind vor allem bei der Gestalltung 
+der Startseite (one-page-design) sehr hilfreich.
+
+Das Paket kann man zwar mit jedem QUIQQER-Template benutzen, um jedoch das beste Darstellungsergebnis 
+zu erzielen, empfiehlt sich das Paket zusammen mit __Präsentation Template__ einzusetzen.
+
+
 
 Paketname:
 
@@ -11,7 +19,8 @@ Paketname:
 Features
 --------
 
-- (...)
+- Wallpaper mit 2 Inhalten (Text und Bild) und Pfeil nach unten. Pefekt für Header.
+- Wallpaper mit Text. Die Position des Inhalts kann man in Einstellungen bestimmen.
 
 Installation
 ------------
