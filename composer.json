@@ -2,7 +2,7 @@
     "name": "quiqqer\/presentation-bricks",
     "type": "quiqqer-module",
     "description": "Presentation bricks module",
-    "version": "dev-master",
+    "version": "dev-dev",
     "license": "MIT",
     "authors": [
         {
