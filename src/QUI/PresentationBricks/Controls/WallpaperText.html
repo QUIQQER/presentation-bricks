@@ -1,11 +1,15 @@
+{assign var=img value=''}
+{if $imageBackground}
+    {assign var=img value="background-image: url({image src=$imageBackground onlysrc='true'});"}
+{/if}
 
-<div class="wallpaperText"
-     style="background-image: url({image src=$imageBackground  onlysrc='true'});"
+<div class="wallpaperText {$fixed}"
+     style="background-color: {$bgColor}; {$img}"
 >
     <div class="wallpaperText-container grid-container" style="justify-content: {$contentPosition}">
         <div class="grid-50 mobile-grid-100 grid-parent wallpaperText-container-content">
             {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-            <header class="">
+            <header>
                 <h1>{$this->getAttribute('frontendTitle')}</h1>
             </header>
             {/if}

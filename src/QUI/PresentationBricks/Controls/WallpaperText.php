@@ -24,7 +24,9 @@ class WallpaperText extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'contentPosition' => 'left'
+            'imageBackgroundFixed' => 'false',
+            'bgColor'              => 'none',
+            'contentPosition'      => 'left'
         ));
 
         parent::__construct($attributes);
@@ -44,11 +46,23 @@ class WallpaperText extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
+        $fixed = '';
+        if ($this->getAttribute('image-background-fixed')) {
+            $fixed = "fixed";
+        }
+
+        $bgColor = '#eee';
+        if ($this->getAttribute('bg-color')) {
+            $bgColor = $this->getAttribute('bg-color');
+        }
+
+
         $Engine->assign(array(
             'this'            => $this,
             'imageBackground' => $this->getAttribute('image-background'),
-            'contentPosition' => $this->getAttribute('content-position'),
-//            'height'          => $this->getAttribute('height')
+            'bgColor'         => $bgColor,
+            'fixed'           => $fixed,
+            'contentPosition' => $this->getAttribute('content-position')
         ));
 
         return $Engine->fetch(dirname(__FILE__) . '/WallpaperText.html');

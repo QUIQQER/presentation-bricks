@@ -1,7 +1,9 @@
+{assign var=img value=''}
+{if $imageBackground}
+    {assign var=img value="background-image: url({image src=$imageBackground onlysrc='true'});"}
+{/if}
 
-<div class="wallpaperTextArrow"
-     style="background-image: url({image src=$imageBackground  onlysrc='true'});"
->
+<div class="wallpaperTextArrow {$fixed}" style="{$img}">
     <div class="grid-container">
         <div class="wallpaperTextArrow-content-left grid-50 mobile-grid-100 grid-parent">
             {$this->getAttribute('content')}

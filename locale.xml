@@ -18,6 +18,11 @@
             <en><![CDATA[Background image]]></en>
             <pl><![CDATA[Zdjecie tla]]></pl>
         </locale>
+        <locale name="control.WallpaperTextArrow.image-background-fixed">
+            <de><![CDATA[Hintergrundbild fixieren]]></de>
+            <en><![CDATA[Background image fixed]]></en>
+            <pl><![CDATA[Nieruchome tlo (fixed)]]></pl>
+        </locale>
         <locale name="control.WallpaperTextArrow.image">
             <de><![CDATA[Bild auf der rechten Seite]]></de>
             <en><![CDATA[Image on the right]]></en>
@@ -131,10 +136,15 @@
             <en><![CDATA[Background image]]></en>
             <pl><![CDATA[Zdjecie tla]]></pl>
         </locale>
-        <locale name="control.WallpaperText.height">
-            <de><![CDATA[Bausteinhöhe]]></de>
-            <en><![CDATA[Height of the brick]]></en>
-            <pl><![CDATA[Wysokosc widgetu]]></pl>
+        <locale name="control.WallpaperText.image-background-fixed">
+            <de><![CDATA[Hintergrundbild fixieren]]></de>
+            <en><![CDATA[Background image fixed]]></en>
+            <pl><![CDATA[Nieruchome tlo (fixed)]]></pl>
+        </locale>
+        <locale name="control.WallpaperText.bg-color">
+            <de><![CDATA[Hintergrundfarbe]]></de>
+            <en><![CDATA[Background color]]></en>
+            <pl><![CDATA[Kolor tla]]></pl>
         </locale>
         <locale name="control.WallpaperText.content-position">
             <de><![CDATA[Ausrichtung]]></de>

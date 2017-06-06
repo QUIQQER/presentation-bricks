@@ -11,6 +11,10 @@
     height: 100%;
 }
 
+.wallpaperText.fixed {
+    background-attachment: fixed;
+}
+
 @media (max-width: 767px) {
 
 }

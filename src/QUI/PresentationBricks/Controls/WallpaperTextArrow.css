@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.wallpaperTextArrow.fixed {
+    background-attachment: fixed;
+}
+
 .wallpaperTextArrow .grid-container {
     height: 100%;
     display: flex;

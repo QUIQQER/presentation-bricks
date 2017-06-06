@@ -24,8 +24,9 @@ class WallpaperTextArrow extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'arrowType' => 'arrow-down',
-            'effect'    => 'scale'
+            'imageBackgroundFixed' => 'false',
+            'arrowType'            => 'arrow-down',
+            'effect'               => 'scale'
         ));
 
         parent::__construct($attributes);
@@ -50,9 +51,15 @@ class WallpaperTextArrow extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
+        $fixed = '';
+        if ($this->getAttribute('image-background-fixed')) {
+            $fixed = "fixed";
+        }
+
         $Engine->assign(array(
             'this'            => $this,
             'imageBackground' => $this->getAttribute('image-background'),
+            'fixed'           => $fixed,
             'image'           => $this->getAttribute('image'),
             'arrowType'       => $this->getAttribute('arrow-type'),
             'effect'          => $this->getAttribute('effect')

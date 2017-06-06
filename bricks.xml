@@ -2,7 +2,7 @@
 <quiqqer>
     <bricks>
 
-        <!-- wallpaper with text and an arrow -->
+        <!-- wallpaper with text, image and an arrow -->
         <brick control="\QUI\PresentationBricks\Controls\WallpaperTextArrow">
             <title>
                 <locale group="quiqqer/presentation-bricks"
@@ -17,6 +17,11 @@
                 <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperTextArrow.image-background"/>
+                </setting>
+
+                <setting name="image-background-fixed" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperTextArrow.image-background-fixed"/>
                 </setting>
 
                 <setting name="image" class="media-image">
@@ -118,6 +123,11 @@
                 <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.image-background"/>
+                </setting>
+
+                <setting name="image-background-fixed" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.image-background-fixed"/>
                 </setting>
 
                 <setting name="bg-color" type="color">
