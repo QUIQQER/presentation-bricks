@@ -1,0 +1,65 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="qui-control-stickyContent control-template"
+>
+    <!--<link property="mainEntityOfPage" href="{url site=$Site}">-->
+
+    {assign var=counter value=1}
+
+    {foreach from=$children item=Child}
+
+    {if $counter > 1}
+        {assign var=inlineStyle value='&nbsp;'}
+    {/if}
+
+    {assign var=_Child value=$Child->load()}
+    <article itemscope
+             itemprop="itemListElement"
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             class="qui-control-stickyContent-entry"
+    >
+        <meta itemprop="position" content="{$counter}"/>
+        {assign var=counter value=$counter+1}
+
+        <!-- entry image -->
+        <div class="grid-50 grid-container qui-control-stickyContent-entry-image">
+            {image src=$Child->getAttribute('image_site') width="500" type="resize"
+            style=$inlineStyle}
+        </div>
+
+        <!-- entry content -->
+        <div class="grid-50 grid-container qui-control-stickyContent-entry-content">
+
+            <header>
+                <h1 itemprop="name">
+                    {$Child->getAttribute('title')}
+                </h1>
+            </header>
+
+            <p class="">
+                {$Child->getAttribute('short')|nl2br}
+            </p>
+
+            <a itemprop="url" href="{url site=$Child}" class="button">
+                {locale group="quiqqer/sitetypes" value="list.more"}
+            </a>
+
+        </div>
+
+    </article>
+
+    {/foreach}
+</section>

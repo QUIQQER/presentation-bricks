@@ -123,7 +123,7 @@
         <!-- wallpaper with text -->
         <locale name="control.WallpaperText.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
-            <en><![CDATA[Presentatino: Wallpaper with text ]]></en>
+            <en><![CDATA[Presentatino: Wallpaper with text]]></en>
             <pl><![CDATA[Presentation: Zdjecie w tle z tekstem]]></pl>
         </locale>
         <locale name="control.WallpaperText.description">
@@ -166,6 +166,19 @@
                 <en><![CDATA[right]]></en>
                 <pl><![CDATA[prawa strona]]></pl>
             </locale>
+
+
+        <!-- sticky content -->
+        <locale name="control.StickyContent.title">
+            <de><![CDATA[Präsentation: Sticky Inhalt]]></de>
+            <en><![CDATA[Presentatino: Sticky content]]></en>
+            <pl><![CDATA[Presentation: Sticky content]]></pl>
+        </locale>
+        <locale name="control.StickyContent.description">
+            <de><![CDATA[Während ein Bereich mit der Seite gescrollt wird, bleibt der andere oben, bis Ende des Bricks kommt.]]></de>
+            <en><![CDATA[...]]></en>
+            <pl><![CDATA[...]]></pl>
+        </locale>
 
     </groups>
 </locales>

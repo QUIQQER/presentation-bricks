@@ -2,7 +2,7 @@
  * QUIQQER Wallapper with text and an arrow
  *
  * @author www.pcsg.de (Michael Danielczok)
- * @module Bricks\Controls\SimpleContact
+ * @module Bricks\Controls\StickyContent
  *
  * @require qui/QUI
  * @require qui/controls/Control
@@ -34,8 +34,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
             this.addEvents({
                 onImport: this.$onImport
             });
-
-            console.log(this);
         },
 
         /**
