@@ -39,21 +39,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
          * event : on import
          */
         $onImport: function () {
-
-            /*console.log(QUI.getScroll().y);
-
-            QUI.addEvent('scroll', function() {
-                console.log(QUI.getScroll().y);
-
-            })*/
-
             this.$Brick    = document.getElement('div[data-quiid="' + this.$uid + '"]');
             this.$Arrow    = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
 
             this.$Arrow.addEvent('click', function () {
                 new Fx.Scroll(window).start(0, this.$Brick.getSize().y);
             }.bind(this))
-
         }
     });
 });
