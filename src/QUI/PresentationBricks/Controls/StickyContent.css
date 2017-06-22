@@ -7,7 +7,7 @@
 
 .qui-control-stickyContent-entry {
     height: 100vh;
-    border: 2px solid #eee;
+    /*border: 2px solid #eee;*/
     display: flex;
 }
 
@@ -39,6 +39,26 @@
 
 
 @media screen and (max-width: 767px) {
+    .qui-control-stickyContent-entry {
+        height: auto;
+        display: block;
+        padding: 4em 0;
+        border-bottom: 2px solid #eee;
+    }
+    .qui-control-stickyContent-entry:last-child {
+        border-bottom: none;
+    }
 
+    .qui-control-stickyContent-entry-image {
+        margin-bottom: 3em;
+    }
+
+    .qui-control-stickyContent-entry-image img {
+        position: relative !important;
+        top: 0;
+        transform: translateY(0);
+        opacity: 1;
+        transition: 0.3s all ease-in-out;
+    }
 
 }

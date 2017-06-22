@@ -23,6 +23,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         Binds: [
             '$onImport',
             '$calc',
+            '$resize',
+            '$scroll',
             'show',
             'hide',
             'setImagesFixed',
@@ -47,49 +49,50 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
 
             this.List       = null;
             this.PointsList = null;
-
-
         },
 
         /**
-         * event : on import
+         * event: on import
          */
         $onImport: function () {
-
-            QUI.addEvent('resize', this.$calc);
 
             this.brick      = document.getElement('.qui-control-stickyContent');
             this.sections   = document.getElements('.qui-control-stickyContent-entry');
             this.List       = [];
             this.PointsList = [];
 
-            this.$calc();
+            QUI.addEvent('resize', this.$resize);
+
+            this.$resize();
+
+            /*// mobile?
+            if (window.getSize().x < 768) {
+                console.log("es ist mobile!");
+                return;
+            }
+
+            console.log("PC versoin");*/
+
 
             QUI.addEvent('scroll', function () {
-                var scroll = QUI.getScroll().y;
-
-                if (scroll > this.firstPoint && scroll < this.lastPoint - this.entryHeight) {
-
-                    if (!this.imagesFixed) {
-                        this.setImagesFixed();
-                    }
-
-                    for (var i = 0; i < this.PointsList.length; i++) {
-                        if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
-                            if (this.pos != this.PointsList[i]) {
-                                this.pos = this.PointsList[i];
-                                this.show(this.List[this.pos]);
-                            }
-                        }
-                    }
-                    return;
-                }
-
-                if (this.imagesFixed) {
-                    this.setImagesAbsolute();
-                }
+                this.$scroll(QUI.getScroll().y);
             }.bind(this));
+        },
 
+        /**
+         * event: on resize
+         */
+        $resize: function () {
+            console.log("resize event");
+            // mobile?
+            if (window.getSize().x < 768) {
+                return;
+            }
+            console.log(1111111)
+
+            this.hide();
+            this.$calc();
+            this.$scroll(QUI.getScroll().y);
         },
 
         /**
@@ -109,6 +112,32 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             }.bind(this));
 
             this.PointsList.push(this.lastPoint);
+        },
+
+        /**
+         * scroll event
+         */
+        $scroll: function (scroll) {
+            if (scroll > this.firstPoint && scroll < this.lastPoint - this.entryHeight) {
+
+                if (!this.imagesFixed) {
+                    this.setImagesFixed();
+                }
+
+                for (var i = 0; i < this.PointsList.length; i++) {
+                    if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
+                        if (this.pos != this.PointsList[i]) {
+                            this.pos = this.PointsList[i];
+                            this.show(this.List[this.pos]);
+                        }
+                    }
+                }
+                return;
+            }
+
+            if (this.imagesFixed) {
+                this.setImagesAbsolute();
+            }
         },
 
         /**
