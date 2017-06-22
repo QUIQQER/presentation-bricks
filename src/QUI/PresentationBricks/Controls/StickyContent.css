@@ -7,7 +7,7 @@
 
 .qui-control-stickyContent-entry {
     height: 100vh;
-    /*border: 2px solid #eee;*/
+    border: 2px solid #eee;
     display: flex;
 }
 

@@ -29,7 +29,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
 
             this.$Brick    = null;
             this.$Arrow    = null;
-            this.$ScrollTo = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -41,12 +40,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
          */
         $onImport: function () {
 
+            /*console.log(QUI.getScroll().y);
+
+            QUI.addEvent('scroll', function() {
+                console.log(QUI.getScroll().y);
+
+            })*/
+
             this.$Brick    = document.getElement('div[data-quiid="' + this.$uid + '"]');
             this.$Arrow    = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
-            this.$ScrollTo = this.$Brick.getElement('.wallpaperTextArrow-scrollTo');
 
             this.$Arrow.addEvent('click', function () {
-                new Fx.Scroll(window).toElement(this.$ScrollTo);
+                new Fx.Scroll(window).start(0, this.$Brick.getSize().y);
             }.bind(this))
 
         }

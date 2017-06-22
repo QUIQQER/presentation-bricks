@@ -49,15 +49,30 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
                 posAbsolute = true,
                 position    = 0;
 
-            console.log("top " + top)
-            console.log("bottom " + bottom)
-            console.log("entryHeight " + entryHeight)
-            console.log("breakPoint " + breakPoint);
-            console.log(images);
+            // console.log("top " + top)
+            // console.log("bottom " + bottom)
+            // console.log("entryHeight " + entryHeight)
+            // console.log("breakPoint " + breakPoint);
+            // console.log(images);
 
-            window.addEvent('scroll', function () {
+            window.addEvent('scroll', function (event) {
 
                 var scroll = window.getScroll().y;
+
+                /*if (!(scroll > bottom || scroll < top)) {
+                    return;
+                }*/
+
+
+                if (scroll > bottom || scroll < top) {
+                    images.forEach(function (Elm) {
+                        Elm.setStyle('position', 'absolute');
+                    });
+
+                    posAbsolute = true;
+                }
+
+
 
                 if (scroll > top && scroll < bottom) {
 
@@ -135,13 +150,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
                     position = scroll;
                 }
 
-                if (scroll > bottom || scroll < top) {
-                    images.forEach(function (Elm) {
-                        Elm.setStyle('position', 'absolute');
-                    });
 
-                    posAbsolute = true;
-                }
             });
 
 
