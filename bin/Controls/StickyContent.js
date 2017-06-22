@@ -21,7 +21,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         Type   : 'Controls/StickyContent',
 
         Binds: [
-            '$onImport'
+            '$onImport',
+            '$calc',
+            'show',
+            'hide',
+            'setImagesFixed',
+            'setImagesAbsolute'
         ],
 
         initialize: function (options) {
@@ -32,128 +37,120 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
                 onImport: this.$onImport
             });
 
+            this.brick       = null;
+            this.sections    = null;
+            this.firstPoint  = null;
+            this.lastPoint   = null;
+            this.entryHeight = null;
+            this.imagesFixed = false;
+            this.pos         = 0;
+
+            this.List       = null;
+            this.PointsList = null;
+
+
         },
 
         /**
          * event : on import
          */
         $onImport: function () {
-            var brick       = document.getElement('.qui-control-stickyContent'),
-                images      = document.getElements('.qui-control-stickyContent-entry-image img'),
-                counter  = 0,
-                sections    = document.getElements('.qui-control-stickyContent-entry'),
-                entryHeight = sections[0].getSize().y,
-                top         = brick.getPosition().y,
-                bottom      = top + brick.getSize().y - entryHeight,
-                breakPoint  = top + (entryHeight / 2),
-                posAbsolute = true,
-                position    = 0;
 
-            // console.log("top " + top)
-            // console.log("bottom " + bottom)
-            // console.log("entryHeight " + entryHeight)
-            // console.log("breakPoint " + breakPoint);
-            // console.log(images);
+            QUI.addEvent('resize', this.$calc);
 
-            window.addEvent('scroll', function (event) {
+            this.brick      = document.getElement('.qui-control-stickyContent');
+            this.sections   = document.getElements('.qui-control-stickyContent-entry');
+            this.List       = [];
+            this.PointsList = [];
 
-                var scroll = window.getScroll().y;
+            this.$calc();
 
-                /*if (!(scroll > bottom || scroll < top)) {
-                    return;
-                }*/
+            QUI.addEvent('scroll', function () {
+                var scroll = QUI.getScroll().y;
 
+                if (scroll > this.firstPoint && scroll < this.lastPoint - this.entryHeight) {
 
-                if (scroll > bottom || scroll < top) {
-                    images.forEach(function (Elm) {
-                        Elm.setStyle('position', 'absolute');
-                    });
-
-                    posAbsolute = true;
-                }
-
-
-
-                if (scroll > top && scroll < bottom) {
-
-                    // set position of all images to fixed if not already done
-                    if (posAbsolute) {
-                        images.forEach(function (Elm) {
-                            Elm.setStyle('position', 'fixed');
-                            posAbsolute = false;
-                        });
+                    if (!this.imagesFixed) {
+                        this.setImagesFixed();
                     }
 
-
-                    if (scroll > breakPoint && scroll < bottom) {
-                        // hide current image...
-                        images[counter].setStyle(
-                            'opacity', 0
-                        );
-                        // ...and show the next
-                        images[counter + 1].setStyle(
-                            'opacity', 1
-                        );
-
-                        counter += 1;
-                        breakPoint += entryHeight;
-                        console.log("breakPoint " + breakPoint);
-
-                    }
-                    /*if (scroll > position) {
-                        if (scroll > breakPoint && scroll < bottom) {
-                            console.warn("counter " + counter)
-                            console.warn("break point erreicht (scroll down)!");
-
-                            // hide current image...
-                            images[counter].setStyle(
-                                'opacity', 0
-                            );
-                            // ...and show the next
-                            images[counter + 1].setStyle(
-                                'opacity', 1
-                            );
-
-
-                            counter += 1;
-                            console.info("images.length ---------------- " + images.length)
-                            console.info("counter ----------- " + counter + 1)
-                            if (images.length - 1 == counter) {
-                                console.log(11111111111111)
-                                return;
+                    for (var i = 0; i < this.PointsList.length; i++) {
+                        if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
+                            if (this.pos != this.PointsList[i]) {
+                                this.pos = this.PointsList[i];
+                                this.show(this.List[this.pos]);
                             }
-                            breakPoint += entryHeight;
-                            console.log("breakPoint " + breakPoint);
-
                         }
-                    } else {
-                        if (scroll < breakPoint && scroll > top) {
-                            console.warn("counter " + counter)
-                            console.warn("break point erreicht! Scroll up....");
-
-                            // hide current image...
-                            images[counter].setStyle(
-                                'opacity', 0
-                            );
-                            // ...and show the previous
-                            images[counter - 1].setStyle(
-                                'opacity', 1
-                            );
-
-                            breakPoint -= entryHeight;
-                            counter -= 1;
-                            console.log("breakPoint " + breakPoint);
-                        }
-                    }*/
-
-
-                    position = scroll;
+                    }
+                    return;
                 }
 
+                if (this.imagesFixed) {
+                    this.setImagesAbsolute();
+                }
+            }.bind(this));
 
+        },
+
+        /**
+         * calc the point of all containers
+         */
+        $calc: function () {
+            this.firstPoint  = this.sections[0].getPosition().y;
+            this.entryHeight = this.sections[0].getSize().y;
+            this.lastPoint   = this.firstPoint + (this.entryHeight * this.sections.length);
+
+            this.sections.forEach(function (entry) {
+                var point = entry.getPosition().y - Math.round((this.entryHeight / 2)), // change img when half of next the next section is visible
+                    image = entry.getElement('img');
+
+                this.List[point] = image;
+                this.PointsList.push(point);
+            }.bind(this));
+
+            this.PointsList.push(this.lastPoint);
+        },
+
+        /**
+         * show current image
+         *
+         * @param image DOM
+         */
+        show: function (image) {
+            this.hide();
+            image.setStyle('opacity', 1);
+        },
+
+        /**
+         * hide all images
+         */
+        hide: function () {
+            this.List.forEach(function (Elm) {
+                Elm.setStyle('opacity', 0)
+            })
+        },
+
+        /**
+         * set images position to fixed
+         */
+        setImagesFixed: function () {
+            this.List.forEach(function (Elm) {
+                Elm.setStyle('position', 'fixed')
             });
 
+            this.imagesFixed = true;
 
+        },
+
+        /**
+         * set images position to absolute
+         */
+        setImagesAbsolute: function () {
+            this.List.forEach(function (Elm) {
+                Elm.setStyle('position', 'absolute')
+            });
+
+            this.imagesFixed = false;
         }
     });
 });
