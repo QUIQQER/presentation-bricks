@@ -13,8 +13,19 @@
 {/if}
 
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
-         class="qui-control-stickyContent control-template"
+         class="qui-control-stickyContent control-template grid-children-container"
 >
+    <div class="qui-control-stickyContent-vNav-container">
+        <ul class="qui-control-stickyContent-vNav">
+            {assign var=test value=0}
+            {foreach from=$children item=Child}
+                <li><span data-qui-section="{$test}" class="circle-icon control-color"></span></li>
+            {assign var=test value=$test+1}
+
+            {/foreach}
+        </ul>
+    </div>
+
     <!--<link property="mainEntityOfPage" href="{url site=$Site}">-->
 
     {assign var=counter value=1}
@@ -29,7 +40,7 @@
     <article itemscope
              itemprop="itemListElement"
              itemtype="{$this->getAttribute('child-itemtype')}"
-             class="qui-control-stickyContent-entry"
+             class="qui-control-stickyContent-entry grid-children"
     >
         <meta itemprop="position" content="{$counter}"/>
         {assign var=counter value=$counter+1}
