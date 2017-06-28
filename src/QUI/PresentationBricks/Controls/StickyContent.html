@@ -17,10 +17,10 @@
 >
     <div class="qui-control-stickyContent-vNav-container">
         <ul class="qui-control-stickyContent-vNav">
-            {assign var=test value=0}
+            {assign var=navCounter value=0}
             {foreach from=$children item=Child}
-                <li><span data-qui-section="{$test}" class="circle-icon control-color"></span></li>
-            {assign var=test value=$test+1}
+                <li><span data-qui-section="{$navCounter}" class="circle-icon control-color"></span></li>
+            {assign var=navCounter value=$navCounter+1}
 
             {/foreach}
         </ul>

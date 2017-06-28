@@ -10,9 +10,10 @@
 define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
 
     'qui/QUI',
-    'qui/controls/Control'
+    'qui/controls/Control',
+    'qui/utils/Functions'
 
-], function (QUI, QUIControl) {
+], function (QUI, QUIControl, QUIFunctions) {
     "use strict";
 
     return new Class({
@@ -25,10 +26,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             '$calc',
             '$resize',
             '$scroll',
-            'show',
-            'hide',
+            '$changeImg',
+            'showImage',
+            'hideImages',
             'setImagesFixed',
-            'setImagesAbsolute'
+            'setImagesAbsolute',
+            'changeDotsFocus',
+            'showVNav',
+            'hideVNav'
         ],
 
         initialize: function (options) {
@@ -46,11 +51,16 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.entryHeight = null;
             this.imagesFixed = false;
             this.pos         = 0;
+            this.winPos      = null;
+            this.scrollDown  = true;
 
             this.List       = null;
             this.PointsList = null;
 
-            this.vNav = null;
+            this.vNav        = null;
+            this.dots        = null;
+            this.activeDot   = null;
+            this.vNavVisible = false;
         },
 
         /**
@@ -68,12 +78,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.dots = this.vNav.getElements('.circle-icon');
 
             var self = this;
-            this.dots.forEach(function (dot) {
+
+            // add click event to all dots in vertical nav
+            this.dots.each(function (dot) {
                 dot.addEvent('click', function () {
-                    self.dots.forEach(function(Elm) {
-                        Elm.removeClass('control-background circle-icon-active');
-                    });
-                    this.addClass('control-background circle-icon-active');
                     var section = self.sections[dot.getAttribute('data-qui-section')];
                     new Fx.Scroll(window).toElement(section);
                 });
@@ -85,15 +93,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.$resize();
 
             QUI.addEvent('scroll', function () {
-                this.$scroll(QUI.getScroll().y);
-            }.bind(this));
+                self.$scroll(QUI.getScroll().y)
+            });
         },
 
         /**
          * event: on resize
          */
         $resize: function () {
-            console.log("resize event");
             // mobile?
             /*if (window.getSize().x < 768) {
              return;
@@ -110,16 +117,25 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.firstPoint  = this.sections[0].getPosition().y;
             this.entryHeight = this.sections[0].getSize().y;
             this.lastPoint   = this.firstPoint + (this.entryHeight * (this.sections.length - 1));
+            var dot          = 0;
 
-            this.sections.forEach(function (entry) {
+            this.sections.each(function (entry) {
                 var point = entry.getPosition().y - Math.round((this.entryHeight / 2)), // change img when half of next the next section is visible
                     image = entry.getElement('img');
 
-                this.List[point] = image;
+                this.List[point] = {
+                    img: image,
+                    dot: this.dots[dot]
+                };
+
+                dot++;
                 this.PointsList.push(point);
             }.bind(this));
 
             this.PointsList.push(this.lastPoint);
+
+            this.winPos = QUI.getScroll().y;
+            this.hideImages();
 
         },
 
@@ -127,7 +143,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
          * scroll event
          */
         $scroll: function (scroll) {
-            if (scroll > this.firstPoint && scroll < this.lastPoint) {
+
+            if (scroll >= this.firstPoint && scroll <= this.lastPoint) {
+
+                if (!this.vNavVisible) {
+                    this.showVNav();
+                }
 
                 if (!this.imagesFixed) {
                     this.setImagesFixed();
@@ -136,8 +157,16 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
                 for (var i = 0; i < this.PointsList.length; i++) {
                     if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
                         if (this.pos != this.PointsList[i]) {
-                            this.pos = this.PointsList[i];
-                            this.show(this.List[this.pos]);
+
+                            // scroll up
+                            this.scrollDown = true;
+                            if (scroll < this.winPos) {
+                                this.scrollDown = false;
+                            }
+
+                            this.winPos = scroll;
+                            this.pos    = this.PointsList[i];
+                            this.$changeImg(this.List[this.pos].img, this.List[this.pos].dot);
                         }
                     }
                 }
@@ -147,33 +176,76 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             if (this.imagesFixed) {
                 this.setImagesAbsolute();
             }
+
+            if (this.vNavVisible) {
+                this.hideVNav();
+            }
         },
 
         /**
-         * show current image
+         * change images
          *
-         * @param image DOM
+         * @param currentImage
          */
-        show: function (image) {
-            this.hide();
-            image.setStyle('opacity', 1);
+        $changeImg: function (currentImage, currentDot) {
+
+            this.hideImages();
+            this.showImage(currentImage);
+            this.changeDotsFocus(currentDot);
+        },
+
+        /**
+         * show image
+         *
+         * @param currentImage DOM
+         */
+        showImage: function (currentImage) {
+
+            currentImage.removeProperty('class');
+            if (this.scrollDown) {
+                currentImage.addClass('fadeInUp');
+                return;
+            }
+            currentImage.addClass('fadeInDown');
+
+            /*currentImage.setStyles({
+             opacity: 1,
+             top    : '50%'
+             });*/
+
         },
 
         /**
          * hide all images
          */
-        hide: function () {
-            this.List.forEach(function (Elm) {
-                Elm.setStyle('opacity', 0)
-            })
+        hideImages: function () {
+
+            if (this.scrollDown) {
+                this.List.each(function (Elm) {
+                    Elm.img.addClass('fadeOutUp');
+                });
+                return;
+            }
+
+            this.List.each(function (Elm) {
+                Elm.img.addClass('fadeOutDown');
+            });
+
+
+            /*this.List.each(function (Elm) {
+             Elm.img.setStyles({
+             opacity: 0,
+             top    : '30%'
+             })
+             })*/
         },
 
         /**
          * set images position to fixed
          */
         setImagesFixed: function () {
-            this.List.forEach(function (Elm) {
-                Elm.setStyle('position', 'fixed')
+            this.List.each(function (Elm) {
+                Elm.img.setStyle('position', 'fixed')
             });
 
             this.imagesFixed = true;
@@ -184,11 +256,36 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
          * set images position to absolute and show all
          */
         setImagesAbsolute: function () {
-            this.List.forEach(function (Elm) {
-                Elm.setStyle('position', 'absolute');
+            this.List.each(function (Elm) {
+                Elm.img.setStyle('position', 'absolute');
             });
 
             this.imagesFixed = false;
+        },
+
+        changeDotsFocus: function (activeDot) {
+            this.dots.each(function (Elm) {
+                Elm.removeClass('control-background circle-icon-active');
+            });
+            activeDot.addClass('control-background circle-icon-active');
+        },
+
+        showVNav: function () {
+            this.vNav.setStyles({
+                opacity   : 1,
+                visibility: 'visible'
+            });
+
+            this.vNavVisible = true;
+        },
+
+        hideVNav: function () {
+            this.vNav.setStyles({
+                opacity   : 0,
+                visibility: 'hidden'
+            });
+
+            this.vNavVisible = false;
         }
     });
 });

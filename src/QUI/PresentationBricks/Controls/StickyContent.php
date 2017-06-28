@@ -26,7 +26,7 @@ class StickyContent extends QUI\Control
         // default options
         $this->setAttributes(array(
             'class'           => 'qui-control-brick',
-            'limit'           => 4,
+            'limit'           => 5,
             'order'           => 'c_date DESC',
             'parentInputList' => false,
 
