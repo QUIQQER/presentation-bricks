@@ -29,8 +29,6 @@
     animation-fill-mode: both;
 }
 
-
-
 .qui-control-stickyContent-entry-content {
     /*top: 50%;
     transform: translateY(-50%);
@@ -50,6 +48,17 @@
     z-index: 10;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all ease-in-out;
+
+}
+
+.qui-control-stickyContent-vNav-container.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s all ease-in-out;
+
 }
 
 .qui-control-stickyContent-vNav {
@@ -58,8 +67,8 @@
     list-style: none;
     cursor: pointer;
     margin: 0;
-    opacity: 0;
-    visibility: hidden;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
     transition: 0.3s all ease-in-out;
 }
 
@@ -92,22 +101,23 @@
         padding: 4em 0;
         border-bottom: 2px solid #eee;
     }
+
     .qui-control-stickyContent-entry:last-child {
         border-bottom: none;
     }
-    
-    .qui-control-stickyContent-entry:first-child .qui-control-stickyContent-entry-image{
+
+    .qui-control-stickyContent-entry:first-child .qui-control-stickyContent-entry-image {
         position: relative;
     }
 
     .qui-control-stickyContent-entry-image {
-        position: fixed;
+        /*position: fixed;*/
         top: 0;
         height: 50%;
         text-align: center;
         background: #fff;
         padding: 1em;
-        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)
+        /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1)*/
     }
 
     .qui-control-stickyContent-entry-image img {
@@ -120,7 +130,6 @@
     }
 
 }
-
 
 @keyframes fadeInDown {
     from {
@@ -189,4 +198,26 @@
 
 .fadeOutUp {
     animation-name: fadeOutUp;
+}
+
+
+
+
+
+
+
+
+
+
+
+.test-css {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,0,0,0.5);
+    z-index: 10000;
+    position: absolute;
+}
+
+body{
+    position: relative;
 }

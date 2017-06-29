@@ -24,11 +24,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         Binds: [
             '$onImport',
             '$calc',
+            '$calcMobile',
             '$resize',
             '$scroll',
             '$changeImg',
             'showImage',
             'hideImages',
+            'showImageMobile',
+            'hideImagesMobile',
             'setImagesFixed',
             'setImagesAbsolute',
             'changeDotsFocus',
@@ -71,7 +74,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.brick    = document.getElement('.qui-control-stickyContent');
             this.sections = this.brick.getElements('.qui-control-stickyContent-entry');
 
-            this.vNav = this.brick.getElement('.qui-control-stickyContent-vNav');
+            this.vNav = this.brick.getElement('.qui-control-stickyContent-vNav-container');
             this.dots = this.vNav.getElements('.circle-icon');
 
             var self = this;
@@ -100,13 +103,17 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
          * event: on resize
          */
         $resize: function () {
-            // mobile?
-            /*if (window.getSize().x < 768) {
-             return;
-             }*/
 
             this.List       = []; // clear the both arrays
             this.PointsList = []; // at each resize
+            this.mobile     = false;
+
+            // mobile?
+            if (window.getSize().x < 768) {
+                this.$calcMobile();
+                this.mobile = true;
+                return;
+            }
 
             this.$calc();
             this.$scroll(QUI.getScroll().y);
@@ -114,7 +121,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         },
 
         /**
-         * calc the point of all containers
+         * calc the break points of all containers
          */
         $calc: function () {
             this.firstPoint  = this.sections[0].getPosition().y;
@@ -140,7 +147,47 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.winPos = QUI.getScroll().y;
             this.hideImages();
 
-            // this.List[this.PointsList[0]].img.removeClass('fadeOutUp');
+        },
+
+        $calcMobile: function () {
+            this.firstPoint  = this.sections[0].getPosition().y;
+            this.entryHeight = this.sections[0].getSize().y;
+            this.lastPoint   = this.firstPoint + (this.entryHeight * (this.sections.length - 1));
+            var dot          = 0;
+
+            this.sections.each(function (entry) {
+                var point = entry.getPosition().y - Math.round((this.entryHeight / 2)), // change img when half of next the next section is visible
+                    image = entry.getElement('img');
+
+                this.List[point] = {
+                    img: image,
+                    dot: this.dots[dot]
+                };
+
+                dot++;
+                this.PointsList.push(point);
+            }.bind(this));
+
+            this.PointsList.push(this.lastPoint);
+
+            this.winPos = QUI.getScroll().y;
+            // this.hideImages();
+
+
+            /*var container = document.getElement('body');
+
+             this.PointsList.each(function (Elm) {
+             var html = new Element('div', {
+             'class': 'test-css',
+             styles : {
+             top: Elm
+             }
+             });
+
+             html.inject(container);
+
+
+             });*/
 
         },
 
@@ -191,12 +238,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         },
 
         /**
-         * change images
+         * change images and call a function to change the focus on vertical nav
          *
-         * @param currentImage
+         * @param currentImage DOM
+         * @param currentDot DOM
          */
         $changeImg: function (currentImage, currentDot) {
-
+            if (this.mobile) {
+                this.hideImagesMobile();
+                this.showImageMobile(currentImage);
+                this.changeDotsFocus(currentDot);
+                return;
+            }
             this.hideImages();
             this.showImage(currentImage);
             this.changeDotsFocus(currentDot);
@@ -237,6 +290,54 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
         },
 
         /**
+         * show image (mobile)
+         *
+         * @param currentImage DOM
+         */
+        showImageMobile: function (currentImage) {
+
+            currentImage.removeProperty('class');
+
+            if (this.scrollDown) {
+                currentImage.setStyles({
+                    opacity  : 1,
+                    transform: 'translateY(0px)'
+                });
+            }
+
+            currentImage.setStyles({
+                opacity  : 1,
+                transform: 'translateY(0px)'
+            });
+
+        },
+
+        /**
+         * hide all images (mobile)
+         */
+        hideImagesMobile: function () {
+
+            if (this.scrollDown) {
+
+                this.List.each(function (Elm) {
+                    Elm.img.removeProperty('class');
+                    Elm.img.setStyles({
+                        opacity  : 0,
+                        transform: 'translateY(60px)'
+                    });
+                });
+                return;
+            }
+            this.List.each(function (Elm) {
+                Elm.img.removeProperty('class');
+                Elm.img.setStyles({
+                    opacity  : 0,
+                    transform: 'translateY(-60px)'
+                });
+            });
+        },
+
+        /**
          * set images position to fixed
          */
         setImagesFixed: function () {
@@ -246,7 +347,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
 
             this.imagesFixed = true;
 
-        },
+        }
+        ,
 
         /**
          * set images position to absolute and show all
@@ -257,30 +359,36 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             });
 
             this.imagesFixed = false;
-        },
+        }
+        ,
 
+        /**
+         * change the focus of the vertical nav point
+         *
+         * @param activeDot
+         */
         changeDotsFocus: function (activeDot) {
             this.dots.each(function (Elm) {
                 Elm.removeClass('control-background circle-icon-active');
             });
             activeDot.addClass('control-background circle-icon-active');
-        },
+        }
+        ,
 
+        /**
+         * show the container with the vertical nav (points)
+         */
         showVNav: function () {
-            this.vNav.setStyles({
-                opacity   : 1,
-                visibility: 'visible'
-            });
-
+            this.vNav.addClass('visible');
             this.vNavVisible = true;
-        },
+        }
+        ,
 
+        /**
+         * show the container with the vertical nav (points)
+         */
         hideVNav: function () {
-            this.vNav.setStyles({
-                opacity   : 0,
-                visibility: 'hidden'
-            });
-
+            this.vNav.removeClass('visible');
             this.vNavVisible = false;
         }
     });
