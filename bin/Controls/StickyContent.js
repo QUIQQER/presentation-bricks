@@ -71,9 +71,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.brick    = document.getElement('.qui-control-stickyContent');
             this.sections = this.brick.getElements('.qui-control-stickyContent-entry');
 
-            this.List       = [];
-            this.PointsList = [];
-
             this.vNav = this.brick.getElement('.qui-control-stickyContent-vNav');
             this.dots = this.vNav.getElements('.circle-icon');
 
@@ -91,10 +88,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             QUI.addEvent('resize', this.$resize);
 
             this.$resize();
+            // this.hideImages();
 
             QUI.addEvent('scroll', function () {
                 self.$scroll(QUI.getScroll().y)
             });
+
         },
 
         /**
@@ -106,8 +105,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
              return;
              }*/
 
+            this.List       = []; // clear the both arrays
+            this.PointsList = []; // at each resize
+
             this.$calc();
             this.$scroll(QUI.getScroll().y);
+
         },
 
         /**
@@ -137,6 +140,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             this.winPos = QUI.getScroll().y;
             this.hideImages();
 
+            // this.List[this.PointsList[0]].img.removeClass('fadeOutUp');
+
         },
 
         /**
@@ -156,16 +161,19 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
 
                 for (var i = 0; i < this.PointsList.length; i++) {
                     if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
-                        if (this.pos != this.PointsList[i]) {
 
-                            // scroll up
+                        if (this.pos != this.PointsList[i]) {
+                            // scroll down
                             this.scrollDown = true;
                             if (scroll < this.winPos) {
+                                // scroll up
                                 this.scrollDown = false;
                             }
 
-                            this.winPos = scroll;
+                            this.winPos = scroll; // to determinate scroll direction
                             this.pos    = this.PointsList[i];
+
+
                             this.$changeImg(this.List[this.pos].img, this.List[this.pos].dot);
                         }
                     }
@@ -208,11 +216,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
             }
             currentImage.addClass('fadeInDown');
 
-            /*currentImage.setStyles({
-             opacity: 1,
-             top    : '50%'
-             });*/
-
         },
 
         /**
@@ -231,13 +234,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
                 Elm.img.addClass('fadeOutDown');
             });
 
-
-            /*this.List.each(function (Elm) {
-             Elm.img.setStyles({
-             opacity: 0,
-             top    : '30%'
-             })
-             })*/
         },
 
         /**

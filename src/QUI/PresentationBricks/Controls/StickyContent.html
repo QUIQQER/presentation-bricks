@@ -19,7 +19,10 @@
         <ul class="qui-control-stickyContent-vNav">
             {assign var=navCounter value=0}
             {foreach from=$children item=Child}
-                <li><span data-qui-section="{$navCounter}" class="circle-icon control-color"></span></li>
+                <li>
+                    <span data-qui-section="{$navCounter}"
+                          class="circle-icon control-color"></span>
+                </li>
             {assign var=navCounter value=$navCounter+1}
 
             {/foreach}
