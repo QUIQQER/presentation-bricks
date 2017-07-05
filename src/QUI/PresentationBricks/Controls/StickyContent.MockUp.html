@@ -1,0 +1,100 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="qui-control-stickyContent control-template grid-children-container"
+>
+    <div class="qui-control-stickyContent-vNav-container">
+        <ul class="qui-control-stickyContent-vNav">
+            {assign var=navCounter value=0}
+            {foreach from=$children item=Child}
+                <li>
+                    <span data-qui-section="{$navCounter}"
+                          class="circle-icon control-color"></span>
+                </li>
+            {assign var=navCounter value=$navCounter+1}
+
+            {/foreach}
+        </ul>
+    </div>
+
+    {assign var=counter value=1}
+
+    <div class="image-container grid-50">
+        <!--<img src="{$URL_OPT_DIR}quiqqer/presentation-bricks/bin/img/iMac_purefront.png" />-->
+
+        <div class="test-wrapper">
+
+        <div class="test">
+
+            <div class="image-wrapper">
+    {foreach from=$children item=Child}
+
+    {if $counter > 1}
+        {assign var=inlineStyle value='&nbsp;'}
+    {/if}
+
+    {assign var=_Child value=$Child->load()}
+
+        <!-- entry image -->
+        {image src=$Child->getAttribute('image_site') width="500" type="resize" class="super-img"}
+
+    {/foreach}
+                </div>
+        </div>
+        </div>
+        <img src="{$URL_OPT_DIR}quiqqer/presentation-bricks/bin/img/iMac_purefront.png"
+             class="image-mockup" />
+    </div>
+
+    <div class="content-container grid-50">
+    {foreach from=$children item=Child}
+
+    {if $counter > 1}
+    {assign var=inlineStyle value='&nbsp;'}
+    {/if}
+
+    {assign var=_Child value=$Child->load()}
+    <article itemscope
+             itemprop="itemListElement"
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             class="qui-control-stickyContent-entry grid-children"
+    >
+        <meta itemprop="position" content="{$counter}"/>
+        {assign var=counter value=$counter+1}
+
+        <!-- entry content -->
+        <div class="qui-control-stickyContent-entry-content">
+
+            <header>
+                <h1 itemprop="name">
+                    {$Child->getAttribute('title')}
+                </h1>
+            </header>
+
+            <p class="">
+                {$Child->getAttribute('short')|nl2br}
+            </p>
+
+            <a itemprop="url" href="{url site=$Child}" class="button">
+                {locale group="quiqqer/sitetypes" value="list.more"}
+            </a>
+
+        </div>
+
+    </article>
+
+    {/foreach}
+    </div>
+</section>

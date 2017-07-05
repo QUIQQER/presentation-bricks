@@ -1,13 +1,13 @@
 /**
- * QUIQQER Sticky Content
+ * QUIQQER Sticky Content - Template MockUp
  *
  * @author www.pcsg.de (Michael Danielczok)
- * @module Bricks\Controls\StickyContent
+ * @module Bricks\Controls\StickyContentMockup
  *
  * @require qui/QUI
  * @require qui/controls/Control
  */
-define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
+define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
     'qui/QUI',
     'qui/controls/Control',
@@ -19,7 +19,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'Controls/StickyContent',
+        Type   : 'Controls/StickyContent/MockUp',
 
         Binds: [
             '$onImport',
@@ -70,6 +70,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContent', [
          * event: on import
          */
         $onImport: function () {
+
+            return;
 
             this.brick    = document.getElement('.qui-control-stickyContent');
             this.sections = this.brick.getElements('.qui-control-stickyContent-entry');

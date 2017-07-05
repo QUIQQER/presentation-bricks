@@ -29,16 +29,12 @@ class StickyContent extends QUI\Control
             'limit'           => 5,
             'order'           => 'c_date DESC',
             'parentInputList' => false,
+            'template'        => 'default',
+            'quiClass'        => 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault'
 
         ));
 
         parent::__construct($attributes);
-
-        $this->setAttribute(
-            'qui-class',
-            'package/quiqqer/presentation-bricks/bin/Controls/StickyContent'
-        );
-
     }
 
     /**
@@ -56,7 +52,7 @@ class StickyContent extends QUI\Control
 
 
         if (!$limit) {
-            $limit = 3;
+            $limit = 5;
         }
 
         $children = Utils::getSitesByInputList($Project, $this->getAttribute('site'), array(
@@ -66,16 +62,36 @@ class StickyContent extends QUI\Control
         ));
 
 
+
+        $template = "mockup";
+
+        switch($template) {
+            case 'default':
+            default:
+                $html = dirname(__FILE__) . '/StickyContent.Default.html';
+                $css = dirname(__FILE__) . '/StickyContent.Default.css';
+                $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault';
+                break;
+            case 'mockup':
+                $html = dirname(__FILE__) . '/StickyContent.MockUp.html';
+                $css = dirname(__FILE__) . '/StickyContent.MockUp.css';
+                $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp';
+                break;
+        }
+
         $Engine->assign(array(
             'this'        => $this,
             'Site'        => $this->getSite(),
             'Project'     => $this->getProject(),
             'children'    => $children,
-            'inlineStyle' => 'opacity: 1;'
+            'inlineStyle' => 'opacity: 1;',
+            'URL_OPT_DIR' => URL_OPT_DIR
         ));
 
-        $this->addCSSFile(dirname(__FILE__) . '/StickyContent.css');
-        return $Engine->fetch(dirname(__FILE__) . '/StickyContent.html');
+        $this->addCSSFile($css);
+        $this->setAttribute('qui-class', $quiClass);
+
+        return $Engine->fetch($html);
     }
 
     /**
