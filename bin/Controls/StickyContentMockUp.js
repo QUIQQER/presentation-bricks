@@ -27,11 +27,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             '$calcMobile',
             '$resize',
             '$scroll',
-            '$changeImg',
-            'showImage',
-            'hideImages',
-            'showImageMobile',
-            'hideImagesMobile',
             'setImagesFixed',
             'setImagesAbsolute',
             'changeDotsFocus',
@@ -47,22 +42,26 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                 onImport: this.$onImport
             });
 
-            this.brick       = null;
-            this.sections    = null;
-            this.firstPoint  = null;
-            this.lastPoint   = null;
-            this.entryHeight = null;
-            this.imagesFixed = false;
-            this.pos         = 0;
-            this.winPos      = null;
-            this.scrollDown  = true;
+            this.brick          = null; // whole brick
+            this.sections       = null; // entries with text
+            this.left    = null; // container with mockup and images
+            this.leftWrapper = null;
+            this.imageContainer = null;
+            this.mockUp         = null; // mockup image (iMac, Macbook)
+            this.firstPoint     = null;
+            this.lastPoint      = null;
+            this.entryHeight    = null;
+            this.imagesFixed    = false;
+            this.pos            = 0;
+            this.winPos         = null;
+            this.scrollDown     = true;
+
 
             this.List       = null;
             this.PointsList = null;
 
             this.vNav        = null;
             this.dots        = null;
-            this.activeDot   = null;
             this.vNavVisible = false;
         },
 
@@ -71,10 +70,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          */
         $onImport: function () {
 
-            return;
-
-            this.brick    = document.getElement('.qui-control-stickyContent');
-            this.sections = this.brick.getElements('.qui-control-stickyContent-entry');
+            this.brick          = document.getElement('.qui-control-stickyContent');
+            this.sections       = this.brick.getElements('.qui-control-stickyContent-right-entry');
+            this.left    = this.brick.getElement('.qui-control-stickyContent-left');
+            this.leftWrapper    = this.brick.getElement('.qui-control-stickyContent-left-wrapper');
+            this.imageContainer = this.brick.getElement('.qui-control-stickyContent-left-wrapper-container');
+            this.mockUp         = this.brick.getElement('.image-mockup');
 
             this.vNav = this.brick.getElement('.qui-control-stickyContent-vNav-container');
             this.dots = this.vNav.getElements('.circle-icon');
@@ -93,7 +94,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             QUI.addEvent('resize', this.$resize);
 
             this.$resize();
-            // this.hideImages();
 
             QUI.addEvent('scroll', function () {
                 self.$scroll(QUI.getScroll().y)
@@ -126,70 +126,81 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          * calc the break points of all containers
          */
         $calc: function () {
-            this.firstPoint  = this.sections[0].getPosition().y;
+            this.firstPoint  = this.brick.getPosition().y;
             this.entryHeight = this.sections[0].getSize().y;
             this.lastPoint   = this.firstPoint + (this.entryHeight * (this.sections.length - 1));
-            var dot          = 0;
+            var dot          = 0,
+                imgSize      = document.getElement('.qui-control-stickyContent-image').getSize().y,
+                imgPos       = 0;
 
             this.sections.each(function (entry) {
-                var point = entry.getPosition().y - Math.round((this.entryHeight / 2)), // change img when half of next the next section is visible
-                    image = entry.getElement('img');
+                // change img when half of next the next section is visible
+                var point = entry.getPosition().y - Math.round((this.entryHeight / 2));
 
                 this.List[point] = {
-                    img: image,
+                    img: imgPos,
                     dot: this.dots[dot]
                 };
 
                 dot++;
+                imgPos = imgPos + imgSize;
                 this.PointsList.push(point);
             }.bind(this));
 
             this.PointsList.push(this.lastPoint);
 
-            this.winPos = QUI.getScroll().y;
-            this.hideImages();
+            this.containerPos = (this.entryHeight * (this.sections.length - 1));
 
+            console.log(this.List);
+            console.log(this.PointsList);
+
+            this.winPos = QUI.getScroll().y;
         },
 
         $calcMobile: function () {
-            this.firstPoint  = this.sections[0].getPosition().y;
+            this.firstPoint  = this.brick.getPosition().y;
             this.entryHeight = this.sections[0].getSize().y;
-            this.lastPoint   = this.firstPoint + (this.entryHeight * (this.sections.length - 1));
-            var dot          = 0;
+            // this.lastPoint   = this.firstPoint + (this.entryHeight * (this.sections.length - 1));
+            this.lastPoint   = this.firstPoint + this.brick.getSize().y - this.sections[this.sections.length - 1].getSize().y;
+            var dot          = 0,
+                imgSize      = document.getElement('.qui-control-stickyContent-left-wrapper-container img').getSize().y,
+                imgPos       = 0;
+
 
             this.sections.each(function (entry) {
-                var point = entry.getPosition().y - Math.round((this.entryHeight / 2)), // change img when half of next the next section is visible
-                    image = entry.getElement('img');
+                // change img when half of next the next section is visible
+                var point = entry.getPosition().y - Math.round((this.entryHeight * 1));
 
                 this.List[point] = {
-                    img: image,
+                    img: imgPos,
                     dot: this.dots[dot]
                 };
 
                 dot++;
+                imgPos = imgPos + imgSize;
+
                 this.PointsList.push(point);
             }.bind(this));
 
             this.PointsList.push(this.lastPoint);
+            console.log(this.PointsList);
 
             this.winPos = QUI.getScroll().y;
-            // this.hideImages();
 
 
-            /*var container = document.getElement('body');
+            var container = document.getElement('body');
 
-             this.PointsList.each(function (Elm) {
-             var html = new Element('div', {
-             'class': 'test-css',
-             styles : {
-             top: Elm
-             }
-             });
+            /*this.PointsList.each(function (Elm) {
+                var html = new Element('div', {
+                    'class': 'test-css',
+                    styles : {
+                        top: Elm
+                    }
+                });
 
-             html.inject(container);
+                html.inject(container);
 
-
-             });*/
+            });*/
 
         },
 
@@ -219,11 +230,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                                 this.scrollDown = false;
                             }
 
-                            this.winPos = scroll; // to determinate scroll direction
                             this.pos    = this.PointsList[i];
 
+                            var top = this.List[this.PointsList[i]].img;
+                            this.changeDotsFocus(this.List[this.PointsList[i]].dot);
 
-                            this.$changeImg(this.List[this.pos].img, this.List[this.pos].dot);
+                            // scroll the screen to the new position
+                            this.imageContainer.setStyle('top', -top);
                         }
                     }
                 }
@@ -231,6 +244,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             }
 
             if (this.imagesFixed) {
+                if (scroll > this.lastPoint) {
+                    this.left.setStyle('top', this.containerPos);
+                } else {
+                    this.left.setStyle('top', 0);
+                }
                 this.setImagesAbsolute();
             }
 
@@ -240,129 +258,37 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
         },
 
         /**
-         * change images and call a function to change the focus on vertical nav
-         *
-         * @param currentImage DOM
-         * @param currentDot DOM
-         */
-        $changeImg: function (currentImage, currentDot) {
-            if (this.mobile) {
-                this.hideImagesMobile();
-                this.showImageMobile(currentImage);
-                this.changeDotsFocus(currentDot);
-                return;
-            }
-            this.hideImages();
-            this.showImage(currentImage);
-            this.changeDotsFocus(currentDot);
-        },
-
-        /**
-         * show image
-         *
-         * @param currentImage DOM
-         */
-        showImage: function (currentImage) {
-
-            currentImage.removeProperty('class');
-            if (this.scrollDown) {
-                currentImage.addClass('fadeInUp');
-                return;
-            }
-            currentImage.addClass('fadeInDown');
-
-        },
-
-        /**
-         * hide all images
-         */
-        hideImages: function () {
-
-            if (this.scrollDown) {
-                this.List.each(function (Elm) {
-                    Elm.img.addClass('fadeOutUp');
-                });
-                return;
-            }
-
-            this.List.each(function (Elm) {
-                Elm.img.addClass('fadeOutDown');
-            });
-
-        },
-
-        /**
-         * show image (mobile)
-         *
-         * @param currentImage DOM
-         */
-        showImageMobile: function (currentImage) {
-
-            currentImage.removeProperty('class');
-
-            if (this.scrollDown) {
-                currentImage.setStyles({
-                    opacity  : 1,
-                    transform: 'translateY(0px)'
-                });
-            }
-
-            currentImage.setStyles({
-                opacity  : 1,
-                transform: 'translateY(0px)'
-            });
-
-        },
-
-        /**
-         * hide all images (mobile)
-         */
-        hideImagesMobile: function () {
-
-            if (this.scrollDown) {
-
-                this.List.each(function (Elm) {
-                    Elm.img.removeProperty('class');
-                    Elm.img.setStyles({
-                        opacity  : 0,
-                        transform: 'translateY(60px)'
-                    });
-                });
-                return;
-            }
-            this.List.each(function (Elm) {
-                Elm.img.removeProperty('class');
-                Elm.img.setStyles({
-                    opacity  : 0,
-                    transform: 'translateY(-60px)'
-                });
-            });
-        },
-
-        /**
          * set images position to fixed
          */
         setImagesFixed: function () {
-            this.List.each(function (Elm) {
-                Elm.img.setStyle('position', 'fixed')
-            });
+            if (!this.mobile) {
+                this.mockUp.setStyle('position', 'fixed');
+                document.getElement('.qui-control-stickyContent-left-wrapper').setStyle('position', 'fixed');
+            } else {
+                // mobile
+                this.left.setStyle('position', 'fixed');
+                document.getElement('.qui-control-stickyContent-right-entry-content').setStyle('margin-top', '50vh');
+            }
+
 
             this.imagesFixed = true;
-
-        }
-        ,
+        },
 
         /**
-         * set images position to absolute and show all
+         * set images position to absolute
          */
         setImagesAbsolute: function () {
-            this.List.each(function (Elm) {
-                Elm.img.setStyle('position', 'absolute');
-            });
+            if (!this.mobile) {
+                this.mockUp.setStyle('position', 'absolute');
+                document.getElement('.qui-control-stickyContent-left-wrapper').setStyle('position', 'absolute');
+            } else {
+                // mobile
+                this.left.setStyle('position', 'relative');
+                document.getElement('.qui-control-stickyContent-right-entry-content').setStyle('margin-top', 0);
+            }
 
             this.imagesFixed = false;
-        }
-        ,
+        },
 
         /**
          * change the focus of the vertical nav point
@@ -374,20 +300,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                 Elm.removeClass('control-background circle-icon-active');
             });
             activeDot.addClass('control-background circle-icon-active');
-        }
-        ,
+        },
 
         /**
-         * show the container with the vertical nav (points)
+         * show the container with the vertical nav (dots)
          */
         showVNav: function () {
             this.vNav.addClass('visible');
             this.vNavVisible = true;
-        }
-        ,
+        },
 
         /**
-         * show the container with the vertical nav (points)
+         * show the container with the vertical nav (dots)
          */
         hideVNav: function () {
             this.vNav.removeClass('visible');

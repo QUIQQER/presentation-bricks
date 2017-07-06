@@ -347,8 +347,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault', 
 
             this.imagesFixed = true;
 
-        }
-        ,
+        },
 
         /**
          * set images position to absolute and show all
@@ -359,8 +358,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault', 
             });
 
             this.imagesFixed = false;
-        }
-        ,
+        },
 
         /**
          * change the focus of the vertical nav point
@@ -372,20 +370,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault', 
                 Elm.removeClass('control-background circle-icon-active');
             });
             activeDot.addClass('control-background circle-icon-active');
-        }
-        ,
+        },
 
         /**
-         * show the container with the vertical nav (points)
+         * show the container with the vertical nav (dots)
          */
         showVNav: function () {
             this.vNav.addClass('visible');
             this.vNavVisible = true;
-        }
-        ,
+        },
 
         /**
-         * show the container with the vertical nav (points)
+         * show the container with the vertical nav (dots)
          */
         hideVNav: function () {
             this.vNav.removeClass('visible');

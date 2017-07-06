@@ -30,7 +30,8 @@ class StickyContent extends QUI\Control
             'order'           => 'c_date DESC',
             'parentInputList' => false,
             'template'        => 'default',
-            'quiClass'        => 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault'
+            'quiClass'        => 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault',
+            'imgagMockup'     => ''
 
         ));
 
@@ -62,30 +63,31 @@ class StickyContent extends QUI\Control
         ));
 
 
-
         $template = "mockup";
 
-        switch($template) {
+        switch ($template) {
             case 'default':
             default:
-                $html = dirname(__FILE__) . '/StickyContent.Default.html';
-                $css = dirname(__FILE__) . '/StickyContent.Default.css';
+                $html     = dirname(__FILE__) . '/StickyContent.Default.html';
+                $css      = dirname(__FILE__) . '/StickyContent.Default.css';
                 $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault';
                 break;
             case 'mockup':
-                $html = dirname(__FILE__) . '/StickyContent.MockUp.html';
-                $css = dirname(__FILE__) . '/StickyContent.MockUp.css';
+                $html     = dirname(__FILE__) . '/StickyContent.MockUp.html';
+                $css      = dirname(__FILE__) . '/StickyContent.MockUp.css';
                 $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp';
                 break;
         }
 
+        $mockupUrl = 'quiqqer/presentation-bricks/bin/img/';
+
         $Engine->assign(array(
-            'this'        => $this,
-            'Site'        => $this->getSite(),
-            'Project'     => $this->getProject(),
-            'children'    => $children,
-            'inlineStyle' => 'opacity: 1;',
-            'URL_OPT_DIR' => URL_OPT_DIR
+            'this'           => $this,
+            'Site'           => $this->getSite(),
+            'Project'        => $this->getProject(),
+            'children'       => $children,
+            'inlineStyle'    => 'opacity: 1;',
+            'imageMockupUrl' => URL_OPT_DIR . $mockupUrl . 'imac-image.png'
         ));
 
         $this->addCSSFile($css);
