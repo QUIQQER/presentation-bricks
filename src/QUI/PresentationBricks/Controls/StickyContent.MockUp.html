@@ -12,38 +12,39 @@
 </div>
 {/if}
 
-<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+<section itemscope itemtype="{$this->getAttribute('itemtype')|escape:'html'}"
          class="qui-control-stickyContent control-template"
 >
     <div class="qui-control-stickyContent-vNav-container">
         <ul class="qui-control-stickyContent-vNav">
             {assign var=navCounter value=0}
             {foreach from=$children item=Child}
-                <li>
-                    <span data-qui-section="{$navCounter}"
-                          class="circle-icon control-color"></span>
-                </li>
+            <li>
+                <span data-qui-section="{$navCounter}" class="circle-icon control-color"></span>
+            </li>
             {assign var=navCounter value=$navCounter+1}
             {/foreach}
         </ul>
     </div>
 
     <!-- image container -->
+    <div class="test-div">
     <div class="qui-control-stickyContent-left grid-50">
         <div class="qui-control-stickyContent-left-wrapper">
             <div class="qui-control-stickyContent-left-wrapper-container">
                 {foreach from=$children item=Child}
 
                 {assign var=_Child value=$Child->load()}
-                    <!-- entry image -->
-                    {image src=$Child->getAttribute('image_site') width="500" type="resize"
-                        class="qui-control-stickyContent-image"}
+                <!-- entry image -->
+                {image src=$Child->getAttribute('image_site') width="500" type="resize"
+                class="qui-control-stickyContent-image"}
                 {/foreach}
             </div>
         </div>
 
         <!-- mockup image -->
-        <img src="{$imageMockupUrl}" class="image-mockup" />
+        <img src="{$imageMockupUrl}" class="image-mockup"/>
+    </div>
     </div>
 
     <!-- content container -->
@@ -53,7 +54,7 @@
 
         <article itemscope
                  itemprop="itemListElement"
-                 itemtype="{$this->getAttribute('child-itemtype')}"
+                 itemtype="{$this->getAttribute('child-itemtype')|escape:'html'}"
                  class="qui-control-stickyContent-right-entry"
         >
             <meta itemprop="position" content="{$counter}"/>

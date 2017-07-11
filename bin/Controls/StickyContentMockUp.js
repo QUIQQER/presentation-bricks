@@ -44,8 +44,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
             this.brick          = null; // whole brick
             this.sections       = null; // entries with text
-            this.left    = null; // container with mockup and images
-            this.leftWrapper = null;
+            this.left           = null; // container with mockup and images
+            this.leftWrapper    = null;
             this.imageContainer = null;
             this.mockUp         = null; // mockup image (iMac, Macbook)
             this.firstPoint     = null;
@@ -54,7 +54,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             this.imagesFixed    = false;
             this.pos            = 0;
             this.winPos         = null;
-            this.scrollDown     = true;
 
 
             this.List       = null;
@@ -72,7 +71,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
             this.brick          = document.getElement('.qui-control-stickyContent');
             this.sections       = this.brick.getElements('.qui-control-stickyContent-right-entry');
-            this.left    = this.brick.getElement('.qui-control-stickyContent-left');
+            this.left           = this.brick.getElement('.qui-control-stickyContent-left');
             this.leftWrapper    = this.brick.getElement('.qui-control-stickyContent-left-wrapper');
             this.imageContainer = this.brick.getElement('.qui-control-stickyContent-left-wrapper-container');
             this.mockUp         = this.brick.getElement('.image-mockup');
@@ -165,11 +164,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             var dot          = 0,
                 imgSize      = document.getElement('.qui-control-stickyContent-left-wrapper-container img').getSize().y,
                 imgPos       = 0;
+            this.winHeight   = Math.round(window.getSize().y / 2);
 
 
             this.sections.each(function (entry) {
                 // change img when half of next the next section is visible
-                var point = entry.getPosition().y - Math.round((this.entryHeight * 1));
+                // var point = entry.getPosition().y - Math.round((this.entryHeight * 1));
+                var point = entry.getPosition().y - this.winHeight * 1.5;
 
                 this.List[point] = {
                     img: imgPos,
@@ -190,7 +191,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
             var container = document.getElement('body');
 
-            /*this.PointsList.each(function (Elm) {
+
+            this.PointsList.each(function (Elm) {
                 var html = new Element('div', {
                     'class': 'test-css',
                     styles : {
@@ -200,7 +202,23 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
                 html.inject(container);
 
-            });*/
+            });
+
+            this.lp   = this.firstPoint + this.brick.getSize().y - this.sections[this.sections.length - 1].getSize().y - Math.round(window.getSize().y / 2) - 50;
+
+
+            var lastPoint = new Element('div', {
+                styles: {
+                    top       : this.lp,
+                    width     : '100%',
+                    height    : 5,
+                    background: 'rgba(255,150,0,0.5)',
+                    position  : 'absolute',
+                    zIndex    : 100
+                }
+            })
+
+            lastPoint.inject(container);
 
         },
 
@@ -209,6 +227,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          */
         $scroll: function (scroll) {
 
+            // if (scroll >= this.firstPoint && scroll <= this.lastPoint) {
             if (scroll >= this.firstPoint && scroll <= this.lastPoint) {
 
                 if (!this.vNavVisible) {
@@ -223,16 +242,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                     if (scroll > this.PointsList[i] && scroll < this.PointsList[i + 1]) {
 
                         if (this.pos != this.PointsList[i]) {
-                            // scroll down
-                            this.scrollDown = true;
-                            if (scroll < this.winPos) {
-                                // scroll up
-                                this.scrollDown = false;
-                            }
 
-                            this.pos    = this.PointsList[i];
+                            this.pos = this.PointsList[i];
+                            var top  = this.List[this.PointsList[i]].img;
 
-                            var top = this.List[this.PointsList[i]].img;
                             this.changeDotsFocus(this.List[this.PointsList[i]].dot);
 
                             // scroll the screen to the new position
@@ -261,12 +274,16 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          * set images position to fixed
          */
         setImagesFixed: function () {
+            // desktop
             if (!this.mobile) {
                 this.mockUp.setStyle('position', 'fixed');
                 document.getElement('.qui-control-stickyContent-left-wrapper').setStyle('position', 'fixed');
+                document.getElement('.qui-control-stickyContent-left-wrapper').setStyle('position', 'fixed');
             } else {
                 // mobile
-                this.left.setStyle('position', 'fixed');
+                // this.left.setStyle('position', 'fixed');
+                document.getElement('.test-div').setStyle('position', 'fixed');
+
                 document.getElement('.qui-control-stickyContent-right-entry-content').setStyle('margin-top', '50vh');
             }
 
@@ -278,12 +295,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          * set images position to absolute
          */
         setImagesAbsolute: function () {
+            // desktop
             if (!this.mobile) {
                 this.mockUp.setStyle('position', 'absolute');
                 document.getElement('.qui-control-stickyContent-left-wrapper').setStyle('position', 'absolute');
             } else {
                 // mobile
-                this.left.setStyle('position', 'relative');
+                // this.left.setStyle('position', 'relative');
+                document.getElement('.test-div').setStyle('position', 'relative');
                 document.getElement('.qui-control-stickyContent-right-entry-content').setStyle('margin-top', 0);
             }
 

@@ -21,10 +21,12 @@
 }
 
 .wallpaperTextArrow-content-right {
+    text-align: center;
 }
 
 .wallpaperTextArrow-arrow {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .wallpaperTextArrow-arrow .fa {
@@ -132,5 +134,9 @@
 @media (max-width: 767px) {
     .wallpaperTextArrow .grid-container {
         display: block;
+    }
+
+    .wallpaperTextArrow-content-left {
+        padding: 3em 0 0 0;
     }
 }
