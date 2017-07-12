@@ -350,6 +350,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                 });
                 this.leftWrapper.setStyle('position', '');
                 this.entryContainer.setStyle('margin-top', '50vh');
+                
             }
 
             this.imagesFixed = true;
