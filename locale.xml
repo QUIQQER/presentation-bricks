@@ -6,7 +6,7 @@
         <locale name="control.WallpaperTextArrow.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
             <en><![CDATA[Presentatino: Wallpaper with text and arrow]]></en>
-            <pl><![CDATA[Presentation: Zdjecie w tle z tekstem i strzalka]]></pl>
+            <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem i strzałka]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.description">
             <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
@@ -16,23 +16,23 @@
         <locale name="control.WallpaperTextArrow.image-background">
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
-            <pl><![CDATA[Zdjecie tla]]></pl>
+            <pl><![CDATA[Zdjecie tła]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
-            <pl><![CDATA[Nieruchome tlo (fixed)]]></pl>
+            <pl><![CDATA[Nieruchome tło (fixed)]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.image">
             <de><![CDATA[Bild auf der rechten Seite]]></de>
             <en><![CDATA[Image on the right]]></en>
-            <pl><![CDATA[Zdjecie po lewej]]></pl>
+            <pl><![CDATA[Zdjęcie po lewej]]></pl>
         </locale>
 
         <locale name="control.WallpaperTextArrow.arrow-type">
             <de><![CDATA[Pfeiltype]]></de>
             <en><![CDATA[Arrow type]]></en>
-            <pl><![CDATA[Rodzaj strzalki]]></pl>
+            <pl><![CDATA[Rodzaj strzałki]]></pl>
         </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.arrow-down">
                 <de><![CDATA[Arrow Down]]></de>
@@ -82,7 +82,7 @@
         <locale name="control.WallpaperTextArrow.effect">
             <de><![CDATA[Pfeileffect]]></de>
             <en><![CDATA[Arrow effect]]></en>
-            <pl><![CDATA[Efekt strzalki]]></pl>
+            <pl><![CDATA[Efekt strzałki]]></pl>
         </locale>
             <locale name="control.WallpaperTextArrow.effect.scale">
                 <de><![CDATA[Scale]]></de>
@@ -97,22 +97,22 @@
             <locale name="control.WallpaperTextArrow.effect.ball-bounce-hover">
                 <de><![CDATA[Ball bounce (erst nach maus over)]]></de>
                 <en><![CDATA[Ball bounce (after mouse hover)]]></en>
-                <pl><![CDATA[Ball bounce (po najechaniu myszka)]]></pl>
+                <pl><![CDATA[Ball bounce (po najechaniu myszką)]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.ball-bounce-always">
                 <de><![CDATA[Ball bounce (immer)]]></de>
                 <en><![CDATA[Ball bounce (always)]]></en>
-                <pl><![CDATA[Ball bounce (ciagle)]]></pl>
+                <pl><![CDATA[Ball bounce (ciągle)]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.opacity-to-transparent">
                 <de><![CDATA[Durchsichtig]]></de>
                 <en><![CDATA[Transparent]]></en>
-                <pl><![CDATA[Przezroczysty]]></pl>
+                <pl><![CDATA[Przeźroczysty]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.opacity-from-transparent">
                 <de><![CDATA[Undurchsichtig]]></de>
                 <en><![CDATA[Non-transparent]]></en>
-                <pl><![CDATA[Nieprzezroczysty]]></pl>
+                <pl><![CDATA[Nieprzeźroczysty]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.no-effect">
                 <de><![CDATA[Kein Effekt]]></de>
@@ -124,7 +124,7 @@
         <locale name="control.WallpaperText.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
             <en><![CDATA[Presentatino: Wallpaper with text]]></en>
-            <pl><![CDATA[Presentation: Zdjecie w tle z tekstem]]></pl>
+            <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem]]></pl>
         </locale>
         <locale name="control.WallpaperText.description">
             <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
@@ -134,22 +134,22 @@
         <locale name="control.WallpaperText.image-background">
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
-            <pl><![CDATA[Zdjecie tla]]></pl>
+            <pl><![CDATA[Obrazek tła]]></pl>
         </locale>
         <locale name="control.WallpaperText.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
-            <pl><![CDATA[Nieruchome tlo (fixed)]]></pl>
+            <pl><![CDATA[Nieruchome tło (fixed)]]></pl>
         </locale>
         <locale name="control.WallpaperText.bg-color">
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Background color]]></en>
-            <pl><![CDATA[Kolor tla]]></pl>
+            <pl><![CDATA[Kolor tła]]></pl>
         </locale>
         <locale name="control.WallpaperText.content-position">
             <de><![CDATA[Ausrichtung]]></de>
             <en><![CDATA[Position]]></en>
-            <pl><![CDATA[Ulozenie]]></pl>
+            <pl><![CDATA[Ułożenie]]></pl>
         </locale>
             <locale name="control.WallpaperText.content-position.left">
                 <de><![CDATA[links]]></de>
@@ -159,7 +159,7 @@
             <locale name="control.WallpaperText.content-position.center">
                 <de><![CDATA[zentriert]]></de>
                 <en><![CDATA[center]]></en>
-                <pl><![CDATA[na srodku]]></pl>
+                <pl><![CDATA[pośrodku]]></pl>
             </locale>
             <locale name="control.WallpaperText.content-position.right">
                 <de><![CDATA[rechts]]></de>
@@ -179,6 +179,43 @@
             <en><![CDATA[...]]></en>
             <pl><![CDATA[...]]></pl>
         </locale>
+
+        <!-- template -->
+        <locale name="control.StickyContent.template">
+            <de><![CDATA[Vorlage]]></de>
+            <en><![CDATA[Template]]></en>
+            <pl><![CDATA[Szablon]]></pl>
+        </locale>
+            <locale name="control.StickyContent.template.simple">
+                <de><![CDATA[Einfach]]></de>
+                <en><![CDATA[Simple]]></en>
+                <pl><![CDATA[Prosty]]></pl>
+            </locale>
+            <locale name="control.StickyContent.template.mockup">
+                <de><![CDATA[Mockup]]></de>
+                <en><![CDATA[Mockup]]></en>
+                <pl><![CDATA[Mockup]]></pl>
+            </locale>
+
+        <!-- image mockup -->
+        <locale name="control.StickyContent.imgagMockup" html="true">
+            <de><![CDATA[Mockup Bild<br />
+                            Gilt für Mockup-Template]]></de>
+            <en><![CDATA[Mockup picture<br />
+                        Use it for Mocup-Template]]></en>
+            <pl><![CDATA[Mockup obrazek <br />
+                        Działa tylko z szablonem "Mockup"]]></pl>
+        </locale>
+            <locale name="control.StickyContent.imgagMockup.imac-glossy">
+                <de><![CDATA[iMac mit glänzendem Display]]></de>
+                <en><![CDATA[iMac with glossy display]]></en>
+                <pl><![CDATA[iMac z błyszczącym ekranem]]></pl>
+            </locale>
+            <locale name="control.StickyContent.imgagMockup.imac-without-logo">
+                <de><![CDATA[iMac ohne Logo]]></de>
+                <en><![CDATA[iMac without logo]]></en>
+                <pl><![CDATA[iMac bez loga]]></pl>
+            </locale>
 
     </groups>
 </locales>

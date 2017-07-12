@@ -63,10 +63,10 @@ class StickyContent extends QUI\Control
         ));
 
 
-        $template = "mockup";
+        $template = $this->getAttribute('template');
 
         switch ($template) {
-            case 'default':
+            case 'simple':
             default:
                 $html     = dirname(__FILE__) . '/StickyContent.Default.html';
                 $css      = dirname(__FILE__) . '/StickyContent.Default.css';
@@ -79,6 +79,7 @@ class StickyContent extends QUI\Control
                 break;
         }
 
+        $mockup    = $this->getAttribute('imgagMockup') . '.png';
         $mockupUrl = 'quiqqer/presentation-bricks/bin/img/';
 
         $Engine->assign(array(
@@ -87,7 +88,7 @@ class StickyContent extends QUI\Control
             'Project'        => $this->getProject(),
             'children'       => $children,
             'inlineStyle'    => 'opacity: 1;',
-            'imageMockupUrl' => URL_OPT_DIR . $mockupUrl . 'imac-image.png'
+            'imageMockupUrl' => URL_OPT_DIR . $mockupUrl . $mockup
         ));
 
         $this->addCSSFile($css);

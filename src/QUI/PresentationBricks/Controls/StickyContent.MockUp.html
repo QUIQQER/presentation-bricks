@@ -28,23 +28,23 @@
     </div>
 
     <!-- image container -->
-    <div class="test-div">
-    <div class="qui-control-stickyContent-left grid-50">
-        <div class="qui-control-stickyContent-left-wrapper">
-            <div class="qui-control-stickyContent-left-wrapper-container">
-                {foreach from=$children item=Child}
+    <div class="stickyContent-left-mobileWrapper">
+        <div class="qui-control-stickyContent-left grid-50">
+            <div class="qui-control-stickyContent-left-wrapper">
+                <div class="qui-control-stickyContent-left-wrapper-container">
+                    {foreach from=$children item=Child}
 
-                {assign var=_Child value=$Child->load()}
-                <!-- entry image -->
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"
-                class="qui-control-stickyContent-image"}
-                {/foreach}
+                    {assign var=_Child value=$Child->load()}
+                    <!-- entry image -->
+                    {image src=$Child->getAttribute('image_site') width="500" type="resize"
+                    class="qui-control-stickyContent-image"}
+                    {/foreach}
+                </div>
             </div>
-        </div>
 
-        <!-- mockup image -->
-        <img src="{$imageMockupUrl}" class="image-mockup"/>
-    </div>
+            <!-- mockup image -->
+            <img src="{$imageMockupUrl}" class="image-mockup"/>
+        </div>
     </div>
 
     <!-- content container -->

@@ -217,7 +217,36 @@
                     </option>
                 </setting>
 
-                <!--<setting name="image-background" class="media-image">
+                <setting name="template" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.StickyContent.template"/>
+
+                    <option value="simple">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.StickyContent.template.simple"/>
+                    </option>
+                    <option value="mockup">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.StickyContent.template.mockup"/>
+                    </option>
+                </setting>
+
+                <setting name="imgagMockup" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.StickyContent.imgagMockup"/>
+
+                    <option value="imac-glossy">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.StickyContent.imgagMockup.imac-glossy"/>
+                    </option>
+                    <option value="imac-without-logo">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.StickyContent.imgagMockup.imac-without-logo"/>
+                    </option>
+                </setting>
+
+                <!--
+                <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.StickyContent.image-background"/>
                 </setting>
@@ -232,23 +261,7 @@
                             var="control.WallpaperText.bg-color"/>
                 </setting>
 
-                <setting name="content-position" type="select">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperText.content-position"/>
-
-                    <option value="flex-start">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperText.content-position.left"/>
-                    </option>
-                    <option value="center">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperText.content-position.center"/>
-                    </option>
-                    <option value="flex-end">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.WallpaperText.content-position.right"/>
-                    </option>
-                </setting>-->
+                -->
 
 
             </settings>
