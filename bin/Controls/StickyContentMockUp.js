@@ -181,9 +181,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
 
             this.containerPos = (this.entryHeight * (this.sections.length - 1));
 
-            console.log(this.List);
-            console.log(this.PointsList);
-
             this.winPos = QUI.getScroll().y;
         },
 
