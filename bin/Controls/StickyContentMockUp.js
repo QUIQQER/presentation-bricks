@@ -112,13 +112,22 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
          * event: on resize
          */
         $resize: function () {
+            var self = this;
 
-            QUI.removeEvents('scroll');
+            var scrollMobile = function () {
+                self.$scrollMobile(QUI.getScroll().y)
+            };
+
+            var scrollDesktop = function () {
+                self.$scroll(QUI.getScroll().y)
+            };
+
+            QUI.removeEvent('scroll', scrollMobile);
+            QUI.removeEvent('scroll', scrollDesktop);
 
             this.List        = []; // clear the both arrays
             this.PointsList  = []; // at each resize
             this.imagesFixed = false;
-            var self         = this;
 
             // mobile?
             if (window.getSize().x < 768) {
@@ -129,9 +138,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                 this.$calcMobile();
                 this.$scrollMobile(QUI.getScroll().y);
 
-                QUI.addEvent('scroll', function () {
-                    self.$scrollMobile(QUI.getScroll().y)
-                });
+                QUI.addEvent('scroll', scrollMobile);
 
                 this.brick.removeClass('hideOnResize');
 
@@ -144,9 +151,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
             this.$calc();
             this.$scroll(QUI.getScroll().y);
 
-            QUI.addEvent('scroll', function () {
-                self.$scroll(QUI.getScroll().y)
-            });
+            QUI.addEvent('scroll', scrollDesktop);
 
             this.brick.removeClass('hideOnResize');
 
@@ -347,7 +352,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp', [
                 });
                 this.leftWrapper.setStyle('position', '');
                 this.entryContainer.setStyle('margin-top', '50vh');
-                
+
             }
 
             this.imagesFixed = true;

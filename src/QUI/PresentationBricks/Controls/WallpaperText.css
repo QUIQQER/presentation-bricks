@@ -17,4 +17,8 @@
 
 @media (max-width: 767px) {
 
+    .wallpaperText-container {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
 }
