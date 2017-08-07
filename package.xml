@@ -18,17 +18,15 @@
         </preview>
 
         <support>
-            <email>support@pcsg.de</email>
-            <issues>https://dev.quiqqer.com/quiqqer/presentation/issues</issues>
-            <forum>https://community.quiqqer.com</forum>
-            <!--<wiki>https://dev.quiqqer.com/quiqqer/presentation/wikis/home</wiki>-->
-            <!--<irc>irc://irc.freenode.org/composer</irc>-->
-            <source>https://dev.quiqqer.com/quiqqer/presentation/tree/master</source>
-            <docs>https://doc.quiqqer.com/</docs>
+            <email><![CDATA[support@pcsg.de]]></email>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/issues]]></issues>
+            <forum><![CDATA[https://community.quiqqer.com]]></forum>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/tree/master]]></source>
+            <docs><![CDATA[https://doc.quiqqer.com/]]></docs>
         </support>
 
         <copyright>
-            <name>PCSG - Computer & Internet Service OHG</name>
+            <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
             <license>GPL-3.0+</license>
         </copyright>
 
