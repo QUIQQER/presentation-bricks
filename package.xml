@@ -1,0 +1,45 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/presentation" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/presentation" var="package.title"/>
+        </description>
+
+        <!-- Hauptbild -->
+        <image src="URL_OPT_DIR/quiqqer/presentation/bin/presentation-logo.jpg"/>
+
+        <!-- Weitere Vorschaubilder -->
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/presentation/bin/preview/1.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation/bin/preview/2.jpg"/>
+        </preview>
+
+        <support>
+            <email>support@pcsg.de</email>
+            <issues>https://dev.quiqqer.com/quiqqer/presentation/issues</issues>
+            <forum>https://community.quiqqer.com</forum>
+            <!--<wiki>https://dev.quiqqer.com/quiqqer/presentation/wikis/home</wiki>-->
+            <!--<irc>irc://irc.freenode.org/composer</irc>-->
+            <source>https://dev.quiqqer.com/quiqqer/presentation/tree/master</source>
+            <docs>https://doc.quiqqer.com/</docs>
+        </support>
+
+        <copyright>
+            <name>PCSG - Computer & Internet Service OHG</name>
+            <license>GPL-3.0+</license>
+        </copyright>
+
+        <extra>
+            <displayInStore>1</displayInStore>
+        </extra>
+        <!--
+               <provider>
+                   <desktopSearch src="\Provider" />
+               </provider>
+       -->
+
+    </package>
+</quiqqer>

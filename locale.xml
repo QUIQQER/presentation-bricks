@@ -2,6 +2,17 @@
 <locales>
     <groups name="quiqqer/presentation-bricks" datatype="php,js">
 
+        <locale name="package.title">
+            <de><![CDATA[Präsentation Paket]]></de>
+            <en><![CDATA[Presentatino Packet]]></en>
+            <pl><![CDATA[Presentation: Pakiet]]></pl>
+        </locale>
+        <locale name="package.description" html="true">
+            <de><![CDATA[<p>Dieses Paket beinhaltet u.a. Bausteine, die sich perfekt dazu eignen, Inhalte auf Ihrer Seite zu präsentieren.</p>]]></de>
+            <en><![CDATA[no desciption at the moment]]></en>
+            <pl><![CDATA[Na razie brak opisu]]></pl>
+        </locale>
+
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
