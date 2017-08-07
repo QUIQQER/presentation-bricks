@@ -9,12 +9,12 @@
         </description>
 
         <!-- Hauptbild -->
-        <image src="URL_OPT_DIR/quiqqer/presentation/bin/presentation-logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/presentation-logo.jpg"/>
 
         <!-- Weitere Vorschaubilder -->
         <preview>
-            <image src="URL_OPT_DIR/quiqqer/presentation/bin/preview/1.jpg"/>
-            <image src="URL_OPT_DIR/quiqqer/presentation/bin/preview/2.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/1.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/2.jpg"/>
         </preview>
 
         <support>
