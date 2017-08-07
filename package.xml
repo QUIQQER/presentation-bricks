@@ -1,11 +1,11 @@
 <quiqqer>
     <package>
         <title>
-            <locale group="quiqqer/presentation" var="package.title"/>
+            <locale group="quiqqer/presentation-bricks" var="package.title"/>
         </title>
 
         <description>
-            <locale group="quiqqer/presentation" var="package.title"/>
+            <locale group="quiqqer/presentation-bricks" var="package.title"/>
         </description>
 
         <!-- Hauptbild -->
