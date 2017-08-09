@@ -21,8 +21,8 @@
             <email><![CDATA[support@pcsg.de]]></email>
             <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/issues]]></issues>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
-            <!--<wiki><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/wikis/home]]></wiki>-->
-            <!--<irc><![CDATA[irc://irc.freenode.org/composer]]></irc>-->
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/wikis/home]]></wiki>
+            <irc><![CDATA[irc://irc.freenode.org/composer]]></irc>
             <source><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/tree/master]]></source>
             <docs><![CDATA[https://doc.quiqqer.com/]]></docs>
         </support>
