@@ -1,7 +1,7 @@
 {
     "name": "quiqqer\/presentation-bricks",
     "type": "quiqqer-module",
-    "description": "Presentation bricks module",
+    "description": "This package contains building blocks for the presentation of contents on your website",
     "version": "dev-dev",
     "license": "MIT",
     "authors": [

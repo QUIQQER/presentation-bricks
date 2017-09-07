@@ -19,11 +19,11 @@
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
-            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/issues]]></issues>
+            <issues>https://dev.quiqqer.com/quiqqer/presentation-bricks/issues</issues>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
-            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/wikis/home]]></wiki>
+            <wiki>https://dev.quiqqer.com/quiqqer/presentation-bricks/wikis/home</wiki>
             <irc><![CDATA[irc://irc.freenode.org/composer]]></irc>
-            <source><![CDATA[https://dev.quiqqer.com/quiqqer/presentation/tree/master]]></source>
+            <source>https://dev.quiqqer.com/quiqqer/presentation-bricks</source>
             <docs><![CDATA[https://doc.quiqqer.com/]]></docs>
         </support>
 
