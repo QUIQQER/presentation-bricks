@@ -19,21 +19,21 @@
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
-            <issues>https://dev.quiqqer.com/quiqqer/presentation-bricks/issues</issues>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks/issues]]></issues>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
-            <wiki>https://dev.quiqqer.com/quiqqer/presentation-bricks/wikis/home</wiki>
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks/wikis/home]]></wiki>
             <irc><![CDATA[irc://irc.freenode.org/composer]]></irc>
-            <source>https://dev.quiqqer.com/quiqqer/presentation-bricks</source>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks]]></source>
             <docs><![CDATA[https://doc.quiqqer.com/]]></docs>
         </support>
 
         <copyright>
             <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
-            <license>GPL-3.0+</license>
+            <license><![CDATA[GPL-3.0+]]></license>
         </copyright>
 
         <extra>
-            <displayInStore>1</displayInStore>
+            <displayInStore><![CDATA[1]]></displayInStore>
         </extra>
         <!--
                <provider>
