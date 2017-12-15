@@ -5,12 +5,12 @@
         <locale name="package.title">
             <de><![CDATA[QUIQQER - Präsentation Paket]]></de>
             <en><![CDATA[QUIQQER - Presentation Package]]></en>
-            <pl><![CDATA[Presentation: Pakiet]]></pl>
+            <pl><![CDATA[QUIQQER Presentation]]></pl>
         </locale>
         <locale name="package.description" html="true">
-            <de><![CDATA[<p>Dieses Paket beinhaltet u.a. Bausteine, die sich perfekt dazu eignen, Inhalte auf Ihrer Seite zu präsentieren.</p>]]></de>
-            <en><![CDATA[This package contains building blocks for the presentation of contents on your website]]></en>
-            <pl><![CDATA[Na razie brak opisu]]></pl>
+            <de><![CDATA[Dieses Paket beinhaltet Bausteine, die sich perfekt dazu eignen, z.B. Funktionen Ihrer App zu präsentieren.</p>]]></de>
+            <en><![CDATA[This package contains bricks for the presentation of app or programm on your website]]></en>
+            <pl><![CDATA[Rozszerzenie dostarcza widgety służące do prezentacji aplikacji lub programu na stronie internetowej.]]></pl>
         </locale>
 
         <!-- wallpaper with text and an arrow -->

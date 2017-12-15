@@ -13,33 +13,21 @@
 
         <!-- Weitere Vorschaubilder -->
         <preview>
-            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/1.jpg"/>
-            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/2.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/img/bin/preview/1.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/img/bin/preview/2.jpg"/>
         </preview>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
-            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks/issues]]></issues>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
-            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks/wikis/home]]></wiki>
-            <irc><![CDATA[irc://irc.freenode.org/composer]]></irc>
             <source><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks]]></source>
-            <docs><![CDATA[https://doc.quiqqer.com/]]></docs>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/presentation-bricks/issues]]></issues>
         </support>
 
         <copyright>
             <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
             <license><![CDATA[GPL-3.0+]]></license>
         </copyright>
-
-        <extra>
-            <displayInStore><![CDATA[1]]></displayInStore>
-        </extra>
-        <!--
-               <provider>
-                   <desktopSearch src="\Provider" />
-               </provider>
-       -->
 
     </package>
 </quiqqer>
