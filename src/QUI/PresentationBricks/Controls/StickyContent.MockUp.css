@@ -173,13 +173,13 @@
 
     .stickyContent-left-mobileWrapper {
         background: #fff;
-        top: 0px;
-        width: calc(100% + 0px);
+        top: 0;
+        width: 100%;
         height: 50vh;
         display: flex;
         justify-content: center;
         z-index: 1;
-        left: 0px;
+        left: 0;
     }
 
     .stickyContent-left-mobileWrapper:after {

@@ -1,9 +1,9 @@
 {
     "name": "quiqqer\/presentation-bricks",
     "type": "quiqqer-module",
-    "description": "Presentation bricks module",
+    "description": "This package contains bricks for the presentation of app or program on your website.",
     "version": "dev-dev",
-    "license": "MIT",
+    "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Michael Danielczok",

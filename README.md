@@ -1,17 +1,13 @@
+![QUIQQER Presentation Bricks](bin/img/Readme.jpg)
 
-QUIQQER Präsentation Bausteine
-========
+QUIQQER Presentation Bricks
+===========================
 
-Das Paket beinhaltet Bausteine, mit denen Sie schnell und einfach Ihre Produkte 
-(Apps, Web Lösungen, usw.) im Internet präsentieren können. Sie sind vor allem bei der Gestalltung 
-der Startseite (one-page-design) sehr hilfreich.
-
-Das Paket kann man zwar mit jedem QUIQQER-Template benutzen, um jedoch das beste Darstellungsergebnis 
-zu erzielen, empfiehlt sich das Paket zusammen mit __Presentation Template__ einzusetzen.
+This package contains bricks for the presentation of app or program on your website.
+To get the best display result we recommend to use the package together with Presentation Template.
 
 
-
-Paketname:
+Packagename:
 
     quiqqer/presentation-bricks
 
@@ -19,15 +15,18 @@ Paketname:
 Features
 --------
 
-- Wallpaper mit 2 Inhalten (Text und Bild) und einem Scroll-Pfeil nach unten. Perfekt für den Header.
-- Wallpaper mit Text. Die Position der Inhalte können Sie in den Einstellungen bestimmen.
+- Sticky content: fixed mockup in the middle with scroll text on the right side.
+- Wallpaper brick with content (text and image) and scroll arrow. Perfect for header.
+- Simple brick with text and image background. Text position can be set in settings.
+
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/presentation-bricks
+The package name is: quiqqer/presentation-bricks
 
-Mitwirken
+
+Contribute
 ----------
 
 - Project: https://dev.quiqqer.com/quiqqer/presentation-bricks
@@ -38,15 +37,11 @@ Mitwirken
 Support
 -------
 
-Falls Sie Fehler gefunden, Wünsche oder Verbesserungsvorschläge haben, 
-können Sie uns gern per Mail an support@pcsg.de darüber informieren.  
-Wir werden versuchen auf Ihre Wünsche einzugehen bzw. diese an die zuständigen Entwickler 
-des Projektes weiterleiten.
+If you have found a bug or want to make improvements,
+then you can write an e-mail to support@pcsg.de.
+
 
 License
 -------
 
 GPL-3.0+
-
-Entwickler
---------
