@@ -7,9 +7,9 @@
             <en><![CDATA[QUIQQER - Presentation Package]]></en>
             <pl><![CDATA[QUIQQER Presentation]]></pl>
         </locale>
-        <locale name="package.description" html="true">
-            <de><![CDATA[Dieses Paket beinhaltet Bausteine, die sich perfekt dazu eignen, z.B. Funktionen Ihrer App zu präsentieren.</p>]]></de>
-            <en><![CDATA[This package contains bricks for the presentation of app or programm on your website]]></en>
+        <locale name="package.description">
+            <de><![CDATA[Dieses Paket beinhaltet Bausteine, die sich perfekt dazu eignen, z.B. Funktionen Ihrer App zu präsentieren.]]></de>
+            <en><![CDATA[This package contains bricks for the presentation of app or program on your website.]]></en>
             <pl><![CDATA[Rozszerzenie dostarcza widgety służące do prezentacji aplikacji lub programu na stronie internetowej.]]></pl>
         </locale>
 
