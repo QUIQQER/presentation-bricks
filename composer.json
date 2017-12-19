@@ -2,7 +2,7 @@
   "name": "quiqqer\/presentation-bricks",
   "type": "quiqqer-module",
   "description": "This package contains bricks for the presentation of app or program on your website.",
-  "version": "dev-master",
+  "version": "1.0.0",
   "license": "GPL-3.0+",
   "authors": [
     {
@@ -19,10 +19,10 @@
   "require": {
     "php": ">=5.3",
     "quiqqer\/quiqqer": ">=1.1|dev-master|dev-dev",
-    "quiqqer\/fontawesome": "4.*|dev-master",
-    "quiqqer\/unsemantic": "1.*|dev-master",
-    "quiqqer\/utils": ">=1.7|dev-master",
-    "quiqqer\/buttons": ">=1.0.0|dev-master"
+    "quiqqer\/fontawesome": "4.*",
+    "quiqqer\/unsemantic": "1.*",
+    "quiqqer\/utils": ">=1.7",
+    "quiqqer\/buttons": ">=1.0.0"
   },
   "suggest": {
     "quiqqer/template-presentation": "Business and marketing template for promoting your company or product online."
