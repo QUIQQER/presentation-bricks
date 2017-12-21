@@ -3,9 +3,9 @@
     <groups name="quiqqer/presentation-bricks" datatype="php,js">
 
         <locale name="package.title">
-            <de><![CDATA[Präsentation Bausteine]]></de>
+            <de><![CDATA[Bausteinsammlung - Präsentationen]]></de>
             <en><![CDATA[Presentation Bricks]]></en>
-            <pl><![CDATA[Presentation Widgets]]></pl>
+            <pl><![CDATA[Widgets - Prezentacja]]></pl>
         </locale>
         <locale name="package.description">
             <de><![CDATA[Dieses Paket beinhaltet Bausteine, die sich perfekt dazu eignen, z.B. Funktionen Ihrer App zu präsentieren.]]></de>
