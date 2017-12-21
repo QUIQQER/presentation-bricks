@@ -1,6 +1,6 @@
 {
   "name": "quiqqer\/presentation-bricks",
-  "type": "quiqqer-module",
+  "type": "quiqqer-plugin",
   "description": "This package contains bricks for the presentation of app or program on your website.",
   "version": "dev-dev",
   "license": "GPL-3.0+",
