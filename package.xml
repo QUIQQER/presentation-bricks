@@ -8,11 +8,11 @@
             <locale group="quiqqer/presentation-bricks" var="package.title"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/preview/Logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/img/Logo.jpg"/>
 
         <preview>
-            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/img/bin/preview/Presentation_Bricks_1.jpg"/>
-            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/img/bin/preview/Presentation_Bricks_2.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/img/preview/Presentation_Bricks_1.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/img/preview/Presentation_Bricks_2.jpg"/>
         </preview>
 
         <support>
