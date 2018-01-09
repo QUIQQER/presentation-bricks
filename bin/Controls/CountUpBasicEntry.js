@@ -7,9 +7,10 @@
 define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
 
     'qui/QUI',
-    'qui/controls/Control'
+    'qui/controls/Control',
+    'qui/utils/Functions'
 
-], function (QUI, QUIControl) {
+], function (QUI, QUIControl, QUIFunctionUtils) {
     "use strict";
 
     return new Class({
@@ -53,39 +54,32 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
             this.end = this.$counter.getAttribute('data-qui-count').toInt();
             this.countValue = this.start;
 
-            var winPos = QUI.getScroll().y;
             var winSize = QUI.getWindowSize().y;
             var controlPos = this.$counter.getPosition().y;
             this.breakPoint = controlPos - (winSize / 1.25);
-            this.scrolled = false;
-
-//            console.log('win pos ' + winPos)
-//            console.log('win size ' + winSize)
-//            console.log('control pos ' + controlPos)
-//            console.log('break point ' + breakPoint)
-
-
+            this.scrollFinisch = false;
 
             if (QUI.getScroll().y > this.breakPoint) {
                 this.$prepareCount();
-
             }
 
-            QUI.addEvent('scroll', this.$scroll)
-
+            QUI.addEvent('scroll', this.$scroll);
         },
 
-        $scroll: function() {
-            if (this.scrolled) {
+        $scroll: function () {
+            console.log(1);
+            if (this.scrollFinisch) {
+                QUI.removeEvent('scroll', this.$scroll);
                 return;
             }
+
             if (QUI.getScroll().y > this.breakPoint) {
                 this.$prepareCount();
             }
         },
 
         $prepareCount: function () {
-            this.scrolled = true;
+            this.scrollFinisch = true;
 
             var step = Math.ceil(this.end / (this.options.duration / this.options.speed));
             this.$count(step);
