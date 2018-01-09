@@ -1,0 +1,45 @@
+.countUpBasic-wrapper {
+    display: flex;
+}
+
+.countUpBasic-entry {
+    padding: 10px;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.countUpBasic-entry:last-child {
+    border-right: none;
+}
+
+.countUpBasic-entry-row:nth-child(2) {
+    margin: 20px 0;
+}
+
+.countUpBasic-entry-icon {
+    /*margin-bottom: 2em;*/
+}
+
+.countUpBasic-entry-icon .fa {
+    font-size: 36px;
+    /*padding: 20px 0 30px;*/
+}
+
+.countUpBasic-entry-number {
+    font-size: 60px;
+    line-height: 100%;
+    color: #666;
+    display: flex;
+    justify-content: center;
+}
+
+.countUpBasic-entry-title {
+    font-size: 24px;
+    color: #999;
+}
+
+@media (max-width: 767px) {
+
+}

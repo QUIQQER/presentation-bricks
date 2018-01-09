@@ -228,5 +228,70 @@
                 <pl><![CDATA[iMac bez loga]]></pl>
             </locale>
 
+
+
+        <!-- count up basic -->
+        <locale name="control.countUpBasic.title">
+            <de><![CDATA[Count Up Basic]]></de>
+            <en><![CDATA[Count Up Basic]]></en>
+            <pl><![CDATA[Count Up Basic]]></pl>
+        </locale>
+        <locale name="control.countUpBasic.description">
+            <de><![CDATA[(...)]]></de>
+            <en><![CDATA[(...)]]></en>
+            <pl><![CDATA[(...)]]></pl>
+        </locale>
+
+        <!-- settings -->
+
+        <locale name="control.CountUpBasic.iconTop">
+            <de><![CDATA[Icon über dem Zähler?]]></de>
+            <en><![CDATA[Set the icon above the counter?]]></en>
+            <pl><![CDATA[Ikona nad licznikiem?]]></pl>
+        </locale>
+
+        <locale name="CountUpBasic.entries">
+            <de><![CDATA[Zähler Einträge]]></de>
+            <en><![CDATA[Counter entries]]></en>
+            <pl><![CDATA[Wpisy licznika]]></pl>
+        </locale>
+
+        <!-- count up basic - JS control settings -->
+        <locale name="CountUpBasicSettings.entries.button.text">
+            <de><![CDATA[Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add entry]]></en>
+            <pl><![CDATA[Dodaj wpis]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue">
+            <de><![CDATA[Zähler]]></de>
+            <en><![CDATA[Counter]]></en>
+            <pl><![CDATA[Licznik]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue.prefix">
+            <de><![CDATA[Zähler prefix]]></de>
+            <en><![CDATA[Counter prefix]]></en>
+            <pl><![CDATA[Przedrostek licznika]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue.suffix">
+            <de><![CDATA[Zähler suffix]]></de>
+            <en><![CDATA[Counter suffix]]></en>
+            <pl><![CDATA[Suffix licznik]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.icon">
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
+            <pl><![CDATA[Ikona]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.title">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+            <pl><![CDATA[Tytul]]></pl>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.content">
+            <de><![CDATA[Kurzer Text]]></de>
+            <en><![CDATA[Short text]]></en>
+            <pl><![CDATA[Krotki tekst]]></pl>
+        </locale>
+
     </groups>
 </locales>
