@@ -3,7 +3,7 @@
 }
 
 .countUpBasic-entry {
-    padding: 10px;
+    padding: 0 20px;
     flex-grow: 1;
     flex-basis: 0;
     text-align: center;
@@ -14,20 +14,20 @@
     border-right: none;
 }
 
-.countUpBasic-entry-row:nth-child(2) {
+.countUpBasic-entry-header div:nth-child(2) {
     margin: 20px 0;
 }
 
-.countUpBasic-entry-icon {
+.countUpBasic-entry-header-icon {
     /*margin-bottom: 2em;*/
 }
 
-.countUpBasic-entry-icon .fa {
+.countUpBasic-entry-header-icon .fa {
     font-size: 36px;
     /*padding: 20px 0 30px;*/
 }
 
-.countUpBasic-entry-number {
+.countUpBasic-entry-header-number {
     font-size: 60px;
     line-height: 100%;
     color: #666;
@@ -38,8 +38,37 @@
 .countUpBasic-entry-title {
     font-size: 24px;
     color: #999;
+    margin: 20px 0;
+    padding-bottom: 0;
+}
+
+.countUpBasic-entry-content {
+    margin-top: 20px;
 }
 
 @media (max-width: 767px) {
+    .countUpBasic-wrapper {
+        display: block;
+    }
 
+    .countUpBasic-entry {
+        border-right: none;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        position: relative;
+    }
+
+    .countUpBasic-entry:after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        background: #ddd;
+        left: calc(50% - 50px);
+        bottom: 0;
+    }
+
+    .countUpBasic-entry:last-child:after {
+        display: none;
+    }
 }

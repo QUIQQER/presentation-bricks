@@ -48,7 +48,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
          * event : on import
          */
         $onImport: function () {
-            this.$counter = this.$Elm.getElement('.countUpBasic-entry-number-counter');
+            this.$counter = this.$Elm.getElement('.countUpBasic-entry-header-number-counter');
 
             this.start = this.$counter.get('html').toInt();
             this.end = this.$counter.getAttribute('data-qui-count').toInt();
@@ -63,11 +63,17 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
                 this.$prepareCount();
             }
 
-            QUI.addEvent('scroll', this.$scroll);
+            var self = this;
+
+            QUI.addEvents({
+                scroll: function () {
+                    QUIFunctionUtils.debounce(self.$scroll, 20);
+                }
+            })
         },
 
         $scroll: function () {
-            console.log(1);
+//            console.log(1);
             if (this.scrollFinisch) {
                 QUI.removeEvent('scroll', this.$scroll);
                 return;
