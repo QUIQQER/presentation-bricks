@@ -65,11 +65,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
 
             var self = this;
 
-            QUI.addEvents({
+            QUI.addEvent('scroll', this.$scroll);
+
+            /*QUI.addEvents({
                 scroll: function () {
                     QUIFunctionUtils.debounce(self.$scroll, 20);
                 }
-            })
+            })*/
         },
 
         $scroll: function () {
