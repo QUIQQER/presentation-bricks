@@ -57,27 +57,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
             var winSize = QUI.getWindowSize().y;
             var controlPos = this.$counter.getPosition().y;
             this.breakPoint = controlPos - (winSize / 1.25);
-            this.scrollFinisch = false;
+            this.$isAnimating = false;
 
             if (QUI.getScroll().y > this.breakPoint) {
                 this.$prepareCount();
             }
 
-            var self = this;
-
-            QUI.addEvent('scroll', this.$scroll);
-
-            /*QUI.addEvents({
-                scroll: function () {
-                    QUIFunctionUtils.debounce(self.$scroll, 20);
-                }
-            })*/
+            QUI.addEvent('scrollEnd', this.$scroll);
         },
 
         $scroll: function () {
-//            console.log(1);
-            if (this.scrollFinisch) {
-                QUI.removeEvent('scroll', this.$scroll);
+            if (this.$isAnimating) {
+                QUI.removeEvent('scrollEnd', this.$scroll);
                 return;
             }
 
@@ -87,7 +78,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
         },
 
         $prepareCount: function () {
-            this.scrollFinisch = true;
+            this.$isAnimating = true;
 
             var step = Math.ceil(this.end / (this.options.duration / this.options.speed));
             this.$count(step);
