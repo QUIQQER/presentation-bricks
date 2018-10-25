@@ -8,9 +8,11 @@
         <div class="wallpaperTextArrow-content-left grid-50 mobile-grid-100 grid-parent">
             {$this->getAttribute('content')}
         </div>
+        {if $image}
         <div class="wallpaperTextArrow-content-right grid-50 mobile-grid-100 grid-parent">
             {image src=$image class="wallpaperTextArrow-content-image" width="600"}
         </div>
+        {/if}
     </div>
     <div class="wallpaperTextArrow-arrow">
         <span class="fa fa-{$arrowType} fa-effect-{$effect} wallpaperTextArrow-arrow-fa"></span>
