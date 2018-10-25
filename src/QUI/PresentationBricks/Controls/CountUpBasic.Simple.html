@@ -1,0 +1,55 @@
+<!--<script src="presentations-bricks/bin/Controls/CountUpBasic.js"></script>-->
+
+<div class="countUpBasic-wrapper">
+    {foreach from=$entries item=entry key=key}
+
+    <div class="countUpBasic-entry"
+         data-qui="package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry">
+
+        <div class="countUpBasic-entry-header">
+        {if $iconTop}
+            {if $entry.icon}
+            <div class="countUpBasic-entry-header-icon">
+                <span class="fa {$entry.icon} color-main"></span>
+            </div>
+            {/if}
+
+            <div class="countUpBasic-entry-header-number">
+                <span class="countUpBasic-entry-header-number-prefix">{$entry.counterValuePrefix}</span>
+                <span class="countUpBasic-entry-header-number-counter" data-qui-count="{$entry.counterValue}">
+                    0
+                </span>
+                <span class="countUpBasic-entry-header-number-suffix">{$entry.counterValueSuffix}</span>
+            </div>
+            {else}
+            <div class="countUpBasic-entry-header-number">
+                <span class="countUpBasic-entry-header-number-prefix">{$entry.counterValuePrefix}</span>
+                <span class="countUpBasic-entry-header-number-counter" data-qui-count="{$entry.counterValue}">
+                    0
+                </span>
+                <span class="countUpBasic-entry-header-number-suffix">{$entry.counterValueSuffix}</span>
+            </div>
+
+            {if $entry.icon}
+            <div class="countUpBasic-entry-header-icon">
+                <span class="fa {$entry.icon} color-main"></span>
+            </div>
+            {/if}
+        {/if}
+        </div>
+
+        {if $entry.title}
+        <h2 class="countUpBasic-entry-title">
+            {$entry.title}
+        </h2>
+        {/if}
+
+        {if $entry.content}
+        <div class="countUpBasic-entry-content">
+            {$entry.content}
+        </div>
+        {/if}
+    </div>
+
+    {/foreach}
+</div>

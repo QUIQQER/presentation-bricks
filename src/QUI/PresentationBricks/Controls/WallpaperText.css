@@ -9,16 +9,10 @@
     display: flex;
     align-items: center;
     height: 100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .wallpaperText.fixed {
     background-attachment: fixed;
-}
-
-@media (max-width: 767px) {
-
-    .wallpaperText-container {
-        padding-top: 3em;
-        padding-bottom: 3em;
-    }
 }
