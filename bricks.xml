@@ -291,36 +291,7 @@
                             var="CountUpBasic.entries"/>
                 </setting>
             </settings>
-
-            <window>
-                <!--<title>My Settings</title>
-                <params>
-                    <icon>URL_BIN_DIR/16x16/settings.png</icon>
-                </params>-->
-
-                <categories>
-                    <category name="first_settings">
-                        <text>Einträge</text>
-                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
-
-                        <settings title="first_setting_section" name="first_setting_section">
-                            <title>Allgemeine Einstellungen</title>
-                            <input conf="first_section.var1" type="checkbox">
-                                <text>Here is a title text</text>
-                                <description>
-                                    Here is a description
-                                </description>
-                            </input>
-                            <setting name="entries"
-                                     data-qui="package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicSettings">
-                                <locale group="quiqqer/presentation-bricks" var="CountUpBasic.entries"/>
-                            </setting>
-
-                        </settings>
-
-                    </category>
-                </categories>
-            </window>
+            
         </brick>
     </bricks>
 </quiqqer>
