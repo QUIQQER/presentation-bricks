@@ -1,5 +1,3 @@
-<!--<script src="presentations-bricks/bin/Controls/CountUpBasic.js"></script>-->
-
 <div class="countUpBasic-wrapper">
     {foreach from=$entries item=entry key=key}
 
@@ -21,7 +19,7 @@
                 </span>
                 <span class="countUpBasic-entry-header-number-suffix">{$entry.counterValueSuffix}</span>
             </div>
-            {else}
+        {else}
             <div class="countUpBasic-entry-header-number">
                 <span class="countUpBasic-entry-header-number-prefix">{$entry.counterValuePrefix}</span>
                 <span class="countUpBasic-entry-header-number-counter" data-qui-count="{$entry.counterValue}">
