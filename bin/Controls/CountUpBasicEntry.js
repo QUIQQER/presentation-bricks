@@ -7,10 +7,9 @@
 define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
 
     'qui/QUI',
-    'qui/controls/Control',
-    'qui/utils/Functions'
+    'qui/controls/Control'
 
-], function (QUI, QUIControl, QUIFunctionUtils) {
+], function (QUI, QUIControl) {
     "use strict";
 
     return new Class({

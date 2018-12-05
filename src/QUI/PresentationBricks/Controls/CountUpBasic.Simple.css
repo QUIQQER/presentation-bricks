@@ -7,24 +7,14 @@
     flex-grow: 1;
     flex-basis: 0;
     text-align: center;
-    border-right: 1px solid #ddd;
-}
-
-.countUpBasic-entry:last-child {
-    border-right: none;
 }
 
 .countUpBasic-entry-header div:nth-child(2) {
     margin: 20px 0;
 }
 
-.countUpBasic-entry-header-icon {
-    /*margin-bottom: 2em;*/
-}
-
 .countUpBasic-entry-header-icon .fa {
     font-size: 36px;
-    /*padding: 20px 0 30px;*/
 }
 
 .countUpBasic-entry-header-number {
@@ -54,7 +44,6 @@
     }
 
     .countUpBasic-entry {
-        border-right: none;
         margin-bottom: 40px;
         padding-bottom: 40px;
         position: relative;

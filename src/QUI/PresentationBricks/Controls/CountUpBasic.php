@@ -7,7 +7,6 @@
 namespace QUI\PresentationBricks\Controls;
 
 use QUI;
-use QUI\Projects\Site\Utils;
 
 /**
  * Class StickyContent
@@ -28,9 +27,7 @@ class CountUpBasic extends QUI\Control
             'class'    => 'qui-control-countUpBasic',
             'entries'  => array(),
             'iconTop'  => false,
-            'template' => 'simple',
-//            'quiClass' => 'package/quiqqer/presentation-bricks/bin/Controls/CountUpBasic'
-            // quiClass wird nicht mehr benötigt
+            'template' => 'simple'
         ));
 
         parent::__construct($attributes);
@@ -68,24 +65,6 @@ class CountUpBasic extends QUI\Control
 
         $this->addCSSFile($css);
 
-//        $this->setAttribute('qui-class', $this->getAttribute('quiClass'));
-
         return $Engine->fetch($html);
     }
-
-    /**
-     * @return mixed|QUI\Projects\Site
-     */
-    /*protected function getSite()
-    {
-        if ($this->getAttribute('Site')) {
-            return $this->getAttribute('Site');
-        }
-
-        $Site = QUI::getRewrite()->getSite();
-
-        $this->setAttribute('Site', $Site);
-
-        return $Site;
-    }*/
 }
