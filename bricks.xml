@@ -292,11 +292,11 @@
                 </setting>
             </settings>
 
-            <window>
-                <!--<title>My Settings</title>
+            <!--<window>
+                &lt;!&ndash;<title>My Settings</title>
                 <params>
                     <icon>URL_BIN_DIR/16x16/settings.png</icon>
-                </params>-->
+                </params>&ndash;&gt;
 
                 <categories>
                     <category name="first_settings">
@@ -320,7 +320,7 @@
 
                     </category>
                 </categories>
-            </window>
+            </window>-->
         </brick>
     </bricks>
 </quiqqer>
