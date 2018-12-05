@@ -2,7 +2,7 @@
   "name": "quiqqer\/presentation-bricks",
   "type": "quiqqer-plugin",
   "description": "This package contains bricks for the presentation of app or program on your website.",
-  "version": "dev-master",
+  "version": "1.1.0",
   "license": "GPL-3.0+",
   "authors": [
     {
