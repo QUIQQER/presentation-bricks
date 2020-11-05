@@ -291,36 +291,60 @@
                             var="CountUpBasic.entries"/>
                 </setting>
             </settings>
+        </brick>
 
-            <!--<window>
-                &lt;!&ndash;<title>My Settings</title>
-                <params>
-                    <icon>URL_BIN_DIR/16x16/settings.png</icon>
-                </params>&ndash;&gt;
+        <!-- count up basic -->
+        <brick control="\QUI\PresentationBricks\Controls\TextImage">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.textImage.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.textImage.description"/>
+            </description>
 
-                <categories>
-                    <category name="first_settings">
-                        <text>Einträge</text>
-                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+            <settings>
 
-                        <settings title="first_setting_section" name="first_setting_section">
-                            <title>Allgemeine Einstellungen</title>
-                            <input conf="first_section.var1" type="checkbox">
-                                <text>Here is a title text</text>
-                                <description>
-                                    Here is a description
-                                </description>
-                            </input>
-                            <setting name="entries"
-                                     data-qui="package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicSettings">
-                                <locale group="quiqqer/presentation-bricks" var="CountUpBasic.entries"/>
-                            </setting>
+                <setting name="image" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.textImage.image"/>
+                </setting>
 
-                        </settings>
+                <setting name="backgroundColor" type="color" default="#ffffff">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.textImage.backgroundColor"/>
+                </setting>
 
-                    </category>
-                </categories>
-            </window>-->
+                <setting name="imageRight" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.textImage.imageRight"/>
+                </setting>
+
+                <setting name="imageAsBackground" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.textImage.imageAsBackground"/>
+                </setting>
+
+                <setting name="textPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.textImage.textPosition"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.textImage.textPosition.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.textImage.textPosition.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.textImage.textPosition.bottom"/>
+                    </option>
+                </setting>
+
+            </settings>
         </brick>
     </bricks>
 </quiqqer>

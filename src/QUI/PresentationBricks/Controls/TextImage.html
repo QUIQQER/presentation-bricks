@@ -1,0 +1,26 @@
+{*assign var=img value=''}
+{if $imageBackground}
+{assign var=img value="background-image: url({image src=$imageBackground onlysrc='true'});"}
+{/if*}
+
+<div class="quiqqer-textImage-wrapper" style="background-color: {$backgroundColor};">
+    <div class="quiqqer-textImage grid-container grid-parent">
+        <div class="quiqqer-textImage-imageContainer grid-50 mobile-grid-100">
+            {if $img}
+            {image src=$img class="quiqqer-textImage-image"}
+            {/if}
+        </div>
+        <div class="quiqqer-textImage-contentContainer grid-50 mobile-grid-100"
+             style="justify-content: {$textPosition};">
+            <div class="quiqqer-textImage-content">
+                {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+                <header>
+                    <h1>{$this->getAttribute('frontendTitle')}</h1>
+                </header>
+                {/if}
+
+                {$this->getAttribute('content')}
+            </div>
+        </div>
+    </div>
+</div>
