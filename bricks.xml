@@ -292,59 +292,5 @@
                 </setting>
             </settings>
         </brick>
-
-        <!-- count up basic -->
-        <brick control="\QUI\PresentationBricks\Controls\TextImage">
-            <title>
-                <locale group="quiqqer/presentation-bricks"
-                        var="control.textImage.title"/>
-            </title>
-            <description>
-                <locale group="quiqqer/presentation-bricks"
-                        var="control.textImage.description"/>
-            </description>
-
-            <settings>
-
-                <setting name="image" class="media-image">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.textImage.image"/>
-                </setting>
-
-                <setting name="backgroundColor" type="color" default="#ffffff">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.textImage.backgroundColor"/>
-                </setting>
-
-                <setting name="imageRight" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.textImage.imageRight"/>
-                </setting>
-
-                <setting name="imageAsBackground" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.textImage.imageAsBackground"/>
-                </setting>
-
-                <setting name="textPosition" type="select">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.textImage.textPosition"/>
-
-                    <option value="top">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.textImage.textPosition.top"/>
-                    </option>
-                    <option value="center">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.textImage.textPosition.center"/>
-                    </option>
-                    <option value="bottom">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.textImage.textPosition.bottom"/>
-                    </option>
-                </setting>
-
-            </settings>
-        </brick>
     </bricks>
 </quiqqer>
