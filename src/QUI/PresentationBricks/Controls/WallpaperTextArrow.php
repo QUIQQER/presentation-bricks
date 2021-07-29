@@ -40,7 +40,6 @@ class WallpaperTextArrow extends QUI\Control
             'qui-class',
             'package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow'
         );
-
     }
 
     /**

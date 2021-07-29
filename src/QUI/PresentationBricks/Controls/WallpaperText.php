@@ -35,7 +35,6 @@ class WallpaperText extends QUI\Control
         $this->addCSSFile(
             dirname(__FILE__).'/WallpaperText.css'
         );
-
     }
 
     /**
