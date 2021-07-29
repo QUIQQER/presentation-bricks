@@ -16,3 +16,9 @@
 .wallpaperText.fixed {
     background-attachment: fixed;
 }
+
+@media screen and (max-width: 1024px) {
+    .wallpaperText.fixed {
+        background-attachment: initial;
+    }
+}

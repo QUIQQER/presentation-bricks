@@ -10,6 +10,12 @@
     background-attachment: fixed;
 }
 
+@media screen and (max-width: 1024px) {
+    .wallpaperTextArrow.fixed {
+        background-attachment: initial;
+    }
+}
+
 .wallpaperTextArrow .grid-container {
     height: 100%;
     display: flex;

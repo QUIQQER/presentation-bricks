@@ -20,26 +20,26 @@ class WallpaperTextArrow extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = array())
+    public function __construct($attributes = [])
     {
         // default options
-        $this->setAttributes(array(
+        $this->setAttributes([
             'imageBackgroundFixed' => 'false',
             'arrowType'            => 'arrow-down',
+            'fixed'                => false,
             'effect'               => 'scale'
-        ));
+        ]);
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__) . '/WallpaperTextArrow.css'
+            dirname(__FILE__).'/WallpaperTextArrow.css'
         );
 
         $this->setAttribute(
             'qui-class',
             'package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow'
         );
-
     }
 
     /**
@@ -56,15 +56,15 @@ class WallpaperTextArrow extends QUI\Control
             $fixed = "fixed";
         }
 
-        $Engine->assign(array(
+        $Engine->assign([
             'this'            => $this,
             'imageBackground' => $this->getAttribute('image-background'),
             'fixed'           => $fixed,
             'image'           => $this->getAttribute('image'),
             'arrowType'       => $this->getAttribute('arrow-type'),
             'effect'          => $this->getAttribute('effect')
-        ));
+        ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextArrow.html');
+        return $Engine->fetch(dirname(__FILE__).'/WallpaperTextArrow.html');
     }
 }
