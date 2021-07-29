@@ -20,19 +20,20 @@ class WallpaperText extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = array())
+    public function __construct($attributes = [])
     {
         // default options
-        $this->setAttributes(array(
+        $this->setAttributes([
             'imageBackgroundFixed' => 'false',
             'bgColor'              => 'none',
+            'fixed'                => false,
             'contentPosition'      => 'left'
-        ));
+        ]);
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__) . '/WallpaperText.css'
+            dirname(__FILE__).'/WallpaperText.css'
         );
 
     }
@@ -57,14 +58,14 @@ class WallpaperText extends QUI\Control
         }
 
 
-        $Engine->assign(array(
+        $Engine->assign([
             'this'            => $this,
             'imageBackground' => $this->getAttribute('image-background'),
             'bgColor'         => $bgColor,
             'fixed'           => $fixed,
             'contentPosition' => $this->getAttribute('content-position')
-        ));
+        ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/WallpaperText.html');
+        return $Engine->fetch(dirname(__FILE__).'/WallpaperText.html');
     }
 }
