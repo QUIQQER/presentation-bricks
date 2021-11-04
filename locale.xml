@@ -293,5 +293,15 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+        <!-- progressbar -->
+        <locale name="control.progressbar.title">
+            <de><![CDATA[Ziegel: Fortschrittsbalken]]></de>
+            <en><![CDATA[Brick: Progressbar ]]></en>
+        </locale>
+        <locale name="control.progressbar.description">
+            <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
+            <en><![CDATA[Visual presentation of progress]]></en>
+        </locale>
+
     </groups>
 </locales>

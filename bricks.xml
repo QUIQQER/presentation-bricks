@@ -292,5 +292,23 @@
                 </setting>
             </settings>
         </brick>
+
+        <!-- progressbar -->
+        <brick control="\QUI\PresentationBricks\Controls\Progressbar">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.progressbar.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.progressbar.description"/>
+            </description>
+
+            <settings>
+
+
+
+            </settings>
+        </brick>
     </bricks>
 </quiqqer>
