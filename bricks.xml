@@ -305,6 +305,11 @@
             </description>
 
             <settings>
+
+                <setting name="progressbarContent" data-qui="controls/editors/Input">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.content"/>
+                </setting>
+
                 <setting name="textRight" type="checkbox">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.textRight"/>
                 </setting>

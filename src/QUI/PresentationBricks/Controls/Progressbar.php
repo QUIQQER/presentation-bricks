@@ -30,7 +30,7 @@ class Progressbar extends QUI\Control
             'template' => 'largeImageTop' // template
         ]);
 
-        $this->addCSSFile(dirname(__FILE__).'/Author.css');
+        $this->addCSSFile(dirname(__FILE__) . '/Progressbar.css');
 
         parent::__construct($attributes);
     }
@@ -42,7 +42,26 @@ class Progressbar extends QUI\Control
      */
     public function getBody()
     {
-        $Engine = QUI::getTemplateManager()->getEngine();
+        $Engine  = QUI::getTemplateManager()->getEngine();
+        $entries = json_decode($this->getAttribute('entries'), true);
 
+        $content     = $this->getAttribute('progressbarContent');
+        $progressbarData = [];
+
+        echo $content;
+
+        foreach ($entries as $entry) {
+            \array_push($progressbarData, ['title' => $entry['title'], "percent" => $entry['percent']]);
+        }
+
+        var_dump($this->getAttribute('textRight'));
+
+        $Engine->assign([
+            'this'        => $this,
+            'content'     => $content,
+            'progressbarData' => $progressbarData
+        ]);
+
+        return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');
     }
 }

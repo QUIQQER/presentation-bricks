@@ -302,6 +302,10 @@
             <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
             <en><![CDATA[Visual presentation of progress]]></en>
         </locale>
+        <locale name="brick.setting.progressbar.content">
+            <de><![CDATA[Inhalt der Fortschrittsleiste]]></de>
+            <en><![CDATA[Progressbar content]]></en>
+        </locale>
         <locale name="brick.setting.progressbar.textRight">
             <de><![CDATA[Text rechts]]></de>
             <en><![CDATA[Text on right]]></en>

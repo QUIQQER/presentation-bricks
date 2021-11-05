@@ -13,11 +13,19 @@
 <div class="quiqqer-progressbar-wrapper">
 
     <div class="quiqqer-progressbar-content">
-
+        {$content}
     </div>
 
     <div class="quiqqer-progressbar-chart">
-        
+
+        {foreach from=$progressbarData item=Progressbar}
+
+        hej
+        {$Progressbar['title']}
+        {$Progressbar['percent']}
+
+        {/foreach}
+
     </div>
 
 </div>
