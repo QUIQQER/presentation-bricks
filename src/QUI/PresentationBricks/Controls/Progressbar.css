@@ -7,3 +7,16 @@
 .quiqqer-progressbar-chart {
     width: 50%;
 }
+
+.quiqqer-progressbar-chart-line-background {
+    height: 5px;
+    background: #e8e8e8;
+    width: 100%;
+}
+
+.quiqqer-progressbar-chart-line {
+    height: 100%;
+    background: #46aae5;
+    left: 0;
+    top: 0;
+}

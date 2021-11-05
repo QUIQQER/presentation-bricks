@@ -20,9 +20,10 @@
 
         {foreach from=$progressbarData item=Progressbar}
 
-        hej
-        {$Progressbar['title']}
-        {$Progressbar['percent']}
+        <p>{$Progressbar['title']}</p>
+        <div class="quiqqer-progressbar-chart-line-background">
+            <div class="quiqqer-progressbar-chart-line" style="width:{$Progressbar['percent']}%"></div>
+        </div>
 
         {/foreach}
 
