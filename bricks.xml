@@ -305,19 +305,8 @@
             </description>
 
             <settings>
-
-                <setting name="layout" type="select">
-                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.layout"/>
-
-                    <option value="textTop" selected="selected">
-                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.layout.textTop"/>
-                    </option>
-                    <option value="textLeft">
-                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.layout.textLeft"/>
-                    </option>
-                    <option value="textRight">
-                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.layout.textRight"/>
-                    </option>
+                <setting name="textRight" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.textRight"/>
                 </setting>
 
                 <setting name="entries" type="hidden"
