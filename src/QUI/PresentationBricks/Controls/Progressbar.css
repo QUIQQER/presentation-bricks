@@ -1,0 +1,9 @@
+.quiqqer-progressbar-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.quiqqer-progressbar-content,
+.quiqqer-progressbar-chart {
+    width: 50%;
+}
