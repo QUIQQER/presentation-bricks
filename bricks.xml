@@ -320,6 +320,11 @@
                     </option>
                 </setting>
 
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings"
+                >
+                    <locale group="quiqqer/presentation-bricks" var="brick.progressbar.settings.entries"/>
+                </setting>
 
             </settings>
         </brick>
