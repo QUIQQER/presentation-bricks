@@ -4,8 +4,17 @@
 }
 
 .quiqqer-progressbar-content,
-.quiqqer-progressbar-chart {
+.quiqqer-progressbar-charts {
     width: 50%;
+}
+
+.quiqqer-progressbar-chart {
+    margin-bottom: 15px;
+}
+
+.quiqqer-progressbar-chart-content {
+    display: flex;
+    justify-content: space-between;
 }
 
 .quiqqer-progressbar-chart-line-background {

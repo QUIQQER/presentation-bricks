@@ -16,13 +16,18 @@
         {$content}
     </div>
 
-    <div class="quiqqer-progressbar-chart">
+    <div class="quiqqer-progressbar-charts">
 
         {foreach from=$progressbarData item=Progressbar}
 
-        <p>{$Progressbar['title']}</p>
-        <div class="quiqqer-progressbar-chart-line-background">
-            <div class="quiqqer-progressbar-chart-line" style="width:{$Progressbar['percent']}%"></div>
+        <div class="quiqqer-progressbar-chart">
+            <div class="quiqqer-progressbar-chart-content">
+                <span>{$Progressbar['title']}</span>
+                <span>{$Progressbar['percent']}%</span>
+            </div>
+            <div class="quiqqer-progressbar-chart-line-background">
+                <div class="quiqqer-progressbar-chart-line" style="width:{$Progressbar['percent']}%"></div>
+            </div>
         </div>
 
         {/foreach}
