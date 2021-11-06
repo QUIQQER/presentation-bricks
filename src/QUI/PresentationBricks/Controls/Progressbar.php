@@ -45,21 +45,23 @@ class Progressbar extends QUI\Control
         $Engine  = QUI::getTemplateManager()->getEngine();
         $entries = json_decode($this->getAttribute('entries'), true);
 
-        $content     = $this->getAttribute('progressbarContent');
+        $content = $this->getAttribute('progressbarContent');
+        $textPosition = 'quiqqer-progressbar__textLeft';
         $progressbarData = [];
 
-        echo $content;
+        if ($this->getAttribute('textRight')) {
+            $textPosition = 'quiqqer-progressbar__textRight';
+        }
 
         foreach ($entries as $entry) {
             \array_push($progressbarData, ['title' => $entry['title'], "percent" => $entry['percent']]);
         }
 
-        var_dump($this->getAttribute('textRight'));
-
         $Engine->assign([
             'this'        => $this,
             'content'     => $content,
-            'progressbarData' => $progressbarData
+            'progressbarData' => $progressbarData,
+            'textPosition' => $textPosition
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');

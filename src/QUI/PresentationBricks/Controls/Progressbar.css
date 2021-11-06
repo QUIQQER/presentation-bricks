@@ -3,6 +3,10 @@
     flex-direction: row;
 }
 
+.quiqqer-progressbar-wrapper.quiqqer-progressbar__textRight {
+    flex-direction: row-reverse;
+}
+
 .quiqqer-progressbar-content,
 .quiqqer-progressbar-charts {
     width: 50%;
