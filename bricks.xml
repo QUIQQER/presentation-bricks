@@ -306,6 +306,10 @@
 
             <settings>
 
+                <setting name="maxWidth" type="number" min="0" max="1920">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth"/>
+                </setting>
+
                 <setting name="progressbarContent" data-qui="controls/editors/Input">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.content"/>
                 </setting>
