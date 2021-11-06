@@ -303,8 +303,8 @@
             <en><![CDATA[Visual presentation of progress]]></en>
         </locale>
         <locale name="brick.setting.progressbar.maxWidth">
-            <de><![CDATA[Inhalt der Fortschrittsleiste]]></de>
-            <en><![CDATA[Progressbar max width]]></en>
+            <de><![CDATA[Inhalt der Fortschrittsleiste (0/1920)]]></de>
+            <en><![CDATA[Progressbar max width (0/1920)]]></en>
         </locale>
         <locale name="brick.setting.progressbar.content">
             <de><![CDATA[Maximale Breite des Fortschrittsbalkens]]></de>

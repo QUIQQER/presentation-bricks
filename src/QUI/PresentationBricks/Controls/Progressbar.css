@@ -7,13 +7,32 @@
     flex-direction: row-reverse;
 }
 
-.quiqqer-progressbar-content,
-.quiqqer-progressbar-charts {
-    width: 50%;
+.quiqqer-progressbar__center {
+    margin: auto;
+}
+
+.quiqqer-progressbar__center .quiqqer-progressbar-chart{
+    padding: 0;
+}
+
+.quiqqer-progressbar-content {
+    padding-right: 2rem;
 }
 
 .quiqqer-progressbar-chart {
-    margin-bottom: 15px;
+    margin: auto;
+    margin-bottom: 25px;
+    padding-left: 2rem;
+}
+
+.quiqqer-progressbar__textRight .quiqqer-progressbar-content {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.quiqqer-progressbar__textRight .quiqqer-progressbar-chart {
+    padding-left: 0;
+    padding-right: 2rem;
 }
 
 .quiqqer-progressbar-chart-content {
@@ -32,4 +51,24 @@
     background: #46aae5;
     left: 0;
     top: 0;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+    .quiqqer-progressbar-wrapper {
+        flex-direction: column;
+    }
+
+    .quiqqer-progressbar-content {
+        padding: 0;
+    }
+
+    .quiqqer-progressbar-charts {
+        margin-top: 20px;
+    }
+
+    .quiqqer-progressbar-chart {
+        padding: 0;
+    }
 }

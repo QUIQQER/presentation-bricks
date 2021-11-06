@@ -46,7 +46,7 @@ class Progressbar extends QUI\Control
         $entries = json_decode($this->getAttribute('entries'), true);
 
         $content         = $this->getAttribute('progressbarContent');
-        $maxWidth        = false;
+        $maxWidth        = '1920px';
         $textPosition    = 'quiqqer-progressbar__textLeft';
         $progressbarData = [];
 
@@ -54,9 +54,9 @@ class Progressbar extends QUI\Control
             $textPosition = 'quiqqer-progressbar__textRight';
         }
 
-        if ($this->getAttribute('maxWidth') >= 0 &&
+        if ($this->getAttribute('maxWidth') > 0 &&
             $this->getAttribute('maxWidth') <= 1920) {
-            $maxWidth = $this->getAttribute('maxWidth');
+            $maxWidth = $this->getAttribute('maxWidth') . 'px';
         }
 
         foreach ($entries as $entry) {
