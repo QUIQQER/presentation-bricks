@@ -26,8 +26,10 @@ class Progressbar extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'class'    => 'quiqqer-blog-control-author',
-            'template' => 'largeImageTop' // template
+            'content'         => '',
+            'progressbarData' => [],
+            'textPosition'    => 'quiqqer-progressbar__textLeft',
+            'maxWidth'        => '' //in pixels
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/Progressbar.css');
@@ -68,7 +70,7 @@ class Progressbar extends QUI\Control
             'content'         => $content,
             'progressbarData' => $progressbarData,
             'textPosition'    => $textPosition,
-            'maxWidth'        => $maxWidth
+            ''                => $maxWidth
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');
