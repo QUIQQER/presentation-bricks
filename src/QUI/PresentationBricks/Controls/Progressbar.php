@@ -70,7 +70,7 @@ class Progressbar extends QUI\Control
             'content'         => $content,
             'progressbarData' => $progressbarData,
             'textPosition'    => $textPosition,
-            ''                => $maxWidth
+            'maxWidth'        => $maxWidth
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');
