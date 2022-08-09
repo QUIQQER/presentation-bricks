@@ -295,8 +295,8 @@
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">
-            <de><![CDATA[Ziegel: Fortschrittsbalken]]></de>
-            <en><![CDATA[Brick: Progressbar ]]></en>
+            <de><![CDATA[Präsentation Bricks: Fortschrittsbalken (Progress bar)]]></de>
+            <en><![CDATA[Presentation Bricks: Progress bar]]></en>
         </locale>
         <locale name="control.progressbar.description">
             <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
@@ -307,7 +307,7 @@
             <en><![CDATA[Progressbar max width (0/1920)]]></en>
         </locale>
         <locale name="brick.setting.progressbar.content">
-            <de><![CDATA[Maximale Breite des Fortschrittsbalkens]]></de>
+            <de><![CDATA[Maximale Breite des Balkens]]></de>
             <en><![CDATA[Progressbar content]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textRight">
