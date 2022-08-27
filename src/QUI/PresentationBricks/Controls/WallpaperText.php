@@ -29,7 +29,7 @@ class WallpaperText extends QUI\Control
             'imageBackgroundPos'   => 'center',
             'fixed'                => false,
             'contentPosition'      => 'flex-start',
-            'minHeight'            => 'initial',
+            'minHeight'            => false,
             'contentMaxWidth'      => 600,
             'fontColor'            => 'inherit',
         ]);
@@ -53,6 +53,10 @@ class WallpaperText extends QUI\Control
         $fixed = '';
         if ($this->getAttribute('image-background-fixed')) {
             $fixed = "fixed";
+        }
+
+        if ($this->getAttribute('minHeight')) {
+            $this->setStyle('min-height', $this->getAttribute('minHeight'));
         }
 
         $bgColor = '#eee';
