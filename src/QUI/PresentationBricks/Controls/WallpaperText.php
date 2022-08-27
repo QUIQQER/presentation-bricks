@@ -26,6 +26,7 @@ class WallpaperText extends QUI\Control
         $this->setAttributes([
             'imageBackgroundFixed' => false,
             'bgColor'              => '#eee',
+            'imageBackgroundPos'   => 'center',
             'fixed'                => false,
             'contentPosition'      => 'flex-start',
             'minHeight'            => 'initial',

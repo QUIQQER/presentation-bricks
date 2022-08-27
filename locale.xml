@@ -152,6 +152,22 @@
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
         </locale>
+        <locale name="control.WallpaperText.imageBackgroundPos">
+            <de><![CDATA[Hintergrundbild-Position]]></de>
+            <en><![CDATA[Background image position]]></en>
+        </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.top">
+                <de><![CDATA[Oben]]></de>
+                <en><![CDATA[Top]]></en>
+            </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.center">
+                <de><![CDATA[Zentriert]]></de>
+                <en><![CDATA[Center]]></en>
+            </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.bottom">
+                <de><![CDATA[Unten]]></de>
+                <en><![CDATA[Bottom]]></en>
+            </locale>
         <locale name="control.WallpaperText.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
