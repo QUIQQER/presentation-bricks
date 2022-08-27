@@ -134,49 +134,60 @@
         <!-- wallpaper with text -->
         <locale name="control.WallpaperText.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
-            <en><![CDATA[Presentatino: Wallpaper with text]]></en>
-            <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem]]></pl>
+            <en><![CDATA[Presentation: Wallpaper with text]]></en>
         </locale>
         <locale name="control.WallpaperText.description">
-            <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
-            <en><![CDATA[...]]></en>
-            <pl><![CDATA[...]]></pl>
+            <de><![CDATA[Mit diesem Baustein kannst du schnell einen Banner erstellen. Wähle ein passendes Bild oder eine Farbe, die unter dem Text angezeigt werden.]]></de>
+            <en><![CDATA[With this brick you can quickly create a banner. Choose a suitable image or color to be displayed below the text.]]></en>
+        </locale>
+        <locale name="control.WallpaperText.minHeight">
+            <de><![CDATA[Minimale Höhe]]></de>
+            <en><![CDATA[Minimum height]]></en>
+        </locale>
+        <locale name="control.WallpaperText.minHeight.desc">
+            <de><![CDATA[Bitte den Wert mit einer gültigen CSS Einheit eingeben (z.B. 500px, 80vh, etc.)]]></de>
+            <en><![CDATA[Please enter the value with valid CSS unit (e.g. 500px, 80vh, etc.)]]></en>
         </locale>
         <locale name="control.WallpaperText.image-background">
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
-            <pl><![CDATA[Obrazek tła]]></pl>
         </locale>
         <locale name="control.WallpaperText.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
-            <pl><![CDATA[Nieruchome tło (fixed)]]></pl>
         </locale>
         <locale name="control.WallpaperText.bg-color">
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Background color]]></en>
-            <pl><![CDATA[Kolor tła]]></pl>
         </locale>
         <locale name="control.WallpaperText.content-position">
             <de><![CDATA[Ausrichtung]]></de>
             <en><![CDATA[Position]]></en>
-            <pl><![CDATA[Ułożenie]]></pl>
         </locale>
             <locale name="control.WallpaperText.content-position.left">
                 <de><![CDATA[links]]></de>
                 <en><![CDATA[left]]></en>
-                <pl><![CDATA[lewa strona]]></pl>
             </locale>
             <locale name="control.WallpaperText.content-position.center">
                 <de><![CDATA[zentriert]]></de>
                 <en><![CDATA[center]]></en>
-                <pl><![CDATA[pośrodku]]></pl>
             </locale>
             <locale name="control.WallpaperText.content-position.right">
                 <de><![CDATA[rechts]]></de>
                 <en><![CDATA[right]]></en>
-                <pl><![CDATA[prawa strona]]></pl>
             </locale>
+        <locale name="control.WallpaperText.contentMaxWidth">
+            <de><![CDATA[Maximale Breite des Inhalts]]></de>
+            <en><![CDATA[Maximum content width]]></en>
+        </locale>
+        <locale name="control.WallpaperText.fontColor">
+            <de><![CDATA[Inhalt Farbe]]></de>
+            <en><![CDATA[Content color]]></en>
+        </locale>
+        <locale name="control.WallpaperText.fontColor.desc">
+            <de><![CDATA[Für dunkleren Hintergrund kann man hier pauschal die Standard Inhalt Farbe ändern. Bitte beachte, dass je nach Template die Titel (h1, h2, etc.) ggf. gesondert die Farbe gesetzt haben können.]]></de>
+            <en><![CDATA[For darker background you can change the default content color here. Please note that depending on the template, the titles (h1, h2, etc.) may have the color set separately.]]></en>
+        </locale>
 
 
         <!-- sticky content -->

@@ -120,6 +120,14 @@
             </description>
 
             <settings>
+                <setting name="minHeight" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.minHeight"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.minHeight.desc"/>
+                    </description>
+                </setting>
                 <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.image-background"/>
@@ -151,6 +159,20 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.WallpaperText.content-position.right"/>
                     </option>
+                </setting>
+
+                <setting name="contentMaxWidth" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.contentMaxWidth"/>
+                </setting>
+
+                <setting name="fontColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.fontColor"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.fontColor.desc"/>
+                    </description>
                 </setting>
 
 

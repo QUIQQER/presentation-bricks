@@ -24,10 +24,13 @@ class WallpaperText extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'imageBackgroundFixed' => 'false',
-            'bgColor'              => 'none',
+            'imageBackgroundFixed' => false,
+            'bgColor'              => '#eee',
             'fixed'                => false,
-            'contentPosition'      => 'left'
+            'contentPosition'      => 'flex-start',
+            'minHeight'            => 'initial',
+            'contentMaxWidth'      => 600,
+            'fontColor'            => 'inherit',
         ]);
 
         parent::__construct($attributes);
@@ -52,10 +55,10 @@ class WallpaperText extends QUI\Control
         }
 
         $bgColor = '#eee';
+
         if ($this->getAttribute('bg-color')) {
             $bgColor = $this->getAttribute('bg-color');
         }
-
 
         $Engine->assign([
             'this'            => $this,
