@@ -349,12 +349,12 @@
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth"/>
                 </setting>
 
-                <setting name="progressbarContent" data-qui="controls/editors/Input">
-                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.content"/>
+                <setting name="additionalText" data-qui="controls/editors/Input">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText"/>
                 </setting>
 
-                <setting name="textRight" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.textRight"/>
+                <setting name="additionalTextRight" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalTextRight"/>
                 </setting>
 
                 <setting name="entries" type="hidden"

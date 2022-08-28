@@ -322,24 +322,24 @@
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">
-            <de><![CDATA[Präsentation Bricks: Fortschrittsbalken (Progress bar)]]></de>
-            <en><![CDATA[Presentation Bricks: Progress bar]]></en>
+            <de><![CDATA[Präsentation: Fortschrittsbalken]]></de>
+            <en><![CDATA[Presentation: Progress bar]]></en>
         </locale>
         <locale name="control.progressbar.description">
             <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
             <en><![CDATA[Visual presentation of progress]]></en>
         </locale>
         <locale name="brick.setting.progressbar.maxWidth">
-            <de><![CDATA[Inhalt der Fortschrittsleiste (0/1920)]]></de>
-            <en><![CDATA[Progressbar max width (0/1920)]]></en>
-        </locale>
-        <locale name="brick.setting.progressbar.content">
             <de><![CDATA[Maximale Breite des Balkens]]></de>
-            <en><![CDATA[Progressbar content]]></en>
+            <en><![CDATA[Maximum width of the bar]]></en>
         </locale>
-        <locale name="brick.setting.progressbar.textRight">
-            <de><![CDATA[Text rechts]]></de>
-            <en><![CDATA[Text on right]]></en>
+        <locale name="brick.setting.progressbar.additionalText">
+            <de><![CDATA[Zusatztext]]></de>
+            <en><![CDATA[Additional text]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalTextRight">
+            <de><![CDATA[Zusatztext rechts]]></de>
+            <en><![CDATA[Additional text on right]]></en>
         </locale>
         <locale name="brick.progressbar.settings.entries">
             <de><![CDATA[Fortschrittseinträge]]></de>

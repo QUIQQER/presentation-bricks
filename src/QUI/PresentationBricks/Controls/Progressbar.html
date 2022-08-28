@@ -12,9 +12,9 @@
 
 <div class="quiqqer-progressbar-wrapper {$textPosition}">
 
-    {if $content}
+    {if $additionalText}
     <div class="quiqqer-progressbar-content grid-parent grid-50">
-        {$content}
+        {$additionalText}
     </div>
 
     <div class="quiqqer-progressbar-charts grid-parent grid-50">
@@ -32,7 +32,7 @@
     </div>
     {/if}
 
-    {if !$content}
+    {if !$additionalText}
     <div class="quiqqer-progressbar-charts grid-parent quiqqer-progressbar__center" style="width:{$maxWidth}">
         {foreach from=$progressbarData item=Progressbar}
         <div class="quiqqer-progressbar-chart">
