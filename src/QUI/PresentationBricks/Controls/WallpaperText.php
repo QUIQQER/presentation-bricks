@@ -24,10 +24,14 @@ class WallpaperText extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'imageBackgroundFixed' => 'false',
-            'bgColor'              => 'none',
+            'imageBackgroundFixed' => false,
+            'bgColor'              => '#eee',
+            'imageBackgroundPos'   => 'center',
             'fixed'                => false,
-            'contentPosition'      => 'left'
+            'contentPosition'      => 'flex-start',
+            'minHeight'            => false,
+            'contentMaxWidth'      => 600,
+            'fontColor'            => 'inherit',
         ]);
 
         parent::__construct($attributes);
@@ -51,11 +55,15 @@ class WallpaperText extends QUI\Control
             $fixed = "fixed";
         }
 
+        if ($this->getAttribute('minHeight')) {
+            $this->setStyle('min-height', $this->getAttribute('minHeight'));
+        }
+
         $bgColor = '#eee';
+
         if ($this->getAttribute('bg-color')) {
             $bgColor = $this->getAttribute('bg-color');
         }
-
 
         $Engine->assign([
             'this'            => $this,

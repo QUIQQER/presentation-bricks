@@ -120,9 +120,34 @@
             </description>
 
             <settings>
+                <setting name="minHeight" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.minHeight"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.minHeight.desc"/>
+                    </description>
+                </setting>
                 <setting name="image-background" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.image-background"/>
+                </setting>
+                <setting name="imageBackgroundPos" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.imageBackgroundPos"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageBackgroundPos.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageBackgroundPos.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageBackgroundPos.bottom"/>
+                    </option>
                 </setting>
 
                 <setting name="image-background-fixed" type="checkbox">
@@ -151,6 +176,20 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.WallpaperText.content-position.right"/>
                     </option>
+                </setting>
+
+                <setting name="contentMaxWidth" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.contentMaxWidth"/>
+                </setting>
+
+                <setting name="fontColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.fontColor"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.fontColor.desc"/>
+                    </description>
                 </setting>
 
 

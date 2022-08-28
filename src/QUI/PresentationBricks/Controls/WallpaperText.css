@@ -1,8 +1,10 @@
 .wallpaperText {
     height: 100%;
-    background-position: center;
+    background-color: var(--qui-wallpaperText-bgColor, #eee);
+    background-position: var(--qui-wallpaperText-bgPos, center);
     background-size: cover;
     position: relative;
+    background-image: var(--qui-wallpaperText-bgImage, none);
 }
 
 .wallpaperText-container {
@@ -11,6 +13,13 @@
     height: 100%;
     padding-top: 3em;
     padding-bottom: 3em;
+    justify-content: var(--qui-wallpaperText-contentPos, flex-start);
+    min-height: var(--qui-wallpaperText-minHeight, initial);
+    color: var(--qui-wallpaperText-fontColor, inherit);
+}
+
+.wallpaperText-container-content{
+    max-width: var(--qui-wallpaperText-contentMaxWidth, 600px);
 }
 
 .wallpaperText.fixed {
