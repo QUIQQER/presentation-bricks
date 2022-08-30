@@ -62,6 +62,10 @@ class Progressbar extends QUI\Control
         }
 
         foreach ($entries as $entry) {
+
+            if ($entry['percent'] > 100) {
+                $entry['percent'] = 100;
+            }
             \array_push($progressbarData, ['title' => $entry['title'], "percent" => $entry['percent']]);
         }
 

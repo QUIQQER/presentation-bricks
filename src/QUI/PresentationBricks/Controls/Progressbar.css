@@ -60,6 +60,14 @@
         flex-direction: column;
     }
 
+    .quiqqer-progressbar-wrapper.quiqqer-progressbar__textRight {
+        flex-direction: column;
+    }
+
+    .quiqqer-progressbar__textRight .quiqqer-progressbar-content {
+        padding: 0;
+    }
+
     .quiqqer-progressbar-content {
         padding: 0;
     }
