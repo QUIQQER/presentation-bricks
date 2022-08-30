@@ -26,7 +26,7 @@ class Progressbar extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'additionalText'         => '',
+            'additionalText'  => '',
             'progressbarData' => [],
             'textPosition'    => 'quiqqer-progressbar__textLeft',
             'maxWidth'        => '' //in pixels
@@ -47,7 +47,7 @@ class Progressbar extends QUI\Control
         $Engine  = QUI::getTemplateManager()->getEngine();
         $entries = json_decode($this->getAttribute('entries'), true);
 
-        $additionalText         = $this->getAttribute('additionalText');
+        $additionalText  = $this->getAttribute('additionalText');
         $maxWidth        = '1920px';
         $textPosition    = 'quiqqer-progressbar__textLeft';
         $progressbarData = [];
@@ -71,7 +71,7 @@ class Progressbar extends QUI\Control
 
         $Engine->assign([
             'this'            => $this,
-            'additionalText'         => $additionalText,
+            'additionalText'  => $additionalText,
             'progressbarData' => $progressbarData,
             'textPosition'    => $textPosition,
             'maxWidth'        => $maxWidth
