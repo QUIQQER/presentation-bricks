@@ -462,9 +462,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
             for (var i = 0, len = gridData.length; i < len; i++) {
                 data.push({
                     isDisabled: parseInt(gridData[i].isDisabled),
-                    image     : gridData[i].image,
-                    entryTitle      : gridData[i].entryTitle,
-                    entryContent      : gridData[i].entryContent,
+                    image        : gridData[i].image,
+                    entryTitle   : gridData[i].entryTitle,
+                    entryContent : gridData[i].entryContent,
                 });
             }
 
@@ -531,13 +531,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                     var Form    = Content.getElement('form');
 
                     var Image        = Form.elements.image;
-                    var EntryTitle = Form.elements.entryTitle;
-                    var entryContent       = Form.elements.entryContent;
+                    var EntryTitle   = Form.elements.entryTitle;
+                    var entryContent = Form.elements.entryContent;
 
                     self.edit(index, {
                         image        : Image.value,
-                        entryTitle : EntryTitle.value,
-                        entryContent       : entryContent.value,
+                        entryTitle   : EntryTitle.value,
+                        entryContent : entryContent.value,
                         isDisabled   : Dialog.IsDisabledSwitch.getStatus()
                     });
 
@@ -550,8 +550,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                     var Form    = Content.getElement('form');
 
                     var Image        = Form.elements.image;
-                    var entryTitle = Form.elements.entryTitle;
-                    var entryContent       = Form.elements.entryContent;
+                    var entryTitle   = Form.elements.entryTitle;
+                    var entryContent = Form.elements.entryContent;
 
                     if (data.isDisabled) {
                         Dialog.IsDisabledSwitch.on();
@@ -559,8 +559,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                         Dialog.IsDisabledSwitch.off();
                     }
 
-                    Image.value       = data.image;
-                    entryTitle.value = data.entryTitle;
+                    Image.value        = data.image;
+                    entryTitle.value   = data.entryTitle;
                     entryContent.value = data.entryContent;
 
                     if (data.newTab && data.newTab.getAttribute('data-enabled') === "1") {
@@ -595,13 +595,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                     var Form    = Content.getElement('form');
 
                     var Image        = Form.elements.image;
-                    var EntryTitle = Form.elements.entryTitle;
-                    var entryContent       = Form.elements.entryContent;
+                    var EntryTitle   = Form.elements.entryTitle;
+                    var entryContent = Form.elements.entryContent;
 
                     self.add({
                         image        : Image.value,
-                        entryTitle : EntryTitle.value,
-                        entryContent       : entryContent.value,
+                        entryTitle   : EntryTitle.value,
+                        entryContent : entryContent.value,
                         isDisabled   : Dialog.IsDisabledSwitch.getStatus()
                     });
 
@@ -622,14 +622,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
 
             return new Promise(function (resolve) {
                 var Dialog = new QUIConfirm({
-                    title           : QUILocale.get(lg, 'quiqqer.presentationBricks.entires.adddialog.title'),
-                    icon            : 'fa fa-edit',
-                    maxWidth        : 800,
-                    maxHeight       : 600,
-                    autoclose       : false,
-                    IsDisabledSwitch: false,
-                    NewTabSwitch    : false,
-                    events          : {
+                    title            : QUILocale.get(lg, 'quiqqer.presentationBricks.entires.adddialog.title'),
+                    icon             : 'fa fa-edit',
+                    maxWidth         : 800,
+                    maxHeight        : 600,
+                    autoclose        : false,
+                    IsDisabledSwitch : false,
+                    NewTabSwitch     : false,
+                    events           : {
                         onOpen: function (Win) {
                             Win.Loader.show();
                             Win.getContent().set('html', '');
