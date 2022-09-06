@@ -331,5 +331,89 @@
                 </setting>
             </settings>
         </brick>
+
+        <!-- IconBox -->
+        <brick control="\QUI\PresentationBricks\Controls\IconBox">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.IconBox.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.IconBox.description"/>
+            </description>
+
+            <settings>
+
+                <setting name="centerContent" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.centerContent"/>
+                </setting>
+
+                <setting name="template" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.template"/>
+
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.template.default"/>
+                    </option>
+                </setting>
+
+                <setting name="entriesPerLine" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.entriesPerLine"/>
+
+                    <option value="2">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.two"/>
+                    </option>
+                    <option value="3">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.three"/>
+                    </option>
+                    <option value="4">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.four"/>
+                    </option>
+                    <option value="5">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.five"/>
+                    </option>
+                    <option value="6">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.six"/>
+                    </option>
+                </setting>
+
+                <setting name="iconSize" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.iconSize"/>
+
+                    <option value="small">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.iconSize.small"/>
+                    </option>
+                    <option value="medium">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.iconSize.medium"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.iconSize.large"/>
+                    </option>
+                </setting>
+
+                <setting name="imgIconSize" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.imgIconSize"/>
+                </setting>
+
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings">
+                    <locale group="quiqqer/presentation-bricks" var="IconBox.entries"/>
+                </setting>
+            </settings>
+        </brick>
     </bricks>
 </quiqqer>

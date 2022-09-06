@@ -320,5 +320,131 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+        <!-- Icon Box-->
+        <locale name="control.IconBox.title">
+            <de><![CDATA[Icon Box]]></de>
+            <en><![CDATA[Icon Box]]></en>
+        </locale>
+        <locale name="control.IconBox.description">
+            <de><![CDATA[Abschnitt mit einfachem Text und Platz für ein Symbol]]></de>
+            <en><![CDATA[Section with simple text and space for an icon]]></en>
+        </locale>
+        <locale name="control.IconBox.centerContent">
+            <de><![CDATA[Inhalt zentrieren]]></de>
+            <en><![CDATA[Center content]]></en>
+        </locale>
+
+        <locale name="control.IconBox.template">
+            <de><![CDATA[Vorlage]]></de>
+            <en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="control.IconBox.template.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+
+        <locale name="control.IconBox.entriesPerLine">
+            <de><![CDATA[Einträge pro Zeile]]></de>
+            <en><![CDATA[Entries per line]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.two">
+            <de><![CDATA[2]]></de>
+            <en><![CDATA[2]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.three">
+            <de><![CDATA[3]]></de>
+            <en><![CDATA[3]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.four">
+            <de><![CDATA[4]]></de>
+            <en><![CDATA[4]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.five">
+            <de><![CDATA[5]]></de>
+            <en><![CDATA[5]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.six">
+            <de><![CDATA[6]]></de>
+            <en><![CDATA[6]]></en>
+        </locale>
+
+        <locale name="control.IconBox.iconSize">
+            <de><![CDATA[Größe der Ikone]]></de>
+            <en><![CDATA[Icon size]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.medium">
+            <de><![CDATA[Mittel]]></de>
+            <en><![CDATA[Medium]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+
+        <locale name="control.IconBox.imgIconSize">
+            <de><![CDATA[Größe des Bildsymbols]]></de>
+            <en><![CDATA[Image icon size]]></en>
+        </locale>
+
+        <!-- Icon box Entries -->
+        <locale name="IconBox.entries">
+            <de><![CDATA[Einträge]]></de>
+            <en><![CDATA[Entries]]></en>
+        </locale>
+
+        <locale name="quiqqer.presentationBricks.iconBox.settings.isDisabled.short">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.icon.short">
+            <de><![CDATA[Ikone]]></de>
+            <en><![CDATA[Icon]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.title.short">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.entryContent.short">
+            <de><![CDATA[Inhalt]]></de>
+            <en><![CDATA[Content]]></en>
+        </locale>
+
+        <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.disable">
+            <de><![CDATA[Eintrag deaktivieren]]></de>
+            <en><![CDATA[Disable entry]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.icon">
+            <de><![CDATA[Icon setzen]]></de>
+            <en><![CDATA[Set icon]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.title">
+            <de><![CDATA[Titel deaktivieren]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.entryContent">
+            <de><![CDATA[Inhalt des Eintrags]]></de>
+            <en><![CDATA[Entry content]]></en>
+        </locale>
+
+        <locale name="quiqqer.presentationBricks.entires.adddialog.title">
+            <de><![CDATA[Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add Entry]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.entires.editdialog.title">
+            <de><![CDATA[Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit Entry]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.entires.delete.text">
+            <de><![CDATA[Möchten Sie diesen Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this entry?]]></en>
+        </locale>
+        <locale name="quiqqer.presentationBricks.entires.delete.information">
+            <de><![CDATA[Möchten Sie diesen Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this entry?]]></en>
+        </locale>
     </groups>
 </locales>

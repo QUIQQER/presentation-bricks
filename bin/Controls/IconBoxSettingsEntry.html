@@ -1,0 +1,50 @@
+<form name="quiqqer-presentationBricks-iconBox-settings-entry"
+      class="quiqqer-presentationBricks-iconBox-settings-entry-form"
+>
+    <table class="data-table data-table-flexbox">
+        <tbody>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">
+                        {{fieldIsDisabled}}
+                    </span>
+                    <span id="isDisabledWrapper" class="field-container-field"></span>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">
+                        {{fieldIcon}}
+                    </span>
+                    <input name="image" class="field-container-field media-image"/>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">
+                        {{fieldEntryTitle}}
+                    </span>
+                    <input name="entryTitle" class="field-container-field field-customerName"/>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">
+                        {{fieldEntryContent}}
+                    </span>
+                    <input name="entryContent" class="field-container-field field-description"
+                           data-qui="controls/editors/Input"
+                    />
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
