@@ -10,3 +10,32 @@
 </div>
 {/if}
 
+
+<div class="iconBox-wrapper"
+     style="
+     --qui-iconBox-entryWidth: calc(100% / {$entriesPerLine});
+     --qui-iconBox-imgHeight: {$imgIconSize}px;
+
+">
+    {foreach $entries as $entry}
+
+    <div class="iconBox-entry {if $centerContent} iconBox-entry__centerContent{/if}">
+
+        {if $entry['image']}
+        <div class="iconBox-entry-icon iconBox__iconSize-{$iconSize}">
+            {image src=$entry['image'] loading="lazy" height="{$imgIconSize}"}
+        </div>
+        {/if}
+
+        {if $entry['entryTitle']}
+        <h3 class="iconBox-entry-title">{$entry['entryTitle']}</h3>
+        {/if}
+
+        {if $entry['entryContent']}
+        <p class="iconBox-entry-content">{$entry['entryContent']}</p>
+        {/if}
+
+    </div>
+
+    {/foreach}
+</div>

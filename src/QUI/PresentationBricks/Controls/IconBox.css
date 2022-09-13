@@ -1,0 +1,37 @@
+.iconBox-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iconBox-entry {
+    flex-basis: var(--qui-iconBox-entryWidth);
+    padding: 2rem;
+}
+
+.iconBox-entry-title {
+    margin: 1rem 0;
+}
+
+.iconBox-entry__centerContent {
+    text-align: center;
+}
+
+.iconBox-entry__centerContent > .iconBox-entry-icon{
+    margin: auto;
+}
+
+.iconBox__iconSize-large {
+    font-size: 5rem;
+}
+
+.iconBox__iconSize-medium {
+    font-size: 3rem;
+}
+
+.iconBox__iconSize-small {
+    font-size: 1.5rem;
+}
+
+.iconBox-entry-icon:not(.twojaKlasaDlaFontAwesome) {
+    height: var(--qui-iconBox-imgHeight);
+}
