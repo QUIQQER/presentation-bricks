@@ -14,16 +14,15 @@
 <div class="iconBox-wrapper"
      style="
      --qui-iconBox-entryWidth: calc(100% / {$entriesPerLine});
-     --qui-iconBox-imgHeight: {$imgIconSize}px;
-
+     --qui-iconBox-imgIconSize: {$imgIconSize}px;
 ">
     {foreach $entries as $entry}
 
     <div class="iconBox-entry {if $centerContent} iconBox-entry__centerContent{/if}">
 
         {if $entry['image']}
-        <div class="iconBox-entry-icon iconBox__iconSize-{$iconSize}">
-            {image src=$entry['image'] loading="lazy" height="{$imgIconSize}"}
+        <div class="iconBox-entry-icon iconBox__iconSize-{$iconSize} {if $imgSquare} iconBox-entry__square{/if}">
+            {image src=$entry['image'] loading="lazy"}
         </div>
         {/if}
 

@@ -20,18 +20,24 @@
     margin: auto;
 }
 
-.iconBox__iconSize-large {
+.iconBox__iconSize-large > .quiqqer-icon.fa {
     font-size: 5rem;
 }
 
-.iconBox__iconSize-medium {
+.iconBox__iconSize-medium > .quiqqer-icon.fa {
     font-size: 3rem;
 }
 
-.iconBox__iconSize-small {
+.iconBox__iconSize-small > .quiqqer-icon.fa {
     font-size: 1.5rem;
 }
 
-.iconBox-entry-icon:not(.twojaKlasaDlaFontAwesome) {
-    height: var(--qui-iconBox-imgHeight);
+.iconBox-entry-icon img {
+    height: var(--qui-iconBox-imgIconSize);
+}
+
+.iconBox-entry__square img {
+    height: var(--qui-iconBox-imgIconSize);
+    width: var(--qui-iconBox-imgIconSize);
+    object-fit: cover;
 }
