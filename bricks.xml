@@ -407,6 +407,10 @@
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.entriesPerLine"/>
 
+                    <option value="1">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.entriesPerLine.one"/>
+                    </option>
                     <option value="2">
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.IconBox.entriesPerLine.two"/>

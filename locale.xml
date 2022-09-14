@@ -351,24 +351,24 @@
             <en><![CDATA[Content width]]></en>
         </locale>
         <locale name="control.IconBox.contentWidth.30">
-            <de><![CDATA[30]]></de>
-            <en><![CDATA[30]]></en>
+            <de><![CDATA[30%]]></de>
+            <en><![CDATA[30%]]></en>
         </locale>
         <locale name="control.IconBox.contentWidth.40">
-            <de><![CDATA[40]]></de>
-            <en><![CDATA[40]]></en>
+            <de><![CDATA[40%]]></de>
+            <en><![CDATA[40%]]></en>
         </locale>
         <locale name="control.IconBox.contentWidth.50">
-            <de><![CDATA[50]]></de>
-            <en><![CDATA[50]]></en>
+            <de><![CDATA[50%]]></de>
+            <en><![CDATA[50%]]></en>
         </locale>
         <locale name="control.IconBox.contentWidth.60">
-            <de><![CDATA[60]]></de>
-            <en><![CDATA[60]]></en>
+            <de><![CDATA[60%]]></de>
+            <en><![CDATA[60%]]></en>
         </locale>
         <locale name="control.IconBox.contentWidth.70">
-            <de><![CDATA[70]]></de>
-            <en><![CDATA[70]]></en>
+            <de><![CDATA[70%]]></de>1
+            <en><![CDATA[70%]]></en>
         </locale>
 
         <locale name="control.IconBox.centerContent">
@@ -392,6 +392,10 @@
         <locale name="control.IconBox.entriesPerLine">
             <de><![CDATA[Einträge pro Zeile]]></de>
             <en><![CDATA[Entries per line]]></en>
+        </locale>
+        <locale name="control.IconBox.entriesPerLine.one">
+            <de><![CDATA[1]]></de>
+            <en><![CDATA[1]]></en>
         </locale>
         <locale name="control.IconBox.entriesPerLine.two">
             <de><![CDATA[2]]></de>
