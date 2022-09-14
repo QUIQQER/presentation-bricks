@@ -28,7 +28,8 @@ class IconBox extends QUI\Control
             'centerContent'  => false,
             'entriesPerLine' => 2,
             'iconSize'       => 'small',
-            'imgIconSize'    => '50px'
+            'imgIconSize'    => '50px',
+            'imgSquare'      => false
         ]);
 
         parent::__construct($attributes);
@@ -53,6 +54,7 @@ class IconBox extends QUI\Control
         $entriesPerLine = $this->getAttribute('entriesPerLine');
         $iconSize       = $this->getAttribute('iconSize');
         $imgIconSize    = $this->getAttribute('imgIconSize');
+        $imgSquare      = $this->getAttribute('imgSquare');
         $enabledEntries = [];
 
         foreach ($entries as $entry) {
@@ -69,6 +71,7 @@ class IconBox extends QUI\Control
             'entriesPerLine' => $entriesPerLine,
             'iconSize'       => $iconSize,
             'imgIconSize'    => $imgIconSize,
+            'imgSquare'      => $imgSquare,
             'entries'        => $enabledEntries
         ]);
 

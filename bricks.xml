@@ -408,6 +408,10 @@
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.imgIconSize"/>
                 </setting>
+                <setting name="imgSquare" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.imgSquare"/>
+                </setting>
 
                 <setting name="entries" type="hidden"
                          data-qui="package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings">

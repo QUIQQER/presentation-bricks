@@ -333,6 +333,10 @@
             <de><![CDATA[Inhalt zentrieren]]></de>
             <en><![CDATA[Center content]]></en>
         </locale>
+        <locale name="control.IconBox.imgSquare">
+            <de><![CDATA[Bild in ein Quadrat umwandeln]]></de>
+            <en><![CDATA[Transform image to square]]></en>
+        </locale>
 
         <locale name="control.IconBox.template">
             <de><![CDATA[Vorlage]]></de>
