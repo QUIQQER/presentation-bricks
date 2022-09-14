@@ -329,9 +329,51 @@
             <de><![CDATA[Abschnitt mit einfachem Text und Platz für ein Symbol]]></de>
             <en><![CDATA[Section with simple text and space for an icon]]></en>
         </locale>
+        <locale name="control.IconBox.contentPosition">
+            <de><![CDATA[Inhaltliche Position]]></de>
+            <en><![CDATA[Content position]]></en>
+        </locale>
+        <locale name="control.IconBox.contentPosition.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="control.IconBox.contentPosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="control.IconBox.contentPosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
+        </locale>
+
+        <locale name="control.IconBox.contentWidth">
+            <de><![CDATA[Breite des Inhalts]]></de>
+            <en><![CDATA[Content width]]></en>
+        </locale>
+        <locale name="control.IconBox.contentWidth.30">
+            <de><![CDATA[30]]></de>
+            <en><![CDATA[30]]></en>
+        </locale>
+        <locale name="control.IconBox.contentWidth.40">
+            <de><![CDATA[40]]></de>
+            <en><![CDATA[40]]></en>
+        </locale>
+        <locale name="control.IconBox.contentWidth.50">
+            <de><![CDATA[50]]></de>
+            <en><![CDATA[50]]></en>
+        </locale>
+        <locale name="control.IconBox.contentWidth.60">
+            <de><![CDATA[60]]></de>
+            <en><![CDATA[60]]></en>
+        </locale>
+        <locale name="control.IconBox.contentWidth.70">
+            <de><![CDATA[70]]></de>
+            <en><![CDATA[70]]></en>
+        </locale>
+
         <locale name="control.IconBox.centerContent">
-            <de><![CDATA[Inhalt zentrieren]]></de>
-            <en><![CDATA[Center content]]></en>
+            <de><![CDATA[Center-Einträge Inhalt]]></de>
+            <en><![CDATA[Center entries content]]></en>
         </locale>
         <locale name="control.IconBox.imgSquare">
             <de><![CDATA[Bild in ein Quadrat umwandeln]]></de>

@@ -24,12 +24,14 @@ class IconBox extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'template'       => 'default',
-            'centerContent'  => false,
-            'entriesPerLine' => 2,
-            'iconSize'       => 'small',
-            'imgIconSize'    => '50px',
-            'imgSquare'      => false
+            'template'        => 'default',
+            'centerContent'   => false,
+            'entriesPerLine'  => 2,
+            'iconSize'        => 'small',
+            'imgIconSize'     => '50px',
+            'imgSquare'       => false,
+            'contentPosition' => 'default',
+            'contentWidth'    => '30'
         ]);
 
         parent::__construct($attributes);
@@ -48,14 +50,16 @@ class IconBox extends QUI\Control
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $entries        = json_decode($this->getAttribute('entries'), true);
-        $template       = $this->getAttribute('template');
-        $centerContent  = $this->getAttribute('centerContent');
-        $entriesPerLine = $this->getAttribute('entriesPerLine');
-        $iconSize       = $this->getAttribute('iconSize');
-        $imgIconSize    = $this->getAttribute('imgIconSize');
-        $imgSquare      = $this->getAttribute('imgSquare');
-        $enabledEntries = [];
+        $entries         = json_decode($this->getAttribute('entries'), true);
+        $template        = $this->getAttribute('template');
+        $centerContent   = $this->getAttribute('centerContent');
+        $entriesPerLine  = $this->getAttribute('entriesPerLine');
+        $iconSize        = $this->getAttribute('iconSize');
+        $imgIconSize     = $this->getAttribute('imgIconSize');
+        $imgSquare       = $this->getAttribute('imgSquare');
+        $contentPosition = $this->getAttribute('contentPosition');
+        $contentWidth    = $this->getAttribute('contentWidth');
+        $enabledEntries  = [];
 
         foreach ($entries as $entry) {
             if ($entry['isDisabled'] === 1) {
@@ -66,13 +70,15 @@ class IconBox extends QUI\Control
         }
 
         $Engine->assign([
-            'this'           => $this,
-            'centerContent'  => $centerContent,
-            'entriesPerLine' => $entriesPerLine,
-            'iconSize'       => $iconSize,
-            'imgIconSize'    => $imgIconSize,
-            'imgSquare'      => $imgSquare,
-            'entries'        => $enabledEntries
+            'this'            => $this,
+            'centerContent'   => $centerContent,
+            'entriesPerLine'  => $entriesPerLine,
+            'iconSize'        => $iconSize,
+            'imgIconSize'     => $imgIconSize,
+            'imgSquare'       => $imgSquare,
+            'entries'         => $enabledEntries,
+            'contentPosition' => $contentPosition,
+            'contentWidth'    => $contentWidth
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/IconBox.' . $template . '.html');

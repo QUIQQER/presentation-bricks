@@ -345,6 +345,49 @@
 
             <settings>
 
+                <setting name="contentPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.contentPosition"/>
+
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentPosition.default"/>
+                    </option>
+                    <option value="left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentPosition.left"/>
+                    </option>
+                    <option value="right">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentPosition.right"/>
+                    </option>
+                </setting>
+                <setting name="contentWidth" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.contentWidth"/>
+
+                    <option value="30">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.30"/>
+                    </option>
+                    <option value="40">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.40"/>
+                    </option>
+                    <option value="50">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.50"/>
+                    </option>
+                    <option value="60">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.60"/>
+                    </option>
+                    <option value="70">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.70"/>
+                    </option>
+                </setting>
+
                 <setting name="centerContent" type="checkbox">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.centerContent"/>
