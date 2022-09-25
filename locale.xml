@@ -16,7 +16,7 @@
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
-            <en><![CDATA[Presentatino: Wallpaper with text and arrow]]></en>
+            <en><![CDATA[Presentation: Wallpaper with text and arrow]]></en>
             <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem i strzałka]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.description">
@@ -209,7 +209,7 @@
         <!-- sticky content -->
         <locale name="control.StickyContent.title">
             <de><![CDATA[Präsentation: Sticky Inhalt]]></de>
-            <en><![CDATA[Presentatino: Sticky content]]></en>
+            <en><![CDATA[Presentation: Sticky content]]></en>
             <pl><![CDATA[Presentation: Sticky content]]></pl>
         </locale>
         <locale name="control.StickyContent.description">
@@ -259,9 +259,9 @@
 
         <!-- count up basic -->
         <locale name="control.countUpBasic.title">
-            <de><![CDATA[Count Up Basic]]></de>
-            <en><![CDATA[Count Up Basic]]></en>
-            <pl><![CDATA[Count Up Basic]]></pl>
+            <de><![CDATA[Präsentation: Count Up Basic]]></de>
+            <en><![CDATA[Presentation: Count Up Basic]]></en>
+            <pl><![CDATA[Presentation: Count Up Basic]]></pl>
         </locale>
         <locale name="control.countUpBasic.description">
             <de><![CDATA[(...)]]></de>
@@ -320,5 +320,139 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+        <!-- Background video -->
+        <locale name="control.backgroundVideo.title">
+            <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
+            <en><![CDATA[Presentation: Background video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.description">
+            <de><![CDATA[Baustein für Video im Hintergrund]]></de>
+            <en><![CDATA[Brick for video in background]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.video">
+            <de><![CDATA[Video]]></de>
+            <en><![CDATA[Video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.video.desc">
+            <de><![CDATA[Video in voller Länge]]></de>
+            <en><![CDATA[Full length video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.poster">
+            <de><![CDATA[Poster]]></de>
+            <en><![CDATA[Poster]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.poster.desc">
+            <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
+            <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundColor">
+            <de><![CDATA[Baustein Hintergrundfarbe]]></de>
+            <en><![CDATA[Brick background color]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo">
+            <de><![CDATA[Gekürztes Video]]></de>
+            <en><![CDATA[Short video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo.desc">
+            <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
+            <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay">
+            <de><![CDATA[Automatisches Abspielen]]></de>
+            <en><![CDATA[Autoplay]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay.desc">
+            <de><![CDATA[Das Video wird automatisch abgespielt. In einigen Browsern (z. B. Chrome 70.0) funktioniert die automatische Wiedergabe nicht, wenn die Option "Ton ausschalten" (mute) nicht aktiviert ist.]]></de>
+            <en><![CDATA[The video automatically begins to play back as soon as it can do so without stopping to finish loading the data. In some browsers (e.g. Chrome 70.0) autoplay doesn't work if muted option is not active.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.muted">
+            <de><![CDATA[Ton ausschalten]]></de>
+            <en><![CDATA[Mute]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.muted.desc">
+            <de><![CDATA[Video wird ohne Ton abgespielt.]]></de>
+            <en><![CDATA[The audio will be initially silenced.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.loop">
+            <de><![CDATA[Dauerschleife]]></de>
+            <en><![CDATA[Loop]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.loop.desc">
+            <de><![CDATA[Wenn diese Option aktiviert ist, springt der Browser automatisch zum Anfang zurück, wenn das Ende des Videos erreicht ist.]]></de>
+            <en><![CDATA[If active, the browser will automatically seek back to the start upon reaching the end of the video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline">
+            <de><![CDATA[Video in der Seite abspielen (playsinline)]]></de>
+            <en><![CDATA[Play video inline (playsinline)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline.desc" html="true">
+            <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
+            <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness">
+            <de><![CDATA[Video Helligkeit]]></de>
+            <en><![CDATA[Video brightness]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness.desc" html="true">
+            <de><![CDATA[Damit der Text über dem Hintergrundvideo besser sichtbar ist, kann man mit dieser Option das Video abdunkeln. Bitte Wert zwischen <strong>0 und 100</strong> eingeben.]]></de>
+            <en><![CDATA[To make the text above the background video more visible, you can darken the video with this option. Please enter value between <strong>0 and 100</strong>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.fontColor">
+            <de><![CDATA[Schriftfarbe]]></de>
+            <en><![CDATA[Font color]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentMaxWidth">
+            <de><![CDATA[Maximale Breite des Inhalts (in Pixel)]]></de>
+            <en><![CDATA[Maximum content width (in pixel)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition">
+            <de><![CDATA[Inhalt Ausrichtung]]></de>
+            <en><![CDATA[Content position]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top content width]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
+        <locale name="control.backgroundVideo.openVideoInPopup">
+            <de><![CDATA[Video in Popup öffnen]]></de>
+            <en><![CDATA[Open video in popup]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopup.desc">
+            <de><![CDATA[Diese Option ist meistens dann sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann somit das volle Video in Popup anschauen.]]></de>
+            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can thus watch the full video in popup.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton">
+            <de><![CDATA[Button zum Popup-Öffnen]]></de>
+            <en><![CDATA[Button to open the popup]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.desc" html="true">
+            <de><![CDATA[Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
+            <en><![CDATA[You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.useDefaultButton">
+            <de><![CDATA[Eingebauten Button verwenden]]></de>
+            <en><![CDATA[Use default button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.useOwnButton">
+            <de><![CDATA[Eigenen Button benutzen]]></de>
+            <en><![CDATA[Use own button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.noButton">
+            <de><![CDATA[Kein Button]]></de>
+            <en><![CDATA[No button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.btnText">
+            <de><![CDATA[Video anschauen]]></de>
+            <en><![CDATA[Watch the Film]]></en>
+        </locale>
     </groups>
 </locales>

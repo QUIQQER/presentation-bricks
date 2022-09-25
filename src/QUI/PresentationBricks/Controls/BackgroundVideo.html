@@ -1,0 +1,30 @@
+<div class="quiqqer-presentationBricks-backgroundVideo" style="
+        --qui-backgroundVideo-bgColor: {$backgroundColor};
+        --qui-backgroundVideo-fontColor: {$fontColor};
+        --qui-backgroundVideo-contentPos: {$contentPosition};
+        --qui-backgroundVideo-contentMaxWidth: {$contentMaxWidth}px;
+        --qui-backgroundVideo-backgroundVideoBrightness: {$backgroundVideoBrightness}%;
+        ">
+    <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
+        <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
+               preload="none"
+               src="{$this->getAttribute('shortVideo')}"
+               poster="{$this->getAttribute('poster')}">
+        </video>
+    </div>
+
+    {if $this->getAttribute('content')}
+        <div class="quiqqer-presentationBricks-backgroundVideo-content">
+            {$this->getAttribute('content')}
+
+            {if $this->getAttribute('openVideoInPopupButton') === 'useDefaultButton'}
+                <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
+                    <button class="button openVideoInPopupBtn">
+                        {locale group='quiqqer/presentation-bricks' var='control.backgroundVideo.btnText'}
+                        <span class="fa fa-play"></span>
+                    </button>
+                </div>
+            {/if}
+        </div>
+    {/if}
+</div>
