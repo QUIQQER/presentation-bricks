@@ -322,7 +322,7 @@
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">
-            <de><![CDATA[Präsentation: Fortschrittsbalken (progress bar)]]></de>
+            <de><![CDATA[Präsentation: Fortschrittsbalken (progressbar)]]></de>
             <en><![CDATA[Presentation: Progress bar]]></en>
         </locale>
         <locale name="control.progressbar.description">
@@ -330,8 +330,8 @@
             <en><![CDATA[Visual presentation of progress]]></en>
         </locale>
         <locale name="brick.setting.progressbar.maxWidth">
-            <de><![CDATA[Maximale Breite des Balkens]]></de>
-            <en><![CDATA[Maximum width of the bar]]></en>
+            <de><![CDATA[Maximale Balkenbreite (in Pixel)]]></de>
+            <en><![CDATA[Maximum bar width (in pixel)]]></en>
         </locale>
         <locale name="brick.setting.progressbar.additionalText">
             <de><![CDATA[Zusatztext]]></de>
@@ -342,14 +342,14 @@
             <en><![CDATA[Additional text on right]]></en>
         </locale>
         <locale name="brick.progressbar.settings.entries">
-            <de><![CDATA[Fortschrittseinträge]]></de>
-            <en><![CDATA[Progress entries]]></en>
+            <de><![CDATA[Einträge]]></de>
+            <en><![CDATA[Entries]]></en>
         </locale>
 
         <!-- progressbar settings entry -->
         <locale name="brick.progressbar.entires.adddialog.title">
-            <de><![CDATA[Fortschrittseinträge hinzufügen]]></de>
-            <en><![CDATA[Add progress entries]]></en>
+            <de><![CDATA[Fortschrittseintrag (progressbar)]]></de>
+            <en><![CDATA[Progressbar]]></en>
         </locale>
 
         <locale name="bricks.progressbar.settings.createPopup.title">
@@ -357,19 +357,19 @@
             <en><![CDATA[Title]]></en>
         </locale>
         <locale name="bricks.progressbar.settings.createPopup.percent">
-            <de><![CDATA[Prozent (min 0/ max 100)]]></de>
-            <en><![CDATA[Percent (min 0/ max 100)]]></en>
+            <de><![CDATA[Prozent (min 0 / max 100)]]></de>
+            <en><![CDATA[Percent (min 0 / max 100)]]></en>
         </locale>
         <locale name="brick.progressbar.settings.add.percent">
             <de><![CDATA[Prozent]]></de>
             <en><![CDATA[Percent]]></en>
         </locale>
         <locale name="brick.progressbar.entires.editdialog.title">
-            <de><![CDATA[Eintrag im Fortschrittsbalken bearbeiten]]></de>
+            <de><![CDATA[Eintrag bearbeiten]]></de>
             <en><![CDATA[Edit progressbar entry]]></en>
         </locale>
         <locale name="brick.progressbar.entires.delete.title">
-            <de><![CDATA[Möchten Sie diesen Fortschrittsbalken-Eintrag wirklich entfernen?]]></de>
+            <de><![CDATA[Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
         </locale>
         <locale name="brick.progressbar.entires.delete.text">
