@@ -447,6 +447,151 @@
                 <setting name="entries" type="hidden"
                          data-qui="package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings">
                     <locale group="quiqqer/presentation-bricks" var="IconBox.entries"/>
+
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- Background video -->
+        <brick control="\QUI\PresentationBricks\Controls\BackgroundVideo">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.backgroundVideo.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.backgroundVideo.description"/>
+            </description>
+
+            <settings>
+                <setting name="video" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.video"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.video.desc"/>
+                    </description>
+                </setting>
+                <setting name="poster" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.poster"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.poster.desc"/>
+                    </description>
+                </setting>
+                <setting name="backgroundColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.backgroundColor"/>
+                </setting>
+                <setting name="shortVideo" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.shortVideo"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.shortVideo.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="autoplay" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.autoplay"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.autoplay.desc"/>
+                    </description>
+                </setting>
+                <setting name="muted" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.muted"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.muted.desc"/>
+                    </description>
+                </setting>
+                <setting name="loop" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.loop"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.loop.desc"/>
+                    </description>
+                </setting>
+                <setting name="playsinline" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.playsinline"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.playsinline.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="backgroundVideoBrightness" type="number" min="0" max="100">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.backgroundVideoBrightness"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.backgroundVideoBrightness.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="fontColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.fontColor"/>
+                </setting>
+
+                <setting name="contentMaxWidth" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.contentMaxWidth"/>
+                </setting>
+
+                <setting name="contentPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.contentPosition"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.contentPosition.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.contentPosition.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.contentPosition.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="openVideoInPopup" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.openVideoInPopup"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="openVideoInPopupButton" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.openVideoInPopupButton"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopupButton.desc"/>
+                    </description>
+
+                    <option value="useDefaultButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopupButton.useDefaultButton"/>
+                    </option>
+                    <option value="useOwnButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopupButton.useOwnButton"/>
+                    </option>
+                    <option value="noButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopupButton.noButton"/>
+                    </option>
                 </setting>
             </settings>
         </brick>
