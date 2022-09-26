@@ -337,6 +337,22 @@
             <de><![CDATA[Zusatztext]]></de>
             <en><![CDATA[Additional text]]></en>
         </locale>
+        <locale name="brick.setting.progressbar.textPosition">
+            <de><![CDATA[Textposition]]></de>
+            <en><![CDATA[Text position]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.top">
+            <de><![CDATA[Top]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.center">
+            <de><![CDATA[Zentrum]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
         <locale name="brick.setting.progressbar.additionalTextRight">
             <de><![CDATA[Zusatztext rechts]]></de>
             <en><![CDATA[Additional text on right]]></en>

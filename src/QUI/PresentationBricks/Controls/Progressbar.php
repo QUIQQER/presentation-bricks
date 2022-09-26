@@ -28,8 +28,9 @@ class Progressbar extends QUI\Control
         $this->setAttributes([
             'additionalText'  => '',
             'progressbarData' => [],
-            'textPosition'    => 'quiqqer-progressbar__textLeft',
-            'maxWidth'        => '' //in pixels
+            'textOnRight'     => false,
+            'maxWidth'        => '', //in pixels
+            'textPosition'    => 'top'
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/Progressbar.css');
@@ -49,11 +50,15 @@ class Progressbar extends QUI\Control
 
         $additionalText  = $this->getAttribute('additionalText');
         $maxWidth        = '1920px';
-        $textPosition    = 'quiqqer-progressbar__textLeft';
+        $textOnRight     = 'quiqqer-progressbar__textLeft';
         $progressbarData = [];
 
+        if ($this->getAttribute('textPosition')) {
+            $textPosition = $this->getAttribute('textPosition');
+        }
+
         if ($this->getAttribute('additionalTextRight')) {
-            $textPosition = 'quiqqer-progressbar__textRight';
+            $textOnRight = 'quiqqer-progressbar__textRight';
         }
 
         if ($this->getAttribute('maxWidth') > 0 &&
@@ -65,7 +70,7 @@ class Progressbar extends QUI\Control
             if ($entry['percent'] > 100) {
                 $entry['percent'] = 100;
             }
-            
+
             \array_push($progressbarData, ['title' => $entry['title'], "percent" => $entry['percent']]);
         }
 
@@ -73,8 +78,9 @@ class Progressbar extends QUI\Control
             'this'            => $this,
             'additionalText'  => $additionalText,
             'progressbarData' => $progressbarData,
-            'textPosition'    => $textPosition,
-            'maxWidth'        => $maxWidth
+            'textOnRight'     => $textOnRight,
+            'maxWidth'        => $maxWidth,
+            'textPosition'    => $textPosition
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');

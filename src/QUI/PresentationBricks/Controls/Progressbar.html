@@ -1,20 +1,22 @@
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-    <header class="control-header">
-        <h1>{$this->getAttribute('frontendTitle')}</h1>
-    </header>
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
 {/if}
 
 {if $this->getAttribute('content') != ""}
-    <div class="control-content">
-        {$this->getAttribute('content')}
-    </div>
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
 {/if}
 
-<div class="quiqqer-progressbar-wrapper {$textPosition}">
+<div class="quiqqer-progressbar-wrapper {$textOnRight}">
 
     {if $additionalText}
-    <div class="quiqqer-progressbar-content grid-parent grid-50">
-        {$additionalText}
+    <div class="quiqqer-progressbar-content-wrapper grid-parent grid-50">
+        <div class="quiqqer-progressbar-content {if $textPosition}quiqqer-progressbar-content__{$textPosition}{/if}">
+            {$additionalText}
+        </div>
     </div>
 
     <div class="quiqqer-progressbar-charts grid-parent grid-50">
