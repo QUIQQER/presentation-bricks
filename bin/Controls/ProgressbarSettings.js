@@ -429,9 +429,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
         $openDeleteDialog: function () {
             new QUIConfirm({
                 icon: 'fa fa-icon',
-                title: QUILocale.get(pb, 'brick.progressbar.entires.delete.title'),
-                text: QUILocale.get(pb, 'brick.progressbar.entires.delete.text'),
-                information: QUILocale.get(pb, 'brick.progressbar.entires.delete.information'),
+                title: QUILocale.get(pb, 'brick.progressbar.entries.delete.title'),
+                text: QUILocale.get(pb, 'brick.progressbar.entries.delete.text'),
+                information: QUILocale.get(pb, 'brick.progressbar.entries.delete.information'),
                 texticon: false,
                 maxWidth: 600,
                 maxHeight: 400,
@@ -499,7 +499,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     Percent.fireEvent('change');
                 });
 
-                Dialog.setAttribute('title', QUILocale.get(pb, 'brick.progressbar.entires.editdialog.title'));
+                Dialog.setAttribute('title', QUILocale.get(pb, 'brick.progressbar.entries.editdialog.title'));
                 Dialog.open();
             });
         },
@@ -544,7 +544,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
 
             return new Promise(function (resolve) {
                 var Dialog = new QUIConfirm({
-                    title: QUILocale.get(pb, 'brick.progressbar.entires.adddialog.title'),
+                    title: QUILocale.get(pb, 'brick.progressbar.entries.adddialog.title'),
                     icon: 'fa fa-edit',
                     maxWidth: 800,
                     maxHeight: 600,

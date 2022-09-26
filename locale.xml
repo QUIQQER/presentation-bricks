@@ -347,7 +347,7 @@
         </locale>
 
         <!-- progressbar settings entry -->
-        <locale name="brick.progressbar.entires.adddialog.title">
+        <locale name="brick.progressbar.entries.adddialog.title">
             <de><![CDATA[Fortschrittseintrag (progressbar)]]></de>
             <en><![CDATA[Progressbar]]></en>
         </locale>
@@ -364,19 +364,19 @@
             <de><![CDATA[Prozent]]></de>
             <en><![CDATA[Percent]]></en>
         </locale>
-        <locale name="brick.progressbar.entires.editdialog.title">
+        <locale name="brick.progressbar.entries.editdialog.title">
             <de><![CDATA[Eintrag bearbeiten]]></de>
             <en><![CDATA[Edit progressbar entry]]></en>
         </locale>
-        <locale name="brick.progressbar.entires.delete.title">
+        <locale name="brick.progressbar.entries.delete.title">
             <de><![CDATA[Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
         </locale>
-        <locale name="brick.progressbar.entires.delete.text">
+        <locale name="brick.progressbar.entries.delete.text">
             <de><![CDATA[Möchten Sie diesen Fortschrittsbalken-Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
         </locale>
-        <locale name="brick.progressbar.entires.delete.information">
+        <locale name="brick.progressbar.entries.delete.information">
             <de><![CDATA[Die Einträge der Fortschrittsleiste können nicht wiederhergestellt werden]]></de>
             <en><![CDATA[The progressbar entries can not be restored]]></en>
         </locale>
