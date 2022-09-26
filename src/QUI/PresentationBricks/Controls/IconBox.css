@@ -41,16 +41,20 @@
     margin: auto;
 }
 
-.iconBox__iconSize-large > .quiqqer-icon.fa {
-    font-size: 5rem;
+.iconBox__iconSize-sm > .quiqqer-icon.fa {
+    font-size: 1.5rem;
 }
 
-.iconBox__iconSize-medium > .quiqqer-icon.fa {
+.iconBox__iconSize-md > .quiqqer-icon.fa {
+    font-size: 2rem;
+}
+
+.iconBox__iconSize-lg > .quiqqer-icon.fa {
     font-size: 3rem;
 }
 
-.iconBox__iconSize-small > .quiqqer-icon.fa {
-    font-size: 1.5rem;
+.iconBox__iconSize-xl > .quiqqer-icon.fa {
+    font-size: 4rem;
 }
 
 .iconBox-entry-icon img {

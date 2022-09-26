@@ -322,20 +322,20 @@
 
         <!-- Icon Box-->
         <locale name="control.IconBox.title">
-            <de><![CDATA[Icon Box]]></de>
-            <en><![CDATA[Icon Box]]></en>
+            <de><![CDATA[Präsentation: Boxen mit Icon und Text]]></de>
+            <en><![CDATA[Presentation: Boxes with icon and text]]></en>
         </locale>
         <locale name="control.IconBox.description">
-            <de><![CDATA[Abschnitt mit einfachem Text und Platz für ein Symbol]]></de>
-            <en><![CDATA[Section with simple text and space for an icon]]></en>
+            <de><![CDATA[Erstelle mehrere Boxen mit Icon und Text. Der Baustein liefert verschiedene Templates.]]></de>
+            <en><![CDATA[Create multiple boxes with icon and text. The brick provides different templates.]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition">
-            <de><![CDATA[Inhaltliche Position]]></de>
+            <de><![CDATA[Inhalt Position]]></de>
             <en><![CDATA[Content position]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition.default">
-            <de><![CDATA[Standard]]></de>
-            <en><![CDATA[Default]]></en>
+            <de><![CDATA[Über dem Baustein (Standard)]]></de>
+            <en><![CDATA[Above the brick (default)]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition.left">
             <de><![CDATA[Links]]></de>
@@ -347,37 +347,25 @@
         </locale>
 
         <locale name="control.IconBox.contentWidth">
-            <de><![CDATA[Breite des Inhalts]]></de>
+            <de><![CDATA[Inhaltsbreite]]></de>
             <en><![CDATA[Content width]]></en>
         </locale>
-        <locale name="control.IconBox.contentWidth.30">
-            <de><![CDATA[30%]]></de>
-            <en><![CDATA[30%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.40">
-            <de><![CDATA[40%]]></de>
-            <en><![CDATA[40%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.50">
-            <de><![CDATA[50%]]></de>
-            <en><![CDATA[50%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.60">
-            <de><![CDATA[60%]]></de>
-            <en><![CDATA[60%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.70">
-            <de><![CDATA[70%]]></de>1
-            <en><![CDATA[70%]]></en>
+        <locale name="control.IconBox.contentWidth.desc">
+            <de><![CDATA[Diese Option hat nur dann Auswirkung, wenn der Inhalt links oder rechts positioniert ist (siehe vorherige Option).]]></de>
+            <en><![CDATA[This option has effect only if the content is positioned left or right (see previous option).]]></en>
         </locale>
 
         <locale name="control.IconBox.centerContent">
-            <de><![CDATA[Center-Einträge Inhalt]]></de>
+            <de><![CDATA[Inhalt der Einträgen zentrieren]]></de>
             <en><![CDATA[Center entries content]]></en>
         </locale>
         <locale name="control.IconBox.imgSquare">
-            <de><![CDATA[Bild in ein Quadrat umwandeln]]></de>
+            <de><![CDATA[Quadratische Bilder verwenden]]></de>
             <en><![CDATA[Transform image to square]]></en>
+        </locale>
+        <locale name="control.IconBox.imgSquare.desc">
+            <de><![CDATA[Diese Option wandelt Bilder in ein Quadrat um. Dabei werden nicht quadratische Bilder zugeschnitten.]]></de>
+            <en><![CDATA[This option converts images into a square. Non-square images will be cropped.]]></en>
         </locale>
 
         <locale name="control.IconBox.template">
@@ -393,46 +381,30 @@
             <de><![CDATA[Einträge pro Zeile]]></de>
             <en><![CDATA[Entries per line]]></en>
         </locale>
-        <locale name="control.IconBox.entriesPerLine.one">
-            <de><![CDATA[1]]></de>
-            <en><![CDATA[1]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.two">
-            <de><![CDATA[2]]></de>
-            <en><![CDATA[2]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.three">
-            <de><![CDATA[3]]></de>
-            <en><![CDATA[3]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.four">
-            <de><![CDATA[4]]></de>
-            <en><![CDATA[4]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.five">
-            <de><![CDATA[5]]></de>
-            <en><![CDATA[5]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.six">
-            <de><![CDATA[6]]></de>
-            <en><![CDATA[6]]></en>
-        </locale>
 
         <locale name="control.IconBox.iconSize">
-            <de><![CDATA[Größe der Ikone]]></de>
+            <de><![CDATA[Icon-Größe]]></de>
             <en><![CDATA[Icon size]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.small">
+        <locale name="control.IconBox.iconSize.desc">
+            <de><![CDATA[Diese Einstellung betrifft nur die FontAwesome Icons.]]></de>
+            <en><![CDATA[This option affects only FontAwesome icons.]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.sm">
             <de><![CDATA[Klein]]></de>
             <en><![CDATA[Small]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.medium">
-            <de><![CDATA[Mittel]]></de>
+        <locale name="control.IconBox.iconSize.md">
+            <de><![CDATA[Medium]]></de>
             <en><![CDATA[Medium]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.large">
+        <locale name="control.IconBox.iconSize.lg">
             <de><![CDATA[Groß]]></de>
             <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.xl">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
         </locale>
 
         <locale name="control.IconBox.imgIconSize">

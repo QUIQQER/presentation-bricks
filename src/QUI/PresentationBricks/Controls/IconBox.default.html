@@ -19,9 +19,7 @@
 
     <div class="iconBox-entries">
         {foreach $entries as $entry}
-
         <div class="iconBox-entry {if $centerContent} iconBox-entry__centerContent{/if}">
-
             {if $entry['image']}
             <div class="iconBox-entry-icon iconBox__iconSize-{$iconSize} {if $imgSquare} iconBox-entry__square{/if}">
                 {image src=$entry['image'] loading="lazy"}
@@ -29,15 +27,13 @@
             {/if}
 
             {if $entry['entryTitle']}
-            <h3 class="iconBox-entry-title">{$entry['entryTitle']}</h3>
+            <h4 class="iconBox-entry-title">{$entry['entryTitle']}</h4>
             {/if}
 
             {if $entry['entryContent']}
             <p class="iconBox-entry-content">{$entry['entryContent']}</p>
             {/if}
-
         </div>
-
         {/foreach}
     </div>
 </div>

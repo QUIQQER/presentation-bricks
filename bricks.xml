@@ -365,27 +365,16 @@
                 <setting name="contentWidth" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.contentWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.contentWidth.desc"/>
+                    </description>
 
-                    <option value="30">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.contentWidth.30"/>
-                    </option>
-                    <option value="40">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.contentWidth.40"/>
-                    </option>
-                    <option value="50">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.contentWidth.50"/>
-                    </option>
-                    <option value="60">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.contentWidth.60"/>
-                    </option>
-                    <option value="70">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.contentWidth.70"/>
-                    </option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
                 </setting>
 
                 <setting name="centerContent" type="checkbox">
@@ -407,47 +396,37 @@
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.entriesPerLine"/>
 
-                    <option value="1">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.one"/>
-                    </option>
-                    <option value="2">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.two"/>
-                    </option>
-                    <option value="3">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.three"/>
-                    </option>
-                    <option value="4">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.four"/>
-                    </option>
-                    <option value="5">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.five"/>
-                    </option>
-                    <option value="6">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.entriesPerLine.six"/>
-                    </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                 </setting>
 
                 <setting name="iconSize" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.iconSize"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.iconSize.desc"/>
+                    </description>
 
-                    <option value="small">
+                    <option value="sm">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.iconSize.small"/>
+                                var="control.IconBox.iconSize.sm"/>
                     </option>
-                    <option value="medium">
+                    <option value="md">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.iconSize.medium"/>
+                                var="control.IconBox.iconSize.md"/>
                     </option>
-                    <option value="large">
+                    <option value="lg">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.IconBox.iconSize.large"/>
+                                var="control.IconBox.iconSize.lg"/>
+                    </option>
+                    <option value="xl">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.iconSize.xl"/>
                     </option>
                 </setting>
 
@@ -455,9 +434,14 @@
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.imgIconSize"/>
                 </setting>
+
                 <setting name="imgSquare" type="checkbox">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.imgSquare"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.imgSquare.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="entries" type="hidden"
