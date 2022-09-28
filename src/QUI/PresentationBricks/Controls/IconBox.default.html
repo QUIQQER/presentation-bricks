@@ -12,7 +12,7 @@
     {/if}
 
     {if $this->getAttribute('content') != ""}
-    <div class="iconBox-content control-content">
+    <div class="iconBox-content control-content default-content">
         {$this->getAttribute('content')}
     </div>
     {/if}
@@ -33,7 +33,7 @@
             {/if}
 
             {if $entry['entryContent']}
-            <p class="iconBox-entry-content">{$entry['entryContent']}</p>
+            <div class="iconBox-entry-content default-content">{$entry['entryContent']}</div>
             {/if}
 
         </div>
