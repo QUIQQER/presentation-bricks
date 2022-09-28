@@ -362,6 +362,25 @@
                                 var="control.IconBox.contentPosition.right"/>
                     </option>
                 </setting>
+
+                <setting name="textPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.IconBox.textPosition"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.textPosition.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.textPosition.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.textPosition.bottom"/>
+                    </option>
+                </setting>
+
                 <setting name="contentWidth" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.contentWidth"/>

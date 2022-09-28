@@ -31,13 +31,14 @@ class IconBox extends QUI\Control
             'imgIconSize'     => 96,
             'imgSquare'       => false,
             'contentPosition' => 'default',
-            'contentWidth'    => '30'
+            'contentWidth'    => '30',
+            'textPosition'    => 'top'
         ]);
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__).'/IconBox.css'
+            dirname(__FILE__) . '/IconBox.css'
         );
     }
 
@@ -58,6 +59,7 @@ class IconBox extends QUI\Control
         $imgSquare       = $this->getAttribute('imgSquare');
         $contentPosition = $this->getAttribute('contentPosition');
         $contentWidth    = $this->getAttribute('contentWidth');
+        $textPosition    = $this->getAttribute('textPosition');
         $enabledEntries  = [];
 
         $imgIconSize = 96;
@@ -83,9 +85,10 @@ class IconBox extends QUI\Control
             'imgSquare'       => $imgSquare,
             'entries'         => $enabledEntries,
             'contentPosition' => $contentPosition,
-            'contentWidth'    => $contentWidth
+            'contentWidth'    => $contentWidth,
+            'textPosition'    => $textPosition
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/IconBox.'.$template.'.html');
+        return $Engine->fetch(dirname(__FILE__) . '/IconBox.' . $template . '.html');
     }
 }

@@ -152,7 +152,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                         hidden   : true
                     }, {
                         header   : QUILocale.get(lg, 'quiqqer.presentationBricks.iconBox.settings.icon.short'),
-                        dataIndex: 'imagePentryContent',
+                        dataIndex: 'imagePreview',
                         dataType : 'node',
                         width    : 60
                     },
@@ -266,7 +266,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                 entry  = this.$data[i];
                 insert = {
                     image       : '',
-                    imagePentryContent: new Element('span', {html: '&nbsp;'})
+                    imagePreview: new Element('span', {html: '&nbsp;'})
                 };
 
                 entry.isDisabled = parseInt(entry.isDisabled);
@@ -284,9 +284,17 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
 
                     insert.image = entry.image;
 
-                    insert.imagePentryContent = new Element('img', {
-                        src: URL_DIR + insert.image + '&maxwidth=50&maxheight=50'
-                    });
+                    if (entry.image.includes('fa ')) {
+                        insert.imagePreview = new Element('span', {
+                            'class': entry.image
+                        });
+                    } else {
+                        insert.imagePreview = new Element('img', {
+                            src   : URL_DIR + entry.image + '&maxwidth=50&maxheight=50',
+                            width : 50,
+                            height: 50
+                        });
+                    }
                 }
 
                 if ("entryTitle" in entry) {
@@ -484,8 +492,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
         $openDeleteDialog: function () {
             new QUIConfirm({
                 icon       : 'fa fa-icon',
-                text       : QUILocale.get(lg, 'quiqqer.presentationBricks.entires.delete.text'),
-                information: QUILocale.get(lg, 'quiqqer.presentationBricks.entires.delete.information'),
+                text       : QUILocale.get(lg, 'quiqqer.presentationBricks.entries.delete.text'),
+                information: QUILocale.get(lg, 'quiqqer.presentationBricks.entries.delete.information'),
                 texticon   : false,
                 maxWidth   : 600,
                 maxHeight  : 400,
@@ -574,7 +582,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                     entryContent.fireEvent('change');
                 });
 
-                Dialog.setAttribute('title', QUILocale.get(lg, 'quiqqer.presentationBricks.entires.editdialog.title'));
+                Dialog.setAttribute('title', QUILocale.get(lg, 'quiqqer.presentationBricks.entries.editdialog.title'));
                 Dialog.open();
             });
         },
@@ -622,7 +630,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
 
             return new Promise(function (resolve) {
                 var Dialog = new QUIConfirm({
-                    title            : QUILocale.get(lg, 'quiqqer.presentationBricks.entires.adddialog.title'),
+                    title            : QUILocale.get(lg, 'quiqqer.presentationBricks.entries.adddialog.title'),
                     icon             : 'fa fa-edit',
                     maxWidth         : 800,
                     maxHeight        : 600,

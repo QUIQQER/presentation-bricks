@@ -346,6 +346,23 @@
             <en><![CDATA[Right]]></en>
         </locale>
 
+        <locale name="control.IconBox.textPosition">
+            <de><![CDATA[Position des Textes]]></de>
+            <en><![CDATA[Text position]]></en>
+        </locale>
+        <locale name="control.IconBox.textPosition.top">
+            <de><![CDATA[Top]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="control.IconBox.textPosition.center">
+            <de><![CDATA[Zentrum]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="control.IconBox.textPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
         <locale name="control.IconBox.contentWidth">
             <de><![CDATA[Inhaltsbreite]]></de>
             <en><![CDATA[Content width]]></en>
@@ -452,19 +469,19 @@
             <en><![CDATA[Entry content]]></en>
         </locale>
 
-        <locale name="quiqqer.presentationBricks.entires.adddialog.title">
+        <locale name="quiqqer.presentationBricks.entries.adddialog.title">
             <de><![CDATA[Eintrag hinzufügen]]></de>
             <en><![CDATA[Add Entry]]></en>
         </locale>
-        <locale name="quiqqer.presentationBricks.entires.editdialog.title">
+        <locale name="quiqqer.presentationBricks.entries.editdialog.title">
             <de><![CDATA[Eintrag bearbeiten]]></de>
             <en><![CDATA[Edit Entry]]></en>
         </locale>
-        <locale name="quiqqer.presentationBricks.entires.delete.text">
+        <locale name="quiqqer.presentationBricks.entries.delete.text">
             <de><![CDATA[Möchten Sie diesen Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this entry?]]></en>
         </locale>
-        <locale name="quiqqer.presentationBricks.entires.delete.information">
+        <locale name="quiqqer.presentationBricks.entries.delete.information">
             <de><![CDATA[Möchten Sie diesen Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this entry?]]></en>
         </locale>

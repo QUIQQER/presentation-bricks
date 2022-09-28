@@ -12,8 +12,10 @@
     {/if}
 
     {if $this->getAttribute('content') != ""}
-    <div class="iconBox-content control-content default-content">
-        {$this->getAttribute('content')}
+    <div class="iconBox-content-wrapper">
+        <div class="iconBox-content control-content {if $textPosition}iconBox-content__{$textPosition}{/if} default-content">
+            {$this->getAttribute('content')}
+        </div>
     </div>
     {/if}
 
