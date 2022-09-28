@@ -16,7 +16,7 @@
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
             <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
-            <en><![CDATA[Presentatino: Wallpaper with text and arrow]]></en>
+            <en><![CDATA[Presentation: Wallpaper with text and arrow]]></en>
             <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem i strzałka]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.description">
@@ -209,7 +209,7 @@
         <!-- sticky content -->
         <locale name="control.StickyContent.title">
             <de><![CDATA[Präsentation: Sticky Inhalt]]></de>
-            <en><![CDATA[Presentatino: Sticky content]]></en>
+            <en><![CDATA[Presentation: Sticky content]]></en>
             <pl><![CDATA[Presentation: Sticky content]]></pl>
         </locale>
         <locale name="control.StickyContent.description">
@@ -259,9 +259,9 @@
 
         <!-- count up basic -->
         <locale name="control.countUpBasic.title">
-            <de><![CDATA[Count Up Basic]]></de>
-            <en><![CDATA[Count Up Basic]]></en>
-            <pl><![CDATA[Count Up Basic]]></pl>
+            <de><![CDATA[Präsentation: Count Up Basic]]></de>
+            <en><![CDATA[Presentation: Count Up Basic]]></en>
+            <pl><![CDATA[Presentation: Count Up Basic]]></pl>
         </locale>
         <locale name="control.countUpBasic.description">
             <de><![CDATA[(...)]]></de>
@@ -322,20 +322,20 @@
 
         <!-- Icon Box-->
         <locale name="control.IconBox.title">
-            <de><![CDATA[Icon Box]]></de>
-            <en><![CDATA[Icon Box]]></en>
+            <de><![CDATA[Präsentation: Boxen mit Icon und Text]]></de>
+            <en><![CDATA[Presentation: Boxes with icon and text]]></en>
         </locale>
         <locale name="control.IconBox.description">
-            <de><![CDATA[Abschnitt mit einfachem Text und Platz für ein Symbol]]></de>
-            <en><![CDATA[Section with simple text and space for an icon]]></en>
+            <de><![CDATA[Erstelle mehrere Boxen mit Icon und Text. Der Baustein liefert verschiedene Templates.]]></de>
+            <en><![CDATA[Create multiple boxes with icon and text. The brick provides different templates.]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition">
-            <de><![CDATA[Inhaltliche Position]]></de>
+            <de><![CDATA[Inhalt Position]]></de>
             <en><![CDATA[Content position]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition.default">
-            <de><![CDATA[Standard]]></de>
-            <en><![CDATA[Default]]></en>
+            <de><![CDATA[Über dem Baustein (Standard)]]></de>
+            <en><![CDATA[Above the brick (default)]]></en>
         </locale>
         <locale name="control.IconBox.contentPosition.left">
             <de><![CDATA[Links]]></de>
@@ -347,37 +347,25 @@
         </locale>
 
         <locale name="control.IconBox.contentWidth">
-            <de><![CDATA[Breite des Inhalts]]></de>
+            <de><![CDATA[Inhaltsbreite]]></de>
             <en><![CDATA[Content width]]></en>
         </locale>
-        <locale name="control.IconBox.contentWidth.30">
-            <de><![CDATA[30%]]></de>
-            <en><![CDATA[30%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.40">
-            <de><![CDATA[40%]]></de>
-            <en><![CDATA[40%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.50">
-            <de><![CDATA[50%]]></de>
-            <en><![CDATA[50%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.60">
-            <de><![CDATA[60%]]></de>
-            <en><![CDATA[60%]]></en>
-        </locale>
-        <locale name="control.IconBox.contentWidth.70">
-            <de><![CDATA[70%]]></de>1
-            <en><![CDATA[70%]]></en>
+        <locale name="control.IconBox.contentWidth.desc">
+            <de><![CDATA[Diese Option hat nur dann Auswirkung, wenn der Inhalt links oder rechts positioniert ist (siehe vorherige Option).]]></de>
+            <en><![CDATA[This option has effect only if the content is positioned left or right (see previous option).]]></en>
         </locale>
 
         <locale name="control.IconBox.centerContent">
-            <de><![CDATA[Center-Einträge Inhalt]]></de>
+            <de><![CDATA[Inhalt der Einträgen zentrieren]]></de>
             <en><![CDATA[Center entries content]]></en>
         </locale>
         <locale name="control.IconBox.imgSquare">
-            <de><![CDATA[Bild in ein Quadrat umwandeln]]></de>
+            <de><![CDATA[Quadratische Bilder verwenden]]></de>
             <en><![CDATA[Transform image to square]]></en>
+        </locale>
+        <locale name="control.IconBox.imgSquare.desc">
+            <de><![CDATA[Diese Option wandelt Bilder in ein Quadrat um. Dabei werden nicht quadratische Bilder zugeschnitten.]]></de>
+            <en><![CDATA[This option converts images into a square. Non-square images will be cropped.]]></en>
         </locale>
 
         <locale name="control.IconBox.template">
@@ -393,46 +381,30 @@
             <de><![CDATA[Einträge pro Zeile]]></de>
             <en><![CDATA[Entries per line]]></en>
         </locale>
-        <locale name="control.IconBox.entriesPerLine.one">
-            <de><![CDATA[1]]></de>
-            <en><![CDATA[1]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.two">
-            <de><![CDATA[2]]></de>
-            <en><![CDATA[2]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.three">
-            <de><![CDATA[3]]></de>
-            <en><![CDATA[3]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.four">
-            <de><![CDATA[4]]></de>
-            <en><![CDATA[4]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.five">
-            <de><![CDATA[5]]></de>
-            <en><![CDATA[5]]></en>
-        </locale>
-        <locale name="control.IconBox.entriesPerLine.six">
-            <de><![CDATA[6]]></de>
-            <en><![CDATA[6]]></en>
-        </locale>
 
         <locale name="control.IconBox.iconSize">
-            <de><![CDATA[Größe der Ikone]]></de>
+            <de><![CDATA[Icon-Größe]]></de>
             <en><![CDATA[Icon size]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.small">
+        <locale name="control.IconBox.iconSize.desc">
+            <de><![CDATA[Diese Einstellung betrifft nur die FontAwesome Icons.]]></de>
+            <en><![CDATA[This option affects only FontAwesome icons.]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.sm">
             <de><![CDATA[Klein]]></de>
             <en><![CDATA[Small]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.medium">
-            <de><![CDATA[Mittel]]></de>
+        <locale name="control.IconBox.iconSize.md">
+            <de><![CDATA[Medium]]></de>
             <en><![CDATA[Medium]]></en>
         </locale>
-        <locale name="control.IconBox.iconSize.large">
+        <locale name="control.IconBox.iconSize.lg">
             <de><![CDATA[Groß]]></de>
             <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="control.IconBox.iconSize.xl">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
         </locale>
 
         <locale name="control.IconBox.imgIconSize">
@@ -495,6 +467,141 @@
         <locale name="quiqqer.presentationBricks.entires.delete.information">
             <de><![CDATA[Möchten Sie diesen Eintrag wirklich entfernen?]]></de>
             <en><![CDATA[Do you really want to remove this entry?]]></en>
+        </locale>
+
+        <!-- Background video -->
+        <locale name="control.backgroundVideo.title">
+            <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
+            <en><![CDATA[Presentation: Background video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.description">
+            <de><![CDATA[Baustein für Video im Hintergrund]]></de>
+            <en><![CDATA[Brick for video in background]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.video">
+            <de><![CDATA[Video]]></de>
+            <en><![CDATA[Video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.video.desc">
+            <de><![CDATA[Video in voller Länge]]></de>
+            <en><![CDATA[Full length video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.poster">
+            <de><![CDATA[Poster]]></de>
+            <en><![CDATA[Poster]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.poster.desc">
+            <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
+            <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundColor">
+            <de><![CDATA[Baustein Hintergrundfarbe]]></de>
+            <en><![CDATA[Brick background color]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo">
+            <de><![CDATA[Gekürztes Video]]></de>
+            <en><![CDATA[Short video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo.desc">
+            <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
+            <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay">
+            <de><![CDATA[Automatisches Abspielen]]></de>
+            <en><![CDATA[Autoplay]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay.desc">
+            <de><![CDATA[Das Video wird automatisch abgespielt. In einigen Browsern (z. B. Chrome 70.0) funktioniert die automatische Wiedergabe nicht, wenn die Option "Ton ausschalten" (mute) nicht aktiviert ist.]]></de>
+            <en><![CDATA[The video automatically begins to play back as soon as it can do so without stopping to finish loading the data. In some browsers (e.g. Chrome 70.0) autoplay doesn't work if muted option is not active.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.muted">
+            <de><![CDATA[Ton ausschalten]]></de>
+            <en><![CDATA[Mute]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.muted.desc">
+            <de><![CDATA[Video wird ohne Ton abgespielt.]]></de>
+            <en><![CDATA[The audio will be initially silenced.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.loop">
+            <de><![CDATA[Dauerschleife]]></de>
+            <en><![CDATA[Loop]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.loop.desc">
+            <de><![CDATA[Wenn diese Option aktiviert ist, springt der Browser automatisch zum Anfang zurück, wenn das Ende des Videos erreicht ist.]]></de>
+            <en><![CDATA[If active, the browser will automatically seek back to the start upon reaching the end of the video]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline">
+            <de><![CDATA[Video in der Seite abspielen (playsinline)]]></de>
+            <en><![CDATA[Play video inline (playsinline)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline.desc" html="true">
+            <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
+            <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness">
+            <de><![CDATA[Video Helligkeit]]></de>
+            <en><![CDATA[Video brightness]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness.desc" html="true">
+            <de><![CDATA[Damit der Text über dem Hintergrundvideo besser sichtbar ist, kann man mit dieser Option das Video abdunkeln. Bitte Wert zwischen <strong>0 und 100</strong> eingeben.]]></de>
+            <en><![CDATA[To make the text above the background video more visible, you can darken the video with this option. Please enter value between <strong>0 and 100</strong>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.fontColor">
+            <de><![CDATA[Schriftfarbe]]></de>
+            <en><![CDATA[Font color]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentMaxWidth">
+            <de><![CDATA[Maximale Breite des Inhalts (in Pixel)]]></de>
+            <en><![CDATA[Maximum content width (in pixel)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition">
+            <de><![CDATA[Inhalt Ausrichtung]]></de>
+            <en><![CDATA[Content position]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top content width]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
+        <locale name="control.backgroundVideo.openVideoInPopup">
+            <de><![CDATA[Video in Popup öffnen]]></de>
+            <en><![CDATA[Open video in popup]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopup.desc">
+            <de><![CDATA[Diese Option ist meistens dann sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann somit das volle Video in Popup anschauen.]]></de>
+            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can thus watch the full video in popup.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton">
+            <de><![CDATA[Button zum Popup-Öffnen]]></de>
+            <en><![CDATA[Button to open the popup]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.desc" html="true">
+            <de><![CDATA[Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
+            <en><![CDATA[You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.useDefaultButton">
+            <de><![CDATA[Eingebauten Button verwenden]]></de>
+            <en><![CDATA[Use default button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.useOwnButton">
+            <de><![CDATA[Eigenen Button benutzen]]></de>
+            <en><![CDATA[Use own button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopupButton.noButton">
+            <de><![CDATA[Kein Button]]></de>
+            <en><![CDATA[No button]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.btnText">
+            <de><![CDATA[Video anschauen]]></de>
+            <en><![CDATA[Watch the Film]]></en>
         </locale>
     </groups>
 </locales>

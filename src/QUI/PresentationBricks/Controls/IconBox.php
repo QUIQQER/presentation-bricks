@@ -27,8 +27,8 @@ class IconBox extends QUI\Control
             'template'        => 'default',
             'centerContent'   => false,
             'entriesPerLine'  => 2,
-            'iconSize'        => 'small',
-            'imgIconSize'     => '50px',
+            'iconSize'        => 'md',
+            'imgIconSize'     => 96,
             'imgSquare'       => false,
             'contentPosition' => 'default',
             'contentWidth'    => '30'
@@ -37,7 +37,7 @@ class IconBox extends QUI\Control
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__) . '/IconBox.css'
+            dirname(__FILE__).'/IconBox.css'
         );
     }
 
@@ -55,11 +55,16 @@ class IconBox extends QUI\Control
         $centerContent   = $this->getAttribute('centerContent');
         $entriesPerLine  = $this->getAttribute('entriesPerLine');
         $iconSize        = $this->getAttribute('iconSize');
-        $imgIconSize     = $this->getAttribute('imgIconSize');
         $imgSquare       = $this->getAttribute('imgSquare');
         $contentPosition = $this->getAttribute('contentPosition');
         $contentWidth    = $this->getAttribute('contentWidth');
         $enabledEntries  = [];
+
+        $imgIconSize = 96;
+
+        if (intval($this->getAttribute('imgIconSize')) >= 0) {
+            $imgIconSize = intval($this->getAttribute('imgIconSize'));
+        }
 
         foreach ($entries as $entry) {
             if ($entry['isDisabled'] === 1) {
@@ -81,6 +86,6 @@ class IconBox extends QUI\Control
             'contentWidth'    => $contentWidth
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/IconBox.' . $template . '.html');
+        return $Engine->fetch(dirname(__FILE__).'/IconBox.'.$template.'.html');
     }
 }
