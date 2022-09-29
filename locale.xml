@@ -347,15 +347,19 @@
         </locale>
 
         <locale name="control.IconBox.textPosition">
-            <de><![CDATA[Position des Textes]]></de>
+            <de><![CDATA[Textposition]]></de>
             <en><![CDATA[Text position]]></en>
         </locale>
+        <locale name="control.IconBox.textPosition.desc">
+            <de><![CDATA[Bestimmt die vertikale Position. Die Einstellung hat nur dann Auswirkung, wenn sich der Inhalt links oder rechts von den Boxen befindet.]]></de>
+            <en><![CDATA[Determines the vertical position. The setting has an effect only if the content is on the left or on the right of the boxes.]]></en>
+        </locale>
         <locale name="control.IconBox.textPosition.top">
-            <de><![CDATA[Top]]></de>
+            <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
         </locale>
         <locale name="control.IconBox.textPosition.center">
-            <de><![CDATA[Zentrum]]></de>
+            <de><![CDATA[Zentriert]]></de>
             <en><![CDATA[Center]]></en>
         </locale>
         <locale name="control.IconBox.textPosition.bottom">
@@ -400,8 +404,8 @@
         </locale>
 
         <locale name="control.IconBox.iconSize">
-            <de><![CDATA[Icon-Größe]]></de>
-            <en><![CDATA[Icon size]]></en>
+            <de><![CDATA[FontAwesome Icon Größe]]></de>
+            <en><![CDATA[FontAwesome icon size]]></en>
         </locale>
         <locale name="control.IconBox.iconSize.desc">
             <de><![CDATA[Diese Einstellung betrifft nur die FontAwesome Icons.]]></de>
@@ -425,9 +429,14 @@
         </locale>
 
         <locale name="control.IconBox.imgIconSize">
-            <de><![CDATA[Größe des Bildsymbols]]></de>
-            <en><![CDATA[Image icon size]]></en>
+            <de><![CDATA[Icon Größe (Bild) in Pixel]]></de>
+            <en><![CDATA[Image icon size in pixel]]></en>
         </locale>
+        <locale name="control.IconBox.imgIconSize.desc">
+            <de><![CDATA[Dieser Wert bestimmt, wie groß das Bild sein wird (maximale Höhe).]]></de>
+            <en><![CDATA[This value determines how big the image will be (maximum height).]]></en>
+        </locale>
+
 
         <!-- Icon box Entries -->
         <locale name="IconBox.entries">
@@ -436,11 +445,11 @@
         </locale>
 
         <locale name="quiqqer.presentationBricks.iconBox.settings.isDisabled.short">
-            <de><![CDATA[Deaktivieren]]></de>
-            <en><![CDATA[Disable]]></en>
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
         </locale>
         <locale name="quiqqer.presentationBricks.iconBox.settings.icon.short">
-            <de><![CDATA[Ikone]]></de>
+            <de><![CDATA[Icon]]></de>
             <en><![CDATA[Icon]]></en>
         </locale>
         <locale name="quiqqer.presentationBricks.iconBox.settings.title.short">
@@ -457,15 +466,15 @@
             <en><![CDATA[Disable entry]]></en>
         </locale>
         <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.icon">
-            <de><![CDATA[Icon setzen]]></de>
-            <en><![CDATA[Set icon]]></en>
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
         </locale>
         <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.title">
-            <de><![CDATA[Titel deaktivieren]]></de>
+            <de><![CDATA[Titel]]></de>
             <en><![CDATA[Title]]></en>
         </locale>
         <locale name="quiqqer.presentationBricks.iconBox.settings.createPopup.entryContent">
-            <de><![CDATA[Inhalt des Eintrags]]></de>
+            <de><![CDATA[Inhalt]]></de>
             <en><![CDATA[Entry content]]></en>
         </locale>
 

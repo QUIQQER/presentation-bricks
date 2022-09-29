@@ -366,6 +366,10 @@
                 <setting name="textPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.textPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.textPosition.desc"/>
+                    </description>
 
                     <option value="top">
                         <locale group="quiqqer/presentation-bricks"
@@ -452,6 +456,10 @@
                 <setting name="imgIconSize" type="number">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.imgIconSize"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.IconBox.imgIconSize.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="imgSquare" type="checkbox">
