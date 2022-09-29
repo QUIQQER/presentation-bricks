@@ -36,14 +36,13 @@
 }
 
 .iconBox-entries {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: calc(100% - var(--qui-iconBox-contentWidth));
+    display: grid;
+    grid-template-columns: repeat(var(--qui-iconBox-entryPerLine), auto);
+    gap: 2rem
 }
 
 .iconBox-entry {
     flex-basis: var(--qui-iconBox-entryWidth);
-    padding: 2rem;
 }
 
 .iconBox-entry-title {
@@ -91,12 +90,20 @@
         flex-direction: column;
     }
 
-    .iconBox-contentPosition__left > .iconBox-content,
-    .iconBox-contentPosition__right > .iconBox-content-wrapper{
+    .iconBox-contentPosition__left > .iconBox-content-wrapper {
         padding-right: 0;
+
+    }
+    .iconBox-contentPosition__right > .iconBox-content-wrapper {
+        padding-left: 0;
     }
 
     .iconBox-entry {
         flex-basis: 100%;
     }
+
+    .iconBox-entries {
+        grid-template-columns: auto;
+    }
+
 }
