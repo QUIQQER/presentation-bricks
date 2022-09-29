@@ -146,7 +146,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                         header   : QUILocale.get(lg, 'quiqqer.presentationBricks.iconBox.settings.isDisabled.short'),
                         dataIndex: 'isDisabledDisplay',
                         dataType : 'QUI',
-                        width    : 70
+                        width    : 80
                     }, {
                         dataIndex: 'isDisabled',
                         hidden   : true
@@ -160,13 +160,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                         header   : QUILocale.get(lg, 'quiqqer.presentationBricks.iconBox.settings.title.short'),
                         dataIndex: 'entryTitle',
                         dataType : 'code',
-                        width    : 80
+                        width    : 150
                     },
                     {
                         header   : QUILocale.get(lg, 'quiqqer.presentationBricks.iconBox.settings.entryContent.short'),
                         dataIndex: 'entryContent',
                         dataType : 'code',
-                        width    : 80
+                        width    : 250
                     },
                     {
                         dataIndex: 'newTab',
@@ -292,7 +292,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings', [
                         insert.imagePreview = new Element('img', {
                             src   : URL_DIR + entry.image + '&maxwidth=50&maxheight=50',
                             width : 50,
-                            height: 50
+                            height: 50,
+                            styles: {
+                                maxHeight: '2rem'
+                            }
                         });
                     }
                 }
