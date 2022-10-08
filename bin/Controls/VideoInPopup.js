@@ -100,9 +100,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup', [
         onWindowOpen: function (Window) {
             const Video = document.createElement('video');
 
-            console.log(this.getAttribute('poster'))
-            console.log(this.getAttribute('video'))
-
             Video.src      = this.getAttribute('video');
             Video.poster   = this.getAttribute('poster');
             Video.autoplay = true;
