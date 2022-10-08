@@ -10,8 +10,8 @@
 
 .quiqqer-presentationBricks-backgroundVideo video {
     display: block;
-    -webkit-filter: brightness(var(--qui-backgroundVideo-backgroundVideoBrightness, 50%));
-    filter: brightness(var(--qui-backgroundVideo-backgroundVideoBrightness, 50%));
+    -webkit-filter: brightness(var(--qui-backgroundVideo-backgroundVideoBrightness, 0.5));
+    filter: brightness(var(--qui-backgroundVideo-backgroundVideoBrightness, 0.5));
     height: 100%;
     object-fit: cover;
     object-position: center;

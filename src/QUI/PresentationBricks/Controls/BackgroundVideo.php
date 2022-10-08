@@ -89,7 +89,7 @@ class BackgroundVideo extends QUI\Control
         if (intval($this->getAttribute('backgroundVideoBrightness')) &&
             intval($this->getAttribute('backgroundVideoBrightness')) > 0 &&
             intval($this->getAttribute('backgroundVideoBrightness')) <= 100) {
-            $backgroundVideoBrightness = $this->getAttribute('backgroundVideoBrightness');
+            $backgroundVideoBrightness = intval($this->getAttribute('backgroundVideoBrightness')) / 100;
         }
 
         if ($this->getAttribute('fontColor')) {
