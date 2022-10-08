@@ -36,8 +36,8 @@ class BackgroundVideo extends QUI\Control
             'fontColor'                 => '#fff',
             'contentMaxWidth'           => false,
             'contentPosition'           => 'center',
-            'openVideoInPopup'          => true,
-            'openVideoInPopupButton'    => 'useDefaultButton'
+            'openVideoInPopup'          => 'clickOnDefaultButton',
+            'defaultButtonPosition'     => ''
         ]);
 
         parent::__construct($attributes);
@@ -63,7 +63,8 @@ class BackgroundVideo extends QUI\Control
         $backgroundVideoBrightness = 50;
         $fontColor                 = '#fff';
         $contentMaxWidth           = false;
-        $openVideoInPopup          = false;
+        $openVideoInPopup          = 'clickOnDefaultButton';
+        $defaultBtnPos             = '';
 
         if ($this->getAttribute('backgroundColor')) {
             $backgroundColor = $this->getAttribute('backgroundColor');
@@ -114,8 +115,34 @@ class BackgroundVideo extends QUI\Control
                 break;
         }
 
-        if ($this->getAttribute('openVideoInPopup')) {
-            $openVideoInPopup = $this->getAttribute('openVideoInPopup');
+        $initVideoInPopup = false;
+
+        switch ($this->getAttribute('openVideoInPopup')) {
+            case 'clickOnDefaultButton':
+            case 'clickOnOwnButton':
+                $initVideoInPopup = true;
+        }
+
+        if ($initVideoInPopup) {
+            $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup');
+
+            try {
+                $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+                $this->setJavaScriptControlOption('poster', $Poster->getUrl(true));
+            } catch (QUI\Exception $Exception) {
+                // nothing
+            }
+
+            try {
+                $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($this->getAttribute('video'));
+                $this->setJavaScriptControlOption('video', $Video->getUrl(true));
+            } catch (QUI\Exception $Exception) {
+                // nothing
+            }
+        }
+
+        if ($this->getAttribute('defaultButtonPosition')) {
+            $defaultBtnPos = $this->getAttribute('defaultButtonPosition');
         }
 
         $Engine->assign([
@@ -129,7 +156,7 @@ class BackgroundVideo extends QUI\Control
             'fontColor'                 => $fontColor,
             'contentMaxWidth'           => $contentMaxWidth,
             'contentPosition'           => $contentPosition,
-            'openVideoInPopup'          => $openVideoInPopup,
+            'defaultBtnPos'             => $defaultBtnPos,
         ]);
 
         return $Engine->fetch(dirname(__FILE__).'/BackgroundVideo.html');

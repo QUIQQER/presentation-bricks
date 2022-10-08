@@ -24,6 +24,13 @@
     margin-left: auto;
     margin-right: auto;
     max-width: var(--qui-backgroundVideo-contentMaxWidth, initial);
-    padding: var(--qui-spacing-xl, 3rem) var(--qui-spacing, 1rem);
+    padding-bottom: var(--qui-spacing-xl, 3rem);
+    padding-top: var(--qui-spacing-xl, 3rem);
+    width: 100%;
     z-index: 1;
+}
+
+.quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer {
+    margin-top: var(--qui-spacing-lg, 1.5rem);
+    text-align: var(--qui-backgroundVideo-defaultBtnPos, initial);
 }
