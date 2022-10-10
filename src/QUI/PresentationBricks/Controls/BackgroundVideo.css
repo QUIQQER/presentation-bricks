@@ -2,6 +2,7 @@
     color: var(--qui-backgroundVideo-fontColor, inherit);
     display: grid;
     position: relative;
+    background-color: var(--qui-backgroundVideo-bgColor, initial);
 }
 
 .quiqqer-presentationBricks-backgroundVideo-videoContainer {
