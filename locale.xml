@@ -504,29 +504,38 @@
             <de><![CDATA[Video in Popup öffnen]]></de>
             <en><![CDATA[Open video in popup]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopup.desc">
-            <de><![CDATA[Diese Option ist meistens dann sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann somit das volle Video in Popup anschauen.]]></de>
-            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can thus watch the full video in popup.]]></en>
+
+        <locale name="control.backgroundVideo.openVideoInPopup.desc" html="true">
+            <de><![CDATA[Diese Option ist sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann das volle Video in Popup anschauen. <br>Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
+            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can watch the full video in popup.<br> You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton">
-            <de><![CDATA[Button zum Popup-Öffnen]]></de>
-            <en><![CDATA[Button to open the popup]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton">
+            <de><![CDATA[Klick auf den eingebauten Button öffnet ein Popup mit Video]]></de>
+            <en><![CDATA[Click on the default button opens a popup with video]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.desc" html="true">
-            <de><![CDATA[Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
-            <en><![CDATA[You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnOwnButton">
+            <de><![CDATA[Klick auf eigenen Button öffnet ein Popup mit Video]]></de>
+            <en><![CDATA[Click on own button opens popup with video]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.useDefaultButton">
-            <de><![CDATA[Eingebauten Button verwenden]]></de>
-            <en><![CDATA[Use default button]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.noClick">
+            <de><![CDATA[Kein Popup öffnen]]></de>
+            <en><![CDATA[Do not open a popup]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.useOwnButton">
-            <de><![CDATA[Eigenen Button benutzen]]></de>
-            <en><![CDATA[Use own button]]></en>
+        <locale name="control.backgroundVideo.defaultButtonPosition">
+            <de><![CDATA[Position des eingebauten Buttons]]></de>
+            <en><![CDATA[Default button position]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.noButton">
-            <de><![CDATA[Kein Button]]></de>
-            <en><![CDATA[No button]]></en>
+        <locale name="control.backgroundVideo.defaultButtonPosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
         </locale>
         <locale name="control.backgroundVideo.btnText">
             <de><![CDATA[Video anschauen]]></de>

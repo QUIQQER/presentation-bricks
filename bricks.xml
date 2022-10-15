@@ -412,10 +412,6 @@
                                 var="control.backgroundVideo.poster.desc"/>
                     </description>
                 </setting>
-                <setting name="backgroundColor" type="color">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.backgroundVideo.backgroundColor"/>
-                </setting>
                 <setting name="shortVideo" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.shortVideo"/>
@@ -423,6 +419,10 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.shortVideo.desc"/>
                     </description>
+                </setting>
+                <setting name="backgroundColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.backgroundColor"/>
                 </setting>
 
                 <setting name="autoplay" type="checkbox">
@@ -495,34 +495,44 @@
                     </option>
                 </setting>
 
-                <setting name="openVideoInPopup" type="checkbox">
+                <setting name="openVideoInPopup" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.openVideoInPopup"/>
                     <description>
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.openVideoInPopup.desc"/>
                     </description>
+
+                    <option value="clickOnDefaultButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton"/>
+                    </option>
+                    <option value="clickOnOwnButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.clickOnOwnButton"/>
+                    </option>
+                    <option value="noClick">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.noButton"/>
+                    </option>
                 </setting>
 
-                <setting name="openVideoInPopupButton" type="select">
+                <setting name="defaultButtonPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.backgroundVideo.openVideoInPopupButton"/>
-                    <description>
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.desc"/>
-                    </description>
+                            var="control.backgroundVideo.defaultButtonPosition"/>
 
-                    <option value="useDefaultButton">
+                    <option value=""></option>
+                    <option value="left">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.useDefaultButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.left"/>
                     </option>
-                    <option value="useOwnButton">
+                    <option value="center">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.useOwnButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.center"/>
                     </option>
-                    <option value="noButton">
+                    <option value="right">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.noButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.right"/>
                     </option>
                 </setting>
             </settings>
