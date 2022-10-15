@@ -346,7 +346,7 @@
             <en><![CDATA[Top]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.center">
-            <de><![CDATA[Zentrum]]></de>
+            <de><![CDATA[Zentriert]]></de>
             <en><![CDATA[Center]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.bottom">
