@@ -32,6 +32,7 @@ class BackgroundVideo extends QUI\Control
             'muted'                     => true,
             'loop'                      => true,
             'playsinline'               => true,
+            'playIfInView'              => true,
             'backgroundVideoBrightness' => 50,
             'fontColor'                 => '#fff',
             'contentMaxWidth'           => false,
@@ -41,6 +42,8 @@ class BackgroundVideo extends QUI\Control
         ]);
 
         parent::__construct($attributes);
+
+        $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo');
 
         $this->addCSSFile(
             dirname(__FILE__).'/BackgroundVideo.css'
@@ -63,7 +66,6 @@ class BackgroundVideo extends QUI\Control
         $backgroundVideoBrightness = 50;
         $fontColor                 = '#fff';
         $contentMaxWidth           = false;
-        $openVideoInPopup          = 'clickOnDefaultButton';
         $defaultBtnPos             = '';
 
         if ($this->getAttribute('backgroundColor')) {
@@ -86,11 +88,15 @@ class BackgroundVideo extends QUI\Control
             $playsinline = $this->getAttribute('playsinline');
         }
 
+        $this->setJavaScriptControlOption('playifinview', $this->getAttribute('playIfInView'));
+
         if (intval($this->getAttribute('backgroundVideoBrightness')) &&
             intval($this->getAttribute('backgroundVideoBrightness')) > 0 &&
             intval($this->getAttribute('backgroundVideoBrightness')) <= 100) {
-            $backgroundVideoBrightness = intval($this->getAttribute('backgroundVideoBrightness')) / 100;
+            $backgroundVideoBrightness = intval($this->getAttribute('backgroundVideoBrightness'));
         }
+
+        $backgroundVideoBrightness = $backgroundVideoBrightness / 100;
 
         if ($this->getAttribute('fontColor')) {
             $fontColor = $this->getAttribute('fontColor');
@@ -124,8 +130,6 @@ class BackgroundVideo extends QUI\Control
         }
 
         if ($initVideoInPopup) {
-            $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup');
-
             try {
                 $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
                 $this->setJavaScriptControlOption('poster', $Poster->getUrl(true));

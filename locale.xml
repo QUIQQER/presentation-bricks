@@ -467,6 +467,14 @@
             <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
             <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
         </locale>
+        <locale name="control.backgroundVideo.playIfInView">
+            <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>
+            <en><![CDATA[Play when in view]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView.desc">
+            <de><![CDATA[Das Video wird nur abgespielt, wenn es im sichtbaren Bereich ist, ansonsten wird das Video pausiert, z.B. wenn der Benutzer weiter auf der Seite scrollt.]]></de>
+            <en><![CDATA[The video will only play if it is in the visible area, otherwise the video will be paused, e.g. when the user scrolls further on the page.]]></en>
+        </locale>
         <locale name="control.backgroundVideo.backgroundVideoBrightness">
             <de><![CDATA[Video Helligkeit]]></de>
             <en><![CDATA[Video brightness]]></en>
