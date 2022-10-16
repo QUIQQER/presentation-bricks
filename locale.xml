@@ -320,6 +320,84 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+        <!-- progressbar -->
+        <locale name="control.progressbar.title">
+            <de><![CDATA[Präsentation: Fortschrittsbalken (progressbar)]]></de>
+            <en><![CDATA[Presentation: Progress bar]]></en>
+        </locale>
+        <locale name="control.progressbar.description">
+            <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
+            <en><![CDATA[Visual presentation of progress]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth">
+            <de><![CDATA[Maximale Balkenbreite (in Pixel)]]></de>
+            <en><![CDATA[Maximum bar width (in pixel)]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalText">
+            <de><![CDATA[Zusatztext]]></de>
+            <en><![CDATA[Additional text]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition">
+            <de><![CDATA[Textposition]]></de>
+            <en><![CDATA[Text position]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.top">
+            <de><![CDATA[Top]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalTextRight">
+            <de><![CDATA[Zusatztext rechts]]></de>
+            <en><![CDATA[Additional text on right]]></en>
+        </locale>
+        <locale name="brick.progressbar.settings.entries">
+            <de><![CDATA[Einträge]]></de>
+            <en><![CDATA[Entries]]></en>
+        </locale>
+
+        <!-- progressbar settings entry -->
+        <locale name="brick.progressbar.entries.adddialog.title">
+            <de><![CDATA[Fortschrittseintrag (progressbar)]]></de>
+            <en><![CDATA[Progressbar]]></en>
+        </locale>
+
+        <locale name="bricks.progressbar.settings.createPopup.title">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.percent">
+            <de><![CDATA[Prozent (min 0 / max 100)]]></de>
+            <en><![CDATA[Percent (min 0 / max 100)]]></en>
+        </locale>
+        <locale name="brick.progressbar.settings.add.percent">
+            <de><![CDATA[Prozent]]></de>
+            <en><![CDATA[Percent]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.editdialog.title">
+            <de><![CDATA[Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit progressbar entry]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.title">
+            <de><![CDATA[Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.text">
+            <de><![CDATA[Möchten Sie diesen Fortschrittsbalken-Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.information">
+            <de><![CDATA[Die Einträge der Fortschrittsleiste können nicht wiederhergestellt werden]]></de>
+            <en><![CDATA[The progressbar entries can not be restored]]></en>
+        </locale>
+
+
         <!-- Background video -->
         <locale name="control.backgroundVideo.title">
             <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
@@ -388,6 +466,14 @@
         <locale name="control.backgroundVideo.playsinline.desc" html="true">
             <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
             <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView">
+            <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>
+            <en><![CDATA[Play when in view]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView.desc">
+            <de><![CDATA[Das Video wird nur abgespielt, wenn es im sichtbaren Bereich ist, ansonsten wird das Video pausiert, z.B. wenn der Benutzer weiter auf der Seite scrollt.]]></de>
+            <en><![CDATA[The video will only play if it is in the visible area, otherwise the video will be paused, e.g. when the user scrolls further on the page.]]></en>
         </locale>
         <locale name="control.backgroundVideo.backgroundVideoBrightness">
             <de><![CDATA[Video Helligkeit]]></de>
@@ -463,5 +549,6 @@
             <de><![CDATA[Video anschauen]]></de>
             <en><![CDATA[Watch the Film]]></en>
         </locale>
+
     </groups>
 </locales>

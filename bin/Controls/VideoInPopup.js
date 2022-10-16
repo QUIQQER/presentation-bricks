@@ -3,13 +3,16 @@
  *
  * @author www.pcsg.de (Michael Danielczok)
  * @module package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup
+ *
+ * @event onCloseVideo
  */
 define('package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup', [
 
     'qui/controls/Control',
+    'qui/controls/windows/Popup',
     'css!package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup.css'
 
-], function (QUIControl) {
+], function (QUIControl, QUIPopup) {
     "use strict";
 
     return new Class({
@@ -24,72 +27,33 @@ define('package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup', [
         ],
 
         options: {
-            videoUrl: '',
+            video : '',
             poster: ''
         },
 
         initialize: function (options) {
             this.parent(options);
-
-            this.isOpen = false;
-
-            this.addEvents({
-                onImport: this.$onImport
-            });
         },
 
-        /**
-         * event : on import
-         */
-        $onImport: function () {
-            const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn');
-
-            if (buttons.length < 1) {
-                return;
-            }
-
-            let i   = 0,
-                len = buttons.length;
-
-            for (i; i < len; i++) {
-                buttons[i].addEventListener('click', this.openVideo);
-            }
-        },
-
-        /**
-         * Open qui window with video
-         * @param event
-         */
-        openVideo: function (event) {
+        openPopup: function () {
             const self = this;
 
-            event.preventDefault();
-
-            if (this.isOpen) {
-                return;
-            }
-
-            this.isOpen = true;
-
-            require(['qui/controls/windows/Popup'], function (QUIPopup) {
-                new QUIPopup({
-                    'class'           : 'qui-videoInPopup',
-                    buttons           : false,
-                    maxWidth          : 5000,
-                    maxHeight         : 5000,
-                    resizable         : false,
-                    backgroundClosable: false,
-                    draggable         : false,
-                    content           : '<button class="qui-videoInPopup-close"><span class="fa fa-close"></span></button>',
-                    events            : {
-                        onOpen : self.onWindowOpen,
-                        onClose: () => {
-                            self.isOpen = false;
-                        }
+            new QUIPopup({
+                'class'           : 'qui-videoInPopup',
+                buttons           : false,
+                maxWidth          : 5000,
+                maxHeight         : 5000,
+                resizable         : false,
+                backgroundClosable: false,
+                draggable         : false,
+                content           : '<button class="qui-videoInPopup-close"><span class="fa fa-close"></span></button>',
+                events            : {
+                    onOpen: self.onWindowOpen,
+                    onClose: () => {
+                        this.fireEvent('closeVideo');
                     }
-                }).open();
-            });
+                }
+            }).open();
         },
 
         /**

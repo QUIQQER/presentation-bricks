@@ -13,8 +13,8 @@
     <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
         <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
                preload="none"
-               src="{$this->getAttribute('shortVideo')}"
-               poster="{$this->getAttribute('poster')}">
+               src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
+               {if $this->getAttribute('poster')}poster="{$this->getAttribute('poster')}"{/if}>
         </video>
     </div>
 
