@@ -36,10 +36,6 @@ class IconBox extends QUI\Control
         ]);
 
         parent::__construct($attributes);
-
-        $this->addCSSFile(
-            dirname(__FILE__) . '/IconBox.css'
-        );
     }
 
     /**
@@ -52,7 +48,7 @@ class IconBox extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
 
         $entries         = json_decode($this->getAttribute('entries'), true);
-        $template        = $this->getAttribute('template');
+        $templateName    = $this->getAttribute('template');
         $centerContent   = $this->getAttribute('centerContent');
         $entriesPerLine  = $this->getAttribute('entriesPerLine');
         $iconSize        = $this->getAttribute('iconSize');
@@ -76,6 +72,8 @@ class IconBox extends QUI\Control
             array_push($enabledEntries, $entry);
         }
 
+        $this->addCSSFile(dirname(__FILE__).'/IconBox.'.$templateName.'.css');
+
         $Engine->assign([
             'this'            => $this,
             'centerContent'   => $centerContent,
@@ -89,6 +87,6 @@ class IconBox extends QUI\Control
             'textPosition'    => $textPosition
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/IconBox.' . $template . '.html');
+        return $Engine->fetch(dirname(__FILE__).'/IconBox.'.$templateName.'.html');
     }
 }
