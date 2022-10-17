@@ -332,6 +332,7 @@
             </settings>
         </brick>
 
+
         <!-- IconBox -->
         <brick control="\QUI\PresentationBricks\Controls\IconBox">
             <title>
@@ -344,7 +345,6 @@
             </description>
 
             <settings>
-
                 <setting name="contentPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.IconBox.contentPosition"/>
@@ -474,10 +474,61 @@
                 <setting name="entries" type="hidden"
                          data-qui="package/quiqqer/presentation-bricks/bin/Controls/IconBoxSettings">
                     <locale group="quiqqer/presentation-bricks" var="IconBox.entries"/>
-
                 </setting>
             </settings>
         </brick>
+
+        <!-- progressbar -->
+        <brick control="\QUI\PresentationBricks\Controls\Progressbar">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.progressbar.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.progressbar.description"/>
+            </description>
+
+            <settings>
+
+                <setting name="maxWidth" type="number" min="0" max="1920">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth"/>
+                </setting>
+
+                <setting name="additionalText" data-qui="controls/editors/Input">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText"/>
+                </setting>
+
+                <setting name="textPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.textPosition"/>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="additionalTextRight" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalTextRight"/>
+                </setting>
+
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings"
+                >
+                    <locale group="quiqqer/presentation-bricks" var="brick.progressbar.settings.entries"/>
+                </setting>
+            </settings>
+        </brick>
+
 
         <!-- Background video -->
         <brick control="\QUI\PresentationBricks\Controls\BackgroundVideo">
@@ -507,10 +558,6 @@
                                 var="control.backgroundVideo.poster.desc"/>
                     </description>
                 </setting>
-                <setting name="backgroundColor" type="color">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.backgroundVideo.backgroundColor"/>
-                </setting>
                 <setting name="shortVideo" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.shortVideo"/>
@@ -518,6 +565,10 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.shortVideo.desc"/>
                     </description>
+                </setting>
+                <setting name="backgroundColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.backgroundColor"/>
                 </setting>
 
                 <setting name="autoplay" type="checkbox">
@@ -550,6 +601,15 @@
                     <description>
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.playsinline.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="playIfInView" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.playIfInView"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.playIfInView.desc"/>
                     </description>
                 </setting>
 
@@ -590,34 +650,44 @@
                     </option>
                 </setting>
 
-                <setting name="openVideoInPopup" type="checkbox">
+                <setting name="openVideoInPopup" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.openVideoInPopup"/>
                     <description>
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.openVideoInPopup.desc"/>
                     </description>
+
+                    <option value="clickOnDefaultButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton"/>
+                    </option>
+                    <option value="clickOnOwnButton">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.clickOnOwnButton"/>
+                    </option>
+                    <option value="noClick">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.openVideoInPopup.noButton"/>
+                    </option>
                 </setting>
 
-                <setting name="openVideoInPopupButton" type="select">
+                <setting name="defaultButtonPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
-                            var="control.backgroundVideo.openVideoInPopupButton"/>
-                    <description>
-                        <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.desc"/>
-                    </description>
+                            var="control.backgroundVideo.defaultButtonPosition"/>
 
-                    <option value="useDefaultButton">
+                    <option value=""></option>
+                    <option value="left">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.useDefaultButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.left"/>
                     </option>
-                    <option value="useOwnButton">
+                    <option value="center">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.useOwnButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.center"/>
                     </option>
-                    <option value="noButton">
+                    <option value="right">
                         <locale group="quiqqer/presentation-bricks"
-                                var="control.backgroundVideo.openVideoInPopupButton.noButton"/>
+                                var="control.backgroundVideo.defaultButtonPosition.right"/>
                     </option>
                 </setting>
             </settings>

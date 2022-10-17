@@ -1,0 +1,42 @@
+.qui-videoInPopup.qui-window-popup {
+    background-color: #111;
+}
+
+button.qui-videoInPopup-close {
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color: #fff;
+    opacity: 0.5;
+    background: none;
+    line-height: initial;
+    padding: 0;
+    min-width: initial !important;
+    border: none;
+    width: 3rem;
+    z-index: 1;
+}
+
+button.qui-videoInPopup-close:hover,
+button.qui-videoInPopup-close:focus {
+    opacity: 1;
+}
+
+.qui-videoInPopup .qui-window-popup-content {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.qui-videoInPopup video {
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+    aspect-ratio: 1920 / 1080;
+    max-height: 100%;
+}
+
+.qui-videoInPopup video:focus-visible {
+    outline: none;
+}
