@@ -35,11 +35,6 @@ class WallpaperTextArrow extends QUI\Control
         $this->addCSSFile(
             dirname(__FILE__).'/WallpaperTextArrow.css'
         );
-
-        $this->setAttribute(
-            'qui-class',
-            'package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow'
-        );
     }
 
     /**
@@ -49,11 +44,19 @@ class WallpaperTextArrow extends QUI\Control
      */
     public function getBody()
     {
-        $Engine = QUI::getTemplateManager()->getEngine();
+        $Engine    = QUI::getTemplateManager()->getEngine();
+        $arrowType = $this->getAttribute('arrow-type');
 
         $fixed = '';
         if ($this->getAttribute('image-background-fixed')) {
             $fixed = "fixed";
+        }
+
+        if ($arrowType !== 'hide') {
+            $this->setAttribute(
+                'qui-class',
+                'package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow'
+            );
         }
 
         $Engine->assign([

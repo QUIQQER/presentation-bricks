@@ -45,7 +45,7 @@
             <en><![CDATA[Arrow type]]></en>
             <pl><![CDATA[Rodzaj strzałki]]></pl>
         </locale>
-            <locale name="control.WallpaperTextArrow.arrow-type.disabled">
+            <locale name="control.WallpaperTextArrow.arrow-type.hide">
                 <de><![CDATA[Deaktiviert: kein Pfeil]]></de>
                 <en><![CDATA[Disabled: no arrow]]></en>
             </locale>
