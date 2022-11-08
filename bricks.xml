@@ -33,6 +33,10 @@
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperTextArrow.arrow-type"/>
 
+                    <option value="WallpaperTextArrow">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperTextArrow.arrow-type.hide"/>
+                    </option>
                     <option value="arrow-down">
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.WallpaperTextArrow.arrow-type.arrow-down"/>

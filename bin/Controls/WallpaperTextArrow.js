@@ -1,8 +1,8 @@
 /**
- * QUIQQER Wallapper with text and an arrow
+ * QUIQQER Wallpaper with text and an arrow
  *
  * @author www.pcsg.de (Michael Danielczok)
- * @module Bricks\Controls\StickyContent
+ * @module Bricks\Controls\WallpaperTextArrow
  *
  * @require qui/QUI
  * @require qui/controls/Control
@@ -27,8 +27,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
         initialize: function (options) {
             this.parent(options);
 
-            this.$Brick    = null;
-            this.$Arrow    = null;
+            this.$Brick = null;
+            this.$Arrow = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -39,12 +39,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
          * event : on import
          */
         $onImport: function () {
-            this.$Brick    = document.getElement('div[data-quiid="' + this.$uid + '"]');
-            this.$Arrow    = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
+            this.$Brick = document.getElement('div[data-quiid="' + this.$uid + '"]');
+            this.$Arrow = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
 
             this.$Arrow.addEvent('click', function () {
                 new Fx.Scroll(window).start(0, this.$Brick.getSize().y);
-            }.bind(this))
+            }.bind(this));
         }
     });
 });
