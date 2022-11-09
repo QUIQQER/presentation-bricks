@@ -19,7 +19,8 @@
 }
 
 .wallpaperText-container-content{
-    max-width: var(--qui-wallpaperText-contentMaxWidth, 600px);
+    width: var(--qui-wallpaperText-contentMaxWidth, 600px);
+    max-width: 100%;
 }
 
 .wallpaperText.fixed {
