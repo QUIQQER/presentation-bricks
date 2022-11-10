@@ -19,7 +19,7 @@
 }
 
 .iconBox-contentPosition__right .iconBox-content,
-.iconBox-contentPosition__left iconBox-content{
+.iconBox-contentPosition__left .iconBox-content{
     height: 100%;
     display: flex;
     flex-direction: column;

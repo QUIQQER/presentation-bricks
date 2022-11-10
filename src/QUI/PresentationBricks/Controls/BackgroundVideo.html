@@ -2,29 +2,36 @@
         --qui-backgroundVideo-bgColor: {$backgroundColor};
         --qui-backgroundVideo-fontColor: {$fontColor};
         --qui-backgroundVideo-contentPos: {$contentPosition};
+        {if $contentMaxWidth}
         --qui-backgroundVideo-contentMaxWidth: {$contentMaxWidth}px;
-        --qui-backgroundVideo-backgroundVideoBrightness: {$backgroundVideoBrightness}%;
+        {/if}
+        --qui-backgroundVideo-backgroundVideoBrightness: {$backgroundVideoBrightness};
+        {if $defaultBtnPos}
+        --qui-backgroundVideo-defaultBtnPos: {$defaultBtnPos};
+        {/if}
         ">
     <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
         <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
                preload="none"
-               src="{$this->getAttribute('shortVideo')}"
-               poster="{$this->getAttribute('poster')}">
+               src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
+               {if $this->getAttribute('poster')}poster="{$this->getAttribute('poster')}"{/if}>
         </video>
     </div>
 
     {if $this->getAttribute('content')}
         <div class="quiqqer-presentationBricks-backgroundVideo-content">
-            {$this->getAttribute('content')}
+            <div class="grid-container">
+                {$this->getAttribute('content')}
 
-            {if $this->getAttribute('openVideoInPopupButton') === 'useDefaultButton'}
-                <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
-                    <button class="button openVideoInPopupBtn">
-                        {locale group='quiqqer/presentation-bricks' var='control.backgroundVideo.btnText'}
-                        <span class="fa fa-play"></span>
-                    </button>
-                </div>
-            {/if}
+                {if $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
+                    <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
+                        <button class="button openVideoInPopupBtn">
+                            {locale group='quiqqer/presentation-bricks' var='control.backgroundVideo.btnText'}
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
+                {/if}
+            </div>
         </div>
     {/if}
 </div>

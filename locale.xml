@@ -320,6 +320,7 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+
         <!-- Icon Box-->
         <locale name="control.IconBox.title">
             <de><![CDATA[Präsentation: Boxen mit Icon und Text]]></de>
@@ -495,6 +496,83 @@
             <en><![CDATA[Do you really want to remove this entry?]]></en>
         </locale>
 
+        <!-- progressbar -->
+        <locale name="control.progressbar.title">
+            <de><![CDATA[Präsentation: Fortschrittsbalken (progressbar)]]></de>
+            <en><![CDATA[Presentation: Progress bar]]></en>
+        </locale>
+        <locale name="control.progressbar.description">
+            <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
+            <en><![CDATA[Visual presentation of progress]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth">
+            <de><![CDATA[Maximale Balkenbreite (in Pixel)]]></de>
+            <en><![CDATA[Maximum bar width (in pixel)]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalText">
+            <de><![CDATA[Zusatztext]]></de>
+            <en><![CDATA[Additional text]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition">
+            <de><![CDATA[Textposition]]></de>
+            <en><![CDATA[Text position]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.top">
+            <de><![CDATA[Top]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalTextRight">
+            <de><![CDATA[Zusatztext rechts]]></de>
+            <en><![CDATA[Additional text on right]]></en>
+        </locale>
+        <locale name="brick.progressbar.settings.entries">
+            <de><![CDATA[Einträge]]></de>
+            <en><![CDATA[Entries]]></en>
+        </locale>
+
+        <!-- progressbar settings entry -->
+        <locale name="brick.progressbar.entries.adddialog.title">
+            <de><![CDATA[Fortschrittseintrag (progressbar)]]></de>
+            <en><![CDATA[Progressbar]]></en>
+        </locale>
+
+        <locale name="bricks.progressbar.settings.createPopup.title">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.percent">
+            <de><![CDATA[Prozent (min 0 / max 100)]]></de>
+            <en><![CDATA[Percent (min 0 / max 100)]]></en>
+        </locale>
+        <locale name="brick.progressbar.settings.add.percent">
+            <de><![CDATA[Prozent]]></de>
+            <en><![CDATA[Percent]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.editdialog.title">
+            <de><![CDATA[Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit progressbar entry]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.title">
+            <de><![CDATA[Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.text">
+            <de><![CDATA[Möchten Sie diesen Fortschrittsbalken-Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this progressbar entry?]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.information">
+            <de><![CDATA[Die Einträge der Fortschrittsleiste können nicht wiederhergestellt werden]]></de>
+            <en><![CDATA[The progressbar entries can not be restored]]></en>
+        </locale>
+
         <!-- Background video -->
         <locale name="control.backgroundVideo.title">
             <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
@@ -564,6 +642,14 @@
             <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
             <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
         </locale>
+        <locale name="control.backgroundVideo.playIfInView">
+            <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>
+            <en><![CDATA[Play when in view]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView.desc">
+            <de><![CDATA[Das Video wird nur abgespielt, wenn es im sichtbaren Bereich ist, ansonsten wird das Video pausiert, z.B. wenn der Benutzer weiter auf der Seite scrollt.]]></de>
+            <en><![CDATA[The video will only play if it is in the visible area, otherwise the video will be paused, e.g. when the user scrolls further on the page.]]></en>
+        </locale>
         <locale name="control.backgroundVideo.backgroundVideoBrightness">
             <de><![CDATA[Video Helligkeit]]></de>
             <en><![CDATA[Video brightness]]></en>
@@ -601,33 +687,43 @@
             <de><![CDATA[Video in Popup öffnen]]></de>
             <en><![CDATA[Open video in popup]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopup.desc">
-            <de><![CDATA[Diese Option ist meistens dann sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann somit das volle Video in Popup anschauen.]]></de>
-            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can thus watch the full video in popup.]]></en>
+
+        <locale name="control.backgroundVideo.openVideoInPopup.desc" html="true">
+            <de><![CDATA[Diese Option ist sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann das volle Video in Popup anschauen. <br>Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
+            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can watch the full video in popup.<br> You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton">
-            <de><![CDATA[Button zum Popup-Öffnen]]></de>
-            <en><![CDATA[Button to open the popup]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton">
+            <de><![CDATA[Klick auf den eingebauten Button öffnet ein Popup mit Video]]></de>
+            <en><![CDATA[Click on the default button opens a popup with video]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.desc" html="true">
-            <de><![CDATA[Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
-            <en><![CDATA[You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnOwnButton">
+            <de><![CDATA[Klick auf eigenen Button öffnet ein Popup mit Video]]></de>
+            <en><![CDATA[Click on own button opens popup with video]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.useDefaultButton">
-            <de><![CDATA[Eingebauten Button verwenden]]></de>
-            <en><![CDATA[Use default button]]></en>
+        <locale name="control.backgroundVideo.openVideoInPopup.noClick">
+            <de><![CDATA[Kein Popup öffnen]]></de>
+            <en><![CDATA[Do not open a popup]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.useOwnButton">
-            <de><![CDATA[Eigenen Button benutzen]]></de>
-            <en><![CDATA[Use own button]]></en>
+        <locale name="control.backgroundVideo.defaultButtonPosition">
+            <de><![CDATA[Position des eingebauten Buttons]]></de>
+            <en><![CDATA[Default button position]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopupButton.noButton">
-            <de><![CDATA[Kein Button]]></de>
-            <en><![CDATA[No button]]></en>
+        <locale name="control.backgroundVideo.defaultButtonPosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
         </locale>
         <locale name="control.backgroundVideo.btnText">
             <de><![CDATA[Video anschauen]]></de>
             <en><![CDATA[Watch the Film]]></en>
         </locale>
+
     </groups>
 </locales>
