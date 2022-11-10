@@ -36,7 +36,7 @@
 }
 
 .iconBox-entries {
-    flex-basis: 70%;
+    flex-basis: calc(100% - var(--qui-iconBox-entryWidth));
     display: grid;
     grid-template-columns: repeat(var(--qui-iconBox-entryPerLine), auto);
     gap: 2rem
