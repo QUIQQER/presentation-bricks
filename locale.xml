@@ -529,7 +529,7 @@
             <de><![CDATA[Klick auf eigenen Button öffnet ein Popup mit Video]]></de>
             <en><![CDATA[Click on own button opens popup with video]]></en>
         </locale>
-        <locale name="control.backgroundVideo.openVideoInPopup.noClick">
+        <locale name="control.backgroundVideo.openVideoInPopup.noButton">
             <de><![CDATA[Kein Popup öffnen]]></de>
             <en><![CDATA[Do not open a popup]]></en>
         </locale>
