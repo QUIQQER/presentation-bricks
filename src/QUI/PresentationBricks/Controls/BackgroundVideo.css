@@ -3,6 +3,7 @@
     display: grid;
     position: relative;
     background-color: var(--qui-backgroundVideo-bgColor, initial);
+    grid-template-rows: var(--qui-backgroundVideo-videoHeight, initial);
 }
 
 .quiqqer-presentationBricks-backgroundVideo-videoContainer {

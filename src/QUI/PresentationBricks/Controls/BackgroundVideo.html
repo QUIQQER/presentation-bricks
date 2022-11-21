@@ -9,6 +9,9 @@
         {if $defaultBtnPos}
         --qui-backgroundVideo-defaultBtnPos: {$defaultBtnPos};
         {/if}
+        {if $this->getAttribute('height')}
+        --qui-backgroundVideo-videoHeight: {$this->getAttribute('height')};
+        {/if}
         ">
     <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
         <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
