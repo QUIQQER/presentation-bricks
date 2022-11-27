@@ -139,7 +139,7 @@ class Video extends QUI\Control
 
     /**
      * Check max width and return correct value
-     * 
+     *
      * @param $value
      * @return string
      */
