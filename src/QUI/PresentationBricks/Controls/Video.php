@@ -137,7 +137,13 @@ class Video extends QUI\Control
         return $Engine->fetch(dirname(__FILE__).'/Video.default.html');
     }
 
-    function checkMaxWidth($value)
+    /**
+     * Check max width and return correct value
+     * 
+     * @param $value
+     * @return string
+     */
+    protected function checkMaxWidth($value)
     {
         $width = 'initial';
 
