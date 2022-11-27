@@ -554,5 +554,122 @@
             <en><![CDATA[Watch the Film]]></en>
         </locale>
 
+        <!-- Video -->
+        <locale name="control.video.title">
+            <de><![CDATA[Präsentation: Video]]></de>
+            <en><![CDATA[Presentation: Video]]></en>
+        </locale>
+        <locale name="control.video.description">
+            <de><![CDATA[Mit diesem Baustein lässt sich ein Video auf der Seite platzieren.]]></de>
+            <en><![CDATA[With this brick you can place a video on your website.]]></en>
+        </locale>
+        <locale name="control.video.video">
+            <de><![CDATA[Video]]></de>
+            <en><![CDATA[Video]]></en>
+        </locale>
+        <locale name="control.video.video.desc">
+            <de><![CDATA[Video in voller Länge]]></de>
+            <en><![CDATA[Full length video]]></en>
+        </locale>
+        <locale name="control.video.poster">
+            <de><![CDATA[Poster]]></de>
+            <en><![CDATA[Poster]]></en>
+        </locale>
+        <locale name="control.video.poster.desc">
+            <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
+            <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.video.shortVideo">
+            <de><![CDATA[Gekürztes Video]]></de>
+            <en><![CDATA[Short video]]></en>
+        </locale>
+        <locale name="control.video.shortVideo.desc">
+            <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
+            <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.video.playIfInView">
+            <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>
+            <en><![CDATA[Play when in view]]></en>
+        </locale>
+        <locale name="control.video.playIfInView.desc">
+            <de><![CDATA[Das Video wird nur abgespielt, wenn es im sichtbaren Bereich ist, ansonsten wird das Video pausiert, z.B. wenn der Benutzer weiter auf der Seite scrollt.]]></de>
+            <en><![CDATA[The video will only play if it is in the visible area, otherwise the video will be paused, e.g. when the user scrolls further on the page.]]></en>
+        </locale>
+        <locale name="control.video.autoplay">
+            <de><![CDATA[Automatisches Abspielen]]></de>
+            <en><![CDATA[Autoplay]]></en>
+        </locale>
+        <locale name="control.video.autoplay.desc">
+            <de><![CDATA[Das Video wird automatisch abgespielt. In einigen Browsern (z. B. Chrome 70.0) funktioniert die automatische Wiedergabe nicht, wenn die Option "Ton ausschalten" (mute) nicht aktiviert ist.]]></de>
+            <en><![CDATA[The video automatically begins to play back as soon as it can do so without stopping to finish loading the data. In some browsers (e.g. Chrome 70.0) autoplay doesn't work if muted option is not active.]]></en>
+        </locale>
+        <locale name="control.video.muted">
+            <de><![CDATA[Ton ausschalten]]></de>
+            <en><![CDATA[Mute]]></en>
+        </locale>
+        <locale name="control.video.muted.desc">
+            <de><![CDATA[Video wird ohne Ton abgespielt.]]></de>
+            <en><![CDATA[The audio will be initially silenced.]]></en>
+        </locale>
+        <locale name="control.video.loop">
+            <de><![CDATA[Dauerschleife]]></de>
+            <en><![CDATA[Loop]]></en>
+        </locale>
+        <locale name="control.video.loop.desc">
+            <de><![CDATA[Wenn diese Option aktiviert ist, springt der Browser automatisch zum Anfang zurück, wenn das Ende des Videos erreicht ist.]]></de>
+            <en><![CDATA[If active, the browser will automatically seek back to the start upon reaching the end of the video]]></en>
+        </locale>
+        <locale name="control.video.playsinline">
+            <de><![CDATA[Video in der Seite abspielen (playsinline)]]></de>
+            <en><![CDATA[Play video inline (playsinline)]]></en>
+        </locale>
+        <locale name="control.video.playsinline.desc" html="true">
+            <de><![CDATA[Diese Option besagt, dass das Video in der Seite und nicht mit einem eigenen Player abgespielt wird. Die Auswirkung dieser Option ist meistens auf mobilen Geräten sichtbar. Mehr dazu unter <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></de>
+            <en><![CDATA[If activated the video is to be played "inline", that is within the element's playback area. Note that the absence of this attribute does not imply that the video will always be played in fullscreen. Read more at <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></en>
+        </locale>
+        <locale name="control.video.brightness">
+            <de><![CDATA[Video Helligkeit]]></de>
+            <en><![CDATA[Video brightness]]></en>
+        </locale>
+        <locale name="control.video.videoButton">
+            <de><![CDATA[Video Button]]></de>
+            <en><![CDATA[Video Button]]></en>
+        </locale>
+        <locale name="control.video.videoButton.desc" html="true">
+            <de><![CDATA[Bestimmt, wie der Video Button angezeigt, oder gar ausgeblendet wird. Möchte man eigenen Button verwenden, muss man einem Elemente die CSS Klasse <code>videoActionButton</code> geben.]]></de>
+            <en><![CDATA[Determines how the video button is displayed or even hidden. If you want to use your own button, you must give an element the CSS class <code>videoActionButton</code>.]]></en>
+        </locale>
+        <locale name="control.video.videoButton.showPermanent">
+            <de><![CDATA[Button immer anzeigen]]></de>
+            <en><![CDATA[Always show a button]]></en>
+        </locale>
+        <locale name="control.video.videoButton.showOnMouseEnter">
+            <de><![CDATA[Button nach Mouse-Over anzeigen]]></de>
+            <en><![CDATA[Show button only by mouse over]]></en>
+        </locale>
+        <locale name="control.video.videoButton.disable">
+            <de><![CDATA[Video Button deaktivieren]]></de>
+            <en><![CDATA[Disable video button]]></en>
+        </locale>
+        <locale name="control.video.brightness.desc" html="true">
+            <de><![CDATA[Damit der Text über dem Hintergrundvideo besser sichtbar ist, kann man mit dieser Option das Video abdunkeln. Bitte Wert zwischen <strong>0 und 100</strong> eingeben.]]></de>
+            <en><![CDATA[To make the text above the background video more visible, you can darken the video with this option. Please enter value between <strong>0 and 100</strong>.]]></en>
+        </locale>
+        <locale name="control.video.maxVideoWidth">
+            <de><![CDATA[Maximale Videobreite]]></de>
+            <en><![CDATA[Video max width]]></en>
+        </locale>
+        <locale name="control.video.maxVideoWidth.desc" html="true">
+            <de><![CDATA[Diese Einstellung beeinflusst die Videovorschau in einem Fenster nicht (soweit die Option "Video in einem Popup öffnen" aktiviert). Dieser Wert wird in Pixel einzugeben.]]></de>
+            <en><![CDATA[This setting does not affect the video preview in a window (if open video in a window enabled). This value is entered in pixels.]]></en>
+        </locale>
+        <locale name="control.video.maxContentWidth">
+            <de><![CDATA[Maximale Inhaltsbreite]]></de>
+            <en><![CDATA[Content max width]]></en>
+        </locale>
+        <locale name="control.video.maxContentWidth.desc" html="true">
+            <de><![CDATA[Dieser Wert wird in Pixel einzugeben.]]></de>
+            <en><![CDATA[This value is entered in pixels.]]></en>
+        </locale>
     </groups>
 </locales>

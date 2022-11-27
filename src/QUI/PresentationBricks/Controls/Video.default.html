@@ -1,0 +1,25 @@
+{if ($this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')) || $this->getAttribute('content') != ""}
+    <div class="quiqqer-presentationBricks-video-content">
+        {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+            <h2 class="control-header">{$this->getAttribute('frontendTitle')}</h2>
+        {/if}
+
+        {if $this->getAttribute('content') != ""}
+            <div class="control-content">
+                {$this->getAttribute('content')}
+            </div>
+        {/if}
+    </div>
+{/if}
+
+<div class="quiqqer-presentationBricks-video-videoContainer">
+    {if $this->getAttribute('videoButton') !== 'disable'}
+        {include file=$buttonFile}
+    {/if}
+    
+    <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
+           preload="none"
+           src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
+            {if $this->getAttribute('poster')}poster="{$this->getAttribute('poster')}"{/if}>
+    </video>
+</div>

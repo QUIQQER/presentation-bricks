@@ -2,9 +2,9 @@
  * ...
  *
  * @author www.pcsg.de (Michael Danielczok)
- * @module package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo
+ * @module package/quiqqer/presentation-bricks/bin/Controls/Video
  */
-define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
+define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
 
     'qui/controls/Control'
 
@@ -14,7 +14,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo',
+        Type   : 'package/quiqqer/presentation-bricks/bin/Controls/Video',
 
         Binds: [
             '$onImport',
@@ -43,7 +43,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
          */
         $onImport: function () {
             const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn');
+            const buttons = Elm.querySelectorAll('.openVideoInPopup');
 
             if (buttons.length > 0) {
                 let i   = 0,
