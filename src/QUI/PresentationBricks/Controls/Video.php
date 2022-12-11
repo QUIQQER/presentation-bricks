@@ -24,19 +24,20 @@ class Video extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'class'           => 'quiqqer-presentationBricks-video',
-            'video'           => false,
-            'poster'          => false,
-            'shortVideo'      => false,
-            'autoplay'        => true,
-            'muted'           => true,
-            'loop'            => true,
-            'playsinline'     => true,
-            'playIfInView'    => true,
-            'videoButton'     => 'showPermanent', // showPermanent, showOnMouseOver, disable
-            'videoBrightness' => 50,
-            'maxVideoWidth'   => '',
-            'maxContentWidth' => '',
+            'class'             => 'quiqqer-presentationBricks-video',
+            'video'             => false,
+            'poster'            => false,
+            'shortVideo'        => false,
+            'autoplay'          => true,
+            'muted'             => true,
+            'loop'              => true,
+            'playsinline'       => true,
+            'playIfInView'      => true,
+            'videoButton'       => 'showPermanent', // showPermanent, showOnMouseOver, disable
+            'videoButtonAction' => 'playInWebsite', // playInWebsite, openInPopup
+            'videoBrightness'   => 50,
+            'maxVideoWidth'     => '',
+            'maxContentWidth'   => '',
         ]);
 
         parent::__construct($attributes);
@@ -62,6 +63,7 @@ class Video extends QUI\Control
         $playsinline     = false;
         $videoBrightness = 50;
 
+        $this->setJavaScriptControlOption('openinpopup', 0);
 
         if ($this->getAttribute('autoplay')) {
             $autoplay = $this->getAttribute('autoplay');
@@ -89,16 +91,9 @@ class Video extends QUI\Control
 
         $videoBrightness = $videoBrightness / 100;
 
-        $initVideoInPopup = false;
+        if ($this->getAttribute('videoButtonAction') === 'openInPopup') {
+            $this->setJavaScriptControlOption('openinpopup', 1);
 
-        switch ($this->getAttribute('openVideoInPopup')) {
-            case 'clickOnDefaultButton':
-            case 'clickOnOwnButton':
-                $initVideoInPopup = true;
-        }
-
-//        if ($initVideoInPopup) {
-        if (true) {
             try {
                 $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
                 $this->setJavaScriptControlOption('poster', $Poster->getUrl(true));
@@ -117,7 +112,6 @@ class Video extends QUI\Control
         if ($this->getAttribute('videoButton') === 'showOnMouseOver') {
             $this->addCSSClass('quiqqer-presentationBricks-video__showBtnOnMouseOver');
         }
-
 
         $this->setStyles([
             '--qui-video-videoBrightness' => $videoBrightness,

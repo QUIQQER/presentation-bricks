@@ -646,6 +646,19 @@
                                 var="control.video.videoButton.disable"/>
                     </option>
                 </setting>
+                <setting name="videoButtonAction" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.videoButtonAction"/>
+
+                    <option value="playInWebsite">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButtonAction.playInWebsite"/>
+                    </option>
+                    <option value="openInPopup">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButtonAction.openInPopup"/>
+                    </option>
+                </setting>
 
                 <setting name="videoBrightness" type="number" min="0" max="100">
                     <locale group="quiqqer/presentation-bricks"

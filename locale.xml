@@ -636,8 +636,8 @@
             <en><![CDATA[Video Button]]></en>
         </locale>
         <locale name="control.video.videoButton.desc" html="true">
-            <de><![CDATA[Bestimmt, wie der Video Button angezeigt, oder gar ausgeblendet wird. Möchte man eigenen Button verwenden, muss man einem Elemente die CSS Klasse <code>videoActionButton</code> geben.]]></de>
-            <en><![CDATA[Determines how the video button is displayed or even hidden. If you want to use your own button, you must give an element the CSS class <code>videoActionButton</code>.]]></en>
+            <de><![CDATA[Bestimmt, wie der Video Button angezeigt, oder gar ausgeblendet wird. Möchte man eigenen Button verwenden, muss man einem Elemente die CSS Klasse <code>videoButtonAction</code> geben.]]></de>
+            <en><![CDATA[Determines how the video button is displayed or even hidden. If you want to use your own button, you must give an element the CSS class <code>videoButtonAction</code>.]]></en>
         </locale>
         <locale name="control.video.videoButton.showPermanent">
             <de><![CDATA[Button immer anzeigen]]></de>
@@ -650,6 +650,18 @@
         <locale name="control.video.videoButton.disable">
             <de><![CDATA[Video Button deaktivieren]]></de>
             <en><![CDATA[Disable video button]]></en>
+        </locale>
+        <locale name="control.video.videoButtonAction">
+            <de><![CDATA[Video Button Aktion]]></de>
+            <en><![CDATA[Video button action]]></en>
+        </locale>
+        <locale name="control.video.videoButtonAction.openInPopup">
+            <de><![CDATA[Video in Popup öffnen]]></de>
+            <en><![CDATA[Open video in a popup]]></en>
+        </locale>
+        <locale name="control.video.videoButtonAction.playInWebsite">
+            <de><![CDATA[Video direkt in der Website abspielen]]></de>
+            <en><![CDATA[Play video directly in the website]]></en>
         </locale>
         <locale name="control.video.brightness.desc" html="true">
             <de><![CDATA[Damit der Text über dem Hintergrundvideo besser sichtbar ist, kann man mit dieser Option das Video abdunkeln. Bitte Wert zwischen <strong>0 und 100</strong> eingeben.]]></de>
