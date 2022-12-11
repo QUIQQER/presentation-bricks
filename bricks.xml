@@ -550,5 +550,144 @@
                 </setting>
             </settings>
         </brick>
+
+        <!-- Video -->
+        <brick control="\QUI\PresentationBricks\Controls\Video">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.video.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.video.description"/>
+            </description>
+
+            <settings>
+                <setting name="video" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.video"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.video.desc"/>
+                    </description>
+                </setting>
+                <setting name="poster" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.poster"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.poster.desc"/>
+                    </description>
+                </setting>
+                <setting name="shortVideo" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.shortVideo"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.shortVideo.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="playIfInView" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.playIfInView"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.playIfInView.desc"/>
+                    </description>
+                </setting>
+                <setting name="autoplay" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.autoplay"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.autoplay.desc"/>
+                    </description>
+                </setting>
+                <setting name="muted" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.muted"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.muted.desc"/>
+                    </description>
+                </setting>
+                <setting name="loop" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.loop"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.loop.desc"/>
+                    </description>
+                </setting>
+                <setting name="playsinline" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.playsinline"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.playsinline.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="videoButton" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.videoButton"/>
+
+                    <option value="showPermanent">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButton.showPermanent"/>
+                    </option>
+                    <option value="showOnMouseOver">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButton.showOnMouseEnter"/>
+                    </option>
+                    <option value="disable">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButton.disable"/>
+                    </option>
+                </setting>
+                <setting name="videoButtonAction" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.videoButtonAction"/>
+
+                    <option value="playInWebsite">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButtonAction.playInWebsite"/>
+                    </option>
+                    <option value="openInPopup">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.videoButtonAction.openInPopup"/>
+                    </option>
+                </setting>
+
+                <setting name="videoBrightness" type="number" min="0" max="100">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.brightness"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.brightness.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="maxVideoWidth" type="number" min="0">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.maxVideoWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.maxVideoWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="maxContentWidth" type="number" min="0">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.maxContentWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.maxContentWidth.desc"/>
+                    </description>
+                </setting>
+
+            </settings>
+        </brick>
     </bricks>
 </quiqqer>

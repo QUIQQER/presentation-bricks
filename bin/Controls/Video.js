@@ -2,9 +2,9 @@
  * ...
  *
  * @author www.pcsg.de (Michael Danielczok)
- * @module package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo
+ * @module package/quiqqer/presentation-bricks/bin/Controls/Video
  */
-define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
+define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
 
     'qui/controls/Control'
 
@@ -14,24 +14,27 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo',
+        Type   : 'package/quiqqer/presentation-bricks/bin/Controls/Video',
 
         Binds: [
             '$onImport',
             'openVideoInPopup',
+            '$handleVideoButtonClick',
             'onWindowOpen'
         ],
 
         options: {
             video       : '',
             poster      : '',
-            playifinview: true
+            playifinview: true,
+            openinpopup : 0
         },
 
         initialize: function (options) {
             this.parent(options);
 
             this.isOpen = false;
+            this.Video  = false;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -43,18 +46,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
          */
         $onImport: function () {
             const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn');
-
-            if (buttons.length > 0) {
-                let i   = 0,
-                    len = buttons.length;
-
-                for (i; i < len; i++) {
-                    buttons[i].addEventListener('click', this.openVideoInPopup);
-                }
-            }
-
-            this.Video = Elm.querySelector('video');
+            const buttons = Elm.querySelectorAll('.videoButtonAction');
+            this.Video    = Elm.querySelector('video');
 
             if (!this.Video) {
                 return;
@@ -63,8 +56,43 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
             if (this.getAttribute('playifinview')) {
                 this.initPlayIfInView();
             }
+
+            if (buttons.length > 0) {
+                let i   = 0,
+                    len = buttons.length;
+
+                for (i; i < len; i++) {
+                    buttons[i].addEventListener('click', this.$handleVideoButtonClick);
+                }
+            }
         },
 
+        /**
+         * Handle button click
+         */
+        $handleVideoButtonClick: function () {
+            if (this.getElm().get('data-qui-options-openinpopup') === '1') {
+                this.openVideoInPopup();
+                return;
+            }
+
+            const BtnWrapper = this.getElm().querySelector('.quiqqer-presentationBricks-video-buttonWrapper');
+
+            if (BtnWrapper) {
+                BtnWrapper.style.pointerEvents = 'none';
+                this.Video.style.filter        = 'none';
+                this.Video.setAttribute('controls', 1);
+                this.Video.play();
+                BtnWrapper.destroy();
+            } else {
+                this.Video.setAttribute('controls', 1);
+                this.Video.play();
+            }
+        },
+
+        /**
+         * Open video in a popup
+         */
         openVideoInPopup: function () {
             const self = this;
 
@@ -72,7 +100,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
                 return;
             }
             this.isOpen = true;
-
 
             require(['package/quiqqer/presentation-bricks/bin/Controls/VideoInPopup'], function (VideoPopup) {
                 var Popup = new VideoPopup({
