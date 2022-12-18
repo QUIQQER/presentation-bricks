@@ -20,6 +20,6 @@
     <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
            preload="none"
            src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
-            {if $this->getAttribute('poster')}poster="{$this->getAttribute('poster')}"{/if}>
+           {if $posterUrl}poster="{$posterUrl}"{/if}>
     </video>
 </div>
