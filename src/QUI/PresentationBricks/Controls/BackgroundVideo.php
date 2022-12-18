@@ -129,12 +129,21 @@ class BackgroundVideo extends QUI\Control
                 $initVideoInPopup = true;
         }
 
+        /**
+         * poster url
+         */
+        $posterUrl = false;
+
+        try {
+            $Poster    = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+            $posterUrl = $Poster->getUrl(true);
+        } catch (QUI\Exception $Exception) {
+            // nothing
+        }
+
         if ($initVideoInPopup) {
-            try {
-                $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
-                $this->setJavaScriptControlOption('poster', $Poster->getUrl(true));
-            } catch (QUI\Exception $Exception) {
-                // nothing
+            if ($posterUrl) {
+                $this->setJavaScriptControlOption('poster', $posterUrl);
             }
 
             try {
@@ -151,6 +160,7 @@ class BackgroundVideo extends QUI\Control
 
         $Engine->assign([
             'this'                      => $this,
+            'posterUrl'                 => $posterUrl,
             'backgroundColor'           => $backgroundColor,
             'autoplay'                  => $autoplay,
             'muted'                     => $muted,

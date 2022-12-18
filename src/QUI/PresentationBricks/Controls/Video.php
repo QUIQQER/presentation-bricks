@@ -89,16 +89,26 @@ class Video extends QUI\Control
             $videoBrightness = intval($this->getAttribute('videoBrightness'));
         }
 
+
+        /**
+         * poster url
+         */
+        $posterUrl = false;
+
+        try {
+            $Poster    = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+            $posterUrl = $Poster->getUrl(true);
+        } catch (QUI\Exception $Exception) {
+            // nothing
+        }
+
         $videoBrightness = $videoBrightness / 100;
 
         if ($this->getAttribute('videoButtonAction') === 'openInPopup') {
             $this->setJavaScriptControlOption('openinpopup', 1);
 
-            try {
-                $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
-                $this->setJavaScriptControlOption('poster', $Poster->getUrl(true));
-            } catch (QUI\Exception $Exception) {
-                // nothing
+            if ($posterUrl) {
+                $this->setJavaScriptControlOption('poster', $posterUrl);
             }
 
             try {
@@ -121,6 +131,7 @@ class Video extends QUI\Control
 
         $Engine->assign([
             'this'        => $this,
+            'posterUrl'   => $posterUrl,
             'autoplay'    => $autoplay,
             'muted'       => $muted,
             'loop'        => $loop,
