@@ -20,24 +20,24 @@ class WallpaperText extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         // default options
         $this->setAttributes([
             'imageBackgroundFixed' => false,
-            'bgColor'              => '#eee',
-            'imageBackgroundPos'   => 'center',
-            'fixed'                => false,
-            'contentPosition'      => 'flex-start',
-            'minHeight'            => false,
-            'contentMaxWidth'      => 600,
-            'fontColor'            => 'inherit',
+            'bgColor' => '#eee',
+            'imageBackgroundPos' => 'center',
+            'fixed' => false,
+            'contentPosition' => 'flex-start',
+            'minHeight' => false,
+            'contentMaxWidth' => 600,
+            'fontColor' => 'inherit',
         ]);
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__).'/WallpaperText.css'
+            dirname(__FILE__) . '/WallpaperText.css'
         );
     }
 
@@ -46,7 +46,7 @@ class WallpaperText extends QUI\Control
      *
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
@@ -66,13 +66,13 @@ class WallpaperText extends QUI\Control
         }
 
         $Engine->assign([
-            'this'            => $this,
+            'this' => $this,
             'imageBackground' => $this->getAttribute('image-background'),
-            'bgColor'         => $bgColor,
-            'fixed'           => $fixed,
+            'bgColor' => $bgColor,
+            'fixed' => $fixed,
             'contentPosition' => $this->getAttribute('content-position')
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/WallpaperText.html');
+        return $Engine->fetch(dirname(__FILE__) . '/WallpaperText.html');
     }
 }

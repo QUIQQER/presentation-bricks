@@ -6,6 +6,7 @@
 
 namespace QUI\PresentationBricks\Controls;
 
+use Exception;
 use QUI;
 use QUI\Projects\Site\Utils;
 
@@ -21,19 +22,19 @@ class StickyContent extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = array())
+    public function __construct(array $attributes = [])
     {
         // default options
-        $this->setAttributes(array(
-            'class'           => 'qui-control-brick',
-            'limit'           => 5,
-            'order'           => 'c_date DESC',
+        $this->setAttributes([
+            'class' => 'qui-control-brick',
+            'limit' => 5,
+            'order' => 'c_date DESC',
             'parentInputList' => false,
-            'template'        => 'default',
-            'quiClass'        => 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault',
-            'imgagMockup'     => ''
+            'template' => 'default',
+            'quiClass' => 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault',
+            'imgagMockup' => ''
 
-        ));
+        ]);
 
         parent::__construct($attributes);
     }
@@ -41,14 +42,15 @@ class StickyContent extends QUI\Control
     /**
      * (non-PHPdoc)
      *
+     * @throws Exception
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
         $Engine = QUI::getTemplateManager()->getEngine();
 
-        $start   = 0;
-        $limit   = $this->getAttribute('limit');
+        $start = 0;
+        $limit = $this->getAttribute('limit');
         $Project = $this->getProject();
 
 
@@ -56,11 +58,11 @@ class StickyContent extends QUI\Control
             $limit = 5;
         }
 
-        $children = Utils::getSitesByInputList($Project, $this->getAttribute('site'), array(
+        $children = Utils::getSitesByInputList($Project, $this->getAttribute('site'), [
             'where' => $this->getAttribute('where'),
             'limit' => $start . ',' . $limit,
             'order' => $this->getAttribute('order')
-        ));
+        ]);
 
 
         $template = $this->getAttribute('template');
@@ -68,28 +70,28 @@ class StickyContent extends QUI\Control
         switch ($template) {
             case 'simple':
             default:
-                $html     = dirname(__FILE__) . '/StickyContent.Default.html';
-                $css      = dirname(__FILE__) . '/StickyContent.Default.css';
+                $html = dirname(__FILE__) . '/StickyContent.Default.html';
+                $css = dirname(__FILE__) . '/StickyContent.Default.css';
                 $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentDefault';
                 break;
             case 'mockup':
-                $html     = dirname(__FILE__) . '/StickyContent.MockUp.html';
-                $css      = dirname(__FILE__) . '/StickyContent.MockUp.css';
+                $html = dirname(__FILE__) . '/StickyContent.MockUp.html';
+                $css = dirname(__FILE__) . '/StickyContent.MockUp.css';
                 $quiClass = 'package/quiqqer/presentation-bricks/bin/Controls/StickyContentMockUp';
                 break;
         }
 
-        $mockup    = $this->getAttribute('imgagMockup') . '.png';
+        $mockup = $this->getAttribute('imgagMockup') . '.png';
         $mockupUrl = 'quiqqer/presentation-bricks/bin/img/';
 
-        $Engine->assign(array(
-            'this'           => $this,
-            'Site'           => $this->getSite(),
-            'Project'        => $this->getProject(),
-            'children'       => $children,
-            'inlineStyle'    => 'opacity: 1;',
+        $Engine->assign([
+            'this' => $this,
+            'Site' => $this->getSite(),
+            'Project' => $this->getProject(),
+            'children' => $children,
+            'inlineStyle' => 'opacity: 1;',
             'imageMockupUrl' => URL_OPT_DIR . $mockupUrl . $mockup
-        ));
+        ]);
 
         $this->addCSSFile($css);
         $this->setAttribute('qui-class', $quiClass);
@@ -102,7 +104,7 @@ class StickyContent extends QUI\Control
      *
      * @throws QUI\Exception
      */
-    public function checkLimit()
+    public function checkLimit(): void
     {
         $Site = $this->getSite();
 
@@ -121,9 +123,9 @@ class StickyContent extends QUI\Control
             $sheet = (int)$_REQUEST['sheet'];
         }
 
-        $count_children = $Site->getChildren(array(
+        $count_children = $Site->getChildren([
             'count' => 'count'
-        ));
+        ]);
 
         $sheets = ceil($count_children / $limit);
 
@@ -134,8 +136,9 @@ class StickyContent extends QUI\Control
 
     /**
      * @return mixed|QUI\Projects\Site
+     * @throws QUI\Exception
      */
-    protected function getSite()
+    protected function getSite(): mixed
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
