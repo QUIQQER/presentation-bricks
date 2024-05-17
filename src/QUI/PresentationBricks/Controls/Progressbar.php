@@ -7,7 +7,6 @@
 namespace QUI\PresentationBricks\Controls;
 
 use QUI;
-use QUI\Exception;
 
 /**
  * Class Author
@@ -22,15 +21,15 @@ class Progressbar extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         // default options
         $this->setAttributes([
-            'additionalText'  => '',
+            'additionalText' => '',
             'progressbarData' => [],
-            'textOnRight'     => false,
-            'maxWidth'        => '', //in pixels
-            'textPosition'    => 'top'
+            'textOnRight' => false,
+            'maxWidth' => '', //in pixels
+            'textPosition' => 'top'
         ]);
 
         $this->addCSSFile(dirname(__FILE__) . '/Progressbar.css');
@@ -43,15 +42,16 @@ class Progressbar extends QUI\Control
      *
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
-        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $entries = json_decode($this->getAttribute('entries'), true);
 
-        $additionalText  = $this->getAttribute('additionalText');
-        $maxWidth        = '1920px';
-        $textOnRight     = 'quiqqer-progressbar__textLeft';
+        $additionalText = $this->getAttribute('additionalText');
+        $maxWidth = '1920px';
+        $textOnRight = 'quiqqer-progressbar__textLeft';
         $progressbarData = [];
+        $textPosition = '';
 
         if ($this->getAttribute('textPosition')) {
             $textPosition = $this->getAttribute('textPosition');
@@ -61,8 +61,10 @@ class Progressbar extends QUI\Control
             $textOnRight = 'quiqqer-progressbar__textRight';
         }
 
-        if ($this->getAttribute('maxWidth') > 0 &&
-            $this->getAttribute('maxWidth') <= 1920) {
+        if (
+            $this->getAttribute('maxWidth') > 0 &&
+            $this->getAttribute('maxWidth') <= 1920
+        ) {
             $maxWidth = $this->getAttribute('maxWidth') . 'px';
         }
 
@@ -71,16 +73,19 @@ class Progressbar extends QUI\Control
                 $entry['percent'] = 100;
             }
 
-            \array_push($progressbarData, ['title' => $entry['title'], "percent" => $entry['percent']]);
+            $progressbarData[] = [
+                'title' => $entry['title'],
+                "percent" => $entry['percent']
+            ];
         }
 
         $Engine->assign([
-            'this'            => $this,
-            'additionalText'  => $additionalText,
+            'this' => $this,
+            'additionalText' => $additionalText,
             'progressbarData' => $progressbarData,
-            'textOnRight'     => $textOnRight,
-            'maxWidth'        => $maxWidth,
-            'textPosition'    => $textPosition
+            'textOnRight' => $textOnRight,
+            'maxWidth' => $maxWidth,
+            'textPosition' => $textPosition
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Progressbar.html');

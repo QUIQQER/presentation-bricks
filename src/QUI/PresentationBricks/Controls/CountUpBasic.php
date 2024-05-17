@@ -20,15 +20,15 @@ class CountUpBasic extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = array())
+    public function __construct(array $attributes = [])
     {
         // default options
-        $this->setAttributes(array(
-            'class'    => 'qui-control-countUpBasic',
-            'entries'  => array(),
-            'iconTop'  => false,
+        $this->setAttributes([
+            'class' => 'qui-control-countUpBasic',
+            'entries' => [],
+            'iconTop' => false,
             'template' => 'simple'
-        ));
+        ]);
 
         parent::__construct($attributes);
     }
@@ -38,9 +38,9 @@ class CountUpBasic extends QUI\Control
      *
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
-        $Engine  = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $entries = $this->getAttribute('entries');
 
         if (is_string($entries)) {
@@ -53,15 +53,15 @@ class CountUpBasic extends QUI\Control
             case 'simple':
             default:
                 $html = dirname(__FILE__) . '/CountUpBasic.Simple.html';
-                $css  = dirname(__FILE__) . '/CountUpBasic.Simple.css';
+                $css = dirname(__FILE__) . '/CountUpBasic.Simple.css';
                 break;
         }
 
-        $Engine->assign(array(
-            'this'    => $this,
+        $Engine->assign([
+            'this' => $this,
             'entries' => $entries,
-            'iconTop'  => $this->getAttribute('iconTop')
-        ));
+            'iconTop' => $this->getAttribute('iconTop')
+        ]);
 
         $this->addCSSFile($css);
 

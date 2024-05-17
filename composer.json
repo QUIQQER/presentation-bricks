@@ -1,5 +1,5 @@
 {
-    "name": "quiqqer\/presentation-bricks",
+    "name": "quiqqer/presentation-bricks",
     "type": "quiqqer-plugin",
     "description": "This package contains bricks for the presentation of app or program on your website.",
     "license": "GPL-3.0+",
@@ -7,27 +7,27 @@
         {
             "name": "Michael Danielczok",
             "email": "michael@pcsg.de",
-            "homepage": "http:\/\/www.pcsg.de",
+            "homepage": "https://www.pcsg.de",
             "role": "Developer"
         }
     ],
     "support": {
         "email": "support@pcsg.de",
-        "url": "http:\/\/www.pcsg.de"
+        "url": "https://www.pcsg.de"
     },
     "require": {
-        "quiqqer\/quiqqer": "^1|dev-master|dev-dev",
-        "quiqqer\/fontawesome": "^5|^4|dev-master|dev-dev",
-        "quiqqer\/unsemantic": "^1|dev-master|dev-dev",
-        "quiqqer\/utils": "^1.7|dev-master|dev-dev",
-        "quiqqer\/buttons": "^1|dev-master|dev-dev"
+        "quiqqer/core": "^2",
+        "quiqqer/fontawesome": "^6",
+        "quiqqer/unsemantic": "^2",
+        "quiqqer/utils": "^2",
+        "quiqqer/buttons": "^2"
     },
     "suggest": {
-        "quiqqer\/template-presentation": "Business and marketing template for promoting your company or product online."
+        "quiqqer/template-presentation": "Business and marketing template for promoting your company or product online."
     },
     "autoload": {
         "psr-4": {
-            "QUI\\PresentationBricks\\": "src\/QUI\/PresentationBricks"
+            "QUI\\PresentationBricks\\": "src/QUI/PresentationBricks"
         }
     }
 }
