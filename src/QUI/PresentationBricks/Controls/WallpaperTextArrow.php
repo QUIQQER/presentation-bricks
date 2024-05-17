@@ -20,20 +20,20 @@ class WallpaperTextArrow extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         // default options
         $this->setAttributes([
             'imageBackgroundFixed' => 'false',
-            'arrowType'            => 'arrow-down',
-            'fixed'                => false,
-            'effect'               => 'scale'
+            'arrowType' => 'arrow-down',
+            'fixed' => false,
+            'effect' => 'scale'
         ]);
 
         parent::__construct($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__).'/WallpaperTextArrow.css'
+            dirname(__FILE__) . '/WallpaperTextArrow.css'
         );
     }
 
@@ -42,9 +42,9 @@ class WallpaperTextArrow extends QUI\Control
      *
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
-        $Engine    = QUI::getTemplateManager()->getEngine();
+        $Engine = QUI::getTemplateManager()->getEngine();
         $arrowType = $this->getAttribute('arrow-type');
 
         $fixed = '';
@@ -60,14 +60,14 @@ class WallpaperTextArrow extends QUI\Control
         }
 
         $Engine->assign([
-            'this'            => $this,
+            'this' => $this,
             'imageBackground' => $this->getAttribute('image-background'),
-            'fixed'           => $fixed,
-            'image'           => $this->getAttribute('image'),
-            'arrowType'       => $this->getAttribute('arrow-type'),
-            'effect'          => $this->getAttribute('effect')
+            'fixed' => $fixed,
+            'image' => $this->getAttribute('image'),
+            'arrowType' => $this->getAttribute('arrow-type'),
+            'effect' => $this->getAttribute('effect')
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/WallpaperTextArrow.html');
+        return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextArrow.html');
     }
 }
