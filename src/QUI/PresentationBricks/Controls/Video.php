@@ -20,24 +20,24 @@ class Video extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         // default options
         $this->setAttributes([
-            'class'             => 'quiqqer-presentationBricks-video',
-            'video'             => false,
-            'poster'            => false,
-            'shortVideo'        => false,
-            'autoplay'          => true,
-            'muted'             => true,
-            'loop'              => true,
-            'playsinline'       => true,
-            'playIfInView'      => true,
-            'videoButton'       => 'showPermanent', // showPermanent, showOnMouseOver, disable
+            'class' => 'quiqqer-presentationBricks-video',
+            'video' => false,
+            'poster' => false,
+            'shortVideo' => false,
+            'autoplay' => true,
+            'muted' => true,
+            'loop' => true,
+            'playsinline' => true,
+            'playIfInView' => true,
+            'videoButton' => 'showPermanent', // showPermanent, showOnMouseOver, disable
             'videoButtonAction' => 'playInWebsite', // playInWebsite, openInPopup
-            'videoBrightness'   => 50,
-            'maxVideoWidth'     => '',
-            'maxContentWidth'   => '',
+            'videoBrightness' => 50,
+            'maxVideoWidth' => '',
+            'maxContentWidth' => '',
         ]);
 
         parent::__construct($attributes);
@@ -45,7 +45,7 @@ class Video extends QUI\Control
         $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/Video');
 
         $this->addCSSFile(
-            dirname(__FILE__).'/Video.css'
+            dirname(__FILE__) . '/Video.css'
         );
     }
 
@@ -54,13 +54,13 @@ class Video extends QUI\Control
      *
      * @see \QUI\Control::create()
      */
-    public function getBody()
+    public function getBody(): string
     {
-        $Engine          = QUI::getTemplateManager()->getEngine();
-        $autoplay        = false;
-        $muted           = false;
-        $loop            = false;
-        $playsinline     = false;
+        $Engine = QUI::getTemplateManager()->getEngine();
+        $autoplay = false;
+        $muted = false;
+        $loop = false;
+        $playsinline = false;
         $videoBrightness = 50;
 
         $this->setJavaScriptControlOption('openinpopup', 0);
@@ -83,9 +83,11 @@ class Video extends QUI\Control
 
         $this->setJavaScriptControlOption('playifinview', $this->getAttribute('playIfInView'));
 
-        if (intval($this->getAttribute('videoBrightness')) &&
+        if (
+            intval($this->getAttribute('videoBrightness')) &&
             intval($this->getAttribute('videoBrightness')) > 0 &&
-            intval($this->getAttribute('videoBrightness')) <= 100) {
+            intval($this->getAttribute('videoBrightness')) <= 100
+        ) {
             $videoBrightness = intval($this->getAttribute('videoBrightness'));
         }
 
@@ -96,9 +98,9 @@ class Video extends QUI\Control
         $posterUrl = false;
 
         try {
-            $Poster    = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+            $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
             $posterUrl = $Poster->getUrl(true);
-        } catch (QUI\Exception $Exception) {
+        } catch (QUI\Exception) {
             // nothing
         }
 
@@ -114,7 +116,7 @@ class Video extends QUI\Control
             try {
                 $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($this->getAttribute('video'));
                 $this->setJavaScriptControlOption('video', $Video->getUrl(true));
-            } catch (QUI\Exception $Exception) {
+            } catch (QUI\Exception) {
                 // nothing
             }
         }
@@ -125,21 +127,21 @@ class Video extends QUI\Control
 
         $this->setStyles([
             '--qui-video-videoBrightness' => $videoBrightness,
-            '--qui-video-maxVideoWidth'   => $this->checkMaxWidth($this->getAttribute('maxVideoWidth')),
+            '--qui-video-maxVideoWidth' => $this->checkMaxWidth($this->getAttribute('maxVideoWidth')),
             '--qui-video-maxContentWidth' => $this->checkMaxWidth($this->getAttribute('maxContentWidth')),
         ]);
 
         $Engine->assign([
-            'this'        => $this,
-            'posterUrl'   => $posterUrl,
-            'autoplay'    => $autoplay,
-            'muted'       => $muted,
-            'loop'        => $loop,
+            'this' => $this,
+            'posterUrl' => $posterUrl,
+            'autoplay' => $autoplay,
+            'muted' => $muted,
+            'loop' => $loop,
             'playsinline' => $playsinline,
-            'buttonFile'  => dirname(__FILE__).'/Video.button.html'
+            'buttonFile' => dirname(__FILE__) . '/Video.button.html'
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/Video.default.html');
+        return $Engine->fetch(dirname(__FILE__) . '/Video.default.html');
     }
 
     /**
@@ -148,15 +150,17 @@ class Video extends QUI\Control
      * @param $value
      * @return string
      */
-    protected function checkMaxWidth($value)
+    protected function checkMaxWidth($value): string
     {
         $width = 'initial';
 
-        if (!$value ||
-            intval($value) <= 0) {
+        if (
+            !$value ||
+            intval($value) <= 0
+        ) {
             return $width;
         }
 
-        return intval($value).'px';
+        return intval($value) . 'px';
     }
 }
