@@ -6,10 +6,12 @@
              --qui-wallpaperText-minHeight: {$this->getAttribute('minHeight')};
              --qui-wallpaperText-contentMaxWidth: {$this->getAttribute('contentMaxWidth')}px;
              --qui-wallpaperText-fontColor: {$this->getAttribute('fontColor')};
-             {if $imageBackground}
-             --qui-wallpaperText-bgImage: url('{image src=$imageBackground onlysrc='true'}');
-             {/if}
              ">
+    {if $imageBackground}
+    <div class="wallpaperText__imageWrapper">
+        {image src=$imageBackground width=4000 class="wallpaperText__image"}
+    </div>
+    {/if}
     <div class="wallpaperText-container grid-container">
         <div class="wallpaperText-container-content">
             {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}

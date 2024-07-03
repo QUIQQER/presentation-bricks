@@ -1,10 +1,22 @@
 .wallpaperText {
     height: 100%;
     background-color: var(--qui-wallpaperText-bgColor, #eee);
-    background-position: var(--qui-wallpaperText-bgPos, center);
     background-size: cover;
     position: relative;
-    background-image: var(--qui-wallpaperText-bgImage, none);
+}
+
+.wallpaperText__imageWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.wallpaperText__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--qui-wallpaperText-bgPos, center);
 }
 
 .wallpaperText-container {
@@ -16,6 +28,8 @@
     justify-content: var(--qui-wallpaperText-contentPos, flex-start);
     min-height: var(--qui-wallpaperText-minHeight, initial);
     color: var(--qui-wallpaperText-fontColor, inherit);
+    position: relative;
+    z-index: 1;
 }
 
 .wallpaperText-container-content{
@@ -23,12 +37,15 @@
     max-width: 100%;
 }
 
-.wallpaperText.fixed {
-    background-attachment: fixed;
+/* image fixed */
+.wallpaperText.fixed .wallpaperText__imageWrapper {
+    clip-path: inset(100px 200px 50px 20px);
 }
 
-@media screen and (max-width: 1024px) {
-    .wallpaperText.fixed {
-        background-attachment: initial;
-    }
+.wallpaperText.fixed picture {
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
