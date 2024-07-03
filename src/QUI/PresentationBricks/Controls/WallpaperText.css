@@ -39,7 +39,7 @@
 
 /* image fixed */
 .wallpaperText.fixed .wallpaperText__imageWrapper {
-    clip-path: inset(100px 200px 50px 20px);
+    clip-path: inset(0);
 }
 
 .wallpaperText.fixed picture {
