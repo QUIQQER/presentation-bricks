@@ -43,7 +43,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
             this.$Arrow = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
 
             this.$Arrow.addEvent('click', function () {
-                new Fx.Scroll(window).start(0, this.$Brick.getSize().y);
+                new Fx.Scroll(window).start(0, this.$Brick.offsetTop + this.$Brick.getSize().y);
             }.bind(this));
         }
     });
