@@ -42,7 +42,7 @@
     clip-path: inset(0);
 }
 
-.wallpaperText.fixed picture {
+.wallpaperText.fixed .wallpaperText__imageWrapper picture {
     position: fixed;
     top: 0;
     display: block;
