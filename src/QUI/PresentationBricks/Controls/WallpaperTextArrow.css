@@ -16,10 +16,28 @@
     }
 }
 
+/* background image */
+.wallpaperTextArrow__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.wallpaperTextArrow__bg :where(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* content (text and image) */
 .wallpaperTextArrow .grid-container {
     height: 100%;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .wallpaperTextArrow-content-left {
@@ -30,58 +48,63 @@
     text-align: center;
 }
 
-.wallpaperTextArrow-arrow {
+/* arrow */
+.wallpaperTextArrow__arrowContainer {
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
 }
 
-.wallpaperTextArrow-arrow .fa {
-    font-size: 3em;
-    color: #fff;
-    padding: 20px;
-    /*background-color: rgba(0, 0, 0, 0.1);*/
-    position: absolute;
-    bottom: 0;
-    transition: 0.2s all ease-in-out;
+.wallpaperTextArrow__arrowContainer :where(button),
+.wallpaperTextArrow__arrowContainer button:is(:hover, :focus) {
+    all: unset;
     cursor: pointer;
+    color: var(--icon-color);
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    transition: 0.2s all ease-in-out;
     opacity: 0.9;
+    font-size: var(--icon-size);
 }
 
 /* effect: scale bounce */
-.wallpaperTextArrow-arrow .fa-effect-scale:hover {
+.wallpaperTextArrow__arrowContainer .effect-scale:hover {
     transform: scale(1.2);
 }
 
 /* effect: scale bounce */
-.wallpaperTextArrow-arrow .fa-effect-scale-bounce:hover {
-    animation: scaleBounce 1.2s ;
+.wallpaperTextArrow__arrowContainer .effect-scale-bounce:hover {
+    animation: scaleBounce 1.2s;
 }
 
 /* effect: ball bounce after hover */
-.wallpaperTextArrow-arrow .fa-effect-ball-bounce-hover:hover {
-    -moz-animation: ballBounce 2s infinite;
-    -webkit-animation: ballBounce 2s infinite;
+.wallpaperTextArrow__arrowContainer .effect-ball-bounce-hover:hover {
     animation: ballBounce 2s infinite;
 }
 
 /* effect: ball bounce always */
-.wallpaperTextArrow-arrow .fa-effect-ball-bounce-always {
-    padding-bottom: 2px;
-    -moz-animation: ballBounce 2s infinite;
-    -webkit-animation: ballBounce 2s infinite;
+.wallpaperTextArrow__arrowContainer .effect-ball-bounce-always {
     animation: ballBounce 2s infinite;
 }
 
 /* opacity to transparent */
-.wallpaperTextArrow-arrow .fa-effect-opacity-to-transparent:hover {
+.wallpaperTextArrow__arrowContainer .effect-opacity-to-transparent:hover {
     opacity: 0.4;
 }
 
 /* opacity from transparent */
-.wallpaperTextArrow-arrow .fa-effect-opacity-from-transparent {
+.wallpaperTextArrow__arrowContainer .effect-opacity-from-transparent {
     opacity: 0.5;
 }
-.wallpaperTextArrow-arrow .fa-effect-opacity-from-transparent:hover {
+.wallpaperTextArrow__arrowContainer .effect-opacity-from-transparent:hover {
     opacity: 1;
 }
 
@@ -89,21 +112,12 @@
 /* ball bounce */
 @keyframes ballBounce {
     0%, 20%, 50%, 70%, 85%, 100% {
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
     40% {
-        -moz-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-        -webkit-transform: translateY(-30px);
         transform: translateY(-30px);
     }
     60% {
-        -moz-transform: translateY(-15px);
-        -ms-transform: translateY(-15px);
-        -webkit-transform: translateY(-15px);
         transform: translateY(-15px);
     }
     75% {
@@ -114,35 +128,15 @@
 /* scale bounce */
 @keyframes scaleBounce {
     0%, 20%, 30%, 50%, 70%, 100% {
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -webkit-transform: scale(1);
         transform: scale(1);
     }
     20% {
-        /*-moz-transform: scale(1.2);
-        -ms-transform: scale(-30px);
-        -webkit-transform: scale(-30px);*/
         transform: scale(1.5);
     }
     40% {
         transform: scale(1.2);
     }
     60% {
-        /*-moz-transform: scale(-15px);
-        -ms-transform: scale(-15px);
-        -webkit-transform: scale(-15px);*/
         transform: scale(1.1);
-    }
-}
-
-
-@media (max-width: 767px) {
-    .wallpaperTextArrow .grid-container {
-        display: block;
-    }
-
-    .wallpaperTextArrow-content-left {
-        padding: 3em 0 0 0;
     }
 }
