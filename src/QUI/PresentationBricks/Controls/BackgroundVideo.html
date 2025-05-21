@@ -21,10 +21,14 @@
         </video>
     </div>
 
-    {if $this->getAttribute('content')}
+    {if $this->getAttribute('content') || $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
         <div class="quiqqer-presentationBricks-backgroundVideo-content">
             <div class="grid-container">
-                {$this->getAttribute('content')}
+                {if $this->getAttribute('content')}
+                    <div class="default-content">
+                        {$this->getAttribute('content')}
+                    </div>
+                {/if}
 
                 {if $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
                     <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
