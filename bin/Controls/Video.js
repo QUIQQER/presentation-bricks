@@ -46,7 +46,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
          */
         $onImport: function () {
             const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('.videoButtonAction');
+            const buttons = Elm.querySelectorAll('[data-js="startVideo"]');
             this.Video    = Elm.querySelector('video');
 
             if (!this.Video) {
@@ -81,11 +81,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
             if (BtnWrapper) {
                 BtnWrapper.style.pointerEvents = 'none';
                 this.Video.style.filter        = 'none';
-                this.Video.setAttribute('controls', 1);
+                this.Video.setAttribute('controls', "1");
                 this.Video.play();
                 BtnWrapper.destroy();
             } else {
-                this.Video.setAttribute('controls', 1);
+                this.Video.setAttribute('controls', "1");
                 this.Video.play();
             }
         },
