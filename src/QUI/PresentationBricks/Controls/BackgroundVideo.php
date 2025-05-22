@@ -150,6 +150,8 @@ class BackgroundVideo extends QUI\Control
             }
         }
 
+        $this->setJavaScriptControlOption('openInPopup', intval($initVideoInPopup));
+
         if ($this->getAttribute('defaultButtonPosition')) {
             $defaultBtnPos = $this->getAttribute('defaultButtonPosition');
         }

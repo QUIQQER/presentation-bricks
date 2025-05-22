@@ -518,8 +518,8 @@
         </locale>
 
         <locale name="control.backgroundVideo.openVideoInPopup.desc" html="true">
-            <de><![CDATA[Diese Option ist sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann das volle Video in Popup anschauen. <br>Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du auf ihn die CSS Klasse <code>openVideoInPopupBtn</code> setzen.]]></de>
-            <en><![CDATA[This option is mostly useful when a shortened video is played in the background. The user can watch the full video in popup.<br> You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use own button, you need to set on it CSS class <code>openVideoInPopupBtn</code>.]]></en>
+            <de><![CDATA[Diese Option ist sinnvoll, wenn im Hintergrund ein gekürztes Video abgespielt wird. Der Benutzer kann das volle Video in Popup anschauen. <br>Du kannst entweder den eingebauten oder einen eigenen Button verwenden. Der eingebaute Button wird unter dem Inhalt angezeigt. Wenn du eigenen Button verwenden möchtest, musst du das Attribut <code>data-js="openVideoInPopupBtn"</code> setzen.]]></de>
+            <en><![CDATA[This option is useful when a shortened video is played in the background. The user can watch the full video in a popup. You can use either the built-in button or your own button. The built-in button is displayed below the content. If you want to use your own button, you need to set the attribute <code>data-js="openVideoInPopupBtn"</code> on it]]></en>
         </locale>
         <locale name="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton">
             <de><![CDATA[Klick auf den eingebauten Button öffnet ein Popup mit Video]]></de>
