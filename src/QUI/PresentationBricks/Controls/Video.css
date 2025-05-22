@@ -28,7 +28,6 @@
 /***************/
 .quiqqer-presentationBricks-video-buttonWrapper {
     align-items: center;
-    cursor: pointer;
     display: flex;
     height: 100%;
     justify-content: center;
@@ -37,12 +36,17 @@
     top: 0;
     width: 100%;
     z-index: 1;
+    cursor: pointer;
 }
 
 .quiqqer-presentationBricks-video-buttonWrapper button {
     all: unset;
     opacity: 0.75;
     transition: 0.3s ease;
+}
+
+.quiqqer-presentationBricks-video-buttonWrapper button:focus {
+    opacity: 1;
 }
 
 .quiqqer-presentationBricks-video-button .fa {

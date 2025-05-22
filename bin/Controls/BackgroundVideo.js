@@ -25,7 +25,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
         options: {
             video       : '',
             poster      : '',
-            playifinview: true
+            playifinview: true,
+            openinpopup: true
         },
 
         initialize: function (options) {
@@ -42,8 +43,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
          * event : on import
          */
         $onImport: function () {
+            if (parseInt(this.getAttribute('openinpopup')) !== 1) {
+                return;
+            }
+
             const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn');
+
+            // For compatibility reasons, the CSS class 'openVideoInPopupBtn' is also checked here.
+            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn, [data-js="openVideoInPopup"]');
 
             if (buttons.length > 0) {
                 let i   = 0,

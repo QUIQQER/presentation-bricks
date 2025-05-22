@@ -19,10 +19,11 @@
                             var="control.WallpaperTextArrow.image-background"/>
                 </setting>
 
-                <setting name="image-background-fixed" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks"
-                            var="control.WallpaperTextArrow.image-background-fixed"/>
-                </setting>
+                <!-- by @michael: this setting does not make sense with <img> element -->
+<!--                <setting name="image-background-fixed" type="checkbox">-->
+<!--                    <locale group="quiqqer/presentation-bricks"-->
+<!--                            var="control.WallpaperTextArrow.image-background-fixed"/>-->
+<!--                </setting>-->
 
                 <setting name="image" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
