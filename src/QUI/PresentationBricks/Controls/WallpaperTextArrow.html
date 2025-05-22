@@ -1,9 +1,8 @@
-{assign var=img value=''}
-{if $imageBackground}
-    {assign var=img value="background-image: url({image src=$imageBackground onlysrc='true'});"}
-{/if}
+<div class="wallpaperTextArrow {$fixed}">
+    <div class="wallpaperTextArrow__bg">
+        {image src=$imageBackground width="4000" class="wallpaperTextArrow __bgImage"}
+    </div>
 
-<div class="wallpaperTextArrow {$fixed}" style="{$img}">
     <div class="grid-container">
         <div class="wallpaperTextArrow-content-left grid-50 mobile-grid-100 grid-parent">
             {$this->getAttribute('content')}
@@ -14,9 +13,12 @@
         </div>
         {/if}
     </div>
+
     {if $arrowType !== 'hide'}
-    <div class="wallpaperTextArrow-arrow">
-        <span class="fa fa-{$arrowType} fa-effect-{$effect} wallpaperTextArrow-arrow-fa"></span>
-    </div>
+        <div class="wallpaperTextArrow__arrowContainer">
+            <button title="Weiter" class="effect-{$effect}">
+                <span class="fa fa-{$arrowType} icon" aria-hidden="true"></span>
+            </button>
+        </div>
     {/if}
 </div>

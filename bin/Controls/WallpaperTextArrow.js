@@ -27,9 +27,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
         initialize: function (options) {
             this.parent(options);
 
-            this.$Brick = null;
-            this.$Arrow = null;
-
             this.addEvents({
                 onImport: this.$onImport
             });
@@ -39,11 +36,15 @@ define('package/quiqqer/presentation-bricks/bin/Controls/WallpaperTextArrow', [
          * event : on import
          */
         $onImport: function () {
-            this.$Brick = document.getElement('div[data-quiid="' + this.$uid + '"]');
-            this.$Arrow = this.$Brick.getElement('.wallpaperTextArrow-arrow-fa');
+            const Brick = document.getElement('div[data-quiid="' + this.$uid + '"]');
+            const Btn = Brick.getElement('.wallpaperTextArrow__arrowContainer button');
 
-            this.$Arrow.addEvent('click', function () {
-                new Fx.Scroll(window).start(0, this.$Brick.offsetTop + this.$Brick.getSize().y);
+            if (!Btn || !Brick) {
+                return;
+            }
+
+            Btn.addEvent('click', function () {
+                new Fx.Scroll(window).start(0, Brick.offsetTop + Brick.getSize().y);
             }.bind(this));
         }
     });

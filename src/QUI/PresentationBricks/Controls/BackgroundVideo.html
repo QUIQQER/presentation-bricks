@@ -21,16 +21,23 @@
         </video>
     </div>
 
-    {if $this->getAttribute('content')}
+    {if $this->getAttribute('content') || $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
         <div class="quiqqer-presentationBricks-backgroundVideo-content">
             <div class="grid-container">
-                {$this->getAttribute('content')}
+                {if $this->getAttribute('content')}
+                    <div class="default-content">
+                        {$this->getAttribute('content')}
+                    </div>
+                {/if}
 
                 {if $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
                     <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
-                        <button class="button openVideoInPopupBtn">
+                        <button class="button openVideoInPopupBtn"
+                                data-js="openVideoInPopup"
+                                title="{locale group='quiqqer/presentation-bricks' var='control.video.btn.title'}"
+                        >
                             {locale group='quiqqer/presentation-bricks' var='control.backgroundVideo.btnText'}
-                            <span class="fa fa-play"></span>
+                            <span class="fa fa-play" aria-hidden="true"></span>
                         </button>
                     </div>
                 {/if}
