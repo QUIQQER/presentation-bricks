@@ -1,48 +1,46 @@
-.wallpaperText {
-    height: 100%;
-    background-color: var(--qui-wallpaperText-bgColor, #eee);
-    background-size: cover;
+.qui-presentationBricks-controls-wallpaperText {
+    background-color: var(--_qui-presentationBricks-controls-wallpaperText-bgColor, transparent);
     position: relative;
 }
 
-.wallpaperText__imageWrapper {
+.qui-presentationBricks-controls-wallpaperText__imageWrapper {
     position: absolute;
     inset: 0;
     z-index: 0;
 }
 
-.wallpaperText__image {
+.qui-presentationBricks-controls-wallpaperText__img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: var(--qui-wallpaperText-bgPos, center);
+    object-position: var(--_qui-presentationBricks-controls-wallpaperText-imageBgPos, center);
 }
 
-.wallpaperText-container {
+.qui-presentationBricks-controls-wallpaperText__contentWrapper {
     display: flex;
     align-items: center;
     height: 100%;
     padding-top: 3em;
     padding-bottom: 3em;
-    justify-content: var(--qui-wallpaperText-contentPos, flex-start);
-    min-height: var(--qui-wallpaperText-minHeight, initial);
-    color: var(--qui-wallpaperText-fontColor, inherit);
+    justify-content: var(--_qui-presentationBricks-controls-wallpaperText-contentPos, center);
+    min-height: var(--_qui-presentationBricks-controls-wallpaperText-minHeight, initial);
+    color: var(--_qui-presentationBricks-controls-wallpaperText-fontColor, inherit);
     position: relative;
     z-index: 1;
 }
 
-.wallpaperText-container-content{
-    width: var(--qui-wallpaperText-contentMaxWidth, 600px);
+.qui-presentationBricks-controls-wallpaperText__content {
+    width: var(--_qui-presentationBricks-controls-wallpaperText-contentMaxWidth, 600px);
     max-width: 100%;
 }
 
 /* image fixed */
-.wallpaperText.fixed .wallpaperText__imageWrapper {
+.qui-presentationBricks-controls-wallpaperText--bgImageIsFixed .qui-presentationBricks-controls-wallpaperText__imageWrapper {
     clip-path: inset(0);
 }
 
-.wallpaperText.fixed .wallpaperText__imageWrapper picture {
+.qui-presentationBricks-controls-wallpaperText--bgImageIsFixed .qui-presentationBricks-controls-wallpaperText__imageWrapper picture {
     position: fixed;
     top: 0;
     display: block;
