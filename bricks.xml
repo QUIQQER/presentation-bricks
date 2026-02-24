@@ -183,7 +183,7 @@
                     </option>
                 </setting>
 
-                <setting name="contentMaxWidth" type="number">
+                <setting name="contentMaxWidth">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.contentMaxWidth"/>
                 </setting>
