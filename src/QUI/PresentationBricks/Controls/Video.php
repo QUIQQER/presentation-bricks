@@ -18,7 +18,7 @@ class Video extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -147,10 +147,10 @@ class Video extends QUI\Control
     /**
      * Check max width and return correct value
      *
-     * @param $value
+     * @param mixed $value
      * @return string
      */
-    protected function checkMaxWidth($value): string
+    protected function checkMaxWidth(mixed $value): string
     {
         $width = 'initial';
 
