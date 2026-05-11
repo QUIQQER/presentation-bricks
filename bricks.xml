@@ -349,36 +349,159 @@
                         var="control.progressbar.description"/>
             </description>
 
+            <mockups>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/progressbar-mockup-900x600.png" type="preview"/>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/progressbar-thumbnail-100x80.png" type="thumbnail"/>
+            </mockups>
+
             <settings>
 
-                <setting name="maxWidth" type="number" min="0" max="1920">
+                <setting name="maxWidth" type="text">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="containerMaxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.containerMaxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.containerMaxWidth.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="additionalText" data-qui="controls/editors/Input">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="textPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="brick.setting.progressbar.textPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.desc"/>
+                    </description>
 
                     <option value="top">
                         <locale group="quiqqer/presentation-bricks"
                                 var="brick.setting.progressbar.textPosition.top"/>
                     </option>
-                    <option value="center">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="brick.setting.progressbar.textPosition.center"/>
-                    </option>
                     <option value="bottom">
                         <locale group="quiqqer/presentation-bricks"
                                 var="brick.setting.progressbar.textPosition.bottom"/>
                     </option>
+                    <option value="left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.left"/>
+                    </option>
+                    <option value="right">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.right"/>
+                    </option>
                 </setting>
 
-                <setting name="additionalTextRight" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalTextRight"/>
+                <setting name="textColumnWidth" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.textColumnWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textColumnWidth.desc"/>
+                    </description>
+
+                    <option value="25/75">25 / 75</option>
+                    <option value="33/67">33 / 67</option>
+                    <option value="40/60">40 / 60</option>
+                    <option value="50/50" selected="selected">50 / 50</option>
+                    <option value="60/40">60 / 40</option>
+                    <option value="67/33">67 / 33</option>
+                    <option value="75/25">75 / 25</option>
+                </setting>
+
+                <setting name="verticalAlign" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.verticalAlign"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.desc"/>
+                    </description>
+
+                    <option value="top" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="mobileTextPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.mobileTextPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.desc"/>
+                    </description>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.top"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="barLayout" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.barLayout"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.desc"/>
+                    </description>
+
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.default"/>
+                    </option>
+                    <option value="wide">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.wide"/>
+                    </option>
+                    <option value="overlay">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.overlay"/>
+                    </option>
+                </setting>
+
+                <setting name="animation" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.animation"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.desc"/>
+                    </description>
+
+                    <option value="none">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.none"/>
+                    </option>
+                    <option value="once">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.once"/>
+                    </option>
+                    <option value="scroll">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.scroll"/>
+                    </option>
                 </setting>
 
                 <setting name="entries" type="hidden"

@@ -326,40 +326,140 @@
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">
-            <de><![CDATA[Präsentation: Fortschrittsbalken (progressbar)]]></de>
-            <en><![CDATA[Presentation: Progress bar]]></en>
+            <de><![CDATA[Fortschrittsbalken]]></de>
+            <en><![CDATA[Progress bar]]></en>
         </locale>
-        <locale name="control.progressbar.description">
-            <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
-            <en><![CDATA[Visual presentation of progress]]></en>
+        <locale name="control.progressbar.description" html="true">
+            <de><![CDATA[Mit diesem Baustein kannst du Fortschritte, Werte oder Anteile übersichtlich als Balken darstellen. Er eignet sich z. B. für Fähigkeiten, Projektstände, Auslastungen oder Kennzahlen. Die Darstellung lässt sich flexibel an Inhalt, Layout und gewünschte Wirkung anpassen.<ul><li>Beliebig viele Einträge mit Titel und Prozentwert</li><li>Optional eigene Farbe pro Balken</li><li>Zusätzlicher Textbereich oberhalb, unterhalb, links oder rechts der Balken</li><li>Eigene Textposition für mobile Ansicht</li><li>Verschiedene Balken-Layouts: Standard, Breit oder Overlay mit Text im Balken</li><li>Animation wahlweise deaktiviert, einmal beim Reinscrollen oder scroll-gekoppelt</li><li>Maximale Breite für Balken und gesamten Layout-Bereich einstellbar</li></ul>]]></de>
+            <en><![CDATA[Use this brick to present progress, values or proportions clearly with bars. It is suitable for skills, project status, workloads or key figures. The presentation can be adjusted flexibly to match your content, layout and visual style.<ul><li>Any number of entries with title and percentage value</li><li>Optional custom color for each bar</li><li>Additional text area above, below, left or right of the bars</li><li>Separate text position for mobile view</li><li>Different bar layouts: default, wide or overlay with text inside the bar</li><li>Animation can be disabled, triggered once on scroll into view or linked to scrolling</li><li>Maximum width for bars and the complete layout area can be configured</li></ul>]]></en>
         </locale>
         <locale name="brick.setting.progressbar.maxWidth">
-            <de><![CDATA[Maximale Balkenbreite (in Pixel)]]></de>
-            <en><![CDATA[Maximum bar width (in pixel)]]></en>
+            <de><![CDATA[Maximale Balkenbreite]]></de>
+            <en><![CDATA[Maximum bar width]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth.desc">
+            <de><![CDATA[Beliebige CSS-Einheit, z. B. <code>600px</code>, <code>40rem</code>, <code>80%</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Any CSS unit, e.g. <code>600px</code>, <code>40rem</code>, <code>80%</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth">
+            <de><![CDATA[Maximale Container-Breite]]></de>
+            <en><![CDATA[Maximum container width]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite des gesamten Layout-Bereichs (Text + Balken). Header und Inhalt des Bausteins bleiben unverändert. Beliebige CSS-Einheit, leer = volle Breite.]]></de>
+            <en><![CDATA[Limits the width of the whole layout area (text + bars). The brick's header and content stay untouched. Any CSS unit, empty = full width.]]></en>
         </locale>
         <locale name="brick.setting.progressbar.additionalText">
             <de><![CDATA[Zusatztext]]></de>
             <en><![CDATA[Additional text]]></en>
         </locale>
+        <locale name="brick.setting.progressbar.additionalText.desc">
+            <de><![CDATA[Der Text kann wahlweise <em>oben</em>, <em>unten</em>, <em>links</em> oder <em>rechts</em> von den Balken angezeigt werden. Er ersetzt den normalen Inhalt des Bausteins nicht. Sobald ein Zusatztext gesetzt ist, greifen die Einstellungen <em>Zusatztext-Position</em>, <em>Spaltenverteilung</em> und <em>vertikale Ausrichtung</em>.]]></de>
+            <en><![CDATA[The text can be shown <em>above</em>, <em>below</em>, <em>left</em> or <em>right</em> of the bars. It does not replace the brick's regular content. When additional text is set, the settings <em>additional text position</em>, <em>column distribution</em> and <em>vertical alignment</em> become relevant.]]></en>
+        </locale>
         <locale name="brick.setting.progressbar.textPosition">
-            <de><![CDATA[Textposition]]></de>
-            <en><![CDATA[Text position]]></en>
+            <de><![CDATA[Zusatztext-Position]]></de>
+            <en><![CDATA[Additional text position]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.top">
-            <de><![CDATA[Top]]></de>
+            <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
-        </locale>
-        <locale name="brick.setting.progressbar.textPosition.center">
-            <de><![CDATA[Zentriert]]></de>
-            <en><![CDATA[Center]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.bottom">
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
         </locale>
-        <locale name="brick.setting.progressbar.additionalTextRight">
-            <de><![CDATA[Zusatztext rechts]]></de>
-            <en><![CDATA[Additional text on right]]></en>
+        <locale name="brick.setting.progressbar.textPosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth">
+            <de><![CDATA[Spaltenverteilung]]></de>
+            <en><![CDATA[Column distribution]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth.desc">
+            <de><![CDATA[Verhältnis zwischen Text-Spalte und Balken-Spalte. Greift nur, wenn die Textposition auf <em>links</em> oder <em>rechts</em> steht.]]></de>
+            <en><![CDATA[Ratio between text column and bars column. Only applies when text position is set to <em>left</em> or <em>right</em>.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign">
+            <de><![CDATA[Vertikale Ausrichtung]]></de>
+            <en><![CDATA[Vertical alignment]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.desc">
+            <de><![CDATA[Vertikale Ausrichtung von Text und Balken zueinander. Greift nur, wenn die Textposition auf <em>links</em> oder <em>rechts</em> steht.]]></de>
+            <en><![CDATA[Vertical alignment of text and bars relative to each other. Only applies when text position is set to <em>left</em> or <em>right</em>.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.center">
+            <de><![CDATA[Mitte]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition">
+            <de><![CDATA[Zusatztext-Position (mobil)]]></de>
+            <en><![CDATA[Additional text position (mobile)]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.desc">
+            <de><![CDATA[Auf schmalen Bildschirmen (Container schmaler als 45rem) wird das Layout immer einspaltig. Hier wählst du, ob der Text dann über oder unter den Balken erscheint.]]></de>
+            <en><![CDATA[On narrow screens (container narrower than 45rem) the layout always becomes single-column. Choose whether the text appears above or below the bars.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout">
+            <de><![CDATA[Balken-Layout]]></de>
+            <en><![CDATA[Bar layout]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.desc">
+            <de><![CDATA[Visuelle Variante der Balken. <em>Standard</em>: schmaler Balken mit Beschriftung oben. <em>Breit</em>: dickerer Balken. <em>Overlay</em>: Beschriftung liegt direkt auf dem Balken.]]></de>
+            <en><![CDATA[Visual variant of the bars. <em>Default</em>: thin bar with label above. <em>Wide</em>: thicker bar. <em>Overlay</em>: label sits directly on the bar.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.wide">
+            <de><![CDATA[Breit]]></de>
+            <en><![CDATA[Wide]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.overlay">
+            <de><![CDATA[Overlay - Text über dem Balken]]></de>
+            <en><![CDATA[Overlay - text on top of the bar]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation">
+            <de><![CDATA[Animation]]></de>
+            <en><![CDATA[Animation]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.desc">
+            <de><![CDATA[<em>Keine</em>: Balken werden sofort voll dargestellt. <em>Einmal beim Reinscrollen</em>: Sobald der Baustein in den sichtbaren Bereich kommt, füllen sich die Balken einmalig auf. <em>Scroll-gekoppelt</em>: Die Füllung folgt der Scroll-Position (nur in modernen Browsern; sonst sofort voll). Wenn der Benutzer "reduzierte Bewegung" eingestellt hat, wird grundsätzlich nicht animiert.]]></de>
+            <en><![CDATA[<em>None</em>: bars are shown filled immediately. <em>Once when scrolled into view</em>: bars fill once as soon as the brick enters the viewport. <em>Scroll-driven</em>: fill follows the scroll position (modern browsers only; falls back to fully filled). Animation is disabled when the user has set "reduce motion".]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.none">
+            <de><![CDATA[Keine]]></de>
+            <en><![CDATA[None]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.once">
+            <de><![CDATA[Einmal beim Reinscrollen]]></de>
+            <en><![CDATA[Once when scrolled into view]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.scroll">
+            <de><![CDATA[Scroll-gekoppelt]]></de>
+            <en><![CDATA[Scroll-driven]]></en>
         </locale>
         <locale name="brick.progressbar.settings.entries">
             <de><![CDATA[Einträge]]></de>
@@ -383,6 +483,18 @@
         <locale name="brick.progressbar.settings.add.percent">
             <de><![CDATA[Prozent]]></de>
             <en><![CDATA[Percent]]></en>
+        </locale>
+        <locale name="brick.progressbar.entries.column.color">
+            <de><![CDATA[Farbe]]></de>
+            <en><![CDATA[Color]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.setColor">
+            <de><![CDATA[Eigene Farbe setzen]]></de>
+            <en><![CDATA[Set custom color]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.color">
+            <de><![CDATA[Auffüllfarbe]]></de>
+            <en><![CDATA[Fill color]]></en>
         </locale>
         <locale name="brick.progressbar.entries.editdialog.title">
             <de><![CDATA[Eintrag bearbeiten]]></de>

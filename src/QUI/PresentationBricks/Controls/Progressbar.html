@@ -10,47 +10,54 @@
 </div>
 {/if}
 
-<div class="quiqqer-progressbar-wrapper {$textOnRight}" style="
-    {if $maxWidth}--qui-progressBar-maxWidth: {$maxWidth};{/if}
-    {if $textPosition}--qui-progressBar-textPos: {$textPosition};{/if}
-">
+<div class="quiqqer-presentationBricks-progressbar-control
+            quiqqer-presentationBricks-progressbar-control--layout-{$barLayout}
+            quiqqer-presentationBricks-progressbar-control--animate-{$animation}">
 
-    {if $additionalText}
-    <div class="quiqqer-progressbar-content-wrapper grid-parent grid-50">
-        <div class="quiqqer-progressbar-content">
+    <div class="quiqqer-presentationBricks-progressbar-control__container">
+    <div class="quiqqer-presentationBricks-progressbar-control__layout">
+
+        {if $additionalText}
+        <div class="quiqqer-presentationBricks-progressbar-control__text">
             {$additionalText}
         </div>
-    </div>
+        {/if}
 
-    <div class="quiqqer-progressbar-charts grid-parent grid-50">
-        {foreach from=$progressbarData item=Progressbar}
-        <div class="quiqqer-progressbar-chart">
-            <div class="quiqqer-progressbar-chart-content">
-                <span class="quiqqer-progressbar-chart-content-title">{$Progressbar['title']}</span>
-                <span class="quiqqer-progressbar-chart-content-number">{$Progressbar['percent']}%</span>
+        <div class="quiqqer-presentationBricks-progressbar-control__bars">
+            {foreach from=$progressbarData item=bar}
+            <div class="quiqqer-presentationBricks-progressbar-control__bar"
+                 role="progressbar"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="{$bar.percent}"
+                 aria-label="{$bar.title|escape:'html'}"
+                 style="--qpb-fill: {$bar.percent}%; --qpb-bar-index: {$bar.index};{if $bar.color} --qpb-bar-color: {$bar.color};{/if}">
+
+                {if $barLayout !== 'overlay'}
+                <div class="quiqqer-presentationBricks-progressbar-control__bar-label">
+                    <span class="quiqqer-presentationBricks-progressbar-control__bar-title">{$bar.title}</span>
+                    <span class="quiqqer-presentationBricks-progressbar-control__bar-percent">{$bar.percent}%</span>
+                </div>
+                <div class="quiqqer-presentationBricks-progressbar-control__bar-track">
+                    <div class="quiqqer-presentationBricks-progressbar-control__bar-fill"></div>
+                </div>
+                {else}
+                <div class="quiqqer-presentationBricks-progressbar-control__bar-track">
+                    <div class="quiqqer-presentationBricks-progressbar-control__bar-fill"></div>
+                    <div class="quiqqer-presentationBricks-progressbar-control__bar-label quiqqer-presentationBricks-progressbar-control__bar-label--base">
+                        <span class="quiqqer-presentationBricks-progressbar-control__bar-title">{$bar.title}</span>
+                        <span class="quiqqer-presentationBricks-progressbar-control__bar-percent">{$bar.percent}%</span>
+                    </div>
+                    <div class="quiqqer-presentationBricks-progressbar-control__bar-label quiqqer-presentationBricks-progressbar-control__bar-label--inverted" aria-hidden="true">
+                        <span class="quiqqer-presentationBricks-progressbar-control__bar-title">{$bar.title}</span>
+                        <span class="quiqqer-presentationBricks-progressbar-control__bar-percent">{$bar.percent}%</span>
+                    </div>
+                </div>
+                {/if}
             </div>
-            <div class="quiqqer-progressbar-chart-line-background">
-                <div class="quiqqer-progressbar-chart-line" style="width:{$Progressbar['percent']}%;"></div>
-            </div>
+            {/foreach}
         </div>
-        {/foreach}
-    </div>
-    {/if}
 
-    {if !$additionalText}
-    <div class="quiqqer-progressbar-charts grid-parent quiqqer-progressbar__center">
-        {foreach from=$progressbarData item=Progressbar}
-        <div class="quiqqer-progressbar-chart">
-            <div class="quiqqer-progressbar-chart-content">
-                <span class="quiqqer-progressbar-chart-content-title">{$Progressbar['title']}</span>
-                <span class="quiqqer-progressbar-chart-content-number">{$Progressbar['percent']}%</span>
-            </div>
-            <div class="quiqqer-progressbar-chart-line-background">
-                <div class="quiqqer-progressbar-chart-line" style="width:{$Progressbar['percent']}%;"></div>
-            </div>
-        </div>
-        {/foreach}
     </div>
-    {/if}
-
+    </div>
 </div>

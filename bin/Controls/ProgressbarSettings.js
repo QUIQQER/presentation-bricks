@@ -144,12 +144,17 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     header: QUILocale.get('quiqqer/quiqqer', 'title'),
                     dataIndex: 'title',
                     dataType: 'string',
-                    width: 300
+                    width: 250
                 }, {
                     header: QUILocale.get('quiqqer/presentation-bricks', 'brick.progressbar.settings.add.percent'),
                     dataIndex: 'percent',
                     dataType: 'number',
-                    width: 300
+                    width: 150
+                }, {
+                    header: QUILocale.get('quiqqer/presentation-bricks', 'brick.progressbar.entries.column.color'),
+                    dataIndex: 'colorDisplay',
+                    dataType: 'node',
+                    width: 150
                 }
                 ]
             });
@@ -269,6 +274,24 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     }
                 }
 
+                insert.setColor = !!entry.setColor;
+                insert.color = entry.color || '';
+
+                insert.colorDisplay = new Element('div', {
+                    styles: {
+                        width: 24,
+                        height: 24,
+                        borderRadius: 3,
+                        border: '1px solid rgba(0, 0, 0, .15)',
+                        backgroundColor: insert.setColor && insert.color ? insert.color : 'transparent',
+                        backgroundImage: insert.setColor && insert.color
+                            ? 'none'
+                            : 'linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%), linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%)',
+                        backgroundSize: '8px 8px',
+                        backgroundPosition: '0 0, 4px 4px'
+                    }
+                });
+
                 data.push(insert);
             }
 
@@ -316,6 +339,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
             var entry = {
                 title: '',
                 percent: '',
+                setColor: false,
+                color: ''
             };
 
             if ("title" in params) {
@@ -324,6 +349,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
 
             if ("percent" in params) {
                 entry.percent = params.percent;
+            }
+
+            if ("setColor" in params) {
+                entry.setColor = !!params.setColor;
+            }
+
+            if ("color" in params) {
+                entry.color = params.color;
             }
 
             this.$data.push(entry);
@@ -345,6 +378,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
             var entry = {
                 title: '',
                 percent: '',
+                setColor: false,
+                color: ''
             };
 
             if ("title" in params) {
@@ -353,6 +388,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
 
             if ("percent" in params) {
                 entry.percent = params.percent;
+            }
+
+            if ("setColor" in params) {
+                entry.setColor = !!params.setColor;
+            }
+
+            if ("color" in params) {
+                entry.color = params.color;
             }
 
             this.$data[index] = entry;
@@ -468,35 +511,26 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
             data = data[0];
             index = index[0];
 
-            return this.$createDialog().then(function (Dialog) {
+            return this.$createDialog({
+                title: data.title || '',
+                percent: data.percent !== undefined ? data.percent : '',
+                setColor: !!data.setColor,
+                color: data.color || '#000000'
+            }).then(function (Dialog) {
                 Dialog.addEvent('onSubmit', function () {
                     Dialog.Loader.show();
 
                     var Content = Dialog.getContent();
                     var Form = Content.getElement('form');
 
-                    var Title = Form.elements.title;
-                    var Percent = Form.elements.percent;
-
                     self.edit(index, {
-                        title: Title.value,
-                        percent: Percent.value,
+                        title: Form.elements.title.value,
+                        percent: Form.elements.percent.value,
+                        setColor: Form.elements.setColor.checked,
+                        color: Form.elements.color.value
                     });
 
                     Dialog.close();
-                });
-
-                Dialog.addEvent('onOpenAfterCreate', function () {
-                    var Content = Dialog.getContent();
-                    var Form = Content.getElement('form');
-
-                    var Title = Form.elements.title;
-                    var Percent = Form.elements.percent;
-
-                    Title.value = data.title;
-                    Percent.value = data.percent;
-
-                    Percent.fireEvent('change');
                 });
 
                 Dialog.setAttribute('title', QUILocale.get(pb, 'brick.progressbar.entries.editdialog.title'));
@@ -519,12 +553,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     var Content = Dialog.getContent();
                     var Form = Content.getElement('form');
 
-                    var Title = Form.elements.title;
-                    var Percent = Form.elements.percent;
-
                     self.add({
-                        title: Title.value,
-                        percent: Percent.value,
+                        title: Form.elements.title.value,
+                        percent: Form.elements.percent.value,
+                        setColor: Form.elements.setColor.checked,
+                        color: Form.elements.color.value
                     });
 
                     Dialog.close();
@@ -537,10 +570,20 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
         /**
          * Create a edit / add entry dialog
          *
+         * @param {Object} [initial] - Pre-fill values: { title, percent, setColor, color }
          * @return {Promise}
          */
-        $createDialog: function () {
+        $createDialog: function (initial) {
             var self = this;
+
+            initial = initial || {};
+
+            var initialData = {
+                title: initial.title || '',
+                percent: initial.percent !== undefined && initial.percent !== null ? initial.percent : '',
+                color: initial.color || '#000000',
+                setColor: !!initial.setColor
+            };
 
             return new Promise(function (resolve) {
                 var Dialog = new QUIConfirm({
@@ -559,18 +602,25 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                                     html: Mustache.render(templateEntry, {
                                         fieldTitle: QUILocale.get(pb, prefix + 'title'),
                                         fieldPercent: QUILocale.get(pb, prefix + 'percent'),
+                                        fieldSetColor: QUILocale.get(pb, prefix + 'setColor'),
+                                        fieldColor: QUILocale.get(pb, prefix + 'color'),
+                                        title: initialData.title,
+                                        percent: initialData.percent,
+                                        color: initialData.color,
+                                        setColorChecked: initialData.setColor ? 'checked' : '',
+                                        colorRowStyle: initialData.setColor ? '' : 'display: none;'
                                     }),
                                     'class': 'quiqqer-bricks-progressbar-settings-entry'
                                 }).inject(Win.getContent());
 
-                            Win.IsDisabledSwitch = new QUISwitch({
-                                name: 'isDisabled',
-                                status: false
-                            }).inject(Container.getElement('#isDisabledWrapper'));
+                            var ColorRow = Container.getElement('.quiqqer-bricks-progressbar-settings-entry-color-row');
+                            var SetColorCheckbox = Container.getElement('input[name="setColor"]');
 
-                            Win.NewTabSwitch = new QUISwitch({
-                                name: 'newTab'
-                            }).inject(Container.getElement('#newTabWrapper'));
+                            if (SetColorCheckbox && ColorRow) {
+                                SetColorCheckbox.addEventListener('change', function () {
+                                    ColorRow.setStyle('display', SetColorCheckbox.checked ? '' : 'none');
+                                });
+                            }
 
 
                             QUI.parse(Container).then(function () {
