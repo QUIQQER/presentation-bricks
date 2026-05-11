@@ -24,7 +24,7 @@ class CountUpBasic extends QUI\Control
     {
         // default options
         $this->setAttributes([
-            'class' => 'qui-control-countUpBasic',
+            'class' => 'quiqqer-presentationBricks-countUpBasic',
             'entries' => [],
             'iconTop' => false,
             'template' => 'simple'
@@ -47,6 +47,12 @@ class CountUpBasic extends QUI\Control
             $entries = json_decode($entries, true);
         }
 
+        if (!is_array($entries)) {
+            $entries = [];
+        }
+
+        $entries = $this->filterDisabledEntries($entries);
+
         $template = $this->getAttribute('template');
 
         switch ($template) {
@@ -66,5 +72,20 @@ class CountUpBasic extends QUI\Control
         $this->addCSSFile($css);
 
         return $Engine->fetch($html);
+    }
+
+    /**
+     * @param array<int|string, mixed> $entries
+     * @return array<int, mixed>
+     */
+    protected function filterDisabledEntries(array $entries): array
+    {
+        return array_values(array_filter($entries, function ($entry) {
+            if (!is_array($entry) || !isset($entry['disabled'])) {
+                return true;
+            }
+
+            return !in_array($entry['disabled'], [true, 1, '1'], true);
+        }));
     }
 }

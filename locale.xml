@@ -323,6 +323,41 @@
             <en><![CDATA[Short text]]></en>
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
+        <locale name="brick.countUpBasic.entries.column.status">
+            <de><![CDATA[Status]]></de>
+            <en><![CDATA[Status]]></en>
+            <pl><![CDATA[Status]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.adddialog.title">
+            <de><![CDATA[Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add entry]]></en>
+            <pl><![CDATA[Dodaj wpis]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.editdialog.title">
+            <de><![CDATA[Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit entry]]></en>
+            <pl><![CDATA[Edytuj wpis]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.delete.title">
+            <de><![CDATA[Einträge löschen]]></de>
+            <en><![CDATA[Delete entries]]></en>
+            <pl><![CDATA[Usun wpisy]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.delete.text">
+            <de><![CDATA[Möchtest du die ausgewählten Einträge wirklich löschen?]]></de>
+            <en><![CDATA[Do you really want to delete the selected entries?]]></en>
+            <pl><![CDATA[Czy na pewno chcesz usunac zaznaczone wpisy?]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.delete.information">
+            <de><![CDATA[Dieser Vorgang kann nicht rückgängig gemacht werden.]]></de>
+            <en><![CDATA[This action cannot be undone.]]></en>
+            <pl><![CDATA[Tej operacji nie mozna cofnac.]]></pl>
+        </locale>
+        <locale name="brick.countUpBasic.entries.field.disabled">
+            <de><![CDATA[Eintrag deaktivieren]]></de>
+            <en><![CDATA[Disable entry]]></en>
+            <pl><![CDATA[Wylacz wpis]]></pl>
+        </locale>
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">

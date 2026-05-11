@@ -1,55 +1,66 @@
-.countUpBasic-wrapper {
+.quiqqer-presentationBricks-countUpBasic-control {
     display: flex;
+    gap: 0;
 }
 
-.countUpBasic-entry {
+.quiqqer-presentationBricks-countUpBasic-control__entry {
     padding: 0 20px;
     flex-grow: 1;
     flex-basis: 0;
     text-align: center;
 }
 
-.countUpBasic-entry-header div:nth-child(2) {
-    margin: 20px 0;
+.quiqqer-presentationBricks-countUpBasic-control__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.countUpBasic-entry-header-icon .fa {
+.quiqqer-presentationBricks-countUpBasic-control__header--iconTop {
+    flex-direction: column;
+}
+
+.quiqqer-presentationBricks-countUpBasic-control__icon .fa {
     font-size: 36px;
 }
 
-.countUpBasic-entry-header-number {
+.quiqqer-presentationBricks-countUpBasic-control__number {
     font-size: 56px;
     line-height: 100%;
     color: #666;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.countUpBasic-entry-title {
+.quiqqer-presentationBricks-countUpBasic-control__title {
     font-size: 22px;
     color: #999;
     margin: 20px 0;
     padding-bottom: 0;
 }
 
-.countUpBasic-entry-content {
+.quiqqer-presentationBricks-countUpBasic-control__content {
     margin-top: 20px;
     font-size: 90%;
     line-height: 150%;
 }
 
 @media (max-width: 767px) {
-    .countUpBasic-wrapper {
+    .quiqqer-presentationBricks-countUpBasic-control {
         display: block;
     }
 
-    .countUpBasic-entry {
+    .quiqqer-presentationBricks-countUpBasic-control__entry {
         margin-bottom: 40px;
         padding-bottom: 40px;
         position: relative;
     }
 
-    .countUpBasic-entry:after {
+    .quiqqer-presentationBricks-countUpBasic-control__entry:after {
         content: '';
         position: absolute;
         width: 100px;
@@ -59,7 +70,7 @@
         bottom: 0;
     }
 
-    .countUpBasic-entry:last-child:after {
+    .quiqqer-presentationBricks-countUpBasic-control__entry:last-child:after {
         display: none;
     }
 }

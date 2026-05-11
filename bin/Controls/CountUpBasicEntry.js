@@ -6,10 +6,9 @@
  */
 define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
 
-    'qui/QUI',
     'qui/controls/Control'
 
-], function (QUI, QUIControl) {
+], function (QUIControl) {
     "use strict";
 
     return new Class({
@@ -19,8 +18,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
 
         Binds: [
             '$onImport',
-            '$count',
-            '$scroll'
+            '$count'
         ],
 
         options: {
@@ -28,20 +26,15 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
              * Duration of the count-up animation in milliseconds
              * @type {number}
              */
-            duration: 2000,
-            /**
-             * Delay before the animation starts (ms)
-             * @type {number}
-             */
-            delay: 1500
+            duration: 2500
         },
 
         initialize: function (options) {
             this.parent(options);
 
             this.$counter = null;
-            this.start = null;
-            this.end = null;
+            this.$observer = null;
+            this.$hasAnimated = false;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -49,61 +42,65 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
         },
 
         $onImport: function () {
-            this.$counter = this.$Elm.getElement('.countUpBasic-entry-header-number-counter');
+            this.$counter = this.$Elm.getElement(
+                '.quiqqer-presentationBricks-countUpBasic-control__counter'
+            );
 
-            this.start = this.$counter.get('html').toInt();
-            this.end = this.$counter.getAttribute('data-qui-count').toInt();
-
-            const winSize = QUI.getWindowSize().y;
-            const controlPos = this.$counter.getPosition().y;
-            this.breakPoint = controlPos - (winSize / 1.3);
-            this.$isAnimating = false;
-
-            if (QUI.getScroll().y > this.breakPoint) {
-                this.$prepareCount();
-            }
-
-            QUI.addEvent('scroll', this.$scroll);
-        },
-
-        /**
-         * Scroll event handler: Starts animation when breakpoint is passed
-         */
-        $scroll: function () {
-            if (this.$isAnimating) {
-                QUI.removeEvent('scroll', this.$scroll);
+            if (!this.$counter) {
                 return;
             }
 
-            if (QUI.getScroll().y > this.breakPoint) {
-                this.$prepareCount();
+            if (!('IntersectionObserver' in window)) {
+                this.$count();
+                return;
             }
-        },
 
-        /**
-         * Prepares and starts the count-up animation
-         */
-        $prepareCount: function () {
-            this.$isAnimating = true;
-            this.$count();
+            this.$observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting || this.$hasAnimated) {
+                        return;
+                    }
+
+                    this.$count();
+                    this.$observer.disconnect();
+                }.bind(this));
+            }.bind(this), {
+                rootMargin: '0px 0px -20% 0px',
+                threshold : 0.35
+            });
+
+            this.$observer.observe(this.$Elm);
         },
 
         /**
          * Animates the count-up using easing and requestAnimationFrame
          */
         $count: function () {
+            if (!this.$counter || this.$hasAnimated) {
+                return;
+            }
+
+            this.$hasAnimated = true;
+
             const counterElm = this.$counter;
-            const startValue = this.start;
-            const endValue = this.end;
+            const startValue = 0;
+            const endValue = Number(counterElm.getAttribute('data-qui-count')) || 0;
             const duration = this.options.duration;
             const startTime = performance.now();
+            const formatValue = function (value) {
+                return value.toLocaleString();
+            };
 
             /**
-             * Easing function: easeOutQuad
+             * Easing function: easeOutExpo
              * @param {number} t - Progress from 0 to 1
              */
-            function easeOutQuad(t) {
-                return t * (2 - t);
+            function easeOutExpo(t) {
+                if (t === 1) {
+                    return 1;
+                }
+
+                return 1 - Math.pow(2, -10 * t);
             }
 
             /**
@@ -113,15 +110,15 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry', [
             function animate(now) {
                 const elapsed = now - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                const easedProgress = easeOutQuad(progress);
+                const easedProgress = easeOutExpo(progress);
                 const currentValue = Math.round(startValue + (endValue - startValue) * easedProgress);
 
-                counterElm.set('html', currentValue);
+                counterElm.set('html', formatValue(currentValue));
 
                 if (progress < 1) {
                     requestAnimationFrame(animate);
                 } else {
-                    counterElm.set('html', endValue);
+                    counterElm.set('html', formatValue(endValue));
                 }
             }
 

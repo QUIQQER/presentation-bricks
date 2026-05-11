@@ -10,53 +10,36 @@
 </div>
 {/if}
 
-
-<div class="countUpBasic-wrapper">
+<div class="quiqqer-presentationBricks-countUpBasic-control">
     {foreach from=$entries item=entry key=key}
 
-    <div class="countUpBasic-entry"
+    <div class="quiqqer-presentationBricks-countUpBasic-control__entry"
          data-qui="package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicEntry">
 
-        <div class="countUpBasic-entry-header">
-        {if $iconTop}
+        <div class="quiqqer-presentationBricks-countUpBasic-control__header{if $iconTop} quiqqer-presentationBricks-countUpBasic-control__header--iconTop{/if}">
             {if $entry.icon}
-            <div class="countUpBasic-entry-header-icon">
+            <div class="quiqqer-presentationBricks-countUpBasic-control__icon">
                 <span class="fa {$entry.icon} color-main"></span>
             </div>
             {/if}
 
-            <div class="countUpBasic-entry-header-number">
-                <span class="countUpBasic-entry-header-number-prefix">{$entry.counterValuePrefix}</span>
-                <span class="countUpBasic-entry-header-number-counter" data-qui-count="{$entry.counterValue}">
+            <div class="quiqqer-presentationBricks-countUpBasic-control__number">
+                <span class="quiqqer-presentationBricks-countUpBasic-control__prefix">{$entry.counterValuePrefix}</span>
+                <span class="quiqqer-presentationBricks-countUpBasic-control__counter" data-qui-count="{$entry.counterValue}">
                     0
                 </span>
-                <span class="countUpBasic-entry-header-number-suffix">{$entry.counterValueSuffix}</span>
+                <span class="quiqqer-presentationBricks-countUpBasic-control__suffix">{$entry.counterValueSuffix}</span>
             </div>
-        {else}
-            <div class="countUpBasic-entry-header-number">
-                <span class="countUpBasic-entry-header-number-prefix">{$entry.counterValuePrefix}</span>
-                <span class="countUpBasic-entry-header-number-counter" data-qui-count="{$entry.counterValue}">
-                    0
-                </span>
-                <span class="countUpBasic-entry-header-number-suffix">{$entry.counterValueSuffix}</span>
-            </div>
-
-            {if $entry.icon}
-            <div class="countUpBasic-entry-header-icon">
-                <span class="fa {$entry.icon} color-main"></span>
-            </div>
-            {/if}
-        {/if}
         </div>
 
         {if $entry.title}
-        <h2 class="countUpBasic-entry-title">
+        <h2 class="quiqqer-presentationBricks-countUpBasic-control__title">
             {$entry.title}
         </h2>
         {/if}
 
         {if $entry.content}
-        <div class="countUpBasic-entry-content">
+        <div class="quiqqer-presentationBricks-countUpBasic-control__content">
             {$entry.content}
         </div>
         {/if}
