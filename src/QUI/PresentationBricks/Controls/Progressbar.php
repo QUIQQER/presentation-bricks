@@ -34,6 +34,7 @@ class Progressbar extends QUI\Control
     public function __construct(array $attributes = [])
     {
         $this->setAttributes([
+            'class' => 'quiqqer-presentationBricks-progressbar',
             'additionalText' => '',
             'entries' => '',
             'textPosition' => 'top',
