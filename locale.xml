@@ -324,6 +324,200 @@
             <pl><![CDATA[Krotki tekst]]></pl>
         </locale>
 
+        <!-- counter -->
+        <locale name="control.counter.title">
+            <de><![CDATA[Präsentation: Counter]]></de>
+            <en><![CDATA[Presentation: Counter]]></en>
+        </locale>
+        <locale name="control.counter.description" html="true">
+            <de><![CDATA[Zähler mit Start- und Endwerten pro Eintrag. Der Counter zählt automatisch hoch oder runter und bietet kuratierte Layout-Varianten für Inline, Gestapelt und Horizontal.]]></de>
+            <en><![CDATA[Counter with start and end values per entry. The counter automatically counts up or down and provides curated layout variants for inline, stacked and horizontal.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineLeft">
+            <de><![CDATA[Inline links]]></de>
+            <en><![CDATA[Inline left]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineCenter">
+            <de><![CDATA[Inline zentriert]]></de>
+            <en><![CDATA[Inline centered]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedLeft">
+            <de><![CDATA[Gestapelt links]]></de>
+            <en><![CDATA[Stacked left]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedCenter">
+            <de><![CDATA[Gestapelt zentriert]]></de>
+            <en><![CDATA[Stacked centered]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.horizontal">
+            <de><![CDATA[Horizontal]]></de>
+            <en><![CDATA[Horizontal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.duration">
+            <de><![CDATA[Animationsdauer (ms)]]></de>
+            <en><![CDATA[Animation duration (ms)]]></en>
+        </locale>
+        <locale name="brick.setting.counter.duration.desc">
+            <de><![CDATA[Dauer der Zählanimation in Millisekunden. Standard: 2500.]]></de>
+            <en><![CDATA[Duration of the count animation in milliseconds. Default: 2500.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.columns">
+            <de><![CDATA[Spalten]]></de>
+            <en><![CDATA[Columns]]></en>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth">
+            <de><![CDATA[Breite des Counter-Bausteins]]></de>
+            <en><![CDATA[Maximum width]]></en>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite des gesamten Counter-Bausteins bzw. des Eintragsbereichs. Beliebige CSS-Einheit, z. B. <code>900px</code>, <code>60rem</code>, <code>100%</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Any CSS unit, e.g. <code>900px</code>, <code>60rem</code>, <code>100%</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth">
+            <de><![CDATA[Maximale Breite pro Eintrag]]></de>
+            <en><![CDATA[Maximum width per entry]]></en>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite einzelner Counter-Einträge. Beispiele: <code>18rem</code>, <code>22rem</code>, <code>320px</code>, <code>28ch</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Limits the width of individual counter entries. Examples: <code>18rem</code>, <code>22rem</code>, <code>320px</code>, <code>28ch</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap">
+            <de><![CDATA[Abstand zwischen Einträgen]]></de>
+            <en><![CDATA[Gap between entries]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.none">
+            <de><![CDATA[Aus]]></de>
+            <en><![CDATA[None]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.xs">
+            <de><![CDATA[XS]]></de>
+            <en><![CDATA[XS]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.s">
+            <de><![CDATA[S]]></de>
+            <en><![CDATA[S]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.extraLarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize">
+            <de><![CDATA[Zahlgröße]]></de>
+            <en><![CDATA[Number size]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.xlarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.accentColor">
+            <de><![CDATA[Akzentfarbe]]></de>
+            <en><![CDATA[Accent color]]></en>
+        </locale>
+        <locale name="brick.counter.settings.entries">
+            <de><![CDATA[Counter-Einträge]]></de>
+            <en><![CDATA[Counter entries]]></en>
+        </locale>
+        <locale name="brick.counter.entries.column.status">
+            <de><![CDATA[Status]]></de>
+            <en><![CDATA[Status]]></en>
+        </locale>
+        <locale name="brick.counter.entries.disabled">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="brick.counter.entries.startValue">
+            <de><![CDATA[Startwert]]></de>
+            <en><![CDATA[Start value]]></en>
+        </locale>
+        <locale name="brick.counter.entries.endValue">
+            <de><![CDATA[Endwert]]></de>
+            <en><![CDATA[End value]]></en>
+        </locale>
+        <locale name="brick.counter.entries.endValue.desc">
+            <de><![CDATA[Zielwert des Counters. Ist der Endwert kleiner als der Startwert, zählt der Counter nach unten.]]></de>
+            <en><![CDATA[Target value of the counter. If the end value is lower than the start value, the counter counts down.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.prefix">
+            <de><![CDATA[Präfix]]></de>
+            <en><![CDATA[Prefix]]></en>
+        </locale>
+        <locale name="brick.counter.entries.prefix.desc">
+            <de><![CDATA[Kurzer Text direkt vor dem Zähler. Sinnvoll sind meist einzelne Zeichen oder kurze Abkürzungen, z. B. <code>+</code>, <code>-</code>, <code>€</code>, <code>ca.</code>, <code>ab</code>. In vielen Vorlagen ist dieser Text kleiner als die Zahl.]]></de>
+            <en><![CDATA[Text directly before the counter. In many templates it is smaller than the number. Examples: + before 100 results in +100, about before 250 results in about 250.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.suffix">
+            <de><![CDATA[Suffix]]></de>
+            <en><![CDATA[Suffix]]></en>
+        </locale>
+        <locale name="brick.counter.entries.suffix.desc">
+            <de><![CDATA[Kurzer Text direkt nach dem Zähler. Sinnvoll sind meist einzelne Zeichen oder kurze Abkürzungen, z. B. <code>%</code>, <code>km</code>, <code>J.</code>, <code>Min.</code>. In vielen Vorlagen ist dieser Text kleiner als die Zahl.]]></de>
+            <en><![CDATA[Text directly after the counter. In many templates it is smaller than the number. Examples: years after 15 results in 15 years, % after 80 results in 80%.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.icon">
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
+        </locale>
+        <locale name="brick.counter.entries.title">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="brick.counter.entries.title.desc">
+            <de><![CDATA[Kleine Überschrift zum Zähler. Sie wird unter oder neben der Zahl angezeigt und ist kleiner als der Zahlenwert.]]></de>
+            <en><![CDATA[Small heading for the counter. It is displayed below or next to the number and is smaller than the value.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.content">
+            <de><![CDATA[Kurztext]]></de>
+            <en><![CDATA[Short text]]></en>
+        </locale>
+        <locale name="brick.counter.entries.content.desc">
+            <de><![CDATA[Optionaler kurzer Erklärungstext zum Zähler. Er wird kleiner und zurückhaltender als Titel und Zahl dargestellt.]]></de>
+            <en><![CDATA[Optional short explanatory text for the counter. It is displayed smaller and more subtly than title and number.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.adddialog.title">
+            <de><![CDATA[Counter-Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add counter entry]]></en>
+        </locale>
+        <locale name="brick.counter.entries.editdialog.title">
+            <de><![CDATA[Counter-Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit counter entry]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.title">
+            <de><![CDATA[Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this counter entry?]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.text">
+            <de><![CDATA[Möchten Sie diesen Counter-Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this counter entry?]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.information">
+            <de><![CDATA[Die Counter-Einträge können nicht wiederhergestellt werden.]]></de>
+            <en><![CDATA[The counter entries can not be restored.]]></en>
+        </locale>
+
         <!-- progressbar -->
         <locale name="control.progressbar.title">
             <de><![CDATA[Fortschrittsbalken]]></de>

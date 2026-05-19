@@ -1,0 +1,43 @@
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__item-inner {
+    align-items: flex-start;
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    justify-content: center;
+    text-align: left;
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__icon {
+    flex-shrink: 0;
+    font-size: 2rem;
+    line-height: var(--_iconLineheight--horizontal);
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__body {
+    min-width: 0;
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__head {
+    gap: 0;
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__value {
+    font-size: var(--_numberSize);
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__text {
+    margin-top: 0.5rem;
+}
+
+@container (max-width: 36rem) {
+    .quiqqer-presentationBricks-counter--horizontal .quiqqer-presentationBricks-counter__item-inner {
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+}

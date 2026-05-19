@@ -312,7 +312,7 @@
         </brick>
 
         <!-- count up basic -->
-        <brick control="\QUI\PresentationBricks\Controls\CountUpBasic">
+        <brick control="\QUI\PresentationBricks\Controls\CountUpBasic" deprecated="1">
             <title>
                 <locale group="quiqqer/presentation-bricks"
                         var="control.countUpBasic.title"/>
@@ -333,6 +333,148 @@
                          data-qui="package/quiqqer/presentation-bricks/bin/Controls/CountUpBasicSettings">
                     <locale group="quiqqer/presentation-bricks"
                             var="CountUpBasic.entries"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- counter -->
+        <brick control="\QUI\PresentationBricks\Controls\Counter">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.counter.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.counter.description"/>
+            </description>
+
+            <settings>
+                <setting name="template" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.template"/>
+
+                    <option value="inline-left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.inlineLeft"/>
+                    </option>
+                    <option value="inline-center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.inlineCenter"/>
+                    </option>
+                    <option value="stacked-left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.stackedLeft"/>
+                    </option>
+                    <option value="stacked-center" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.stackedCenter"/>
+                    </option>
+                    <option value="horizontal">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.horizontal"/>
+                    </option>
+                </setting>
+
+                <setting name="duration" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.duration"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.duration.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="columns" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.columns"/>
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </setting>
+
+                <setting name="maxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.maxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.maxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="itemMaxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.itemMaxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.itemMaxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="gap" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.gap"/>
+
+                    <option value="none">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.none"/>
+                    </option>
+                    <option value="xs">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.xs"/>
+                    </option>
+                    <option value="s">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.s"/>
+                    </option>
+                    <option value="normal" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.normal"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.extraLarge"/>
+                    </option>
+                </setting>
+
+                <setting name="numberSize" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.numberSize"/>
+
+                    <option value="small">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.small"/>
+                    </option>
+                    <option value="normal" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.normal"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.large"/>
+                    </option>
+                    <option value="xlarge">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.xlarge"/>
+                    </option>
+                </setting>
+
+                <setting name="accentColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.accentColor"/>
+                </setting>
+
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/CounterSettings">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.counter.settings.entries"/>
                 </setting>
             </settings>
         </brick>

@@ -1,0 +1,35 @@
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<h2 class="control-header">{$this->getAttribute('frontendTitle')}</h2>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<div class="control-template quiqqer-presentationBricks-counter quiqqer-presentationBricks-counter--{$templateVariant} {$layoutModifierClasses}"
+     data-counter-duration="{$duration}">
+    <div class="quiqqer-presentationBricks-counter__list">
+        {foreach from=$entries item=entry}
+        <div class="quiqqer-presentationBricks-counter__item{if $entry.hasIcon} quiqqer-presentationBricks-counter__item--has-icon{/if}">
+            <div class="quiqqer-presentationBricks-counter__item-inner">
+                <div class="quiqqer-presentationBricks-counter__head">
+                    {if $entry.icon}
+                    <span class="quiqqer-presentationBricks-counter__icon fa {$entry.icon|escape:'html'}" aria-hidden="true"></span>
+                    {/if}
+                    <div class="quiqqer-presentationBricks-counter__value">
+                        {if $entry.prefix}<span class="quiqqer-presentationBricks-counter__prefix">{$entry.prefix}</span>{/if}
+                        <span class="quiqqer-presentationBricks-counter__number"
+                              data-start-value="{$entry.startValue|escape:'html'}"
+                              data-end-value="{$entry.endValue|escape:'html'}">{$entry.startValue}</span>
+                        {if $entry.suffix}<span class="quiqqer-presentationBricks-counter__suffix">{$entry.suffix}</span>{/if}
+                    </div>
+                </div>
+                {if $entry.title}<div class="quiqqer-presentationBricks-counter__title">{$entry.title}</div>{/if}
+                {if $entry.content}<div class="quiqqer-presentationBricks-counter__text">{$entry.content}</div>{/if}
+            </div>
+        </div>
+        {/foreach}
+    </div>
+</div>

@@ -12,6 +12,7 @@ use QUI;
  * Class StickyContent
  *
  * @package quiqqer/presentation-bricks
+ * @deprecated Marked as deprecated in bricks.xml. Do not use for new implementations.
  */
 class CountUpBasic extends QUI\Control
 {

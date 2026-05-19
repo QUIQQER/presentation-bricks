@@ -1,0 +1,30 @@
+.quiqqer-presentationBricks-counter--layout-inline .quiqqer-presentationBricks-counter__head {
+    justify-content: flex-start;
+}
+
+.quiqqer-presentationBricks-counter--layout-stacked .quiqqer-presentationBricks-counter__head {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.quiqqer-presentationBricks-counter--layout-stacked .quiqqer-presentationBricks-counter__icon {
+    font-size: 2.2rem;
+}
+
+.quiqqer-presentationBricks-counter--align-left .quiqqer-presentationBricks-counter__item-inner {
+    text-align: left;
+}
+
+.quiqqer-presentationBricks-counter--align-left .quiqqer-presentationBricks-counter__head {
+    align-items: flex-start;
+}
+
+.quiqqer-presentationBricks-counter--align-center .quiqqer-presentationBricks-counter__item-inner {
+    text-align: center;
+}
+
+.quiqqer-presentationBricks-counter--align-center .quiqqer-presentationBricks-counter__head {
+    align-items: center;
+    justify-content: center;
+}
