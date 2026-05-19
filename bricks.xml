@@ -348,6 +348,11 @@
                         var="control.counter.description"/>
             </description>
 
+            <mockups>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/counter-mockup-900x600.png" type="preview"/>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/counter-thumbnail-100x80.png" type="thumbnail"/>
+            </mockups>
+
             <settings>
                 <setting name="template" type="select">
                     <locale group="quiqqer/presentation-bricks"
