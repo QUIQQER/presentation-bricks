@@ -13,8 +13,8 @@
 
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
-            <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
-            <en><![CDATA[Presentation: Wallpaper with text and arrow]]></en>
+            <de><![CDATA[Wallpaper mit Text und Pfeil]]></de>
+            <en><![CDATA[Wallpaper with text and arrow]]></en>
         </locale>
         <locale name="control.WallpaperTextArrow.description">
             <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
@@ -112,8 +112,8 @@
 
         <!-- wallpaper with text -->
         <locale name="control.WallpaperText.title">
-            <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
-            <en><![CDATA[Presentation: Wallpaper with text]]></en>
+            <de><![CDATA[Wallpaper mit Text]]></de>
+            <en><![CDATA[Wallpaper with text]]></en>
         </locale>
         <locale name="control.WallpaperText.description">
             <de><![CDATA[Mit diesem Baustein kannst du schnell einen Banner erstellen. Wähle ein passendes Bild oder eine Farbe, die unter dem Text angezeigt werden.]]></de>
@@ -187,8 +187,8 @@
 
         <!-- sticky content -->
         <locale name="control.StickyContent.title">
-            <de><![CDATA[Präsentation: Sticky Inhalt]]></de>
-            <en><![CDATA[Presentation: Sticky content]]></en>
+            <de><![CDATA[Sticky Inhalt]]></de>
+            <en><![CDATA[Sticky content]]></en>
         </locale>
         <locale name="control.StickyContent.description">
             <de><![CDATA[Während ein Bereich mit der Seite gescrollt wird, bleibt der andere oben, bis Ende des Bricks kommt.]]></de>
@@ -229,8 +229,8 @@
 
         <!-- count up basic -->
         <locale name="control.countUpBasic.title">
-            <de><![CDATA[Präsentation: Count Up Basic]]></de>
-            <en><![CDATA[Presentation: Count Up Basic]]></en>
+            <de><![CDATA[Count Up Basic]]></de>
+            <en><![CDATA[Count Up Basic]]></en>
         </locale>
         <locale name="control.countUpBasic.description">
             <de><![CDATA[(...)]]></de>
@@ -281,12 +281,12 @@
 
         <!-- counter -->
         <locale name="control.counter.title">
-            <de><![CDATA[Präsentation: Counter]]></de>
-            <en><![CDATA[Presentation: Counter]]></en>
+            <de><![CDATA[Counter]]></de>
+            <en><![CDATA[Counter]]></en>
         </locale>
         <locale name="control.counter.description" html="true">
-            <de><![CDATA[Zähler mit Start- und Endwerten pro Eintrag. Der Counter zählt automatisch hoch oder runter und bietet kuratierte Layout-Varianten für Inline, Gestapelt und Horizontal.]]></de>
-            <en><![CDATA[Counter with start and end values per entry. The counter automatically counts up or down and provides curated layout variants for inline, stacked and horizontal.]]></en>
+            <de><![CDATA[Mit diesem Baustein kannst du Kennzahlen, Statistiken oder Meilensteine als animierte Zähler darstellen. Jeder Eintrag unterstützt einen eigenen Start- und Endwert und kann automatisch hoch- oder herunterzählen. Die Darstellung lässt sich passend zu Inhalt und Layout variieren.<ul><li><em>Layout</em>: Inline links, Inline zentriert, Gestapelt links, Gestapelt zentriert oder Horizontal</li><li><em>Dauer</em>: Animationsdauer für alle Zähler in Millisekunden</li><li><em>Start bei 0</em>: ignoriert individuelle Startwerte und beginnt immer bei null</li><li><em>Icon oben</em>: zeigt das Eintrags-Icon oberhalb des Zählerwerts an</li><li><em>Einträge</em>: beliebig viele Werte mit Prefix, Suffix, Titel, Text und optionalem Icon</li></ul>]]></de>
+            <en><![CDATA[Use this brick to present key figures, statistics or milestones as animated counters. Each entry supports its own start and end value and can count up or down automatically. The presentation can be varied to match your content and layout.<ul><li><em>Layout</em>: inline left, inline centered, stacked left, stacked centered or horizontal</li><li><em>Duration</em>: animation duration for all counters in milliseconds</li><li><em>Start at 0</em>: ignores individual start values and always begins at zero</li><li><em>Icon on top</em>: displays the entry icon above the counter value</li><li><em>Entries</em>: any number of values with prefix, suffix, title, text and optional icon</li></ul>]]></en>
         </locale>
         <locale name="brick.setting.counter.template">
             <de><![CDATA[Layout]]></de>
@@ -665,8 +665,8 @@
 
         <!-- Background video -->
         <locale name="control.backgroundVideo.title">
-            <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
-            <en><![CDATA[Presentation: Background video]]></en>
+            <de><![CDATA[Hintergrundvideo]]></de>
+            <en><![CDATA[Background video]]></en>
         </locale>
         <locale name="control.backgroundVideo.description">
             <de><![CDATA[Baustein für Video im Hintergrund]]></de>
@@ -817,8 +817,8 @@
 
         <!-- Video -->
         <locale name="control.video.title">
-            <de><![CDATA[Präsentation: Video]]></de>
-            <en><![CDATA[Presentation: Video]]></en>
+            <de><![CDATA[Video]]></de>
+            <en><![CDATA[Video]]></en>
         </locale>
         <locale name="control.video.description">
             <de><![CDATA[Mit diesem Baustein lässt sich ein Video auf der Seite platzieren.]]></de>
