@@ -2,10 +2,11 @@
     --_maxWidth: var(--quiqqer-presentationBricks-counter-maxWidth, var(--_q-controlConf-maxWidth, 100%));
     --_itemMaxWidth: var(--quiqqer-presentationBricks-counter-itemMaxWidth, var(--_q-controlConf-itemMaxWidth, 100%));
     --_columns: var(--quiqqer-presentationBricks-counter-columns, var(--_q-controlConf-columns, 3));
-    --_columnsTablet: var(--quiqqer-presentationBricks-counter-columnsTablet, var(--_q-controlConf-columnsTablet, 2));
-    --_columnsMobile: var(--quiqqer-presentationBricks-counter-columnsMobile, var(--_q-controlConf-columnsMobile, 1));
+    --_columnsMobile: var(--quiqqer-presentationBricks-counter-columnsMobile, 1);
     --_gap: var(--quiqqer-presentationBricks-counter-gap, var(--_q-controlConf-gap, clamp(1rem, 0.9rem + 0.5vw, 1.5rem)));
     --_numberSize: var(--quiqqer-presentationBricks-counter-numberSize, var(--_q-controlConf-numberSize, clamp(1.5rem, 1.1rem + 1.8vw, 3rem)));
+    --_numberAddonSize: var(--quiqqer-presentationBricks-counter-numberAddonSize, 0.9em);
+    --_numberAddonWeight: var(--quiqqer-presentationBricks-counter-numberAddonWeight, 700);
     --_iconLineheight--horizontal: var(--quiqqer-presentationBricks-counter-iconLineheight--horizontal, var(--_numberSize));
     --_accentColor: var(--quiqqer-presentationBricks-counter-accentColor, var(--_q-controlConf-accentColor, currentColor));
 
@@ -57,14 +58,25 @@
     flex-wrap: wrap;
     font-size: var(--_numberSize);
     font-weight: 700;
-    gap: 0.15em;
     line-height: 1;
 }
 
 .quiqqer-presentationBricks-counter__prefix,
 .quiqqer-presentationBricks-counter__suffix {
     font-size: 0.45em;
-    font-weight: 600;
+}
+
+.quiqqer-presentationBricks-counter__numberAddon {
+    font-size: var(--_numberAddonSize);
+    font-weight: var(--_numberAddonWeight);
+}
+
+.quiqqer-presentationBricks-counter__prefix {
+    margin-right: 0.15em;
+}
+
+.quiqqer-presentationBricks-counter__suffix {
+    margin-left: 0.15em;
 }
 
 .quiqqer-presentationBricks-counter__title {
@@ -78,13 +90,7 @@
     margin-top: 0.25rem;
 }
 
-@container (max-width: 60rem) {
-    .quiqqer-presentationBricks-counter__list {
-        grid-template-columns: repeat(var(--_columnsTablet), minmax(0, 1fr));
-    }
-}
-
-@container (max-width: 36rem) {
+@container (max-width: 767px) {
     .quiqqer-presentationBricks-counter__list {
         grid-template-columns: repeat(var(--_columnsMobile), minmax(0, 1fr));
     }

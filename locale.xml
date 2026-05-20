@@ -424,6 +424,14 @@
             <de><![CDATA[Kurzer Text direkt vor dem Zähler. Sinnvoll sind meist einzelne Zeichen oder kurze Abkürzungen, z. B. <code>+</code>, <code>-</code>, <code>€</code>, <code>ca.</code>, <code>ab</code>. In vielen Vorlagen ist dieser Text kleiner als die Zahl.]]></de>
             <en><![CDATA[Text directly before the counter. In many templates it is smaller than the number. Examples: + before 100 results in +100, about before 250 results in about 250.]]></en>
         </locale>
+        <locale name="brick.counter.entries.numberAddon">
+            <de><![CDATA[Zahlzusatz]]></de>
+            <en><![CDATA[Number addon]]></en>
+        </locale>
+        <locale name="brick.counter.entries.numberAddon.desc">
+            <de><![CDATA[Kurzer Zusatz direkt an der Zahl. Geeignet für Abkürzungen wie <code>k</code>, <code>Mio.</code> oder <code>M</code>. Beispiele: <code>10</code> mit Zahlzusatz <code>k</code> wird zu <code>10k</code>. Wenn eine Schreibweise mit Leerzeichen gewünscht ist, kann dieses direkt mit eingegeben werden, z. B. <code> Mio.</code> für <code>2,5 Mio.</code>. Für nachgestellte Zeichen mit eigenem Abstand wie <code>+</code> oder <code>%</code> bitte das Feld Suffix verwenden.]]></de>
+            <en><![CDATA[Short addon placed directly next to the number. Useful for abbreviations like <code>k</code>, <code>M</code> or <code>mn</code>. Example: <code>10</code> with addon <code>k</code> becomes <code>10k</code>. If you want a spelling with a space, include it in the addon itself, for example <code> M</code> for <code>2.5 M</code>. Use the suffix field for trailing characters with their own spacing such as <code>+</code> or <code>%</code>.]]></en>
+        </locale>
         <locale name="brick.counter.entries.suffix">
             <de><![CDATA[Suffix]]></de>
             <en><![CDATA[Suffix]]></en>

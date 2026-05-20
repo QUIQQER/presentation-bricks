@@ -25,6 +25,7 @@
                             <span class="quiqqer-presentationBricks-counter__number"
                                   data-start-value="{$entry.startValue|escape:'html'}"
                                   data-end-value="{$entry.endValue|escape:'html'}">{$entry.startValue}</span>
+                            {if $entry.numberAddon}<span class="quiqqer-presentationBricks-counter__numberAddon">{$entry.numberAddon}</span>{/if}
                             {if $entry.suffix}<span class="quiqqer-presentationBricks-counter__suffix">{$entry.suffix}</span>{/if}
                         </div>
                     </div>

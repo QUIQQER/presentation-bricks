@@ -58,6 +58,7 @@ class CounterTest extends TestCase
                 [
                     'startValue' => '10,5',
                     'endValue' => '20',
+                    'numberAddon' => 'k',
                     'title' => 'A'
                 ]
             ]
@@ -67,6 +68,7 @@ class CounterTest extends TestCase
 
         $this->assertSame(10.5, $entries[0]['startValue']);
         $this->assertSame(20, $entries[0]['endValue']);
+        $this->assertSame('k', $entries[0]['numberAddon']);
     }
 
     public function testInvalidTemplateFallsBackToStackedCenter(): void
@@ -133,7 +135,9 @@ class CounterTest extends TestCase
             'entries' => [[
                 'title' => 'Projekte',
                 'startValue' => 0,
-                'endValue' => 12
+                'endValue' => 12,
+                'numberAddon' => 'k',
+                'suffix' => '+'
             ]]
         ]);
 
@@ -141,5 +145,7 @@ class CounterTest extends TestCase
 
         $this->assertStringContainsString('<h2 class="control-header">Kennzahlen</h2>', $result);
         $this->assertStringContainsString('<div class="quiqqer-presentationBricks-counter__title">Projekte</div>', $result);
+        $this->assertStringContainsString('<span class="quiqqer-presentationBricks-counter__numberAddon">k</span>', $result);
+        $this->assertStringContainsString('<span class="quiqqer-presentationBricks-counter__suffix">+</span>', $result);
     }
 }

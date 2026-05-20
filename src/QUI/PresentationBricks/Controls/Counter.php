@@ -119,8 +119,6 @@ class Counter extends QUI\Control
         }
 
         $this->setCustomVariable('columns', (string)$columns);
-        $this->setCustomVariable('columnsTablet', (string)min($columns, 2));
-        $this->setCustomVariable('columnsMobile', '1');
         $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/Counter');
         $this->setJavaScriptControlOption('duration', $duration);
 
@@ -170,6 +168,7 @@ class Counter extends QUI\Control
                 'startValue' => $this->normalizeNumber($entry['startValue'] ?? 0),
                 'endValue' => $this->normalizeNumber($entry['endValue'] ?? 0),
                 'prefix' => isset($entry['prefix']) ? (string)$entry['prefix'] : '',
+                'numberAddon' => isset($entry['numberAddon']) ? (string)$entry['numberAddon'] : '',
                 'suffix' => isset($entry['suffix']) ? (string)$entry['suffix'] : '',
                 'icon' => $icon,
                 'title' => isset($entry['title']) ? (string)$entry['title'] : '',

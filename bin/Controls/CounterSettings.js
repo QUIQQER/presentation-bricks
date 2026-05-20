@@ -147,6 +147,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                     dataType: 'string',
                     width: 100
                 }, {
+                    header: QUILocale.get(lg, 'brick.counter.entries.numberAddon'),
+                    dataIndex: 'numberAddon',
+                    dataType: 'string',
+                    width: 100
+                }, {
                     header: QUILocale.get(lg, 'brick.counter.entries.suffix'),
                     dataIndex: 'suffix',
                     dataType: 'string',
@@ -213,6 +218,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                     startValue: entry.startValue,
                     endValue: entry.endValue,
                     prefix: entry.prefix,
+                    numberAddon: entry.numberAddon,
                     suffix: entry.suffix,
                     icon: entry.icon,
                     title: entry.title,
@@ -381,6 +387,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                                     fieldEndValueDesc: QUILocale.get(lg, prefix + 'endValue.desc'),
                                     fieldPrefix: QUILocale.get(lg, prefix + 'prefix'),
                                     fieldPrefixDesc: QUILocale.get(lg, prefix + 'prefix.desc'),
+                                    fieldNumberAddon: QUILocale.get(lg, prefix + 'numberAddon'),
+                                    fieldNumberAddonDesc: QUILocale.get(lg, prefix + 'numberAddon.desc'),
                                     fieldSuffix: QUILocale.get(lg, prefix + 'suffix'),
                                     fieldSuffixDesc: QUILocale.get(lg, prefix + 'suffix.desc'),
                                     fieldIcon: QUILocale.get(lg, prefix + 'icon'),
@@ -391,6 +399,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                                     startValue: initial.startValue,
                                     endValue: initial.endValue,
                                     prefix: initial.prefix,
+                                    numberAddon: initial.numberAddon,
                                     suffix: initial.suffix,
                                     icon: initial.icon,
                                     title: initial.title,
@@ -428,6 +437,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                 startValue: Form.elements.startValue.value,
                 endValue: Form.elements.endValue.value,
                 prefix: Form.elements.prefix.value,
+                numberAddon: Form.elements.numberAddon.value,
                 suffix: Form.elements.suffix.value,
                 icon: Form.elements.icon.value,
                 title: Form.elements.title.value,
@@ -443,6 +453,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/CounterSettings', [
                 startValue: typeof entry.startValue !== 'undefined' ? entry.startValue : 0,
                 endValue: typeof entry.endValue !== 'undefined' ? entry.endValue : '',
                 prefix: entry.prefix || '',
+                numberAddon: entry.numberAddon || '',
                 suffix: entry.suffix || '',
                 icon: entry.icon || '',
                 title: entry.title || '',
