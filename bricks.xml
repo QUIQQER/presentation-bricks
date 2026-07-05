@@ -695,6 +695,23 @@
                                 var="control.backgroundVideo.shortVideo.desc"/>
                     </description>
                 </setting>
+                <setting name="lazyLoadMode" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.lazyLoadMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.desc"/>
+                    </description>
+
+                    <option value="immediate">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.immediate"/>
+                    </option>
+                    <option value="afterWindowLoad">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.afterWindowLoad"/>
+                    </option>
+                </setting>
                 <setting name="backgroundColor" type="color">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.backgroundColor"/>
@@ -857,6 +874,23 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.video.shortVideo.desc"/>
                     </description>
+                </setting>
+                <setting name="lazyLoadMode" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.lazyLoadMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.desc"/>
+                    </description>
+
+                    <option value="immediate">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.immediate"/>
+                    </option>
+                    <option value="afterWindowLoad">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.afterWindowLoad"/>
+                    </option>
                 </setting>
 
                 <setting name="playIfInView" type="checkbox">

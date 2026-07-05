@@ -708,6 +708,22 @@
             <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
             <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
         </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode">
+            <de><![CDATA[Ladeverhalten des Videos]]></de>
+            <en><![CDATA[Video loading behavior]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.desc" html="true">
+            <de><![CDATA[Standardmäßig wird das Video erst nach dem vollständigen Laden der Seite aufgebaut. Dafür sollte ein Poster gesetzt sein. Ohne Poster wird das Video weiterhin direkt geladen.]]></de>
+            <en><![CDATA[By default, the video is only built after the page has fully loaded. A poster should be set for this. Without a poster, the video will still load immediately.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.immediate">
+            <de><![CDATA[Sofort laden]]></de>
+            <en><![CDATA[Load immediately]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.afterWindowLoad">
+            <de><![CDATA[Erst nach vollständigem Seitenaufbau laden]]></de>
+            <en><![CDATA[Load only after full page load]]></en>
+        </locale>
         <locale name="control.backgroundVideo.autoplay">
             <de><![CDATA[Automatisches Abspielen]]></de>
             <en><![CDATA[Autoplay]]></en>
@@ -855,6 +871,22 @@
         <locale name="control.video.shortVideo.desc">
             <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
             <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode">
+            <de><![CDATA[Ladeverhalten des Videos]]></de>
+            <en><![CDATA[Video loading behavior]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.desc" html="true">
+            <de><![CDATA[Standardmäßig wird das Video erst nach dem vollständigen Laden der Seite aufgebaut. Dafür sollte ein Poster gesetzt sein. Ohne Poster wird das Video weiterhin direkt geladen.]]></de>
+            <en><![CDATA[By default, the video is only built after the page has fully loaded. A poster should be set for this. Without a poster, the video will still load immediately.]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.immediate">
+            <de><![CDATA[Sofort laden]]></de>
+            <en><![CDATA[Load immediately]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.afterWindowLoad">
+            <de><![CDATA[Erst nach vollständigem Seitenaufbau laden]]></de>
+            <en><![CDATA[Load only after full page load]]></en>
         </locale>
         <locale name="control.video.playIfInView">
             <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>
