@@ -32,7 +32,7 @@ class WallpaperText extends QUI\Control
             'content-position' => 'center',
             'minHeight' => false,
             'contentMaxWidth' => 600,
-            'fontColor' => 'inherit',
+            'fontColor' => '',
         ]);
 
         parent::__construct($attributes);

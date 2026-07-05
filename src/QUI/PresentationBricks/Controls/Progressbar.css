@@ -1,89 +1,195 @@
-.quiqqer-progressbar-wrapper {
-    display: flex;
-    flex-direction: row;
+@property --qpb-fill {
+    syntax: '<length-percentage>';
+    inherits: true;
+    initial-value: 0%;
 }
 
-.quiqqer-progressbar-wrapper.quiqqer-progressbar__textRight {
-    flex-direction: row-reverse;
+.quiqqer-presentationBricks-progressbar-control {
+    --_container-maxWidth: var(--quiqqer-presentationBricks-progressbar-container-maxWidth, var(--_q-controlConf-container-maxWidth, 100%));
+    --_bars-maxWidth: var(--quiqqer-presentationBricks-progressbar-bars-maxWidth, var(--_q-controlConf-bars-maxWidth, 100%));
+    --_areas: var(--quiqqer-presentationBricks-progressbar-areas, var(--_q-controlConf-areas, "text" "bars"));
+    --_areas-mobile: var(--quiqqer-presentationBricks-progressbar-areas-mobile, var(--_q-controlConf-areas-mobile, "text" "bars"));
+    --_cols: var(--quiqqer-presentationBricks-progressbar-cols, var(--_q-controlConf-cols, 1fr));
+    --_valign: var(--quiqqer-presentationBricks-progressbar-valign, var(--_q-controlConf-valign, stretch));
+    --_track-height: var(--quiqqer-presentationBricks-progressbar-track-height, 6px);
+    --_track-radius: var(--quiqqer-presentationBricks-progressbar-track-radius, 0);
+    --_bars-gap: var(--quiqqer-presentationBricks-progressbar-bars-gap, var(--qui-spacing-md, 1.25rem));
+
+    color: currentColor;
 }
 
-.quiqqer-progressbar__center {
-    margin: auto;
+.quiqqer-presentationBricks-progressbar-control__container {
+    container-type: inline-size;
+    max-width: var(--_container-maxWidth);
+    margin-inline: auto;
 }
 
-.quiqqer-progressbar__center .quiqqer-progressbar-chart{
-    padding: 0;
+/* === Layout === */
+.quiqqer-presentationBricks-progressbar-control__layout {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: var(--_cols);
+    grid-template-areas: var(--_areas);
+    align-items: var(--_valign);
+    justify-items: center;
 }
 
-.quiqqer-progressbar-content {
-    height: 100%;
+.quiqqer-presentationBricks-progressbar-control__text { grid-area: text; }
+.quiqqer-presentationBricks-progressbar-control__bars { grid-area: bars; }
+
+.quiqqer-presentationBricks-progressbar-control__bars {
+    max-width: var(--_bars-maxWidth);
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: var(--qui-progressBar-textPos, start);
+    gap: var(--_bars-gap);
 }
 
-.quiqqer-progressbar-content-wrapper {
-    padding-right: var(--qui-spacing, 1rem);
+/* === Mobile (container query) === */
+@container (max-width: 45rem) {
+    .quiqqer-presentationBricks-progressbar-control__layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: var(--_areas-mobile);
+    }
 }
 
-.quiqqer-progressbar-charts {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--qui-spacing, 1rem);
-    max-width: var(--qui-progressBar-maxWidth, 100%);
-    width: 100%;
+/* === Single bar === */
+.quiqqer-presentationBricks-progressbar-control__bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
 }
 
-.quiqqer-progressbar-chart {
-    margin-bottom: var(--qui-spacing-md, 1.25rem);
-}
-
-.quiqqer-progressbar__textRight .quiqqer-progressbar-content-wrapper {
-    padding-right: 0;
-    padding-left: var(--qui-spacing, 1rem);
-}
-
-.quiqqer-progressbar__textRight .quiqqer-progressbar-charts {
-    padding-left: 0;
-    padding-right: var(--qui-spacing, 1rem);
-}
-
-.quiqqer-progressbar-chart-content {
+.quiqqer-presentationBricks-progressbar-control__bar-label {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
 }
 
-.quiqqer-progressbar-chart-line-background {
-    height: 5px;
-    background-color: #e8e8e8;
+.quiqqer-presentationBricks-progressbar-control__bar-track {
+    position: relative;
+    height: var(--_track-height);
+    background-color: color-mix(in srgb, currentColor 15%, transparent);
+    border-radius: var(--_track-radius);
+    overflow: hidden;
     width: 100%;
 }
 
-.quiqqer-progressbar-chart-line {
+.quiqqer-presentationBricks-progressbar-control__bar-fill {
     height: 100%;
-    background-color: var(--qui-color-primary, #333);
-    left: 0;
-    top: 0;
+    width: var(--qpb-fill, 0%);
+    background-color: var(--qpb-bar-color, currentColor);
 }
 
-/* Mobile */
-@media screen and (max-width: 767px) {
-    .quiqqer-progressbar-wrapper {
-        flex-direction: column;
+/* === Layout variants === */
+.quiqqer-presentationBricks-progressbar-control--layout-wide .quiqqer-presentationBricks-progressbar-control__bar-track {
+    --_track-height: 1rem;
+    --_track-radius: 999px;
+}
+
+.quiqqer-presentationBricks-progressbar-control--layout-overlay .quiqqer-presentationBricks-progressbar-control__bar-track {
+    --_track-height: 2.25rem;
+    --_track-radius: 0.5rem;
+}
+
+.quiqqer-presentationBricks-progressbar-control--layout-overlay .quiqqer-presentationBricks-progressbar-control__bar-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.quiqqer-presentationBricks-progressbar-control--layout-overlay .quiqqer-presentationBricks-progressbar-control__bar-label--base {
+    color: currentColor;
+}
+
+.quiqqer-presentationBricks-progressbar-control--layout-overlay .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+    color: oklch(from var(--qpb-bar-color, currentColor) clamp(0, (0.62 - l) * 100, 1) 0 0);
+    clip-path: inset(0 calc(100% - var(--qpb-fill, 0%)) 0 0);
+}
+
+/* === Animation: once (IntersectionObserver toggles .is-in-view) === */
+.quiqqer-presentationBricks-progressbar-control--animate-once .quiqqer-presentationBricks-progressbar-control__bar-fill {
+    width: 0;
+    transition: width 1.2s cubic-bezier(.2, .7, .2, 1);
+    transition-delay: calc(var(--qpb-bar-index, 0) * 120ms);
+}
+
+.quiqqer-presentationBricks-progressbar-control--animate-once .quiqqer-presentationBricks-progressbar-control__bar {
+    --qpb-fill-runtime: 0%;
+}
+
+.quiqqer-presentationBricks-progressbar-control--animate-once.is-in-view .quiqqer-presentationBricks-progressbar-control__bar-fill {
+    width: var(--qpb-fill);
+}
+
+.quiqqer-presentationBricks-progressbar-control--animate-once .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+    transition: clip-path 1.2s cubic-bezier(.2, .7, .2, 1);
+    transition-delay: calc(var(--qpb-bar-index, 0) * 120ms);
+    clip-path: inset(0 100% 0 0);
+}
+
+.quiqqer-presentationBricks-progressbar-control--animate-once.is-in-view .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+    clip-path: inset(0 calc(100% - var(--qpb-fill, 0%)) 0 0);
+}
+
+/* === Animation: scroll (CSS-only with @supports fallback to full) === */
+@supports (animation-timeline: view()) {
+    .quiqqer-presentationBricks-progressbar-control--animate-scroll {
+        view-timeline-name: --qpb-view;
+        view-timeline-axis: block;
     }
 
-    .quiqqer-progressbar-wrapper.quiqqer-progressbar__textRight {
-        flex-direction: column;
+    .quiqqer-presentationBricks-progressbar-control--animate-scroll .quiqqer-presentationBricks-progressbar-control__bar-fill {
+        width: 0;
+        animation-name: qpb-fill;
+        animation-duration: auto;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --qpb-view;
+        animation-range: entry 0% contain 50%;
     }
 
-    .quiqqer-progressbar-content-wrapper,
-    .quiqqer-progressbar__textRight .quiqqer-progressbar-content-wrapper {
-        padding: 0;
+    .quiqqer-presentationBricks-progressbar-control--animate-scroll .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+        animation-name: qpb-clip;
+        animation-duration: auto;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --qpb-view;
+        animation-range: entry 0% contain 50%;
     }
 
-    .quiqqer-progressbar-charts,
-    .quiqqer-progressbar__textRight .quiqqer-progressbar-charts {
-        margin-top: var(--qui-spacing, 1rem);
-        padding: 0
+    @keyframes qpb-fill {
+        from { width: 0; }
+        to   { width: var(--qpb-fill); }
+    }
+
+    @keyframes qpb-clip {
+        from { clip-path: inset(0 100% 0 0); }
+        to   { clip-path: inset(0 calc(100% - var(--qpb-fill, 0%)) 0 0); }
+    }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+    .quiqqer-presentationBricks-progressbar-control__bar-fill,
+    .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .quiqqer-presentationBricks-progressbar-control--animate-once .quiqqer-presentationBricks-progressbar-control__bar-fill,
+    .quiqqer-presentationBricks-progressbar-control--animate-scroll .quiqqer-presentationBricks-progressbar-control__bar-fill {
+        width: var(--qpb-fill);
+    }
+
+    .quiqqer-presentationBricks-progressbar-control--animate-once .quiqqer-presentationBricks-progressbar-control__bar-label--inverted,
+    .quiqqer-presentationBricks-progressbar-control--animate-scroll .quiqqer-presentationBricks-progressbar-control__bar-label--inverted {
+        clip-path: inset(0 calc(100% - var(--qpb-fill, 0%)) 0 0);
     }
 }

@@ -16,6 +16,7 @@ class VideoTest extends TestCase
 
         $this->assertInstanceOf(Control::class, $control);
         $this->assertSame(50, $control->getAttribute('videoBrightness'));
+        $this->assertSame('afterWindowLoad', $control->getAttribute('lazyLoadMode'));
     }
 
     public function testCheckMaxWidthReturnsExpectedValues(): void

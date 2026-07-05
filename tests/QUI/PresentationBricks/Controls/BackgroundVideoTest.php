@@ -16,6 +16,7 @@ class BackgroundVideoTest extends TestCase
 
         $this->assertInstanceOf(Control::class, $control);
         $this->assertTrue($control->getAttribute('autoplay'));
+        $this->assertSame('afterWindowLoad', $control->getAttribute('lazyLoadMode'));
     }
 
     public function testRendersBody(): void

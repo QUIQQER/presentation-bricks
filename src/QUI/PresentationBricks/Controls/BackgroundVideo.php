@@ -28,6 +28,7 @@ class BackgroundVideo extends QUI\Control
             'poster' => false,
             'backgroundColor' => '#333',
             'shortVideo' => false,
+            'lazyLoadMode' => 'afterWindowLoad',
             'autoplay' => true,
             'muted' => true,
             'loop' => true,
@@ -67,6 +68,7 @@ class BackgroundVideo extends QUI\Control
         $fontColor = '#fff';
         $contentMaxWidth = false;
         $defaultBtnPos = '';
+        $delayVideoLoad = false;
 
         if ($this->getAttribute('backgroundColor')) {
             $backgroundColor = $this->getAttribute('backgroundColor');
@@ -87,8 +89,6 @@ class BackgroundVideo extends QUI\Control
         if ($this->getAttribute('playsinline')) {
             $playsinline = $this->getAttribute('playsinline');
         }
-
-        $this->setJavaScriptControlOption('playifinview', $this->getAttribute('playIfInView'));
 
         if (
             intval($this->getAttribute('backgroundVideoBrightness')) &&
@@ -129,24 +129,46 @@ class BackgroundVideo extends QUI\Control
          * poster url
          */
         $posterUrl = false;
+        $PosterImage = false;
 
         try {
-            $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
-            $posterUrl = $Poster->getUrl(true);
+            $PosterImage = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+            $posterUrl = $PosterImage->getUrl(true);
         } catch (QUI\Exception) {
             // nothing
         }
 
-        if ($initVideoInPopup) {
-            if ($posterUrl) {
-                $this->setJavaScriptControlOption('poster', $posterUrl);
-            }
+        $videoUrl = $this->resolveMediaUrl((string)$this->getAttribute('video'));
+        $inlineVideoUrl = $this->resolveMediaUrl(
+            $this->getAttribute('shortVideo') ? (string)$this->getAttribute('shortVideo') : (string)$this->getAttribute('video')
+        );
 
-            try {
-                $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($this->getAttribute('video'));
-                $this->setJavaScriptControlOption('video', $Video->getUrl(true));
-            } catch (QUI\Exception) {
-                // nothing
+        if (
+            $this->getAttribute('lazyLoadMode') === 'afterWindowLoad' &&
+            $posterUrl &&
+            $inlineVideoUrl
+        ) {
+            $delayVideoLoad = true;
+        }
+
+        $this->setJavaScriptControlOption('playifinview', intval($this->getAttribute('playIfInView')));
+        $this->setJavaScriptControlOption('autoplay', intval($autoplay));
+        $this->setJavaScriptControlOption('muted', intval($muted));
+        $this->setJavaScriptControlOption('loop', intval($loop));
+        $this->setJavaScriptControlOption('playsinline', intval($playsinline));
+        $this->setJavaScriptControlOption('delayvideoload', intval($delayVideoLoad));
+
+        if ($posterUrl) {
+            $this->setJavaScriptControlOption('poster', $posterUrl);
+        }
+
+        if ($inlineVideoUrl) {
+            $this->setJavaScriptControlOption('inlinevideo', $inlineVideoUrl);
+        }
+
+        if ($initVideoInPopup) {
+            if ($videoUrl) {
+                $this->setJavaScriptControlOption('video', $videoUrl);
             }
         }
 
@@ -158,7 +180,9 @@ class BackgroundVideo extends QUI\Control
 
         $Engine->assign([
             'this' => $this,
+            'posterImage' => $PosterImage,
             'posterUrl' => $posterUrl,
+            'inlineVideoUrl' => $inlineVideoUrl,
             'backgroundColor' => $backgroundColor,
             'autoplay' => $autoplay,
             'muted' => $muted,
@@ -169,8 +193,27 @@ class BackgroundVideo extends QUI\Control
             'contentMaxWidth' => $contentMaxWidth,
             'contentPosition' => $contentPosition,
             'defaultBtnPos' => $defaultBtnPos,
+            'delayVideoLoad' => $delayVideoLoad,
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/BackgroundVideo.html');
+    }
+
+    /**
+     * @param string $url
+     * @return string|false
+     */
+    protected function resolveMediaUrl(string $url): string|false
+    {
+        if ($url === '') {
+            return false;
+        }
+
+        try {
+            $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($url);
+            return $Video->getUrl(true);
+        } catch (QUI\Exception) {
+            return false;
+        }
     }
 }

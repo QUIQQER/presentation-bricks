@@ -16,10 +16,17 @@
     {if $this->getAttribute('videoButton') !== 'disable'}
         {include file=$buttonFile}
     {/if}
-    
-    <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
-           preload="none"
-           src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
-           {if $posterUrl}poster="{$posterUrl}"{/if}>
-    </video>
+
+    {if $delayVideoLoad}
+        <div data-name="video-poster-wrapper">
+            {image image=$posterImage class="quiqqer-presentationBricks-video-poster" data-name="video-poster" alt=""}
+        </div>
+    {else}
+        <video data-name="video-element"
+               {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
+               preload="none"
+               src="{$inlineVideoUrl}"
+               {if $posterUrl}poster="{$posterUrl}"{/if}>
+        </video>
+    {/if}
 </div>
