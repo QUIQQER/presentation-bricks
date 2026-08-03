@@ -23,16 +23,25 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
         ],
 
         options: {
-            video       : '',
-            poster      : '',
-            playifinview: true,
-            openinpopup: true
+            autoplay           : 1,
+            delayvideoload     : 0,
+            delayvideoloaddelay: 250,
+            inlinevideo        : '',
+            loop               : 1,
+            muted              : 1,
+            openinpopup        : true,
+            playsinline        : 1,
+            playifinview       : true,
+            poster             : '',
+            video              : ''
         },
 
         initialize: function (options) {
             this.parent(options);
 
             this.isOpen = false;
+            this.Video = false;
+            this.playIfInViewInitialized = false;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -43,16 +52,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
          * event : on import
          */
         $onImport: function () {
-            if (parseInt(this.getAttribute('openinpopup')) !== 1) {
-                return;
-            }
-
             const Elm     = this.getElm();
+            this.Video = Elm.querySelector('[data-name="video-element"], video');
 
             // For compatibility reasons, the CSS class 'openVideoInPopupBtn' is also checked here.
-            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn, [data-js="openVideoInPopup"]');
+            const buttons = Elm.querySelectorAll('.openVideoInPopupBtn, [data-js="openVideoInPopup"], [data-name="open-video-popup"]');
 
-            if (buttons.length > 0) {
+            if (parseInt(this.getAttribute('openinpopup'), 10) === 1 && buttons.length > 0) {
                 let i   = 0,
                     len = buttons.length;
 
@@ -61,8 +67,107 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
                 }
             }
 
-            this.Video = Elm.querySelector('video');
+            if (parseInt(this.getAttribute('delayvideoload'), 10) === 1) {
+                this.delayVideoLoad();
+                return;
+            }
 
+            if (!this.Video) {
+                return;
+            }
+
+            this.initDelayedVideoFeatures();
+        },
+
+        delayVideoLoad: function () {
+            const startLoading = () => {
+                window.setTimeout(() => {
+                    if (!this.Video) {
+                        this.Video = this.createVideoElement();
+                    }
+
+                    if (!this.Video) {
+                        return;
+                    }
+
+                    this.initDelayedVideoFeatures();
+                }, parseInt(this.getAttribute('delayvideoloaddelay'), 10) || 0);
+            };
+
+            if (document.readyState === 'complete') {
+                startLoading();
+                return;
+            }
+
+            window.addEventListener('load', startLoading, {once: true});
+        },
+
+        createVideoElement: function () {
+            const container = this.getElm().querySelector('.quiqqer-presentationBricks-backgroundVideo-videoContainer');
+            const placeholderWrapper = container?.querySelector('[data-name="video-poster-wrapper"]');
+            const placeholder = container?.querySelector('[data-name="video-poster"]');
+            const src = this.getAttribute('inlinevideo');
+
+            if (!container || !src) {
+                return false;
+            }
+
+            const Video = document.createElement('video');
+            const placeholderRect = placeholder?.getBoundingClientRect();
+            const placeholderWidth = placeholder?.getAttribute('width') || Math.round(placeholderRect?.width || 0);
+            const placeholderHeight = placeholder?.getAttribute('height') || Math.round(placeholderRect?.height || 0);
+
+            Video.setAttribute('data-name', 'video-element');
+            Video.setAttribute('preload', 'none');
+            Video.src = src;
+
+            if (placeholderWidth) {
+                Video.setAttribute('width', String(placeholderWidth));
+            }
+
+            if (placeholderHeight) {
+                Video.setAttribute('height', String(placeholderHeight));
+            }
+
+            if (this.getAttribute('poster')) {
+                Video.setAttribute('poster', this.getAttribute('poster'));
+            }
+
+            if (parseInt(this.getAttribute('autoplay'), 10) === 1) {
+                Video.setAttribute('autoplay', '');
+                Video.autoplay = true;
+            }
+
+            if (parseInt(this.getAttribute('loop'), 10) === 1) {
+                Video.setAttribute('loop', '');
+                Video.loop = true;
+            }
+
+            if (parseInt(this.getAttribute('muted'), 10) === 1) {
+                Video.setAttribute('muted', '');
+                Video.muted = true;
+                Video.defaultMuted = true;
+            }
+
+            if (parseInt(this.getAttribute('playsinline'), 10) === 1) {
+                Video.setAttribute('playsinline', '');
+                Video.setAttribute('webkit-playsinline', '');
+            }
+
+            if (placeholderWrapper) {
+                placeholderWrapper.replaceWith(Video);
+            } else if (placeholder?.closest('picture')) {
+                placeholder.closest('picture').replaceWith(Video);
+            } else if (placeholder) {
+                placeholder.replaceWith(Video);
+            } else {
+                container.appendChild(Video);
+            }
+
+            return Video;
+        },
+
+        initDelayedVideoFeatures: function () {
             if (!this.Video) {
                 return;
             }
@@ -100,6 +205,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/BackgroundVideo', [
          * Init play if in view function
          */
         initPlayIfInView: function () {
+            if (this.playIfInViewInitialized || !this.Video) {
+                return;
+            }
+
+            this.playIfInViewInitialized = true;
+
             let throttleTimer = false;
 
             /**

@@ -312,7 +312,7 @@
         </brick>
 
         <!-- count up basic -->
-        <brick control="\QUI\PresentationBricks\Controls\CountUpBasic">
+        <brick control="\QUI\PresentationBricks\Controls\CountUpBasic" deprecated="1">
             <title>
                 <locale group="quiqqer/presentation-bricks"
                         var="control.countUpBasic.title"/>
@@ -337,6 +337,153 @@
             </settings>
         </brick>
 
+        <!-- counter -->
+        <brick control="\QUI\PresentationBricks\Controls\Counter">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.counter.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.counter.description"/>
+            </description>
+
+            <mockups>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/counter-mockup-900x600.png" type="preview"/>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/counter-thumbnail-100x80.png" type="thumbnail"/>
+            </mockups>
+
+            <settings>
+                <setting name="template" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.template"/>
+
+                    <option value="inline-left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.inlineLeft"/>
+                    </option>
+                    <option value="inline-center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.inlineCenter"/>
+                    </option>
+                    <option value="stacked-left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.stackedLeft"/>
+                    </option>
+                    <option value="stacked-center" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.stackedCenter"/>
+                    </option>
+                    <option value="horizontal">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.template.horizontal"/>
+                    </option>
+                </setting>
+
+                <setting name="duration" type="number">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.duration"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.duration.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="columns" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.columns"/>
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </setting>
+
+                <setting name="maxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.maxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.maxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="itemMaxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.itemMaxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.itemMaxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="gap" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.gap"/>
+
+                    <option value="none">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.none"/>
+                    </option>
+                    <option value="xs">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.xs"/>
+                    </option>
+                    <option value="s">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.s"/>
+                    </option>
+                    <option value="normal" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.normal"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.gap.extraLarge"/>
+                    </option>
+                </setting>
+
+                <setting name="numberSize" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.numberSize"/>
+
+                    <option value="small">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.small"/>
+                    </option>
+                    <option value="normal" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.normal"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.large"/>
+                    </option>
+                    <option value="xlarge">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.counter.numberSize.xlarge"/>
+                    </option>
+                </setting>
+
+                <setting name="accentColor" type="color">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.counter.accentColor"/>
+                </setting>
+
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/CounterSettings">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.counter.settings.entries"/>
+                </setting>
+            </settings>
+        </brick>
+
 
         <!-- progressbar -->
         <brick control="\QUI\PresentationBricks\Controls\Progressbar">
@@ -349,36 +496,159 @@
                         var="control.progressbar.description"/>
             </description>
 
+            <mockups>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/progressbar-mockup-900x600.png" type="preview"/>
+                <mockup src="/packages/quiqqer/presentation-bricks/bin/img/mockups/progressbar-thumbnail-100x80.png" type="thumbnail"/>
+            </mockups>
+
             <settings>
 
-                <setting name="maxWidth" type="number" min="0" max="1920">
+                <setting name="maxWidth" type="text">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.maxWidth.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="containerMaxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.containerMaxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.containerMaxWidth.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="additionalText" data-qui="controls/editors/Input">
                     <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalText.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="textPosition" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="brick.setting.progressbar.textPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.desc"/>
+                    </description>
 
                     <option value="top">
                         <locale group="quiqqer/presentation-bricks"
                                 var="brick.setting.progressbar.textPosition.top"/>
                     </option>
-                    <option value="center">
-                        <locale group="quiqqer/presentation-bricks"
-                                var="brick.setting.progressbar.textPosition.center"/>
-                    </option>
                     <option value="bottom">
                         <locale group="quiqqer/presentation-bricks"
                                 var="brick.setting.progressbar.textPosition.bottom"/>
                     </option>
+                    <option value="left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.left"/>
+                    </option>
+                    <option value="right">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textPosition.right"/>
+                    </option>
                 </setting>
 
-                <setting name="additionalTextRight" type="checkbox">
-                    <locale group="quiqqer/presentation-bricks" var="brick.setting.progressbar.additionalTextRight"/>
+                <setting name="textColumnWidth" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.textColumnWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.textColumnWidth.desc"/>
+                    </description>
+
+                    <option value="25/75">25 / 75</option>
+                    <option value="33/67">33 / 67</option>
+                    <option value="40/60">40 / 60</option>
+                    <option value="50/50" selected="selected">50 / 50</option>
+                    <option value="60/40">60 / 40</option>
+                    <option value="67/33">67 / 33</option>
+                    <option value="75/25">75 / 25</option>
+                </setting>
+
+                <setting name="verticalAlign" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.verticalAlign"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.desc"/>
+                    </description>
+
+                    <option value="top" selected="selected">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.verticalAlign.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="mobileTextPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.mobileTextPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.desc"/>
+                    </description>
+
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.top"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.mobileTextPosition.bottom"/>
+                    </option>
+                </setting>
+
+                <setting name="barLayout" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.barLayout"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.desc"/>
+                    </description>
+
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.default"/>
+                    </option>
+                    <option value="wide">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.wide"/>
+                    </option>
+                    <option value="overlay">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.barLayout.overlay"/>
+                    </option>
+                </setting>
+
+                <setting name="animation" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="brick.setting.progressbar.animation"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.desc"/>
+                    </description>
+
+                    <option value="none">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.none"/>
+                    </option>
+                    <option value="once">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.once"/>
+                    </option>
+                    <option value="scroll">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.setting.progressbar.animation.scroll"/>
+                    </option>
                 </setting>
 
                 <setting name="entries" type="hidden"
@@ -424,6 +694,23 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.shortVideo.desc"/>
                     </description>
+                </setting>
+                <setting name="lazyLoadMode" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.lazyLoadMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.desc"/>
+                    </description>
+
+                    <option value="immediate">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.immediate"/>
+                    </option>
+                    <option value="afterWindowLoad">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.lazyLoadMode.afterWindowLoad"/>
+                    </option>
                 </setting>
                 <setting name="backgroundColor" type="color">
                     <locale group="quiqqer/presentation-bricks"
@@ -587,6 +874,23 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.video.shortVideo.desc"/>
                     </description>
+                </setting>
+                <setting name="lazyLoadMode" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.lazyLoadMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.desc"/>
+                    </description>
+
+                    <option value="immediate">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.immediate"/>
+                    </option>
+                    <option value="afterWindowLoad">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.lazyLoadMode.afterWindowLoad"/>
+                    </option>
                 </setting>
 
                 <setting name="playIfInView" type="checkbox">

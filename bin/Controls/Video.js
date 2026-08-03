@@ -24,10 +24,17 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
         ],
 
         options: {
-            video       : '',
-            poster      : '',
-            playifinview: true,
-            openinpopup : 0
+            autoplay           : 1,
+            delayvideoload     : 0,
+            delayvideoloaddelay: 250,
+            inlinevideo        : '',
+            loop               : 1,
+            muted              : 1,
+            openinpopup        : 0,
+            playsinline        : 1,
+            playifinview       : true,
+            poster             : '',
+            video              : ''
         },
 
         initialize: function (options) {
@@ -35,6 +42,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
 
             this.isOpen = false;
             this.Video  = false;
+            this.playIfInViewInitialized = false;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -46,16 +54,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
          */
         $onImport: function () {
             const Elm     = this.getElm();
-            const buttons = Elm.querySelectorAll('[data-js="startVideo"]');
-            this.Video    = Elm.querySelector('video');
+            const buttons = Elm.querySelectorAll('[data-name="start-video"], [data-name="start-video-wrapper"]');
 
-            if (!this.Video) {
-                return;
-            }
-
-            if (this.getAttribute('playifinview')) {
-                this.initPlayIfInView();
-            }
+            this.Video = Elm.querySelector('[data-name="video-element"], video');
 
             if (buttons.length > 0) {
                 let i   = 0,
@@ -65,28 +66,148 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
                     buttons[i].addEventListener('click', this.$handleVideoButtonClick);
                 }
             }
+
+            if (parseInt(this.getAttribute('delayvideoload'), 10) === 1) {
+                this.delayVideoLoad();
+                return;
+            }
+
+            if (!this.Video) {
+                return;
+            }
+
+            this.initDelayedVideoFeatures();
         },
 
         /**
          * Handle button click
          */
-        $handleVideoButtonClick: function () {
+        $handleVideoButtonClick: function (event) {
+            event.stopPropagation();
+
             if (this.getElm().get('data-qui-options-openinpopup') === '1') {
                 this.openVideoInPopup();
                 return;
             }
 
-            const BtnWrapper = this.getElm().querySelector('.quiqqer-presentationBricks-video-buttonWrapper');
+            if (!this.Video) {
+                this.Video = this.createVideoElement();
+                this.initDelayedVideoFeatures();
+            }
+
+            if (!this.Video) {
+                return;
+            }
+
+            const BtnWrapper = this.getElm().querySelector('[data-name="start-video-wrapper"], .quiqqer-presentationBricks-video-buttonWrapper');
 
             if (BtnWrapper) {
                 BtnWrapper.style.pointerEvents = 'none';
                 this.Video.style.filter        = 'none';
                 this.Video.setAttribute('controls', "1");
                 this.Video.play();
-                BtnWrapper.destroy();
+                BtnWrapper.remove();
             } else {
                 this.Video.setAttribute('controls', "1");
                 this.Video.play();
+            }
+        },
+
+        delayVideoLoad: function () {
+            const startLoading = () => {
+                window.setTimeout(() => {
+                    if (!this.Video) {
+                        this.Video = this.createVideoElement();
+                    }
+
+                    if (!this.Video) {
+                        return;
+                    }
+
+                    this.initDelayedVideoFeatures();
+                }, parseInt(this.getAttribute('delayvideoloaddelay'), 10) || 0);
+            };
+
+            if (document.readyState === 'complete') {
+                startLoading();
+                return;
+            }
+
+            window.addEventListener('load', startLoading, {once: true});
+        },
+
+        createVideoElement: function () {
+            const container = this.getElm().querySelector('.quiqqer-presentationBricks-video-videoContainer');
+            const placeholderWrapper = container?.querySelector('[data-name="video-poster-wrapper"]');
+            const placeholder = container?.querySelector('[data-name="video-poster"]');
+            const src = this.getAttribute('inlinevideo');
+
+            if (!container || !src) {
+                return false;
+            }
+
+            const Video = document.createElement('video');
+            const placeholderRect = placeholder?.getBoundingClientRect();
+            const placeholderWidth = placeholder?.getAttribute('width') || Math.round(placeholderRect?.width || 0);
+            const placeholderHeight = placeholder?.getAttribute('height') || Math.round(placeholderRect?.height || 0);
+
+            Video.setAttribute('data-name', 'video-element');
+            Video.setAttribute('preload', 'none');
+            Video.src = src;
+
+            if (placeholderWidth) {
+                Video.setAttribute('width', String(placeholderWidth));
+            }
+
+            if (placeholderHeight) {
+                Video.setAttribute('height', String(placeholderHeight));
+            }
+
+            if (this.getAttribute('poster')) {
+                Video.setAttribute('poster', this.getAttribute('poster'));
+            }
+
+            if (parseInt(this.getAttribute('autoplay'), 10) === 1) {
+                Video.setAttribute('autoplay', '');
+                Video.autoplay = true;
+            }
+
+            if (parseInt(this.getAttribute('loop'), 10) === 1) {
+                Video.setAttribute('loop', '');
+                Video.loop = true;
+            }
+
+            if (parseInt(this.getAttribute('muted'), 10) === 1) {
+                Video.setAttribute('muted', '');
+                Video.muted = true;
+                Video.defaultMuted = true;
+            }
+
+            if (parseInt(this.getAttribute('playsinline'), 10) === 1) {
+                Video.setAttribute('playsinline', '');
+                Video.setAttribute('webkit-playsinline', '');
+            }
+
+            if (placeholderWrapper) {
+                placeholderWrapper.replaceWith(Video);
+            } else if (placeholder?.closest('picture')) {
+                placeholder.closest('picture').replaceWith(Video);
+            } else if (placeholder) {
+                placeholder.replaceWith(Video);
+            } else {
+                container.appendChild(Video);
+            }
+
+            return Video;
+        },
+
+        initDelayedVideoFeatures: function () {
+            if (!this.Video) {
+                return;
+            }
+
+            if (this.getAttribute('playifinview')) {
+                this.initPlayIfInView();
             }
         },
 
@@ -120,6 +241,12 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Video', [
          * Init play if in view function
          */
         initPlayIfInView: function () {
+            if (this.playIfInViewInitialized || !this.Video) {
+                return;
+            }
+
+            this.playIfInViewInitialized = true;
+
             let throttleTimer = false;
 
             /**

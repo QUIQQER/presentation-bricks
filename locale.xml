@@ -5,45 +5,37 @@
         <locale name="package.title">
             <de><![CDATA[Bausteinsammlung - Präsentationen]]></de>
             <en><![CDATA[Presentation Bricks]]></en>
-            <pl><![CDATA[Widgets - Prezentacja]]></pl>
         </locale>
         <locale name="package.description">
             <de><![CDATA[Dieses Paket beinhaltet Bausteine, die sich perfekt dazu eignen, z.B. Funktionen Ihrer App zu präsentieren.]]></de>
             <en><![CDATA[This package contains bricks for the presentation of app or program on your website.]]></en>
-            <pl><![CDATA[Rozszerzenie dostarcza widgety służące do prezentacji aplikacji lub programu na stronie internetowej.]]></pl>
         </locale>
 
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
-            <de><![CDATA[Präsentation: Wallpaper mit Text und Pfeil]]></de>
-            <en><![CDATA[Presentation: Wallpaper with text and arrow]]></en>
-            <pl><![CDATA[Presentation: Zdjęcie w tle z tekstem i strzałka]]></pl>
+            <de><![CDATA[Wallpaper mit Text und Pfeil]]></de>
+            <en><![CDATA[Wallpaper with text and arrow]]></en>
         </locale>
         <locale name="control.WallpaperTextArrow.description">
             <de><![CDATA[Text auf einem Hintergrundbild und mit Pfeil, der zu dem nächsten Section scrollt.]]></de>
             <en><![CDATA[...]]></en>
-            <pl><![CDATA[...]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.image-background">
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
-            <pl><![CDATA[Zdjecie tła]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
-            <pl><![CDATA[Nieruchome tło (fixed)]]></pl>
         </locale>
         <locale name="control.WallpaperTextArrow.image">
             <de><![CDATA[Bild auf der rechten Seite]]></de>
             <en><![CDATA[Image on the right]]></en>
-            <pl><![CDATA[Zdjęcie po lewej]]></pl>
         </locale>
 
         <locale name="control.WallpaperTextArrow.arrow-type">
             <de><![CDATA[Pfeiltype]]></de>
             <en><![CDATA[Arrow type]]></en>
-            <pl><![CDATA[Rodzaj strzałki]]></pl>
         </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.hide">
                 <de><![CDATA[Deaktiviert: kein Pfeil]]></de>
@@ -52,93 +44,76 @@
             <locale name="control.WallpaperTextArrow.arrow-type.arrow-down">
                 <de><![CDATA[Arrow Down]]></de>
                 <en><![CDATA[Arrow Down]]></en>
-                <pl><![CDATA[Arrow Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-down">
                 <de><![CDATA[Arrow Circle Down]]></de>
                 <en><![CDATA[Arrow Circle Down]]></en>
-                <pl><![CDATA[Arrow Circle Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-o-down">
                 <de><![CDATA[Arrow Circle O Down]]></de>
                 <en><![CDATA[Arrow Circle O Down]]></en>
-                <pl><![CDATA[Arrow Circle O Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.angle-down">
                 <de><![CDATA[Angle Down]]></de>
                 <en><![CDATA[Angle Down]]></en>
-                <pl><![CDATA[Angle Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.long-arrow-down">
                 <de><![CDATA[Long Arrow Down]]></de>
                 <en><![CDATA[Long Arrow Down]]></en>
-                <pl><![CDATA[Long Arrow Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.caret-down">
                 <de><![CDATA[Caret Down]]></de>
                 <en><![CDATA[Caret Down]]></en>
-                <pl><![CDATA[Caret Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.chevron-down">
                 <de><![CDATA[Chevron Down]]></de>
                 <en><![CDATA[Chevron Down]]></en>
-                <pl><![CDATA[Chevron Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.chevron-circle-down">
                 <de><![CDATA[Chevron Circle Down]]></de>
                 <en><![CDATA[Chevron Circle Down]]></en>
-                <pl><![CDATA[Chevron Circle Down]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.arrow-type.angle-double-down">
                 <de><![CDATA[Angle Double Down]]></de>
                 <en><![CDATA[Angle Double Down]]></en>
-                <pl><![CDATA[Angle Double Down]]></pl>
             </locale>
         <locale name="control.WallpaperTextArrow.effect">
             <de><![CDATA[Pfeileffect]]></de>
             <en><![CDATA[Arrow effect]]></en>
-            <pl><![CDATA[Efekt strzałki]]></pl>
         </locale>
             <locale name="control.WallpaperTextArrow.effect.scale">
                 <de><![CDATA[Scale]]></de>
                 <en><![CDATA[Scale]]></en>
-                <pl><![CDATA[Scale]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.scale-bounce">
                 <de><![CDATA[Scale bounce]]></de>
                 <en><![CDATA[Scale bounce]]></en>
-                <pl><![CDATA[Scale bounce]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.ball-bounce-hover">
                 <de><![CDATA[Ball bounce (erst nach maus over)]]></de>
                 <en><![CDATA[Ball bounce (after mouse hover)]]></en>
-                <pl><![CDATA[Ball bounce (po najechaniu myszką)]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.ball-bounce-always">
                 <de><![CDATA[Ball bounce (immer)]]></de>
                 <en><![CDATA[Ball bounce (always)]]></en>
-                <pl><![CDATA[Ball bounce (ciągle)]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.opacity-to-transparent">
                 <de><![CDATA[Durchsichtig]]></de>
                 <en><![CDATA[Transparent]]></en>
-                <pl><![CDATA[Przeźroczysty]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.opacity-from-transparent">
                 <de><![CDATA[Undurchsichtig]]></de>
                 <en><![CDATA[Non-transparent]]></en>
-                <pl><![CDATA[Nieprzeźroczysty]]></pl>
             </locale>
             <locale name="control.WallpaperTextArrow.effect.no-effect">
                 <de><![CDATA[Kein Effekt]]></de>
                 <en><![CDATA[No effect]]></en>
-                <pl><![CDATA[Bez efektu]]></pl>
             </locale>
 
         <!-- wallpaper with text -->
         <locale name="control.WallpaperText.title">
-            <de><![CDATA[Präsentation: Wallpaper mit Text]]></de>
-            <en><![CDATA[Presentation: Wallpaper with text]]></en>
+            <de><![CDATA[Wallpaper mit Text]]></de>
+            <en><![CDATA[Wallpaper with text]]></en>
         </locale>
         <locale name="control.WallpaperText.description">
             <de><![CDATA[Mit diesem Baustein kannst du schnell einen Banner erstellen. Wähle ein passendes Bild oder eine Farbe, die unter dem Text angezeigt werden.]]></de>
@@ -212,31 +187,26 @@
 
         <!-- sticky content -->
         <locale name="control.StickyContent.title">
-            <de><![CDATA[Präsentation: Sticky Inhalt]]></de>
-            <en><![CDATA[Presentation: Sticky content]]></en>
-            <pl><![CDATA[Presentation: Sticky content]]></pl>
+            <de><![CDATA[Sticky Inhalt]]></de>
+            <en><![CDATA[Sticky content]]></en>
         </locale>
         <locale name="control.StickyContent.description">
             <de><![CDATA[Während ein Bereich mit der Seite gescrollt wird, bleibt der andere oben, bis Ende des Bricks kommt.]]></de>
             <en><![CDATA[...]]></en>
-            <pl><![CDATA[...]]></pl>
         </locale>
 
         <!-- template -->
         <locale name="control.StickyContent.template">
             <de><![CDATA[Vorlage]]></de>
             <en><![CDATA[Template]]></en>
-            <pl><![CDATA[Szablon]]></pl>
         </locale>
             <locale name="control.StickyContent.template.simple">
                 <de><![CDATA[Einfach]]></de>
                 <en><![CDATA[Simple]]></en>
-                <pl><![CDATA[Prosty]]></pl>
             </locale>
             <locale name="control.StickyContent.template.mockup">
                 <de><![CDATA[Mockup]]></de>
                 <en><![CDATA[Mockup]]></en>
-                <pl><![CDATA[Mockup]]></pl>
             </locale>
 
         <!-- image mockup -->
@@ -245,32 +215,26 @@
                             Gilt für Mockup-Template]]></de>
             <en><![CDATA[Mockup picture<br />
                         Use it for Mocup-Template]]></en>
-            <pl><![CDATA[Mockup obrazek <br />
-                        Działa tylko z szablonem "Mockup"]]></pl>
         </locale>
             <locale name="control.StickyContent.imgagMockup.imac-glossy">
                 <de><![CDATA[iMac mit glänzendem Display]]></de>
                 <en><![CDATA[iMac with glossy display]]></en>
-                <pl><![CDATA[iMac z błyszczącym ekranem]]></pl>
             </locale>
             <locale name="control.StickyContent.imgagMockup.imac-without-logo">
                 <de><![CDATA[iMac ohne Logo]]></de>
                 <en><![CDATA[iMac without logo]]></en>
-                <pl><![CDATA[iMac bez loga]]></pl>
             </locale>
 
 
 
         <!-- count up basic -->
         <locale name="control.countUpBasic.title">
-            <de><![CDATA[Präsentation: Count Up Basic]]></de>
-            <en><![CDATA[Presentation: Count Up Basic]]></en>
-            <pl><![CDATA[Presentation: Count Up Basic]]></pl>
+            <de><![CDATA[Count Up Basic]]></de>
+            <en><![CDATA[Count Up Basic]]></en>
         </locale>
         <locale name="control.countUpBasic.description">
             <de><![CDATA[(...)]]></de>
             <en><![CDATA[(...)]]></en>
-            <pl><![CDATA[(...)]]></pl>
         </locale>
 
         <!-- settings -->
@@ -278,88 +242,381 @@
         <locale name="control.CountUpBasic.iconTop">
             <de><![CDATA[Icon über dem Zähler?]]></de>
             <en><![CDATA[Set the icon above the counter?]]></en>
-            <pl><![CDATA[Ikona nad licznikiem?]]></pl>
         </locale>
 
         <locale name="CountUpBasic.entries">
             <de><![CDATA[Zähler Einträge]]></de>
             <en><![CDATA[Counter entries]]></en>
-            <pl><![CDATA[Wpisy licznika]]></pl>
         </locale>
 
         <!-- count up basic - JS control settings -->
         <locale name="CountUpBasicSettings.entries.button.text">
             <de><![CDATA[Eintrag hinzufügen]]></de>
             <en><![CDATA[Add entry]]></en>
-            <pl><![CDATA[Dodaj wpis]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.counterValue">
             <de><![CDATA[Zähler]]></de>
             <en><![CDATA[Counter]]></en>
-            <pl><![CDATA[Licznik]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.counterValue.prefix">
             <de><![CDATA[Zähler prefix]]></de>
             <en><![CDATA[Counter prefix]]></en>
-            <pl><![CDATA[Przedrostek licznika]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.counterValue.suffix">
             <de><![CDATA[Zähler suffix]]></de>
             <en><![CDATA[Counter suffix]]></en>
-            <pl><![CDATA[Suffix licznik]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.icon">
             <de><![CDATA[Icon]]></de>
             <en><![CDATA[Icon]]></en>
-            <pl><![CDATA[Ikona]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.title">
             <de><![CDATA[Titel]]></de>
             <en><![CDATA[Title]]></en>
-            <pl><![CDATA[Tytul]]></pl>
         </locale>
         <locale name="CountUpBasicSettings.entries.entry.content">
             <de><![CDATA[Kurzer Text]]></de>
             <en><![CDATA[Short text]]></en>
-            <pl><![CDATA[Krotki tekst]]></pl>
+        </locale>
+
+        <!-- counter -->
+        <locale name="control.counter.title">
+            <de><![CDATA[Counter]]></de>
+            <en><![CDATA[Counter]]></en>
+        </locale>
+        <locale name="control.counter.description" html="true">
+            <de><![CDATA[Mit diesem Baustein kannst du Kennzahlen, Statistiken oder Meilensteine als animierte Zähler darstellen. Jeder Eintrag unterstützt einen eigenen Start- und Endwert und kann automatisch hoch- oder herunterzählen. Die Darstellung lässt sich passend zu Inhalt und Layout variieren.<ul><li><em>Layout</em>: Inline links, Inline zentriert, Gestapelt links, Gestapelt zentriert oder Horizontal</li><li><em>Dauer</em>: Animationsdauer für alle Zähler in Millisekunden</li><li><em>Start bei 0</em>: ignoriert individuelle Startwerte und beginnt immer bei null</li><li><em>Icon oben</em>: zeigt das Eintrags-Icon oberhalb des Zählerwerts an</li><li><em>Einträge</em>: beliebig viele Werte mit Prefix, Suffix, Titel, Text und optionalem Icon</li></ul>]]></de>
+            <en><![CDATA[Use this brick to present key figures, statistics or milestones as animated counters. Each entry supports its own start and end value and can count up or down automatically. The presentation can be varied to match your content and layout.<ul><li><em>Layout</em>: inline left, inline centered, stacked left, stacked centered or horizontal</li><li><em>Duration</em>: animation duration for all counters in milliseconds</li><li><em>Start at 0</em>: ignores individual start values and always begins at zero</li><li><em>Icon on top</em>: displays the entry icon above the counter value</li><li><em>Entries</em>: any number of values with prefix, suffix, title, text and optional icon</li></ul>]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineLeft">
+            <de><![CDATA[Inline links]]></de>
+            <en><![CDATA[Inline left]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineCenter">
+            <de><![CDATA[Inline zentriert]]></de>
+            <en><![CDATA[Inline centered]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedLeft">
+            <de><![CDATA[Gestapelt links]]></de>
+            <en><![CDATA[Stacked left]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedCenter">
+            <de><![CDATA[Gestapelt zentriert]]></de>
+            <en><![CDATA[Stacked centered]]></en>
+        </locale>
+        <locale name="brick.setting.counter.template.horizontal">
+            <de><![CDATA[Horizontal]]></de>
+            <en><![CDATA[Horizontal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.duration">
+            <de><![CDATA[Animationsdauer (ms)]]></de>
+            <en><![CDATA[Animation duration (ms)]]></en>
+        </locale>
+        <locale name="brick.setting.counter.duration.desc">
+            <de><![CDATA[Dauer der Zählanimation in Millisekunden. Standard: 2500.]]></de>
+            <en><![CDATA[Duration of the count animation in milliseconds. Default: 2500.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.columns">
+            <de><![CDATA[Spalten]]></de>
+            <en><![CDATA[Columns]]></en>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth">
+            <de><![CDATA[Breite des Counter-Bausteins]]></de>
+            <en><![CDATA[Maximum width]]></en>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite des gesamten Counter-Bausteins bzw. des Eintragsbereichs. Beliebige CSS-Einheit, z. B. <code>900px</code>, <code>60rem</code>, <code>100%</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Any CSS unit, e.g. <code>900px</code>, <code>60rem</code>, <code>100%</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth">
+            <de><![CDATA[Maximale Breite pro Eintrag]]></de>
+            <en><![CDATA[Maximum width per entry]]></en>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite einzelner Counter-Einträge. Beispiele: <code>18rem</code>, <code>22rem</code>, <code>320px</code>, <code>28ch</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Limits the width of individual counter entries. Examples: <code>18rem</code>, <code>22rem</code>, <code>320px</code>, <code>28ch</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap">
+            <de><![CDATA[Abstand zwischen Einträgen]]></de>
+            <en><![CDATA[Gap between entries]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.none">
+            <de><![CDATA[Aus]]></de>
+            <en><![CDATA[None]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.xs">
+            <de><![CDATA[XS]]></de>
+            <en><![CDATA[XS]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.s">
+            <de><![CDATA[S]]></de>
+            <en><![CDATA[S]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.gap.extraLarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize">
+            <de><![CDATA[Zahlgröße]]></de>
+            <en><![CDATA[Number size]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.xlarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="brick.setting.counter.accentColor">
+            <de><![CDATA[Akzentfarbe]]></de>
+            <en><![CDATA[Accent color]]></en>
+        </locale>
+        <locale name="brick.counter.settings.entries">
+            <de><![CDATA[Counter-Einträge]]></de>
+            <en><![CDATA[Counter entries]]></en>
+        </locale>
+        <locale name="brick.counter.entries.column.status">
+            <de><![CDATA[Status]]></de>
+            <en><![CDATA[Status]]></en>
+        </locale>
+        <locale name="brick.counter.entries.disabled">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="brick.counter.entries.startValue">
+            <de><![CDATA[Startwert]]></de>
+            <en><![CDATA[Start value]]></en>
+        </locale>
+        <locale name="brick.counter.entries.endValue">
+            <de><![CDATA[Endwert]]></de>
+            <en><![CDATA[End value]]></en>
+        </locale>
+        <locale name="brick.counter.entries.endValue.desc">
+            <de><![CDATA[Zielwert des Counters. Ist der Endwert kleiner als der Startwert, zählt der Counter nach unten.]]></de>
+            <en><![CDATA[Target value of the counter. If the end value is lower than the start value, the counter counts down.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.prefix">
+            <de><![CDATA[Präfix]]></de>
+            <en><![CDATA[Prefix]]></en>
+        </locale>
+        <locale name="brick.counter.entries.prefix.desc">
+            <de><![CDATA[Kurzer Text direkt vor dem Zähler. Sinnvoll sind meist einzelne Zeichen oder kurze Abkürzungen, z. B. <code>+</code>, <code>-</code>, <code>€</code>, <code>ca.</code>, <code>ab</code>. In vielen Vorlagen ist dieser Text kleiner als die Zahl.]]></de>
+            <en><![CDATA[Text directly before the counter. In many templates it is smaller than the number. Examples: + before 100 results in +100, about before 250 results in about 250.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.numberAddon">
+            <de><![CDATA[Zahlzusatz]]></de>
+            <en><![CDATA[Number addon]]></en>
+        </locale>
+        <locale name="brick.counter.entries.numberAddon.desc">
+            <de><![CDATA[Kurzer Zusatz direkt an der Zahl. Geeignet für Abkürzungen wie <code>k</code>, <code>Mio.</code> oder <code>M</code>. Beispiele: <code>10</code> mit Zahlzusatz <code>k</code> wird zu <code>10k</code>. Wenn eine Schreibweise mit Leerzeichen gewünscht ist, kann dieses direkt mit eingegeben werden, z. B. <code> Mio.</code> für <code>2,5 Mio.</code>. Für nachgestellte Zeichen mit eigenem Abstand wie <code>+</code> oder <code>%</code> bitte das Feld Suffix verwenden.]]></de>
+            <en><![CDATA[Short addon placed directly next to the number. Useful for abbreviations like <code>k</code>, <code>M</code> or <code>mn</code>. Example: <code>10</code> with addon <code>k</code> becomes <code>10k</code>. If you want a spelling with a space, include it in the addon itself, for example <code> M</code> for <code>2.5 M</code>. Use the suffix field for trailing characters with their own spacing such as <code>+</code> or <code>%</code>.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.suffix">
+            <de><![CDATA[Suffix]]></de>
+            <en><![CDATA[Suffix]]></en>
+        </locale>
+        <locale name="brick.counter.entries.suffix.desc">
+            <de><![CDATA[Kurzer Text direkt nach dem Zähler. Sinnvoll sind meist einzelne Zeichen oder kurze Abkürzungen, z. B. <code>%</code>, <code>km</code>, <code>J.</code>, <code>Min.</code>. In vielen Vorlagen ist dieser Text kleiner als die Zahl.]]></de>
+            <en><![CDATA[Text directly after the counter. In many templates it is smaller than the number. Examples: years after 15 results in 15 years, % after 80 results in 80%.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.icon">
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
+        </locale>
+        <locale name="brick.counter.entries.title">
+            <de><![CDATA[Titel]]></de>
+            <en><![CDATA[Title]]></en>
+        </locale>
+        <locale name="brick.counter.entries.title.desc">
+            <de><![CDATA[Kleine Überschrift zum Zähler. Sie wird unter oder neben der Zahl angezeigt und ist kleiner als der Zahlenwert.]]></de>
+            <en><![CDATA[Small heading for the counter. It is displayed below or next to the number and is smaller than the value.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.content">
+            <de><![CDATA[Kurztext]]></de>
+            <en><![CDATA[Short text]]></en>
+        </locale>
+        <locale name="brick.counter.entries.content.desc">
+            <de><![CDATA[Optionaler kurzer Erklärungstext zum Zähler. Er wird kleiner und zurückhaltender als Titel und Zahl dargestellt.]]></de>
+            <en><![CDATA[Optional short explanatory text for the counter. It is displayed smaller and more subtly than title and number.]]></en>
+        </locale>
+        <locale name="brick.counter.entries.adddialog.title">
+            <de><![CDATA[Counter-Eintrag hinzufügen]]></de>
+            <en><![CDATA[Add counter entry]]></en>
+        </locale>
+        <locale name="brick.counter.entries.editdialog.title">
+            <de><![CDATA[Counter-Eintrag bearbeiten]]></de>
+            <en><![CDATA[Edit counter entry]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.title">
+            <de><![CDATA[Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this counter entry?]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.text">
+            <de><![CDATA[Möchten Sie diesen Counter-Eintrag wirklich entfernen?]]></de>
+            <en><![CDATA[Do you really want to remove this counter entry?]]></en>
+        </locale>
+        <locale name="brick.counter.entries.delete.information">
+            <de><![CDATA[Die Counter-Einträge können nicht wiederhergestellt werden.]]></de>
+            <en><![CDATA[The counter entries can not be restored.]]></en>
         </locale>
 
         <!-- progressbar -->
         <locale name="control.progressbar.title">
-            <de><![CDATA[Präsentation: Fortschrittsbalken (progressbar)]]></de>
-            <en><![CDATA[Presentation: Progress bar]]></en>
+            <de><![CDATA[Fortschrittsbalken]]></de>
+            <en><![CDATA[Progress bar]]></en>
         </locale>
-        <locale name="control.progressbar.description">
-            <de><![CDATA[Visuelle Darstellung des Fortschritts]]></de>
-            <en><![CDATA[Visual presentation of progress]]></en>
+        <locale name="control.progressbar.description" html="true">
+            <de><![CDATA[Mit diesem Baustein kannst du Fortschritte, Werte oder Anteile übersichtlich als Balken darstellen. Er eignet sich z. B. für Fähigkeiten, Projektstände, Auslastungen oder Kennzahlen. Die Darstellung lässt sich flexibel an Inhalt, Layout und gewünschte Wirkung anpassen.<ul><li>Beliebig viele Einträge mit Titel und Prozentwert</li><li>Optional eigene Farbe pro Balken</li><li>Zusätzlicher Textbereich oberhalb, unterhalb, links oder rechts der Balken</li><li>Eigene Textposition für mobile Ansicht</li><li>Verschiedene Balken-Layouts: Standard, Breit oder Overlay mit Text im Balken</li><li>Animation wahlweise deaktiviert, einmal beim Reinscrollen oder scroll-gekoppelt</li><li>Maximale Breite für Balken und gesamten Layout-Bereich einstellbar</li></ul>]]></de>
+            <en><![CDATA[Use this brick to present progress, values or proportions clearly with bars. It is suitable for skills, project status, workloads or key figures. The presentation can be adjusted flexibly to match your content, layout and visual style.<ul><li>Any number of entries with title and percentage value</li><li>Optional custom color for each bar</li><li>Additional text area above, below, left or right of the bars</li><li>Separate text position for mobile view</li><li>Different bar layouts: default, wide or overlay with text inside the bar</li><li>Animation can be disabled, triggered once on scroll into view or linked to scrolling</li><li>Maximum width for bars and the complete layout area can be configured</li></ul>]]></en>
         </locale>
         <locale name="brick.setting.progressbar.maxWidth">
-            <de><![CDATA[Maximale Balkenbreite (in Pixel)]]></de>
-            <en><![CDATA[Maximum bar width (in pixel)]]></en>
+            <de><![CDATA[Maximale Balkenbreite]]></de>
+            <en><![CDATA[Maximum bar width]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth.desc">
+            <de><![CDATA[Beliebige CSS-Einheit, z. B. <code>600px</code>, <code>40rem</code>, <code>80%</code>. Eine reine Zahl wird als Pixel interpretiert. Leer = keine Begrenzung.]]></de>
+            <en><![CDATA[Any CSS unit, e.g. <code>600px</code>, <code>40rem</code>, <code>80%</code>. A bare number is interpreted as pixels. Empty = no limit.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth">
+            <de><![CDATA[Maximale Container-Breite]]></de>
+            <en><![CDATA[Maximum container width]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite des gesamten Layout-Bereichs (Text + Balken). Header und Inhalt des Bausteins bleiben unverändert. Beliebige CSS-Einheit, leer = volle Breite.]]></de>
+            <en><![CDATA[Limits the width of the whole layout area (text + bars). The brick's header and content stay untouched. Any CSS unit, empty = full width.]]></en>
         </locale>
         <locale name="brick.setting.progressbar.additionalText">
             <de><![CDATA[Zusatztext]]></de>
             <en><![CDATA[Additional text]]></en>
         </locale>
+        <locale name="brick.setting.progressbar.additionalText.desc">
+            <de><![CDATA[Der Text kann wahlweise <em>oben</em>, <em>unten</em>, <em>links</em> oder <em>rechts</em> von den Balken angezeigt werden. Er ersetzt den normalen Inhalt des Bausteins nicht. Sobald ein Zusatztext gesetzt ist, greifen die Einstellungen <em>Zusatztext-Position</em>, <em>Spaltenverteilung</em> und <em>vertikale Ausrichtung</em>.]]></de>
+            <en><![CDATA[The text can be shown <em>above</em>, <em>below</em>, <em>left</em> or <em>right</em> of the bars. It does not replace the brick's regular content. When additional text is set, the settings <em>additional text position</em>, <em>column distribution</em> and <em>vertical alignment</em> become relevant.]]></en>
+        </locale>
         <locale name="brick.setting.progressbar.textPosition">
-            <de><![CDATA[Textposition]]></de>
-            <en><![CDATA[Text position]]></en>
+            <de><![CDATA[Zusatztext-Position]]></de>
+            <en><![CDATA[Additional text position]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.top">
-            <de><![CDATA[Top]]></de>
+            <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
-        </locale>
-        <locale name="brick.setting.progressbar.textPosition.center">
-            <de><![CDATA[Zentriert]]></de>
-            <en><![CDATA[Center]]></en>
         </locale>
         <locale name="brick.setting.progressbar.textPosition.bottom">
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
         </locale>
-        <locale name="brick.setting.progressbar.additionalTextRight">
-            <de><![CDATA[Zusatztext rechts]]></de>
-            <en><![CDATA[Additional text on right]]></en>
+        <locale name="brick.setting.progressbar.textPosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth">
+            <de><![CDATA[Spaltenverteilung]]></de>
+            <en><![CDATA[Column distribution]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth.desc">
+            <de><![CDATA[Verhältnis zwischen Text-Spalte und Balken-Spalte. Greift nur, wenn die Textposition auf <em>links</em> oder <em>rechts</em> steht.]]></de>
+            <en><![CDATA[Ratio between text column and bars column. Only applies when text position is set to <em>left</em> or <em>right</em>.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign">
+            <de><![CDATA[Vertikale Ausrichtung]]></de>
+            <en><![CDATA[Vertical alignment]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.desc">
+            <de><![CDATA[Vertikale Ausrichtung von Text und Balken zueinander. Greift nur, wenn die Textposition auf <em>links</em> oder <em>rechts</em> steht.]]></de>
+            <en><![CDATA[Vertical alignment of text and bars relative to each other. Only applies when text position is set to <em>left</em> or <em>right</em>.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.center">
+            <de><![CDATA[Mitte]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition">
+            <de><![CDATA[Zusatztext-Position (mobil)]]></de>
+            <en><![CDATA[Additional text position (mobile)]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.desc">
+            <de><![CDATA[Auf schmalen Bildschirmen (Container schmaler als 45rem) wird das Layout immer einspaltig. Hier wählst du, ob der Text dann über oder unter den Balken erscheint.]]></de>
+            <en><![CDATA[On narrow screens (container narrower than 45rem) the layout always becomes single-column. Choose whether the text appears above or below the bars.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout">
+            <de><![CDATA[Balken-Layout]]></de>
+            <en><![CDATA[Bar layout]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.desc">
+            <de><![CDATA[Visuelle Variante der Balken. <em>Standard</em>: schmaler Balken mit Beschriftung oben. <em>Breit</em>: dickerer Balken. <em>Overlay</em>: Beschriftung liegt direkt auf dem Balken.]]></de>
+            <en><![CDATA[Visual variant of the bars. <em>Default</em>: thin bar with label above. <em>Wide</em>: thicker bar. <em>Overlay</em>: label sits directly on the bar.]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.default">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.wide">
+            <de><![CDATA[Breit]]></de>
+            <en><![CDATA[Wide]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.overlay">
+            <de><![CDATA[Overlay - Text über dem Balken]]></de>
+            <en><![CDATA[Overlay - text on top of the bar]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation">
+            <de><![CDATA[Animation]]></de>
+            <en><![CDATA[Animation]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.desc">
+            <de><![CDATA[<em>Keine</em>: Balken werden sofort voll dargestellt. <em>Einmal beim Reinscrollen</em>: Sobald der Baustein in den sichtbaren Bereich kommt, füllen sich die Balken einmalig auf. <em>Scroll-gekoppelt</em>: Die Füllung folgt der Scroll-Position (nur in modernen Browsern; sonst sofort voll). Wenn der Benutzer "reduzierte Bewegung" eingestellt hat, wird grundsätzlich nicht animiert.]]></de>
+            <en><![CDATA[<em>None</em>: bars are shown filled immediately. <em>Once when scrolled into view</em>: bars fill once as soon as the brick enters the viewport. <em>Scroll-driven</em>: fill follows the scroll position (modern browsers only; falls back to fully filled). Animation is disabled when the user has set "reduce motion".]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.none">
+            <de><![CDATA[Keine]]></de>
+            <en><![CDATA[None]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.once">
+            <de><![CDATA[Einmal beim Reinscrollen]]></de>
+            <en><![CDATA[Once when scrolled into view]]></en>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.scroll">
+            <de><![CDATA[Scroll-gekoppelt]]></de>
+            <en><![CDATA[Scroll-driven]]></en>
         </locale>
         <locale name="brick.progressbar.settings.entries">
             <de><![CDATA[Einträge]]></de>
@@ -384,6 +641,18 @@
             <de><![CDATA[Prozent]]></de>
             <en><![CDATA[Percent]]></en>
         </locale>
+        <locale name="brick.progressbar.entries.column.color">
+            <de><![CDATA[Farbe]]></de>
+            <en><![CDATA[Color]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.setColor">
+            <de><![CDATA[Eigene Farbe setzen]]></de>
+            <en><![CDATA[Set custom color]]></en>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.color">
+            <de><![CDATA[Auffüllfarbe]]></de>
+            <en><![CDATA[Fill color]]></en>
+        </locale>
         <locale name="brick.progressbar.entries.editdialog.title">
             <de><![CDATA[Eintrag bearbeiten]]></de>
             <en><![CDATA[Edit progressbar entry]]></en>
@@ -404,8 +673,8 @@
 
         <!-- Background video -->
         <locale name="control.backgroundVideo.title">
-            <de><![CDATA[Präsentation: Hintergrundvideo]]></de>
-            <en><![CDATA[Presentation: Background video]]></en>
+            <de><![CDATA[Hintergrundvideo]]></de>
+            <en><![CDATA[Background video]]></en>
         </locale>
         <locale name="control.backgroundVideo.description">
             <de><![CDATA[Baustein für Video im Hintergrund]]></de>
@@ -438,6 +707,22 @@
         <locale name="control.backgroundVideo.shortVideo.desc">
             <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
             <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode">
+            <de><![CDATA[Ladeverhalten des Videos]]></de>
+            <en><![CDATA[Video loading behavior]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.desc" html="true">
+            <de><![CDATA[Standardmäßig wird das Video erst nach dem vollständigen Laden der Seite aufgebaut. Dafür sollte ein Poster gesetzt sein. Ohne Poster wird das Video weiterhin direkt geladen.]]></de>
+            <en><![CDATA[By default, the video is only built after the page has fully loaded. A poster should be set for this. Without a poster, the video will still load immediately.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.immediate">
+            <de><![CDATA[Sofort laden]]></de>
+            <en><![CDATA[Load immediately]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.afterWindowLoad">
+            <de><![CDATA[Erst nach vollständigem Seitenaufbau laden]]></de>
+            <en><![CDATA[Load only after full page load]]></en>
         </locale>
         <locale name="control.backgroundVideo.autoplay">
             <de><![CDATA[Automatisches Abspielen]]></de>
@@ -556,8 +841,8 @@
 
         <!-- Video -->
         <locale name="control.video.title">
-            <de><![CDATA[Präsentation: Video]]></de>
-            <en><![CDATA[Presentation: Video]]></en>
+            <de><![CDATA[Video]]></de>
+            <en><![CDATA[Video]]></en>
         </locale>
         <locale name="control.video.description">
             <de><![CDATA[Mit diesem Baustein lässt sich ein Video auf der Seite platzieren.]]></de>
@@ -586,6 +871,22 @@
         <locale name="control.video.shortVideo.desc">
             <de><![CDATA[Wenn ausgewählt, wird dieses Video als Hintergrundvideo geladen. Die ungekürzte Version kann man in Popup öffnen (siehe weitere Einstellungen).]]></de>
             <en><![CDATA[If selected, this video will be loaded as background video. You can open the uncut version in popup (see more settings below).]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode">
+            <de><![CDATA[Ladeverhalten des Videos]]></de>
+            <en><![CDATA[Video loading behavior]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.desc" html="true">
+            <de><![CDATA[Standardmäßig wird das Video erst nach dem vollständigen Laden der Seite aufgebaut. Dafür sollte ein Poster gesetzt sein. Ohne Poster wird das Video weiterhin direkt geladen.]]></de>
+            <en><![CDATA[By default, the video is only built after the page has fully loaded. A poster should be set for this. Without a poster, the video will still load immediately.]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.immediate">
+            <de><![CDATA[Sofort laden]]></de>
+            <en><![CDATA[Load immediately]]></en>
+        </locale>
+        <locale name="control.video.lazyLoadMode.afterWindowLoad">
+            <de><![CDATA[Erst nach vollständigem Seitenaufbau laden]]></de>
+            <en><![CDATA[Load only after full page load]]></en>
         </locale>
         <locale name="control.video.playIfInView">
             <de><![CDATA[Abspielen, wenn im sichtbaren Bereich]]></de>

@@ -14,11 +14,18 @@
         {/if}
         ">
     <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
-        <video {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
-               preload="none"
-               src="{if $this->getAttribute('shortVideo')}{$this->getAttribute('shortVideo')}{else}{$this->getAttribute('video')}{/if}"
-               {if $posterUrl}poster="{$posterUrl}"{/if}>
-        </video>
+        {if $delayVideoLoad}
+            <div data-name="video-poster-wrapper">
+                {image image=$posterImage class="quiqqer-presentationBricks-backgroundVideo-poster" data-name="video-poster" alt=""}
+            </div>
+        {else}
+            <video data-name="video-element"
+                   {if $autoplay}autoplay=""{/if} {if $loop}loop=""{/if} {if $muted}muted=""{/if} {if $playsinline}playsinline=""{/if}
+                   preload="none"
+                   src="{$inlineVideoUrl}"
+                   {if $posterUrl}poster="{$posterUrl}"{/if}>
+            </video>
+        {/if}
     </div>
 
     {if $this->getAttribute('content') || $this->getAttribute('openVideoInPopup') === 'clickOnDefaultButton'}
@@ -34,6 +41,7 @@
                     <div class="quiqqer-presentationBricks-backgroundVideo-content-defaultBtnContainer">
                         <button class="button openVideoInPopupBtn"
                                 data-js="openVideoInPopup"
+                                data-name="open-video-popup"
                                 title="{locale group='quiqqer/presentation-bricks' var='control.video.btn.title'}"
                         >
                             {locale group='quiqqer/presentation-bricks' var='control.backgroundVideo.btnText'}

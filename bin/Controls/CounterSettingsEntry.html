@@ -1,0 +1,89 @@
+<form name="quiqqer-presentationBricks-counter-settings-entry"
+      class="quiqqer-presentationBricks-counter-settings-entry-form"
+>
+    <table class="data-table data-table-flexbox">
+        <tbody>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldDisabled}}</span>
+                    <div class="field-container-field" id="disabledWrapper"></div>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldStartValue}}</span>
+                    <input name="startValue" type="number" step="any" value="{{startValue}}" class="field-container-field"/>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldEndValue}}</span>
+                    <input name="endValue" type="number" step="any" value="{{endValue}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldEndValueDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldPrefix}}</span>
+                    <input name="prefix" value="{{prefix}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldPrefixDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldNumberAddon}}</span>
+                    <input name="numberAddon" value="{{numberAddon}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldNumberAddonDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldSuffix}}</span>
+                    <input name="suffix" value="{{suffix}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldSuffixDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldIcon}}</span>
+                    <input name="icon"
+                           value="{{icon}}"
+                           class="field-container-field media-image"
+                           data-qui-options-cssclasses="1"/>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldTitle}}</span>
+                    <input name="title" value="{{title}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldTitleDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldContent}}</span>
+                    <textarea name="content" rows="7" class="field-container-field">{{content}}</textarea>
+                </label>
+                <div class="field-container-item-desc">{{{fieldContentDesc}}}</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>

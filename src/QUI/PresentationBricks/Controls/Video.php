@@ -28,6 +28,7 @@ class Video extends QUI\Control
             'video' => false,
             'poster' => false,
             'shortVideo' => false,
+            'lazyLoadMode' => 'afterWindowLoad',
             'autoplay' => true,
             'muted' => true,
             'loop' => true,
@@ -62,6 +63,7 @@ class Video extends QUI\Control
         $loop = false;
         $playsinline = false;
         $videoBrightness = 50;
+        $delayVideoLoad = false;
 
         $this->setJavaScriptControlOption('openinpopup', 0);
 
@@ -81,8 +83,6 @@ class Video extends QUI\Control
             $playsinline = $this->getAttribute('playsinline');
         }
 
-        $this->setJavaScriptControlOption('playifinview', $this->getAttribute('playIfInView'));
-
         if (
             intval($this->getAttribute('videoBrightness')) &&
             intval($this->getAttribute('videoBrightness')) > 0 &&
@@ -96,29 +96,52 @@ class Video extends QUI\Control
          * poster url
          */
         $posterUrl = false;
+        $PosterImage = false;
 
         try {
-            $Poster = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
-            $posterUrl = $Poster->getUrl(true);
+            $PosterImage = QUI\Projects\Media\Utils::getImageByUrl($this->getAttribute('poster'));
+            $posterUrl = $PosterImage->getUrl(true);
         } catch (QUI\Exception) {
             // nothing
         }
 
         $videoBrightness = $videoBrightness / 100;
 
+        $videoUrl = $this->resolveMediaUrl((string)$this->getAttribute('video'));
+        $inlineVideoUrl = $this->resolveMediaUrl(
+            $this->getAttribute('shortVideo') ? (string)$this->getAttribute('shortVideo') : (string)$this->getAttribute('video')
+        );
+
+        if (
+            $this->getAttribute('lazyLoadMode') === 'afterWindowLoad' &&
+            $posterUrl &&
+            $inlineVideoUrl
+        ) {
+            $delayVideoLoad = true;
+        }
+
+        $this->setJavaScriptControlOption('playifinview', intval($this->getAttribute('playIfInView')));
+        $this->setJavaScriptControlOption('autoplay', intval($autoplay));
+        $this->setJavaScriptControlOption('muted', intval($muted));
+        $this->setJavaScriptControlOption('loop', intval($loop));
+        $this->setJavaScriptControlOption('playsinline', intval($playsinline));
+        $this->setJavaScriptControlOption('delayvideoload', intval($delayVideoLoad));
+        $this->setJavaScriptControlOption('delayvideoloaddelay', 250);
+
+        if ($posterUrl) {
+            $this->setJavaScriptControlOption('poster', $posterUrl);
+        }
+
+        if ($inlineVideoUrl) {
+            $this->setJavaScriptControlOption('inlinevideo', $inlineVideoUrl);
+        }
+
+        if ($videoUrl) {
+            $this->setJavaScriptControlOption('video', $videoUrl);
+        }
+
         if ($this->getAttribute('videoButtonAction') === 'openInPopup') {
             $this->setJavaScriptControlOption('openinpopup', 1);
-
-            if ($posterUrl) {
-                $this->setJavaScriptControlOption('poster', $posterUrl);
-            }
-
-            try {
-                $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($this->getAttribute('video'));
-                $this->setJavaScriptControlOption('video', $Video->getUrl(true));
-            } catch (QUI\Exception) {
-                // nothing
-            }
         }
 
         if ($this->getAttribute('videoButton') === 'showOnMouseOver') {
@@ -133,15 +156,36 @@ class Video extends QUI\Control
 
         $Engine->assign([
             'this' => $this,
+            'posterImage' => $PosterImage,
             'posterUrl' => $posterUrl,
+            'inlineVideoUrl' => $inlineVideoUrl,
             'autoplay' => $autoplay,
             'muted' => $muted,
             'loop' => $loop,
             'playsinline' => $playsinline,
-            'buttonFile' => dirname(__FILE__) . '/Video.button.html'
+            'buttonFile' => dirname(__FILE__) . '/Video.button.html',
+            'delayVideoLoad' => $delayVideoLoad
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/Video.default.html');
+    }
+
+    /**
+     * @param string $url
+     * @return string|false
+     */
+    protected function resolveMediaUrl(string $url): string|false
+    {
+        if ($url === '') {
+            return false;
+        }
+
+        try {
+            $Video = QUI\Projects\Media\Utils::getMediaItemByUrl($url);
+            return $Video->getUrl(true);
+        } catch (QUI\Exception) {
+            return false;
+        }
     }
 
     /**
