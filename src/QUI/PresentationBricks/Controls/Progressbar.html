@@ -33,7 +33,7 @@
                  style="--qpb-fill: {$bar.percent}%; --qpb-bar-index: {$bar.index};{if $bar.color} --qpb-bar-color: {$bar.color};{/if}">
 
                 {if $barLayout !== 'overlay'}
-                <div class="quiqqer-presentationBricks-progressbar-control__bar-label">
+                <div class="quiqqer-presentationBricks-progressbar-control__bar-label" aria-hidden="true">
                     <span class="quiqqer-presentationBricks-progressbar-control__bar-title">{$bar.title}</span>
                     <span class="quiqqer-presentationBricks-progressbar-control__bar-percent">{$bar.percent}%</span>
                 </div>
@@ -43,7 +43,7 @@
                 {else}
                 <div class="quiqqer-presentationBricks-progressbar-control__bar-track">
                     <div class="quiqqer-presentationBricks-progressbar-control__bar-fill"></div>
-                    <div class="quiqqer-presentationBricks-progressbar-control__bar-label quiqqer-presentationBricks-progressbar-control__bar-label--base">
+                    <div class="quiqqer-presentationBricks-progressbar-control__bar-label quiqqer-presentationBricks-progressbar-control__bar-label--base" aria-hidden="true">
                         <span class="quiqqer-presentationBricks-progressbar-control__bar-title">{$bar.title}</span>
                         <span class="quiqqer-presentationBricks-progressbar-control__bar-percent">{$bar.percent}%</span>
                     </div>
