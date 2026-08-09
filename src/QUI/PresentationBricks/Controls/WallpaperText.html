@@ -1,16 +1,14 @@
+{if $imageBackground}
+<div class="qui-presentationBricks-controls-wallpaperText__imageWrapper">
+    {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img"}
+</div>
+{/if}
+<div class="qui-presentationBricks-controls-wallpaperText__contentWrapper grid-container">
+    <div class="qui-presentationBricks-controls-wallpaperText__content">
+        {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+            <h2>{$this->getAttribute('frontendTitle')}</h2>
+        {/if}
 
-    {if $imageBackground}
-    <div class="qui-presentationBricks-controls-wallpaperText__imageWrapper">
-        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img"}
+        {$this->getAttribute('content')}
     </div>
-    {/if}
-    <div class="qui-presentationBricks-controls-wallpaperText__contentWrapper grid-container">
-        <div class="qui-presentationBricks-controls-wallpaperText__content">
-            {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-                <h2>{$this->getAttribute('frontendTitle')}</h2>
-            {/if}
-
-            {$this->getAttribute('content')}
-        </div>
-    </div>
-
+</div>

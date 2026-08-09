@@ -33,6 +33,7 @@ class WallpaperText extends QUI\Control
             'minHeight' => false,
             'contentMaxWidth' => 600,
             'fontColor' => '',
+            'borderRadius' => true,
         ]);
 
         parent::__construct($attributes);
@@ -53,6 +54,10 @@ class WallpaperText extends QUI\Control
 
         if ($this->getAttribute('image-background-fixed')) {
             $this->addCSSClass('qui-presentationBricks-controls-wallpaperText--bgImageIsFixed');
+        }
+
+        if ($this->getAttribute('borderRadius')) {
+            $this->addCSSClass('qui-presentationBricks-controls-wallpaperText--rounded');
         }
 
         if ($this->getAttribute('minHeight')) {

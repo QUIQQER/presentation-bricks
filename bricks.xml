@@ -165,6 +165,15 @@
                             var="control.WallpaperText.bg-color"/>
                 </setting>
 
+                <setting name="borderRadius" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.borderRadius"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.borderRadius.desc"/>
+                    </description>
+                </setting>
+
                 <setting name="content-position" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.content-position"/>
