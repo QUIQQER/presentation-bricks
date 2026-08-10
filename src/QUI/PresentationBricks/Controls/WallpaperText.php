@@ -15,6 +15,8 @@ use QUI;
  */
 class WallpaperText extends QUI\Control
 {
+    protected const IMAGE_LOADING_OPTIONS = ['lazy', 'eager'];
+
     /**
      * constructor
      *
@@ -34,6 +36,7 @@ class WallpaperText extends QUI\Control
             'contentMaxWidth' => 600,
             'fontColor' => '',
             'borderRadius' => true,
+            'imageLoading' => 'eager',
         ]);
 
         parent::__construct($attributes);
@@ -86,9 +89,21 @@ class WallpaperText extends QUI\Control
         $Engine->assign([
             'this' => $this,
             'imageBackground' => $this->getAttribute('image-background'),
+            'imageLoading' => $this->normalizeImageLoading(
+                $this->getAttribute('imageLoading')
+            ),
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/WallpaperText.html');
+    }
+
+    protected function normalizeImageLoading(mixed $imageLoading): string
+    {
+        if (!is_string($imageLoading) || !in_array($imageLoading, self::IMAGE_LOADING_OPTIONS, true)) {
+            return 'eager';
+        }
+
+        return $imageLoading;
     }
 
     /**

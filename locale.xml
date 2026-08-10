@@ -155,13 +155,29 @@
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Background color]]></en>
         </locale>
+        <locale name="control.WallpaperText.imageLoading">
+            <de><![CDATA[Ladeverhalten des Hintergrundbilds]]></de>
+            <en><![CDATA[Background image loading behavior]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur für Bausteine unterhalb des sichtbaren Bereichs verwenden. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only for bricks below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
+        </locale>
         <locale name="control.WallpaperText.borderRadius">
             <de><![CDATA[Ecken abrunden]]></de>
             <en><![CDATA[Round corners]]></en>
         </locale>
         <locale name="control.WallpaperText.borderRadius.desc">
-            <de><![CDATA[Rundet die Ecken des Bausteins im Radius des aktiven Templates ab. Bei vollflächigen bzw. randlosen Bausteinen (Full-Width) besser deaktiviert lassen.]]></de>
-            <en><![CDATA[Rounds the brick's corners using the active template's radius. Better left disabled for full-width or edge-to-edge bricks.]]></en>
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
         </locale>
         <locale name="control.WallpaperText.content-position">
             <de><![CDATA[Ausrichtung]]></de>

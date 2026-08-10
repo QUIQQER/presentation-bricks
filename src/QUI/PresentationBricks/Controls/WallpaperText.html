@@ -1,6 +1,10 @@
 {if $imageBackground}
 <div class="qui-presentationBricks-controls-wallpaperText__imageWrapper">
-    {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img"}
+    {if $imageLoading == 'eager'}
+        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img" loading="eager" fetchpriority="high"}
+    {else}
+        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img" loading="lazy" data-src="{$imageBackground}"}
+    {/if}
 </div>
 {/if}
 <div class="qui-presentationBricks-controls-wallpaperText__contentWrapper grid-container">

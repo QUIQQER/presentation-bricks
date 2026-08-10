@@ -165,6 +165,24 @@
                             var="control.WallpaperText.bg-color"/>
                 </setting>
 
+                <setting name="imageLoading" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperText.imageLoading"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageLoading.desc"/>
+                    </description>
+                    <option value="eager">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageLoading.eager"/>
+                    </option>
+                    <option value="lazy">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperText.imageLoading.lazy"/>
+                    </option>
+                    <defaultValue>eager</defaultValue>
+                </setting>
+
                 <setting name="borderRadius" type="checkbox">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.WallpaperText.borderRadius"/>
