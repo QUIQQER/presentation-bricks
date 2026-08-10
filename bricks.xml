@@ -19,6 +19,24 @@
                             var="control.WallpaperTextArrow.image-background"/>
                 </setting>
 
+                <setting name="imageLoading" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.WallpaperTextArrow.imageLoading"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperTextArrow.imageLoading.desc"/>
+                    </description>
+                    <option value="eager">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperTextArrow.imageLoading.eager"/>
+                    </option>
+                    <option value="lazy">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.WallpaperTextArrow.imageLoading.lazy"/>
+                    </option>
+                    <defaultValue>eager</defaultValue>
+                </setting>
+
                 <!-- by @michael: this setting does not make sense with <img> element -->
 <!--                <setting name="image-background-fixed" type="checkbox">-->
 <!--                    <locale group="quiqqer/presentation-bricks"-->
@@ -713,6 +731,23 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.backgroundVideo.poster.desc"/>
                     </description>
+                </setting>
+                <setting name="imageLoading" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.imageLoading"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.imageLoading.desc"/>
+                    </description>
+                    <option value="eager">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.imageLoading.eager"/>
+                    </option>
+                    <option value="lazy">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.imageLoading.lazy"/>
+                    </option>
+                    <defaultValue>eager</defaultValue>
                 </setting>
                 <setting name="shortVideo" class="media-image">
                     <locale group="quiqqer/presentation-bricks"

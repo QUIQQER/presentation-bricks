@@ -24,6 +24,22 @@
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
         </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading">
+            <de><![CDATA[Ladeverhalten des Hintergrundbilds]]></de>
+            <en><![CDATA[Background image loading behavior]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur für Bausteine unterhalb des sichtbaren Bereichs verwenden. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only for bricks below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
+        </locale>
         <locale name="control.WallpaperTextArrow.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
@@ -719,6 +735,22 @@
         <locale name="control.backgroundVideo.poster.desc">
             <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
             <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading">
+            <de><![CDATA[Ladeverhalten des Poster-Bilds]]></de>
+            <en><![CDATA[Poster image loading behavior]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur verwenden, wenn der Baustein unterhalb des sichtbaren Bereichs liegt. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only when the brick is below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
         </locale>
         <locale name="control.backgroundVideo.backgroundColor">
             <de><![CDATA[Baustein Hintergrundfarbe]]></de>

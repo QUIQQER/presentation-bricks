@@ -15,6 +15,8 @@ use QUI;
  */
 class BackgroundVideo extends QUI\Control
 {
+    protected const IMAGE_LOADING_OPTIONS = ['lazy', 'eager'];
+
     /**
      * constructor
      *
@@ -26,6 +28,7 @@ class BackgroundVideo extends QUI\Control
         $this->setAttributes([
             'video' => false,
             'poster' => false,
+            'imageLoading' => 'eager',
             'backgroundColor' => '#333',
             'shortVideo' => false,
             'lazyLoadMode' => 'afterWindowLoad',
@@ -182,6 +185,9 @@ class BackgroundVideo extends QUI\Control
             'this' => $this,
             'posterImage' => $PosterImage,
             'posterUrl' => $posterUrl,
+            'imageLoading' => $this->normalizeImageLoading(
+                $this->getAttribute('imageLoading')
+            ),
             'inlineVideoUrl' => $inlineVideoUrl,
             'backgroundColor' => $backgroundColor,
             'autoplay' => $autoplay,
@@ -197,6 +203,15 @@ class BackgroundVideo extends QUI\Control
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/BackgroundVideo.html');
+    }
+
+    protected function normalizeImageLoading(mixed $imageLoading): string
+    {
+        if (!is_string($imageLoading) || !in_array($imageLoading, self::IMAGE_LOADING_OPTIONS, true)) {
+            return 'eager';
+        }
+
+        return $imageLoading;
     }
 
     /**
