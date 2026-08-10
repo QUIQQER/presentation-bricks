@@ -749,6 +749,14 @@
                     </option>
                     <defaultValue>eager</defaultValue>
                 </setting>
+                <setting name="borderRadius" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.backgroundVideo.borderRadius"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.backgroundVideo.borderRadius.desc"/>
+                    </description>
+                </setting>
                 <setting name="shortVideo" class="media-image">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.backgroundVideo.shortVideo"/>
@@ -953,6 +961,15 @@
                         <locale group="quiqqer/presentation-bricks"
                                 var="control.video.lazyLoadMode.afterWindowLoad"/>
                     </option>
+                </setting>
+
+                <setting name="borderRadius" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.video.borderRadius"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.video.borderRadius.desc"/>
+                    </description>
                 </setting>
 
                 <setting name="playIfInView" type="checkbox">

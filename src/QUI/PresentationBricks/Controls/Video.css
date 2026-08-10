@@ -13,6 +13,11 @@
     position: relative;
 }
 
+/* rounded corners (template radius) */
+.quiqqer-presentationBricks-video--rounded .quiqqer-presentationBricks-video-videoContainer {
+    border-radius: var(--qui-radius-section, 1.5rem);
+}
+
 .quiqqer-presentationBricks-video-videoContainer video {
     display: block;
     -webkit-filter: brightness(var(--qui-video-videoBrightness, 0.5));

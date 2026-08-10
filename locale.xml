@@ -736,6 +736,14 @@
             <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
             <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
         </locale>
+        <locale name="control.backgroundVideo.borderRadius">
+            <de><![CDATA[Ecken abrunden]]></de>
+            <en><![CDATA[Round corners]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
+        </locale>
         <locale name="control.backgroundVideo.imageLoading">
             <de><![CDATA[Ladeverhalten des Poster-Bilds]]></de>
             <en><![CDATA[Poster image loading behavior]]></en>
@@ -919,6 +927,14 @@
         <locale name="control.video.poster.desc">
             <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
             <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.video.borderRadius">
+            <de><![CDATA[Ecken abrunden]]></de>
+            <en><![CDATA[Round corners]]></en>
+        </locale>
+        <locale name="control.video.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
         </locale>
         <locale name="control.video.shortVideo">
             <de><![CDATA[Gekürztes Video]]></de>

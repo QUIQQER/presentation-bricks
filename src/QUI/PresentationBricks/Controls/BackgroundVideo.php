@@ -29,6 +29,7 @@ class BackgroundVideo extends QUI\Control
             'video' => false,
             'poster' => false,
             'imageLoading' => 'eager',
+            'borderRadius' => false,
             'backgroundColor' => '#333',
             'shortVideo' => false,
             'lazyLoadMode' => 'afterWindowLoad',
@@ -188,6 +189,7 @@ class BackgroundVideo extends QUI\Control
             'imageLoading' => $this->normalizeImageLoading(
                 $this->getAttribute('imageLoading')
             ),
+            'borderRadius' => (bool)$this->getAttribute('borderRadius'),
             'inlineVideoUrl' => $inlineVideoUrl,
             'backgroundColor' => $backgroundColor,
             'autoplay' => $autoplay,

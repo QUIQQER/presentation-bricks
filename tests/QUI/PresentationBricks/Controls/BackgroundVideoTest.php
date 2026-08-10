@@ -19,6 +19,52 @@ class BackgroundVideoTest extends TestCase
         $this->assertSame('afterWindowLoad', $control->getAttribute('lazyLoadMode'));
     }
 
+    public function testBorderRadiusDefaultsToOff(): void
+    {
+        $this->assertFalse((new BackgroundVideo())->getAttribute('borderRadius'));
+    }
+
+    public function testBorderRadiusSettingIsCheckbox(): void
+    {
+        $packageDir = dirname(__DIR__, 4);
+        $Document = new \DOMDocument();
+
+        $this->assertTrue($Document->load($packageDir . '/bricks.xml'));
+
+        $XPath = new \DOMXPath($Document);
+        $settings = $XPath->query(
+            '/quiqqer/bricks/brick[@control="\\QUI\\PresentationBricks\\Controls\\BackgroundVideo"]' .
+            '/settings/setting[@name="borderRadius"]'
+        );
+
+        $this->assertNotFalse($settings);
+        $this->assertCount(1, $settings);
+        $this->assertSame('checkbox', $settings->item(0)?->attributes?->getNamedItem('type')?->nodeValue);
+    }
+
+    public function testRoundedModifierRenderedOnlyWhenEnabled(): void
+    {
+        $enabled = new BackgroundVideo([
+            'poster' => '',
+            'openVideoInPopup' => '',
+            'borderRadius' => true
+        ]);
+        $disabled = new BackgroundVideo([
+            'poster' => '',
+            'openVideoInPopup' => '',
+            'borderRadius' => false
+        ]);
+
+        $this->assertStringContainsString(
+            'quiqqer-presentationBricks-backgroundVideo--rounded',
+            $enabled->getBody()
+        );
+        $this->assertStringNotContainsString(
+            'quiqqer-presentationBricks-backgroundVideo--rounded',
+            $disabled->getBody()
+        );
+    }
+
     public function testImageLoadingSettingAndTemplateVariants(): void
     {
         $packageDir = dirname(__DIR__, 4);
