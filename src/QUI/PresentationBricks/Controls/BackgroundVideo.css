@@ -6,6 +6,12 @@
     grid-template-rows: var(--qui-backgroundVideo-videoHeight, initial);
 }
 
+/* rounded corners (template radius) */
+.quiqqer-presentationBricks-backgroundVideo--rounded {
+    border-radius: var(--qui-radius-section, 1.5rem);
+    overflow: hidden;
+}
+
 .quiqqer-presentationBricks-backgroundVideo-videoContainer {
     grid-area: 1 / 1 / 2 / 2;
 }

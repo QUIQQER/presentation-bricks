@@ -15,6 +15,8 @@ use QUI;
  */
 class WallpaperTextArrow extends QUI\Control
 {
+    protected const IMAGE_LOADING_OPTIONS = ['lazy', 'eager'];
+
     /**
      * constructor
      *
@@ -27,7 +29,8 @@ class WallpaperTextArrow extends QUI\Control
             'imageBackgroundFixed' => 'false',
             'arrowType' => 'arrow-down',
             'fixed' => false,
-            'effect' => 'scale'
+            'effect' => 'scale',
+            'imageLoading' => 'eager',
         ]);
 
         parent::__construct($attributes);
@@ -65,9 +68,21 @@ class WallpaperTextArrow extends QUI\Control
             'fixed' => $fixed,
             'image' => $this->getAttribute('image'),
             'arrowType' => $this->getAttribute('arrow-type'),
-            'effect' => $this->getAttribute('effect')
+            'effect' => $this->getAttribute('effect'),
+            'imageLoading' => $this->normalizeImageLoading(
+                $this->getAttribute('imageLoading')
+            ),
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/WallpaperTextArrow.html');
+    }
+
+    protected function normalizeImageLoading(mixed $imageLoading): string
+    {
+        if (!is_string($imageLoading) || !in_array($imageLoading, self::IMAGE_LOADING_OPTIONS, true)) {
+            return 'eager';
+        }
+
+        return $imageLoading;
     }
 }

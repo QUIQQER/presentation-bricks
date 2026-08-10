@@ -39,6 +39,7 @@ class Video extends QUI\Control
             'videoBrightness' => 50,
             'maxVideoWidth' => '',
             'maxContentWidth' => '',
+            'borderRadius' => true,
         ]);
 
         parent::__construct($attributes);
@@ -146,6 +147,10 @@ class Video extends QUI\Control
 
         if ($this->getAttribute('videoButton') === 'showOnMouseOver') {
             $this->addCSSClass('quiqqer-presentationBricks-video__showBtnOnMouseOver');
+        }
+
+        if ($this->getAttribute('borderRadius')) {
+            $this->addCSSClass('quiqqer-presentationBricks-video--rounded');
         }
 
         $this->setStyles([

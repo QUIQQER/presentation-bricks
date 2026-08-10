@@ -19,6 +19,29 @@ class VideoTest extends TestCase
         $this->assertSame('afterWindowLoad', $control->getAttribute('lazyLoadMode'));
     }
 
+    public function testBorderRadiusDefaultsToOn(): void
+    {
+        $this->assertTrue((new Video())->getAttribute('borderRadius'));
+    }
+
+    public function testBorderRadiusSettingIsCheckbox(): void
+    {
+        $packageDir = dirname(__DIR__, 4);
+        $Document = new \DOMDocument();
+
+        $this->assertTrue($Document->load($packageDir . '/bricks.xml'));
+
+        $XPath = new \DOMXPath($Document);
+        $settings = $XPath->query(
+            '/quiqqer/bricks/brick[@control="\\QUI\\PresentationBricks\\Controls\\Video"]' .
+            '/settings/setting[@name="borderRadius"]'
+        );
+
+        $this->assertNotFalse($settings);
+        $this->assertCount(1, $settings);
+        $this->assertSame('checkbox', $settings->item(0)?->attributes?->getNamedItem('type')?->nodeValue);
+    }
+
     public function testCheckMaxWidthReturnsExpectedValues(): void
     {
         $control = new Video();

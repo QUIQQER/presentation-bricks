@@ -67,6 +67,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/Counter', [
                 duration = this.options.duration;
             }
 
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                duration = 0;
+            }
+
             this.$Elm.getElements('.quiqqer-presentationBricks-counter__number').each(function (NumberElm) {
                 this.$animateNumber(NumberElm, duration);
             }.bind(this));

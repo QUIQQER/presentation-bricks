@@ -20,7 +20,7 @@
 
                 <div class="quiqqer-presentationBricks-counter__body">
                     <div class="quiqqer-presentationBricks-counter__head">
-                        <div class="quiqqer-presentationBricks-counter__value">
+                        <div class="quiqqer-presentationBricks-counter__value" aria-hidden="true">
                             {if $entry.prefix}<span class="quiqqer-presentationBricks-counter__prefix">{$entry.prefix}</span>{/if}
                             <span class="quiqqer-presentationBricks-counter__number"
                                   data-start-value="{$entry.startValue|escape:'html'}"
@@ -28,6 +28,7 @@
                             {if $entry.numberAddon}<span class="quiqqer-presentationBricks-counter__numberAddon">{$entry.numberAddon}</span>{/if}
                             {if $entry.suffix}<span class="quiqqer-presentationBricks-counter__suffix">{$entry.suffix}</span>{/if}
                         </div>
+                        <span class="quiqqer-presentationBricks-counter__sr-value">{$entry.accessibleValue|escape:'html'}</span>
                     </div>
                     {if $entry.title}<div class="quiqqer-presentationBricks-counter__title">{$entry.title}</div>{/if}
                     {if $entry.content}<div class="quiqqer-presentationBricks-counter__text">{$entry.content}</div>{/if}

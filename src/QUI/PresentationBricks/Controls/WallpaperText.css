@@ -35,6 +35,12 @@
     max-width: 100%;
 }
 
+/* rounded corners (template radius) */
+.qui-presentationBricks-controls-wallpaperText--rounded {
+    border-radius: var(--qui-radius-section, 1.5rem);
+    overflow: hidden;
+}
+
 /* image fixed */
 .qui-presentationBricks-controls-wallpaperText--bgImageIsFixed .qui-presentationBricks-controls-wallpaperText__imageWrapper {
     clip-path: inset(0);

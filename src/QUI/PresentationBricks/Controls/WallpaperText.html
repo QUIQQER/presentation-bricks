@@ -1,16 +1,18 @@
-
-    {if $imageBackground}
-    <div class="qui-presentationBricks-controls-wallpaperText__imageWrapper">
-        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img"}
-    </div>
+{if $imageBackground}
+<div class="qui-presentationBricks-controls-wallpaperText__imageWrapper">
+    {if $imageLoading == 'eager'}
+        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img" loading="eager" fetchpriority="high"}
+    {else}
+        {image src=$imageBackground width=4000 class="qui-presentationBricks-controls-wallpaperText__img" loading="lazy" data-src="{$imageBackground}"}
     {/if}
-    <div class="qui-presentationBricks-controls-wallpaperText__contentWrapper grid-container">
-        <div class="qui-presentationBricks-controls-wallpaperText__content">
-            {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-                <h2>{$this->getAttribute('frontendTitle')}</h2>
-            {/if}
+</div>
+{/if}
+<div class="qui-presentationBricks-controls-wallpaperText__contentWrapper grid-container">
+    <div class="qui-presentationBricks-controls-wallpaperText__content">
+        {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+            <h2>{$this->getAttribute('frontendTitle')}</h2>
+        {/if}
 
-            {$this->getAttribute('content')}
-        </div>
+        {$this->getAttribute('content')}
     </div>
-
+</div>

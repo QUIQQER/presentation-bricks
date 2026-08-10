@@ -1,4 +1,4 @@
-<div class="quiqqer-presentationBricks-backgroundVideo" style="
+<div class="quiqqer-presentationBricks-backgroundVideo{if $borderRadius} quiqqer-presentationBricks-backgroundVideo--rounded{/if}" style="
         --qui-backgroundVideo-bgColor: {$backgroundColor};
         --qui-backgroundVideo-fontColor: {$fontColor};
         --qui-backgroundVideo-contentPos: {$contentPosition};
@@ -16,7 +16,11 @@
     <div class="quiqqer-presentationBricks-backgroundVideo-videoContainer">
         {if $delayVideoLoad}
             <div data-name="video-poster-wrapper">
-                {image image=$posterImage class="quiqqer-presentationBricks-backgroundVideo-poster" data-name="video-poster" alt=""}
+                {if $imageLoading == 'eager'}
+                    {image image=$posterImage class="quiqqer-presentationBricks-backgroundVideo-poster" data-name="video-poster" alt="" loading="eager" fetchpriority="high"}
+                {else}
+                    {image image=$posterImage class="quiqqer-presentationBricks-backgroundVideo-poster" data-name="video-poster" alt="" loading="lazy"}
+                {/if}
             </div>
         {else}
             <video data-name="video-element"
