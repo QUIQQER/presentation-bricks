@@ -24,6 +24,22 @@
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
         </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading">
+            <de><![CDATA[Ladeverhalten des Hintergrundbilds]]></de>
+            <en><![CDATA[Background image loading behavior]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur für Bausteine unterhalb des sichtbaren Bereichs verwenden. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only for bricks below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
+        </locale>
         <locale name="control.WallpaperTextArrow.image-background-fixed">
             <de><![CDATA[Hintergrundbild fixieren]]></de>
             <en><![CDATA[Background image fixed]]></en>
@@ -154,6 +170,30 @@
         <locale name="control.WallpaperText.bg-color">
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Background color]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading">
+            <de><![CDATA[Ladeverhalten des Hintergrundbilds]]></de>
+            <en><![CDATA[Background image loading behavior]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur für Bausteine unterhalb des sichtbaren Bereichs verwenden. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only for bricks below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
+        </locale>
+        <locale name="control.WallpaperText.borderRadius">
+            <de><![CDATA[Ecken abrunden]]></de>
+            <en><![CDATA[Round corners]]></en>
+        </locale>
+        <locale name="control.WallpaperText.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
         </locale>
         <locale name="control.WallpaperText.content-position">
             <de><![CDATA[Ausrichtung]]></de>
@@ -696,6 +736,30 @@
             <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
             <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
         </locale>
+        <locale name="control.backgroundVideo.borderRadius">
+            <de><![CDATA[Ecken abrunden]]></de>
+            <en><![CDATA[Round corners]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading">
+            <de><![CDATA[Ladeverhalten des Poster-Bilds]]></de>
+            <en><![CDATA[Poster image loading behavior]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.desc">
+            <de><![CDATA[„Verzögert“ nur verwenden, wenn der Baustein unterhalb des sichtbaren Bereichs liegt. Für Hero-/Kopfbausteine „Sofort“ lassen.]]></de>
+            <en><![CDATA[Use “Deferred” only when the brick is below the visible area. Keep “Eager” for hero or top-of-page bricks.]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.eager">
+            <de><![CDATA[Sofort (hohe Priorität)]]></de>
+            <en><![CDATA[Eager (high priority)]]></en>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.lazy">
+            <de><![CDATA[Verzögert (Lazy Loading)]]></de>
+            <en><![CDATA[Deferred (lazy loading)]]></en>
+        </locale>
         <locale name="control.backgroundVideo.backgroundColor">
             <de><![CDATA[Baustein Hintergrundfarbe]]></de>
             <en><![CDATA[Brick background color]]></en>
@@ -863,6 +927,14 @@
         <locale name="control.video.poster.desc">
             <de><![CDATA[Dies ist ein Bild, das angezeigt wird, während das Video geladen wird oder bis der Benutzer auf die Wiedergabetaste drückt.]]></de>
             <en><![CDATA[This is an image to be shown while the video is downloading, or until the user hits the play button.]]></en>
+        </locale>
+        <locale name="control.video.borderRadius">
+            <de><![CDATA[Ecken abrunden]]></de>
+            <en><![CDATA[Round corners]]></en>
+        </locale>
+        <locale name="control.video.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken des Bausteins ab. Ob und wie stark die Ecken abgerundet werden, hängt vom aktiven Template ab – nicht jedes Template unterstützt runde Ecken. Bei vollflächigen Bausteinen (Full-Width) wird empfohlen, diese Option zu deaktivieren.]]></de>
+            <en><![CDATA[Rounds the brick's corners. Whether and how strongly the corners are rounded depends on the active template – not every template supports rounded corners. For full-width bricks, we recommend disabling this option.]]></en>
         </locale>
         <locale name="control.video.shortVideo">
             <de><![CDATA[Gekürztes Video]]></de>

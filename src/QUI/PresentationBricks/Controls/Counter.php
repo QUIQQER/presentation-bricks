@@ -163,21 +163,49 @@ class Counter extends QUI\Control
             }
 
             $icon = isset($entry['icon']) ? trim((string)$entry['icon']) : '';
+            $endValue = $this->normalizeNumber($entry['endValue'] ?? 0);
+            $prefix = isset($entry['prefix']) ? (string)$entry['prefix'] : '';
+            $numberAddon = isset($entry['numberAddon']) ? (string)$entry['numberAddon'] : '';
+            $suffix = isset($entry['suffix']) ? (string)$entry['suffix'] : '';
 
             $result[] = [
                 'startValue' => $this->normalizeNumber($entry['startValue'] ?? 0),
-                'endValue' => $this->normalizeNumber($entry['endValue'] ?? 0),
-                'prefix' => isset($entry['prefix']) ? (string)$entry['prefix'] : '',
-                'numberAddon' => isset($entry['numberAddon']) ? (string)$entry['numberAddon'] : '',
-                'suffix' => isset($entry['suffix']) ? (string)$entry['suffix'] : '',
+                'endValue' => $endValue,
+                'prefix' => $prefix,
+                'numberAddon' => $numberAddon,
+                'suffix' => $suffix,
                 'icon' => $icon,
                 'title' => isset($entry['title']) ? (string)$entry['title'] : '',
                 'content' => isset($entry['content']) ? (string)$entry['content'] : '',
-                'hasIcon' => $icon !== ''
+                'hasIcon' => $icon !== '',
+                'accessibleValue' => $this->getAccessibleValue($prefix, $endValue, $numberAddon, $suffix)
             ];
         }
 
         return $result;
+    }
+
+    /**
+     * Builds the stable, screen-reader friendly value: the final number
+     * formatted for the current locale, combined with prefix, addon and suffix.
+     * The visually animated number is hidden from assistive technology, so this
+     * value is what gets announced (and what crawlers read from the DOM).
+     *
+     * @param float|int $endValue
+     */
+    private function getAccessibleValue(string $prefix, $endValue, string $numberAddon, string $suffix): string
+    {
+        $parts = array_filter(
+            [
+                trim($prefix),
+                QUI::getLocale()->formatNumber($endValue),
+                trim($numberAddon),
+                trim($suffix)
+            ],
+            static fn(string $part): bool => $part !== ''
+        );
+
+        return implode(' ', $parts);
     }
 
     protected function getTemplateName(): string
