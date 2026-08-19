@@ -1,21 +1,24 @@
 {
     "name": "quiqqer/presentation-bricks",
-    "type": "quiqqer-plugin",
+    "type": "quiqqer-module",
     "description": "This package contains bricks for the presentation of app or program on your website.",
-    "license": "GPL-3.0+",
+    "homepage": "https://www.quiqqer.com",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Michael Danielczok",
-            "email": "michael@pcsg.de",
-            "homepage": "https://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
         "email": "support@pcsg.de",
-        "url": "https://www.pcsg.de"
+        "issues": "https://dev.quiqqer.com/quiqqer/presentation-bricks/issues",
+        "source": "https://dev.quiqqer.com/quiqqer/presentation-bricks"
     },
     "require": {
+        "php": "^8.2",
         "quiqqer/core": "^2",
         "quiqqer/fontawesome": "^6",
         "quiqqer/unsemantic": "^2",
