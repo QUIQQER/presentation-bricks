@@ -8,6 +8,15 @@
             <locale group="quiqqer/presentation-bricks" var="package.title"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="content.visual-presentations">
+                <title>Visual presentations</title>
+                <description>
+                    Provides configurable presentation bricks for image and video hero sections, sticky storytelling layouts, animated counters and progress bars, and embedded or background video content.
+                </description>
+            </capability>
+        </capabilities>
+
         <image src="URL_OPT_DIR/quiqqer/presentation-bricks/bin/img/Logo.jpg"/>
 
         <preview>
@@ -29,6 +38,5 @@
 
     </package>
 </quiqqer>
-
 
 
