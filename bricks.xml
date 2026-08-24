@@ -2,6 +2,237 @@
 <quiqqer>
     <bricks>
 
+        <!-- before/after image comparison with a draggable handle -->
+        <brick control="\QUI\PresentationBricks\Controls\ImageCompare" hasContent="1">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.ImageCompare.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.ImageCompare.description"/>
+            </description>
+
+            <settings>
+                <setting name="imageBefore" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.imageBefore"/>
+                </setting>
+
+                <setting name="imageAfter" class="media-image">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.imageAfter"/>
+                </setting>
+
+                <setting name="labelBeforeMode" type="select"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelBeforeMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.desc"/>
+                    </description>
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelBeforeMode.default"/>
+                    </option>
+                    <option value="custom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.custom"/>
+                    </option>
+                    <option value="hidden">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.hidden"/>
+                    </option>
+                    <defaultValue>default</defaultValue>
+                </setting>
+
+                <setting name="labelBeforeText" type="text"
+                         data-dependency="labelBeforeMode"
+                         data-dependency-options="custom">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelBeforeText"/>
+                </setting>
+
+                <setting name="labelAfterMode" type="select"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelAfterMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.desc"/>
+                    </description>
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelAfterMode.default"/>
+                    </option>
+                    <option value="custom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.custom"/>
+                    </option>
+                    <option value="hidden">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelMode.hidden"/>
+                    </option>
+                    <defaultValue>default</defaultValue>
+                </setting>
+
+                <setting name="labelAfterText" type="text"
+                         data-dependency="labelAfterMode"
+                         data-dependency-options="custom">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelAfterText"/>
+                </setting>
+
+                <setting name="labelPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelPosition.desc"/>
+                    </description>
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelPosition.top"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelPosition.center"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelPosition.bottom"/>
+                    </option>
+                    <defaultValue>top</defaultValue>
+                </setting>
+
+                <setting name="labelStyle" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.labelStyle"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelStyle.desc"/>
+                    </description>
+                    <option value="box">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelStyle.box"/>
+                    </option>
+                    <option value="pill">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelStyle.pill"/>
+                    </option>
+                    <option value="plain">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.labelStyle.plain"/>
+                    </option>
+                    <defaultValue>box</defaultValue>
+                </setting>
+
+                <setting name="handleStyle" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.handleStyle"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleStyle.desc"/>
+                    </description>
+                    <option value="circle">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleStyle.circle"/>
+                    </option>
+                    <option value="line">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleStyle.line"/>
+                    </option>
+                    <defaultValue>circle</defaultValue>
+                </setting>
+
+                <setting name="handleColor" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.handleColor"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleColor.desc"/>
+                    </description>
+                    <option value="brand">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleColor.brand"/>
+                    </option>
+                    <option value="white">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleColor.white"/>
+                    </option>
+                    <option value="black">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.handleColor.black"/>
+                    </option>
+                    <defaultValue>brand</defaultValue>
+                </setting>
+
+                <setting name="orientation" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.orientation"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.orientation.desc"/>
+                    </description>
+                    <option value="horizontal">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.orientation.horizontal"/>
+                    </option>
+                    <option value="vertical">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.orientation.vertical"/>
+                    </option>
+                    <defaultValue>horizontal</defaultValue>
+                </setting>
+
+                <setting name="startPosition" type="number" min="0" max="100">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.startPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.startPosition.desc"/>
+                    </description>
+                    <defaultValue>50</defaultValue>
+                </setting>
+
+                <setting name="aspectRatio" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.aspectRatio"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.aspectRatio.desc"/>
+                    </description>
+                    <option value="auto">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.aspectRatio.auto"/>
+                    </option>
+                    <option value="16:9">16:9</option>
+                    <option value="4:3">4:3</option>
+                    <option value="1:1">1:1</option>
+                    <defaultValue>auto</defaultValue>
+                </setting>
+
+                <setting name="introAnimation" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.introAnimation"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.introAnimation.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="borderRadius" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.borderRadius"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.borderRadius.desc"/>
+                    </description>
+                </setting>
+            </settings>
+        </brick>
+
         <!-- wallpaper with text, image and an arrow -->
         <brick control="\QUI\PresentationBricks\Controls\WallpaperTextArrow">
             <title>

@@ -11,6 +11,214 @@
             <en><![CDATA[This package contains bricks for the presentation of app or program on your website.]]></en>
         </locale>
 
+        <!-- before/after image comparison -->
+        <locale name="control.ImageCompare.title">
+            <de><![CDATA[Bildvergleich (Vorher/Nachher)]]></de>
+            <en><![CDATA[Image comparison (before/after)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.description">
+            <de><![CDATA[<p>Mit diesem Baustein legst du zwei Bilder deckungsgleich übereinander und lässt die Besucher per verschiebbarem Griff zwischen „Vorher“ und „Nachher“ umblenden. So werden Veränderungen unmittelbar erlebbar – ideal für Renovierung, Retusche, Sanierung oder Produktvergleich.</p>
+<ul>
+    <li><strong>Intuitiv bedienbar:</strong> Ziehen per Maus und Touch, Klick zum Anspringen, Feinsteuerung per Tastatur – auf Desktop und Mobilgerät gleichermaßen.</li>
+    <li><strong>Blickfang beim Scrollen:</strong> Eine dezente Einführungs-Animation deutet beim Sichtbarwerden an, dass sich der Regler bewegen lässt.</li>
+    <li><strong>Fügt sich ins Design:</strong> Ausrichtung, Griff- und Beschriftungs-Stil, Farbschema (Markenfarbe, Weiß oder Schwarz) und abgerundete Ecken sind einstellbar.</li>
+    <li><strong>Barrierefrei:</strong> per Tastatur bedienbar und für Screenreader ausgezeichnet.</li>
+</ul>
+<p>So machst du den Unterschied zwischen zwei Zuständen mit nur einem Baustein anschaulich – direkt im Editor, ohne eine Zeile Code.</p>]]></de>
+            <en><![CDATA[<p>This brick places two images exactly on top of each other and lets visitors fade between "before" and "after" using a draggable handle. It makes changes immediately tangible – ideal for renovation, retouching, refurbishment or product comparison.</p>
+<ul>
+    <li><strong>Intuitive to use:</strong> Drag with mouse and touch, click to jump, fine-tune with the keyboard – on desktop and mobile alike.</li>
+    <li><strong>Eye-catcher on scroll:</strong> A subtle intro animation hints, as it becomes visible, that the slider can be moved.</li>
+    <li><strong>Fits your design:</strong> Orientation, handle and label style, color scheme (brand color, white or black) and rounded corners are configurable.</li>
+    <li><strong>Accessible:</strong> keyboard operable and exposed to screen readers.</li>
+</ul>
+<p>That lets you illustrate the difference between two states with a single brick – directly in the editor, without writing a line of code.</p>]]></en>
+        </locale>
+        <locale name="control.ImageCompare.imageBefore">
+            <de><![CDATA[Bild „Vorher“ (Pflicht)]]></de>
+            <en><![CDATA[Image "before" (required)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.imageAfter">
+            <de><![CDATA[Bild „Nachher“ (Pflicht)]]></de>
+            <en><![CDATA[Image "after" (required)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeMode">
+            <de><![CDATA[Beschriftung „Vorher“]]></de>
+            <en><![CDATA[Label "before"]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeText">
+            <de><![CDATA[Eigener Text „Vorher“]]></de>
+            <en><![CDATA[Custom text "before"]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterMode">
+            <de><![CDATA[Beschriftung „Nachher“]]></de>
+            <en><![CDATA[Label "after"]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterText">
+            <de><![CDATA[Eigener Text „Nachher“]]></de>
+            <en><![CDATA[Custom text "after"]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeMode.default">
+            <de><![CDATA[Standardtext („Vorher“)]]></de>
+            <en><![CDATA[Default text ("Before")]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterMode.default">
+            <de><![CDATA[Standardtext („Nachher“)]]></de>
+            <en><![CDATA[Default text ("After")]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.desc">
+            <de><![CDATA[Steuert die Beschriftung dieser Seite: „Standardtext“ zeigt den im Frontend ausgegebenen Standard, „Eigener Text“ blendet ein Feld für eine eigene Beschriftung ein, „Ausblenden“ zeigt keine Beschriftung.]]></de>
+            <en><![CDATA[Controls this side's label: "Default text" shows the standard output used in the frontend, "Custom text" reveals a field for your own label, "Hide" shows no label.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.custom">
+            <de><![CDATA[Eigener Text]]></de>
+            <en><![CDATA[Custom text]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.hidden">
+            <de><![CDATA[Ausblenden]]></de>
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition">
+            <de><![CDATA[Position der Beschriftung]]></de>
+            <en><![CDATA[Label position]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Centered]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle">
+            <de><![CDATA[Stil der Beschriftung]]></de>
+            <en><![CDATA[Label style]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.box">
+            <de><![CDATA[Kasten (hell)]]></de>
+            <en><![CDATA[Box (light)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.pill">
+            <de><![CDATA[Pill (dunkel)]]></de>
+            <en><![CDATA[Pill (dark)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.plain">
+            <de><![CDATA[Nur Text]]></de>
+            <en><![CDATA[Text only]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle">
+            <de><![CDATA[Griff-Stil]]></de>
+            <en><![CDATA[Handle style]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.circle">
+            <de><![CDATA[Kreis mit Pfeilen]]></de>
+            <en><![CDATA[Circle with arrows]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.line">
+            <de><![CDATA[Linie mit Griff]]></de>
+            <en><![CDATA[Line with grip]]></en>
+        </locale>
+        <locale name="control.ImageCompare.orientation">
+            <de><![CDATA[Ausrichtung]]></de>
+            <en><![CDATA[Orientation]]></en>
+        </locale>
+        <locale name="control.ImageCompare.orientation.horizontal">
+            <de><![CDATA[Horizontal]]></de>
+            <en><![CDATA[Horizontal]]></en>
+        </locale>
+        <locale name="control.ImageCompare.orientation.vertical">
+            <de><![CDATA[Vertikal]]></de>
+            <en><![CDATA[Vertical]]></en>
+        </locale>
+        <locale name="control.ImageCompare.startPosition">
+            <de><![CDATA[Startposition des Griffs (%)]]></de>
+            <en><![CDATA[Start position of the handle (%)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio">
+            <de><![CDATA[Seitenverhältnis]]></de>
+            <en><![CDATA[Aspect ratio]]></en>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio.auto">
+            <de><![CDATA[Automatisch (aus dem Bild)]]></de>
+            <en><![CDATA[Automatic (from the image)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.desc">
+            <de><![CDATA[Legt fest, wo die Beschriftungen sitzen: oben, mittig oder unten (bei vertikaler Ausrichtung entsprechend links, mittig oder rechts).]]></de>
+            <en><![CDATA[Sets where the labels sit: top, center or bottom (for vertical orientation accordingly left, center or right).]]></en>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.desc">
+            <de><![CDATA[Optische Gestaltung der Beschriftung: „Kasten“ (heller, halbtransparenter Hintergrund mit dunklem Text), „Pill“ (dunkler, stark gerundeter Hintergrund mit weißem Text) oder „Nur Text“ mit dezentem Schatten.]]></de>
+            <en><![CDATA[Visual style of the label: "Box" (light, semi-transparent background with dark text), "Pill" (dark, strongly rounded background with white text) or "Text only" with a subtle shadow.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.desc">
+            <de><![CDATA[Aussehen des Griffs auf der Trennlinie: „Kreis mit Pfeilen“ oder eine schlichte Linie mit kleinem Griff in der Mitte.]]></de>
+            <en><![CDATA[Appearance of the handle on the dividing line: "Circle with arrows" or a plain line with a small grip in the center.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.orientation.desc">
+            <de><![CDATA[Richtung der Trennlinie und der Wischbewegung: „Horizontal“ blendet von links nach rechts um, „Vertikal“ von oben nach unten.]]></de>
+            <en><![CDATA[Direction of the dividing line and the swipe: "Horizontal" fades from left to right, "Vertical" from top to bottom.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.startPosition.desc">
+            <de><![CDATA[Startstellung des Griffs in Prozent (0–100): 0 zeigt zunächst nur das Bild „Nachher“, 100 nur „Vorher“, 50 teilt das Bild mittig.]]></de>
+            <en><![CDATA[Initial handle position in percent (0–100): 0 initially shows only the "after" image, 100 only "before", 50 splits the image in the middle.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio.desc">
+            <de><![CDATA[Seitenverhältnis der Vergleichsfläche. „Automatisch“ übernimmt das Verhältnis des Bildes „Nachher“; feste Werte (16:9, 4:3, 1:1) erzwingen das Format und schneiden die Bilder mittig zu (object-fit: cover). Für ein sauberes Ergebnis beide Bilder gleich groß hochladen.]]></de>
+            <en><![CDATA[Aspect ratio of the comparison area. "Automatic" adopts the ratio of the "after" image; fixed values (16:9, 4:3, 1:1) enforce the format and crop the images centered (object-fit: cover). For a clean result, upload both images at the same size.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.label.before.default">
+            <de><![CDATA[Vorher]]></de>
+            <en><![CDATA[Before]]></en>
+        </locale>
+        <locale name="control.ImageCompare.label.after.default">
+            <de><![CDATA[Nachher]]></de>
+            <en><![CDATA[After]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleColor">
+            <de><![CDATA[Farbe von Griff und Linie]]></de>
+            <en><![CDATA[Handle and line color]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.desc">
+            <de><![CDATA[Farbschema für Trennlinie und Griff. „Markenfarbe“ nutzt die Primärfarbe des Projekts, „Weiß“ und „Schwarz“ sind neutrale Varianten mit leichter Transparenz. Das Symbol im Griff erscheint jeweils in der passenden Kontrastfarbe.]]></de>
+            <en><![CDATA[Color scheme for the dividing line and handle. "Brand color" uses the project's primary color, "White" and "Black" are neutral variants with slight transparency. The icon inside the handle uses the matching contrast color.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.brand">
+            <de><![CDATA[Markenfarbe (color primary)]]></de>
+            <en><![CDATA[Brand color (color primary)]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.white">
+            <de><![CDATA[Weiß]]></de>
+            <en><![CDATA[White]]></en>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.black">
+            <de><![CDATA[Schwarz]]></de>
+            <en><![CDATA[Black]]></en>
+        </locale>
+        <locale name="control.ImageCompare.introAnimation">
+            <de><![CDATA[Einführungs-Animation]]></de>
+            <en><![CDATA[Intro animation]]></en>
+        </locale>
+        <locale name="control.ImageCompare.introAnimation.desc">
+            <de><![CDATA[Wenn aktiviert, bewegt sich der Griff beim ersten Sichtbarwerden des Bausteins kurz nach links und rechts und wieder in die Startposition – ein dezenter Hinweis, dass sich der Regler bedienen lässt. Standardmäßig aktiv.]]></de>
+            <en><![CDATA[When enabled, the handle briefly moves left and right and back to the start position when the brick first becomes visible – a subtle hint that the slider is interactive. Enabled by default.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.borderRadius">
+            <de><![CDATA[Abgerundete Ecken]]></de>
+            <en><![CDATA[Rounded corners]]></en>
+        </locale>
+        <locale name="control.ImageCompare.borderRadius.desc">
+            <de><![CDATA[Rundet die Ecken der Bildfläche ab. Standardmäßig aktiv.]]></de>
+            <en><![CDATA[Rounds the corners of the image area. Enabled by default.]]></en>
+        </locale>
+        <locale name="control.ImageCompare.slider.ariaLabel">
+            <de><![CDATA[Bildvergleich]]></de>
+            <en><![CDATA[Image comparison]]></en>
+        </locale>
+
         <!-- wallpaper with text and an arrow -->
         <locale name="control.WallpaperTextArrow.title">
             <de><![CDATA[Wallpaper mit Text und Pfeil]]></de>

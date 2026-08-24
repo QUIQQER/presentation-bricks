@@ -1,0 +1,351 @@
+/* ImageCompare - before/after comparison with a draggable handle */
+
+/* Registering --_pos makes it a typed, interpolable custom property so the
+   tap-to-jump transition can animate the variable itself (an unregistered
+   custom property would update clip-path/left instantly, without animation). */
+@property --_pos {
+    syntax: '<length-percentage>';
+    inherits: true;
+    initial-value: 50%;
+}
+
+.quiqqer-presentationBricks-imageCompare {
+    /* config layer: long themeable variable > control config > design system fallback */
+    /* handle colors: "main" is line + knob fill, "contrast" is the icon on it.
+       The --handleColor-* modifiers below override these per preset. */
+    --_handleColor: var(--quiqqer-presentationBricks-imageCompare-handleColor, var(--qui-colors-primary, #2f7fed));
+    --_handleSolid: var(--quiqqer-presentationBricks-imageCompare-handleSolid, var(--qui-colors-primary, #2f7fed));
+    --_handleContrast: var(--quiqqer-presentationBricks-imageCompare-handleContrast, var(--qui-colors-primary-contrast, #fff));
+    --_lineWidth: var(--quiqqer-presentationBricks-imageCompare-lineWidth, var(--_q-controlConf-lineWidth, 2px));
+    --_labelRadius: var(--quiqqer-presentationBricks-imageCompare-labelRadius, var(--_q-controlConf-labelRadius, var(--qui-radius-card, 6px)));
+    --_frameRadius: var(--quiqqer-presentationBricks-imageCompare-frameRadius, var(--qui-radius-section, 1.5rem));
+    --_labelBoxBg: var(--quiqqer-presentationBricks-imageCompare-labelBoxBg, var(--_q-controlConf-labelBoxBg, rgba(255, 255, 255, 0.85)));
+    --_labelBoxColor: var(--quiqqer-presentationBricks-imageCompare-labelBoxColor, var(--_q-controlConf-labelBoxColor, var(--qui-colors-dark, #16171a)));
+    --_labelPillBg: var(--quiqqer-presentationBricks-imageCompare-labelPillBg, var(--_q-controlConf-labelPillBg, rgba(0, 0, 0, 0.55)));
+    --_labelPillColor: var(--quiqqer-presentationBricks-imageCompare-labelPillColor, var(--_q-controlConf-labelPillColor, #fff));
+    /* duration + timing only (NOT the full --qui-transition shorthand, which
+       also carries a property and would break "transition: --_pos <value>") */
+    --_transition: var(--quiqqer-presentationBricks-imageCompare-transition, var(--qui-transition-duration, 0.2s) var(--qui-transition-timing-function, ease));
+
+    /* pure theming variables (geometry, not from settings) */
+    --_knobSize: var(--quiqqer-presentationBricks-imageCompare-knobSize, 44px);
+    --_hitSize: var(--quiqqer-presentationBricks-imageCompare-hitSize, 44px);
+
+    /* runtime state, written by PHP (no themeable layer) */
+    --_pos: var(--_q-controlConf-pos, 50%);
+    --_aspectRatio: var(--_q-controlConf-aspectRatio, auto);
+
+    display: block;
+
+    /* animate the tap-to-jump; drag turns this off via .is-dragging */
+    transition: --_pos var(--_transition);
+}
+
+/* ---- handle color presets (line + knob = main, icon = contrast) ---- */
+
+.quiqqer-presentationBricks-imageCompare--handleColor-white {
+    --_handleColor: var(--quiqqer-presentationBricks-imageCompare-handleColor, rgba(255, 255, 255, 0.85));
+    --_handleSolid: var(--quiqqer-presentationBricks-imageCompare-handleSolid, #fff);
+    --_handleContrast: var(--quiqqer-presentationBricks-imageCompare-handleContrast, var(--qui-colors-dark, #16171a));
+}
+
+.quiqqer-presentationBricks-imageCompare--handleColor-black {
+    --_handleColor: var(--quiqqer-presentationBricks-imageCompare-handleColor, rgba(0, 0, 0, 0.5));
+    --_handleSolid: var(--quiqqer-presentationBricks-imageCompare-handleSolid, #000);
+    --_handleContrast: var(--quiqqer-presentationBricks-imageCompare-handleContrast, #fff);
+}
+
+/* longer, smoother easing while the intro animation plays */
+.quiqqer-presentationBricks-imageCompare.is-intro {
+    transition: --_pos 0.45s ease-in-out;
+}
+
+.quiqqer-presentationBricks-imageCompare__frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: opacity var(--_transition);
+}
+
+.quiqqer-presentationBricks-imageCompare--rounded .quiqqer-presentationBricks-imageCompare__frame {
+    border-radius: var(--_frameRadius);
+}
+
+/* JS hides the frame until both images are loaded, so the base image never
+   flashes fully before the overlay arrives. Without JS the class is never
+   added, so the static (SSR) split stays visible. */
+.quiqqer-presentationBricks-imageCompare.is-loading .quiqqer-presentationBricks-imageCompare__frame {
+    opacity: 0;
+}
+
+.quiqqer-presentationBricks-imageCompare__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* base image (after) sits in flow and defines the box height in "auto" mode */
+.quiqqer-presentationBricks-imageCompare__img--after {
+    position: relative;
+}
+
+.quiqqer-presentationBricks-imageCompare__overlay {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.quiqqer-presentationBricks-imageCompare__overlay .quiqqer-presentationBricks-imageCompare__img--before {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* fixed aspect ratio: the container gets the ratio, both layers cover it */
+.quiqqer-presentationBricks-imageCompare--ratio-fixed .quiqqer-presentationBricks-imageCompare__frame {
+    aspect-ratio: var(--_aspectRatio);
+}
+
+.quiqqer-presentationBricks-imageCompare--ratio-fixed .quiqqer-presentationBricks-imageCompare__img--after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- orientation: horizontal (default) ---- */
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__frame {
+    /* keep vertical page scrolling, capture horizontal drag */
+    touch-action: pan-y;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__overlay {
+    clip-path: inset(0 calc(100% - var(--_pos)) 0 0);
+}
+
+/* ---- orientation: vertical ---- */
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__frame {
+    /* keep horizontal page scrolling, capture vertical drag */
+    touch-action: pan-x;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__overlay {
+    clip-path: inset(0 0 calc(100% - var(--_pos)) 0);
+}
+
+/* ---- handle (>=44px transparent hit strip on the dividing line) ---- */
+
+.quiqqer-presentationBricks-imageCompare__handle {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--_handleColor);
+    touch-action: none;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__handle {
+    top: 0;
+    bottom: 0;
+    left: var(--_pos);
+    width: var(--_hitSize);
+    transform: translateX(-50%);
+    cursor: ew-resize;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__handle {
+    left: 0;
+    right: 0;
+    top: var(--_pos);
+    height: var(--_hitSize);
+    transform: translateY(-50%);
+    cursor: ns-resize;
+}
+
+/* dividing line, present in both handle styles */
+.quiqqer-presentationBricks-imageCompare__line {
+    position: absolute;
+    background: var(--_handleColor);
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__line {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: var(--_lineWidth);
+    transform: translateX(-50%);
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__line {
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: var(--_lineWidth);
+    transform: translateY(-50%);
+}
+
+/* circle handle: knob with chevrons */
+.quiqqer-presentationBricks-imageCompare__knob {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+    width: var(--_knobSize);
+    height: var(--_knobSize);
+    border-radius: 50%;
+    background: var(--_handleSolid);
+    color: var(--_handleContrast);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    font-size: 0.85rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__knob {
+    flex-direction: column;
+}
+
+.quiqqer-presentationBricks-imageCompare__chevron {
+    line-height: 1;
+}
+
+/* line handle: a small filled grip pill on the line (clearly visible) */
+.quiqqer-presentationBricks-imageCompare__grip {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--_handleSolid);
+    color: var(--_handleContrast);
+    border-radius: 999px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    font-size: 0.8rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__grip {
+    padding: 0.7em 0.3em;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__grip {
+    padding: 0.3em 0.7em;
+}
+
+/* ---- labels ---- */
+
+.quiqqer-presentationBricks-imageCompare__label {
+    position: absolute;
+    z-index: 3;
+    max-width: calc(50% - 1.5rem);
+    padding: 0.35em 0.6em;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    pointer-events: none;
+    overflow-wrap: break-word;
+}
+
+/* horizontal: before left, after right; labelPosition moves both vertically */
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__label--before {
+    left: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal .quiqqer-presentationBricks-imageCompare__label--after {
+    right: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal.quiqqer-presentationBricks-imageCompare--labelpos-top .quiqqer-presentationBricks-imageCompare__label {
+    top: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal.quiqqer-presentationBricks-imageCompare--labelpos-center .quiqqer-presentationBricks-imageCompare__label {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quiqqer-presentationBricks-imageCompare--horizontal.quiqqer-presentationBricks-imageCompare--labelpos-bottom .quiqqer-presentationBricks-imageCompare__label {
+    bottom: 0.75rem;
+}
+
+/* vertical: before top, after bottom; labelPosition moves both horizontally */
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__label--before {
+    top: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical .quiqqer-presentationBricks-imageCompare__label--after {
+    bottom: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical.quiqqer-presentationBricks-imageCompare--labelpos-top .quiqqer-presentationBricks-imageCompare__label {
+    left: 0.75rem;
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical.quiqqer-presentationBricks-imageCompare--labelpos-center .quiqqer-presentationBricks-imageCompare__label {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quiqqer-presentationBricks-imageCompare--vertical.quiqqer-presentationBricks-imageCompare--labelpos-bottom .quiqqer-presentationBricks-imageCompare__label {
+    right: 0.75rem;
+}
+
+/* label styles */
+.quiqqer-presentationBricks-imageCompare--label-box .quiqqer-presentationBricks-imageCompare__label {
+    background: var(--_labelBoxBg);
+    color: var(--_labelBoxColor);
+    border-radius: var(--_labelRadius);
+}
+
+.quiqqer-presentationBricks-imageCompare--label-pill .quiqqer-presentationBricks-imageCompare__label {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+    background: var(--_labelPillBg);
+    color: var(--_labelPillColor);
+    border-radius: 999px;
+}
+
+.quiqqer-presentationBricks-imageCompare--label-plain .quiqqer-presentationBricks-imageCompare__label {
+    padding: 0;
+    background: none;
+    color: var(--_labelPillColor);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- focus ---- */
+
+.quiqqer-presentationBricks-imageCompare__handle:focus {
+    outline: none;
+}
+
+.quiqqer-presentationBricks-imageCompare__handle:focus-visible .quiqqer-presentationBricks-imageCompare__knob {
+    box-shadow: 0 0 0 3px var(--_handleColor), 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.quiqqer-presentationBricks-imageCompare__handle:focus-visible .quiqqer-presentationBricks-imageCompare__grip {
+    outline: 2px solid var(--_handleColor);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* ---- motion ---- */
+
+.quiqqer-presentationBricks-imageCompare.is-dragging {
+    transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quiqqer-presentationBricks-imageCompare {
+        transition: none;
+    }
+}
