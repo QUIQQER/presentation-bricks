@@ -39,6 +39,11 @@ class ImageCompareTest extends TestCase
                 return $this->normalizeStartPosition();
             }
 
+            public function sanitizeCssLengthForTest(string $value): string
+            {
+                return $this->sanitizeCssLength($value);
+            }
+
             /**
              * @return array{show: bool, text: string, srText: string}
              */
@@ -100,6 +105,7 @@ class ImageCompareTest extends TestCase
         $this->assertSame('horizontal', $control->getAttribute('orientation'));
         $this->assertSame('brand', $control->getAttribute('handleColor'));
         $this->assertSame(50, $control->getAttribute('startPosition'));
+        $this->assertSame('', $control->getAttribute('maxWidth'));
         $this->assertTrue((bool)$control->getAttribute('borderRadius'));
         $this->assertTrue((bool)$control->getAttribute('introAnimation'));
     }
@@ -234,6 +240,28 @@ class ImageCompareTest extends TestCase
         $this->assertSame(42, $this->testable(['startPosition' => 42])->startPositionForTest());
     }
 
+    public function testMaxWidthBareNumberBecomesPixels(): void
+    {
+        $this->assertSame('600px', $this->testable()->sanitizeCssLengthForTest('600'));
+    }
+
+    public function testMaxWidthKeepsValueWithUnit(): void
+    {
+        $control = $this->testable();
+
+        $this->assertSame('80%', $control->sanitizeCssLengthForTest('80%'));
+        $this->assertSame('40rem', $control->sanitizeCssLengthForTest('40rem'));
+    }
+
+    public function testMaxWidthRejectsInvalidValue(): void
+    {
+        $control = $this->testable();
+
+        $this->assertSame('', $control->sanitizeCssLengthForTest(''));
+        $this->assertSame('', $control->sanitizeCssLengthForTest('   '));
+        $this->assertSame('', $control->sanitizeCssLengthForTest('100px; color: red'));
+    }
+
     public function testResolveLabelHiddenIsNotShown(): void
     {
         $control = $this->testable(['labelBeforeMode' => 'hidden']);
@@ -338,6 +366,11 @@ class ImageCompareTest extends TestCase
         $this->assertSame('100', $setting->getAttribute('max'));
     }
 
+    public function testMaxWidthSettingIsFreeTextInput(): void
+    {
+        $this->assertSame('text', $this->settingNode('maxWidth')->getAttribute('type'));
+    }
+
     public function testCssShipsCoreThemingHooks(): void
     {
         $css = file_get_contents(
@@ -350,6 +383,18 @@ class ImageCompareTest extends TestCase
         $this->assertStringContainsString('--handleColor-black', $css);
         $this->assertStringContainsString('--_handleSolid', $css);
         $this->assertStringContainsString('.is-loading', $css);
+    }
+
+    public function testCssShipsMaxWidthHooks(): void
+    {
+        $css = file_get_contents(
+            dirname(__DIR__, 4) . '/src/QUI/PresentationBricks/Controls/ImageCompare.css'
+        );
+
+        $this->assertIsString($css);
+        $this->assertStringContainsString('--_maxWidth: var(--quiqqer-presentationBricks-imageCompare-maxWidth', $css);
+        $this->assertStringContainsString('max-width: var(--_maxWidth)', $css);
+        $this->assertStringContainsString('margin-inline: auto', $css);
     }
 
     public function testJavaScriptShipsInteractionHooks(): void

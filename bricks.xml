@@ -213,6 +213,15 @@
                     <defaultValue>auto</defaultValue>
                 </setting>
 
+                <setting name="maxWidth" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ImageCompare.maxWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ImageCompare.maxWidth.desc"/>
+                    </description>
+                </setting>
+
                 <setting name="introAnimation" type="checkbox">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.ImageCompare.introAnimation"/>

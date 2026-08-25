@@ -170,6 +170,14 @@
             <de><![CDATA[Seitenverhältnis der Vergleichsfläche. „Automatisch“ übernimmt das Verhältnis des Bildes „Nachher“; feste Werte (16:9, 4:3, 1:1) erzwingen das Format und schneiden die Bilder mittig zu (object-fit: cover). Für ein sauberes Ergebnis beide Bilder gleich groß hochladen.]]></de>
             <en><![CDATA[Aspect ratio of the comparison area. "Automatic" adopts the ratio of the "after" image; fixed values (16:9, 4:3, 1:1) enforce the format and crop the images centered (object-fit: cover). For a clean result, upload both images at the same size.]]></en>
         </locale>
+        <locale name="control.ImageCompare.maxWidth">
+            <de><![CDATA[Maximale Breite]]></de>
+            <en><![CDATA[Maximum width]]></en>
+        </locale>
+        <locale name="control.ImageCompare.maxWidth.desc">
+            <de><![CDATA[Begrenzt die Breite der Vergleichsfläche und zentriert sie. Leer lassen für volle Breite (100 %). CSS-Längenangabe wie 600px, 80% oder 40rem; eine reine Zahl wird als Pixel interpretiert.]]></de>
+            <en><![CDATA[Limits the width of the comparison area and centers it. Leave empty for full width (100%). CSS length such as 600px, 80% or 40rem; a plain number is treated as pixels.]]></en>
+        </locale>
         <locale name="control.ImageCompare.label.before.default">
             <de><![CDATA[Vorher]]></de>
             <en><![CDATA[Before]]></en>

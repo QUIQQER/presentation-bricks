@@ -23,6 +23,7 @@
     --_labelBoxColor: var(--quiqqer-presentationBricks-imageCompare-labelBoxColor, var(--_q-controlConf-labelBoxColor, var(--qui-colors-dark, #16171a)));
     --_labelPillBg: var(--quiqqer-presentationBricks-imageCompare-labelPillBg, var(--_q-controlConf-labelPillBg, rgba(0, 0, 0, 0.55)));
     --_labelPillColor: var(--quiqqer-presentationBricks-imageCompare-labelPillColor, var(--_q-controlConf-labelPillColor, #fff));
+    --_maxWidth: var(--quiqqer-presentationBricks-imageCompare-maxWidth, var(--_q-controlConf-maxWidth, 100%));
     /* duration + timing only (NOT the full --qui-transition shorthand, which
        also carries a property and would break "transition: --_pos <value>") */
     --_transition: var(--quiqqer-presentationBricks-imageCompare-transition, var(--qui-transition-duration, 0.2s) var(--qui-transition-timing-function, ease));
@@ -63,6 +64,8 @@
 .quiqqer-presentationBricks-imageCompare__frame {
     position: relative;
     width: 100%;
+    max-width: var(--_maxWidth);
+    margin-inline: auto;
     overflow: hidden;
     line-height: 0;
     user-select: none;

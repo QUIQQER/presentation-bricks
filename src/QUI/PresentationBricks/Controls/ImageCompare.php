@@ -60,6 +60,7 @@ class ImageCompare extends QUI\Control
             'orientation' => 'horizontal',
             'startPosition' => 50,
             'aspectRatio' => 'auto',
+            'maxWidth' => '',
             'borderRadius' => true,
             'introAnimation' => true
         ]);
@@ -112,6 +113,12 @@ class ImageCompare extends QUI\Control
         if ($aspectRatioValue !== '') {
             $this->addCSSClass('quiqqer-presentationBricks-imageCompare--ratio-fixed');
             $this->setCustomVariable('aspectRatio', $aspectRatioValue);
+        }
+
+        $maxWidth = $this->sanitizeCssLength((string)$this->getAttribute('maxWidth'));
+
+        if ($maxWidth !== '') {
+            $this->setCustomVariable('maxWidth', $maxWidth);
         }
 
         $this->setCustomVariable('pos', $startPosition . '%');
@@ -176,6 +183,34 @@ class ImageCompare extends QUI\Control
         $value = (int)$this->getAttribute('startPosition');
 
         return max(0, min(100, $value));
+    }
+
+    /**
+     * Sanitize a user-entered CSS length. A bare number becomes pixels, values
+     * with a unit (px, %, rem, …) are kept, anything else returns an empty
+     * string so the CSS fallback (100%) applies.
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    protected function sanitizeCssLength(string $value): string
+    {
+        $value = trim($value);
+
+        if ($value === '') {
+            return '';
+        }
+
+        if (preg_match('/^[0-9]+(?:\.[0-9]+)?[a-zA-Z%]*$/', $value) !== 1) {
+            return '';
+        }
+
+        if (preg_match('/^[0-9]+(?:\.[0-9]+)?$/', $value) === 1) {
+            return $value . 'px';
+        }
+
+        return $value;
     }
 
     /**
