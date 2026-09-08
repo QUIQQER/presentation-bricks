@@ -1276,5 +1276,479 @@
             <de><![CDATA[Video abspielen]]></de>
             <en><![CDATA[Play video]]></en>
         </locale>
+
+        <!-- scroll pinned cards -->
+        <locale name="control.ScrollPinnedCards.title">
+            <de><![CDATA[Scroll-Karten (Sektion bleibt stehen)]]></de>
+            <en><![CDATA[Scroll cards (pinned section)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.description" html="true">
+            <de><![CDATA[<p>Mit diesem Baustein bleibt eine Sektion beim Scrollen stehen und zieht dabei große Karten flüssig seitwärts durchs Bild. Aus einer normalen Liste wird so eine kleine Inszenierung – ideal für Leistungen, Prozessschritte, Produktvorteile oder Referenzen.</p>
+<ul>
+    <li><strong>Bewegung, die zum Scrollen passt:</strong> Die Karten folgen exakt dem Scroll-Fortschritt, nicht einer eigenen Animation – kein Ruckeln, kein Weiterlaufen.</li>
+    <li><strong>Karten mit Substanz:</strong> Je Karte Bild, Text oder beides nebeneinander, dazu Overline, automatische Nummerierung, Icon und ein Button, der die ganze Karte klickbar macht.</li>
+    <li><strong>Live-Zähler:</strong> Zeigt „01 / 03“ an – eingebaut oben rechts, versteckt oder an einer selbst gewählten Stelle im Inhalt.</li>
+    <li><strong>Überall benutzbar:</strong> Auf Touch-Geräten, schmalen Fenstern, ohne JavaScript und bei reduzierter Bewegung erscheinen dieselben Karten einfach untereinander.</li>
+</ul>
+<p>So bekommt eine Seite einen echten Blickfang, ohne dass Besucher auf kleinen Geräten oder mit Zugänglichkeits-Einstellungen etwas verpassen.</p>]]></de>
+            <en><![CDATA[<p>With this brick a section stays in place while scrolling and moves large cards smoothly sideways across the screen. A plain list turns into a small staging – ideal for services, process steps, product benefits or references.</p>
+<ul>
+    <li><strong>Motion that matches the scroll:</strong> The cards follow the scroll progress exactly instead of running their own animation – no stutter, no overshoot.</li>
+    <li><strong>Cards with substance:</strong> Per card an image, text or both side by side, plus an overline, automatic numbering, an icon and a button that makes the whole card clickable.</li>
+    <li><strong>Live counter:</strong> Shows "01 / 03" – built in at the top right, hidden, or at a position of your choice inside the content.</li>
+    <li><strong>Usable everywhere:</strong> On touch devices, in narrow windows, without JavaScript and with reduced motion the very same cards simply appear below each other.</li>
+</ul>
+<p>This gives a page a real eye-catcher without visitors on small devices or with accessibility settings missing anything.</p>]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.entries">
+            <de><![CDATA[Karten]]></de>
+            <en><![CDATA[Cards]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.entries.desc">
+            <de><![CDATA[Die Karten der Sektion in der Reihenfolge, in der sie durchgezogen werden. Ab zwei Karten wird auf dem Desktop gescrollt, darunter erscheinen die Karten untereinander. Alle Karten sind so hoch wie die höchste – halte den Inhalt je Karte daher ähnlich lang und kurz genug, dass er auf den Bildschirm passt.]]></de>
+            <en><![CDATA[The cards of the section, in the order they are moved through. From two cards on the desktop scroll takes over, below that the cards appear below each other. All cards are as tall as the tallest one – so keep the content per card similar in length and short enough to fit on the screen.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardWidth">
+            <de><![CDATA[Kartenbreite]]></de>
+            <en><![CDATA[Card width]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardWidth.desc">
+            <de><![CDATA[Breite der aktiven, mittig stehenden Karte – bezogen auf die Inhaltsbreite der Seite, nicht auf den Bildschirm. Je schmaler die Karte, desto mehr sieht man von der vorherigen und der nächsten Karte.]]></de>
+            <en><![CDATA[Width of the active, centered card – relative to the page content width, not to the screen. The narrower the card, the more of the previous and the next card is visible.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.speed">
+            <de><![CDATA[Tempo]]></de>
+            <en><![CDATA[Speed]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.desc">
+            <de><![CDATA[Wie viel Scrollweg für eine Karte aufgewendet wird. „Langsam“ hält die Sektion länger stehen und lässt mehr Zeit zum Lesen, „schnell“ zieht die Karten zügiger durch. Die Gesamtlänge ergibt sich automatisch aus der Anzahl der Karten.]]></de>
+            <en><![CDATA[How much scroll distance is spent on one card. "Slow" keeps the section pinned longer and leaves more time to read, "fast" moves the cards through more briskly. The total length follows automatically from the number of cards.]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.slow">
+            <de><![CDATA[Langsam (viel Zeit pro Karte)]]></de>
+            <en><![CDATA[Slow (much time per card)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.fast">
+            <de><![CDATA[Schnell (kurzer Scrollweg)]]></de>
+            <en><![CDATA[Fast (short scroll distance)]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.textPosition">
+            <de><![CDATA[Senkrechte Position des Textes]]></de>
+            <en><![CDATA[Vertical position of the text]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.textPosition.desc">
+            <de><![CDATA[Alle Karten sind so hoch wie die längste Karte. Diese Einstellung legt fest, wo der Text in dieser Höhe steht, wenn er kürzer ist: oben beginnend, mittig ausgerichtet oder oben beginnend, wobei nur der Button an den unteren Rand rutscht – dann sitzen die Buttons aller Karten auf einer Linie. Gilt für alle Karten. Ist der Text einmal höher als der Bildschirm, beginnt er immer oben, damit nichts über den oberen Rand hinausrutscht.]]></de>
+            <en><![CDATA[Every card is as tall as the longest one. This setting decides where a shorter text sits inside that height: starting at the top, centred, or starting at the top with only the button moved to the lower edge – the buttons of all cards then line up. Applies to all cards. Whenever a text is taller than the screen it always starts at the top, so that nothing slips past the upper edge.]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.textPosition.start">
+            <de><![CDATA[Oben beginnen]]></de>
+            <en><![CDATA[Start at the top]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.textPosition.center">
+            <de><![CDATA[Mittig ausrichten]]></de>
+            <en><![CDATA[Centred]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.textPosition.startActionEnd">
+            <de><![CDATA[Oben beginnen, Button unten (Buttons auf einer Linie)]]></de>
+            <en><![CDATA[Start at the top, button at the bottom (buttons line up)]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.showNumbers">
+            <de><![CDATA[Nummern auf den Karten anzeigen]]></de>
+            <en><![CDATA[Show numbers on the cards]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.showNumbers.desc">
+            <de><![CDATA[Blendet auf jeder Karte eine fortlaufende Nummer (01, 02, 03 …) ein. Die Nummer ergibt sich automatisch aus der Reihenfolge der Karten und muss nicht gepflegt werden.]]></de>
+            <en><![CDATA[Shows a running number (01, 02, 03 …) on every card. The number follows automatically from the card order and does not have to be maintained.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counterMode">
+            <de><![CDATA[Position des Zählers]]></de>
+            <en><![CDATA[Counter position]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.desc">
+            <de><![CDATA[Der Zähler („01 / 03“) zeigt, welche Karte gerade sichtbar ist. Er erscheint nur, solange die Sektion tatsächlich steht – in der gestapelten Darstellung wird er ausgeblendet.]]></de>
+            <en><![CDATA[The counter ("01 / 03") shows which card is currently visible. It only appears while the section is actually pinned – in the stacked presentation it is hidden.]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.inline">
+            <de><![CDATA[Eingebaut, oben rechts neben dem Inhalt]]></de>
+            <en><![CDATA[Built in, top right next to the content]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.hidden">
+            <de><![CDATA[Versteckt (kein Zähler)]]></de>
+            <en><![CDATA[Hidden (no counter)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.custom">
+            <de><![CDATA[Eigene Position im Inhalt]]></de>
+            <en><![CDATA[Custom position inside the content]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counterTarget">
+            <de><![CDATA[Name des Zähler-Containers]]></de>
+            <en><![CDATA[Name of the counter container]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterTarget.desc" html="true">
+            <de><![CDATA[Setze im Inhalt dieses Bausteins einen leeren Platzhalter, z.&nbsp;B. <code>&lt;div data-name="cardCounter"&gt;&lt;/div&gt;</code>, und trage hier genau diesen Namen ein (also <code>cardCounter</code>). Der Zähler wird dann dort eingesetzt. Wird der Platzhalter nicht gefunden, bleibt der Zähler an seiner eingebauten Position oben rechts.]]></de>
+            <en><![CDATA[Place an empty placeholder in the content of this brick, for example <code>&lt;div data-name="cardCounter"&gt;&lt;/div&gt;</code>, and enter exactly that name here (so <code>cardCounter</code>). The counter is then moved into it. If the placeholder is not found, the counter stays at its built in position at the top right.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counter.label">
+            <de><![CDATA[Karte [current] von [total]]]></de>
+            <en><![CDATA[Card [current] of [total]]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.button.default">
+            <de><![CDATA[Mehr erfahren]]></de>
+            <en><![CDATA[Learn more]]></en>
+        </locale>
+
+        <!-- scroll pinned cards: card editor -->
+        <locale name="brick.scrollPinnedCards.entries.column.status">
+            <de><![CDATA[Aktiv]]></de>
+            <en><![CDATA[Active]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.adddialog.title">
+            <de><![CDATA[Karte hinzufügen]]></de>
+            <en><![CDATA[Add card]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.editdialog.title">
+            <de><![CDATA[Karte bearbeiten]]></de>
+            <en><![CDATA[Edit card]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.title">
+            <de><![CDATA[Karte löschen]]></de>
+            <en><![CDATA[Delete card]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.text">
+            <de><![CDATA[Karte wirklich löschen?]]></de>
+            <en><![CDATA[Really delete this card?]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.information">
+            <de><![CDATA[Die ausgewählte Karte wird aus der Sektion entfernt. Das lässt sich nur durch Abbrechen der Baustein-Bearbeitung rückgängig machen.]]></de>
+            <en><![CDATA[The selected card is removed from the section. This can only be undone by cancelling the brick editing.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.active">
+            <de><![CDATA[Karte aktiv]]></de>
+            <en><![CDATA[Card active]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.active.desc">
+            <de><![CDATA[Eine inaktive Karte bleibt gespeichert, wird aber nicht ausgegeben und nicht mitgezählt.]]></de>
+            <en><![CDATA[An inactive card stays stored, but is not rendered and not counted.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.layout">
+            <de><![CDATA[Aufbau der Karte]]></de>
+            <en><![CDATA[Card layout]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.desc">
+            <de><![CDATA[Bestimmt, welche Felder die Karte nutzt. In den geteilten Varianten stehen Text und Bild auf dem Desktop nebeneinander; sobald die Karten untereinander erscheinen, steht das Bild immer oben.]]></de>
+            <en><![CDATA[Decides which fields the card uses. In the split variants text and image sit side by side on the desktop; as soon as the cards appear below each other, the image is always on top.]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.content">
+            <de><![CDATA[Nur Inhalt (ohne Bild)]]></de>
+            <en><![CDATA[Content only (without image)]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.image">
+            <de><![CDATA[Nur Bild (formatfüllend)]]></de>
+            <en><![CDATA[Image only (fills the card)]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.textImage">
+            <de><![CDATA[Text links · Bild rechts]]></de>
+            <en><![CDATA[Text left · image right]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.imageText">
+            <de><![CDATA[Bild links · Text rechts]]></de>
+            <en><![CDATA[Image left · text right]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.splitRatio">
+            <de><![CDATA[Spaltenverhältnis]]></de>
+            <en><![CDATA[Column ratio]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.splitRatio.desc" html="true">
+            <de><![CDATA[Breitenverhältnis der linken zur rechten Spalte, z.&nbsp;B. „60 / 40“ = linke Spalte 60 %, rechte Spalte 40 %. Gilt nur für die geteilten Aufbauten.]]></de>
+            <en><![CDATA[Width ratio of the left to the right column, for example "60 / 40" = left column 60 %, right column 40 %. Only applies to the split layouts.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.image">
+            <de><![CDATA[Bild]]></de>
+            <en><![CDATA[Image]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.image.desc">
+            <de><![CDATA[Das Bild der Karte. Es füllt seine Spalte formatfüllend aus, wähle daher ein Motiv, bei dem ein Beschnitt an den Rändern nicht stört.]]></de>
+            <en><![CDATA[The image of the card. It fills its column completely, so pick a motif that tolerates being cropped at the edges.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.icon">
+            <de><![CDATA[Icon]]></de>
+            <en><![CDATA[Icon]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.icon.desc" html="true">
+            <de><![CDATA[Kleines Symbol über der Überschrift. Entweder eine FontAwesome-Klasse (z.&nbsp;B. „fa-solid fa-rocket“) – das ist der übliche Weg – oder alternativ ein Bild aus der Medienverwaltung.]]></de>
+            <en><![CDATA[Small symbol above the heading. Either a FontAwesome class (for example "fa-solid fa-rocket") – the usual way – or alternatively an image from the media manager.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.eyebrow">
+            <de><![CDATA[Overline]]></de>
+            <en><![CDATA[Overline]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.eyebrow.desc" html="true">
+            <de><![CDATA[Kurze Zeile über der Überschrift, die die Karte einordnet – z.&nbsp;B. „Schritt 1“ oder „Beratung“. Wird im Overline-Stil der Vorlage ausgegeben.]]></de>
+            <en><![CDATA[Short line above the heading that classifies the card – for example "Step 1" or "Consulting". Rendered in the overline style of the template.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.title">
+            <de><![CDATA[Überschrift]]></de>
+            <en><![CDATA[Heading]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.title.desc">
+            <de><![CDATA[Die Überschrift der Karte. Sie wird zusätzlich als Alternativtext des Kartenbildes verwendet.]]></de>
+            <en><![CDATA[The heading of the card. It is also used as the alternative text of the card image.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.content">
+            <de><![CDATA[Inhalt]]></de>
+            <en><![CDATA[Content]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.content.desc">
+            <de><![CDATA[Fließtext der Karte. Kurz halten: Der Scroll-Effekt braucht Karten, die komplett auf den Bildschirm passen. Passt die längste Karte nicht mehr, zeigt die Sektion die Karten automatisch untereinander statt Inhalt abzuschneiden.]]></de>
+            <en><![CDATA[Body text of the card. Keep it short: the scroll effect needs cards that fit on the screen completely. If the tallest card no longer fits, the section shows the cards below each other instead of cutting content off.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.buttonText">
+            <de><![CDATA[Button-Text]]></de>
+            <en><![CDATA[Button text]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonText.desc">
+            <de><![CDATA[Beschriftung des Buttons. Bleibt das Feld leer und ist ein Ziel gesetzt, wird „Mehr erfahren“ verwendet.]]></de>
+            <en><![CDATA[Label of the button. If the field stays empty and a target is set, "Learn more" is used.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.link">
+            <de><![CDATA[Ziel des Buttons]]></de>
+            <en><![CDATA[Button target]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.link.desc">
+            <de><![CDATA[Interne Seite oder externe Adresse. Ohne Ziel erscheint kein Button. Ist ein Ziel gesetzt, wird zusätzlich die gesamte Karte klickbar.]]></de>
+            <en><![CDATA[Internal page or external address. Without a target no button is shown. With a target the whole card becomes clickable as well.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.linkTarget">
+            <de><![CDATA[Öffnen in]]></de>
+            <en><![CDATA[Open in]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkTarget.self">
+            <de><![CDATA[Gleichem Fenster]]></de>
+            <en><![CDATA[Same window]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkTarget.blank">
+            <de><![CDATA[Neuem Tab]]></de>
+            <en><![CDATA[New tab]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.linkNofollow">
+            <de><![CDATA[Link auf „nofollow“ setzen]]></de>
+            <en><![CDATA[Mark link as "nofollow"]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkNofollow.desc">
+            <de><![CDATA[Weist Suchmaschinen an, dem Link nicht zu folgen. Sinnvoll bei bezahlten oder fremden Zielen, für normale interne Links nicht nötig.]]></de>
+            <en><![CDATA[Tells search engines not to follow the link. Useful for paid or third party targets, not needed for normal internal links.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.btnType">
+            <de><![CDATA[Button-Typ]]></de>
+            <en><![CDATA[Button type]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.btnType.desc">
+            <de><![CDATA[Farbvariante des Buttons aus dem Design-System der Vorlage – dieselbe Auswahl wie beim Button-Baustein. „primary“ ist die Hauptaktion.]]></de>
+            <en><![CDATA[Colour variant of the button from the design system of the template – the same selection as in the button brick. "primary" is the main action.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.buttonSize">
+            <de><![CDATA[Button-Größe]]></de>
+            <en><![CDATA[Button size]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.desc">
+            <de><![CDATA[Gilt für die Buttons aller Karten, damit die Sektion einheitlich wirkt.]]></de>
+            <en><![CDATA[Applies to the buttons of all cards, so the section stays consistent.]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.default">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+
+        <!-- scroll pinned cards: image options per card -->
+        <locale name="brick.scrollPinnedCards.entries.imageMaxHeight">
+            <de><![CDATA[Maximale Bildhöhe]]></de>
+            <en><![CDATA[Maximum image height]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageMaxHeight.desc" html="true">
+            <de><![CDATA[Begrenzt die Höhe des Bildes nur für diese Karte, z.&nbsp;B. „320“ für 320 Pixel. Eine Zahl ohne Einheit wird als Pixel gelesen, Angaben wie „50vh“ oder „20rem“ funktionieren ebenfalls. <strong>Leer lassen = globale Einstellung des Bausteins verwenden.</strong>]]></de>
+            <en><![CDATA[Limits the height of the image for this card only, for example "320" for 320 pixels. A number without a unit is read as pixels, values like "50vh" or "20rem" work as well. <strong>Leave empty to use the global setting of the brick.</strong>]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imageFit">
+            <de><![CDATA[Bilddarstellung]]></de>
+            <en><![CDATA[Image display]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.desc">
+            <de><![CDATA[Legt fest, wie das Bild seinen Platz ausfüllt. „Formatfüllend“ füllt die Fläche immer komplett und schneidet dafür Ränder ab – gut für Fotos. „Vollständig zeigen“ verkleinert das Bild, bis es ganz sichtbar ist, und lässt dafür Platz frei – gut für Logos, Screenshots oder Grafiken, bei denen nichts fehlen darf. Mit „Globale Einstellung berücksichtigen“ gilt, was im Baustein eingestellt ist.]]></de>
+            <en><![CDATA[Defines how the image fills its space. "Fill the area" always covers the space completely and crops the edges – good for photos. "Show completely" scales the image down until all of it is visible and leaves empty space – good for logos, screenshots or graphics where nothing may be missing. With "Use the global setting" whatever is configured on the brick applies.]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.cover">
+            <de><![CDATA[Formatfüllend (Ränder werden abgeschnitten)]]></de>
+            <en><![CDATA[Fill the area (edges are cropped)]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.contain">
+            <de><![CDATA[Vollständig zeigen (kann Platz frei lassen)]]></de>
+            <en><![CDATA[Show completely (may leave empty space)]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imagePosition">
+            <de><![CDATA[Bildausschnitt]]></de>
+            <en><![CDATA[Image focus]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.desc">
+            <de><![CDATA[Welcher Teil des Bildes auf jeden Fall sichtbar bleibt, wenn es beschnitten wird. Beispiel: Bei einem Porträt „Oben“ wählen, damit der Kopf nicht abgeschnitten wird. Wirkt nur zusammen mit „Formatfüllend“. Mit „Globale Einstellung berücksichtigen“ gilt, was im Baustein eingestellt ist.]]></de>
+            <en><![CDATA[Which part of the image always stays visible when it gets cropped. Example: for a portrait choose "Top" so the head is not cut off. Only has an effect together with "Fill the area". With "Use the global setting" whatever is configured on the brick applies.]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.leftTop">
+            <de><![CDATA[Oben links]]></de>
+            <en><![CDATA[Top left]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.top">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.rightTop">
+            <de><![CDATA[Oben rechts]]></de>
+            <en><![CDATA[Top right]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.center">
+            <de><![CDATA[Mittig]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.leftBottom">
+            <de><![CDATA[Unten links]]></de>
+            <en><![CDATA[Bottom left]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.bottom">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePosition.rightBottom">
+            <de><![CDATA[Unten rechts]]></de>
+            <en><![CDATA[Bottom right]]></en>
+        </locale>
+
+        <!-- scroll pinned cards: further button options per card -->
+        <locale name="brick.scrollPinnedCards.entries.buttonIcon">
+            <de><![CDATA[Button-Icon]]></de>
+            <en><![CDATA[Button icon]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIcon.desc" html="true">
+            <de><![CDATA[FontAwesome-Klasse für ein kleines Symbol im Button, z.&nbsp;B. „fa-solid fa-arrow-right“. Leer lassen für einen Button ohne Symbol. Nicht zu verwechseln mit dem Icon der Karte weiter oben.]]></de>
+            <en><![CDATA[FontAwesome class for a small symbol inside the button, for example "fa-solid fa-arrow-right". Leave empty for a button without a symbol. Not to be confused with the card icon further above.]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition">
+            <de><![CDATA[Position des Button-Icons]]></de>
+            <en><![CDATA[Button icon position]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.desc">
+            <de><![CDATA[Ob das Symbol vor oder hinter der Beschriftung steht. Pfeile stehen üblicherweise hinter dem Text, erklärende Symbole davor.]]></de>
+            <en><![CDATA[Whether the symbol sits before or after the label. Arrows usually go after the text, explanatory symbols before it.]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.start">
+            <de><![CDATA[Vor dem Text]]></de>
+            <en><![CDATA[Before the text]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.end">
+            <de><![CDATA[Hinter dem Text]]></de>
+            <en><![CDATA[After the text]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.customClass">
+            <de><![CDATA[Zusätzliche CSS-Klasse]]></de>
+            <en><![CDATA[Additional CSS class]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.customClass.desc">
+            <de><![CDATA[Eigene Klassen für den Button, durch Leerzeichen getrennt – für individuelles CSS oder zum Auswerten in Skripten. Nur Buchstaben, Ziffern, Bindestrich und Unterstrich sind erlaubt.]]></de>
+            <en><![CDATA[Custom classes for the button, separated by spaces – for individual CSS or for evaluation in scripts. Only letters, digits, hyphen and underscore are allowed.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.ariaLabel">
+            <de><![CDATA[Beschriftung für Screenreader]]></de>
+            <en><![CDATA[Label for screen readers]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.ariaLabel.desc" html="true">
+            <de><![CDATA[Ersetzt die vorgelesene Beschriftung des Buttons. Sinnvoll, wenn der sichtbare Text allein nicht aussagekräftig ist – z.&nbsp;B. „Mehr erfahren“ wird zu „Mehr über SEO &amp; Sichtbarkeit erfahren“. Leer lassen, wenn der Button-Text bereits eindeutig ist.]]></de>
+            <en><![CDATA[Replaces the label announced for the button. Useful when the visible text alone is not meaningful – for example "Learn more" becomes "Learn more about SEO & visibility". Leave empty when the button text is already unambiguous.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.dataAttributes">
+            <de><![CDATA[Data-Attribute]]></de>
+            <en><![CDATA[Data attributes]]></en>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.dataAttributes.desc" html="true">
+            <de><![CDATA[Zusätzliche <code>data-</code>-Attribute am Button, z.&nbsp;B. für Tracking oder eigene Skripte. Namen müssen mit <code>data-</code> beginnen.]]></de>
+            <en><![CDATA[Additional <code>data-</code> attributes on the button, for example for tracking or custom scripts. Names must start with <code>data-</code>.]]></en>
+        </locale>
+
+        <!-- scroll pinned cards: section wide image defaults -->
+        <locale name="control.ScrollPinnedCards.imageMaxHeight">
+            <de><![CDATA[Maximale Bildhöhe (alle Karten)]]></de>
+            <en><![CDATA[Maximum image height (all cards)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageMaxHeight.desc">
+            <de><![CDATA[Begrenzt die Höhe der Bilder in allen Karten, z.&nbsp;B. „320“ für 320 Pixel. Eine Zahl ohne Einheit wird als Pixel gelesen, Angaben wie „50vh“ oder „20rem“ funktionieren ebenfalls. Einzelne Karten können davon abweichen. Auf schmalen Geräten wird ein Bild zusätzlich automatisch auf einen Teil der Bildschirmhöhe begrenzt, damit es den Text nicht verdrängt – eine eigene Angabe für Mobilgeräte ist daher nicht nötig.]]></de>
+            <en><![CDATA[Limits the height of the images in all cards, for example "320" for 320 pixels. A number without a unit is read as pixels, values like "50vh" or "20rem" work as well. Individual cards can deviate from this. On narrow devices an image is additionally limited to a share of the screen height automatically, so it cannot push the text out of view – a separate value for mobile is therefore not needed.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imageFit">
+            <de><![CDATA[Bilddarstellung (alle Karten)]]></de>
+            <en><![CDATA[Image display (all cards)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageFit.desc">
+            <de><![CDATA[Legt für alle Karten fest, wie das Bild seinen Platz ausfüllt. „Formatfüllend“ füllt die Fläche immer komplett und schneidet dafür Ränder ab – gut für Fotos. „Vollständig zeigen“ verkleinert das Bild, bis es ganz sichtbar ist – gut für Logos oder Grafiken. Einzelne Karten können davon abweichen.]]></de>
+            <en><![CDATA[Defines for all cards how the image fills its space. "Fill the area" always covers the space completely and crops the edges – good for photos. "Show completely" scales the image down until all of it is visible – good for logos or graphics. Individual cards can deviate from this.]]></en>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imagePosition">
+            <de><![CDATA[Bildausschnitt (alle Karten)]]></de>
+            <en><![CDATA[Image focus (all cards)]]></en>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imagePosition.desc">
+            <de><![CDATA[Welcher Teil der Bilder auf jeden Fall sichtbar bleibt, wenn sie beschnitten werden. Wirkt nur zusammen mit „Formatfüllend“. Einzelne Karten können davon abweichen.]]></de>
+            <en><![CDATA[Which part of the images always stays visible when they get cropped. Only has an effect together with "Fill the area". Individual cards can deviate from this.]]></en>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.useGlobal">
+            <de><![CDATA[Globale Einstellung berücksichtigen]]></de>
+            <en><![CDATA[Use the global setting]]></en>
+        </locale>
     </groups>
 </locales>

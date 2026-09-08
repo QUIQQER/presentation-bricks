@@ -1313,5 +1313,226 @@
 
             </settings>
         </brick>
+
+        <!-- section that pins while scrolling and moves cards horizontally -->
+        <brick control="\QUI\PresentationBricks\Controls\ScrollPinnedCards" hasContent="1">
+            <title>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.ScrollPinnedCards.title"/>
+            </title>
+            <description>
+                <locale group="quiqqer/presentation-bricks"
+                        var="control.ScrollPinnedCards.description"/>
+            </description>
+
+            <settings>
+                <setting name="entries" type="hidden"
+                         data-qui="package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettings">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.entries"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.entries.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="cardWidth" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.cardWidth"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.cardWidth.desc"/>
+                    </description>
+                    <option value="60">60 %</option>
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <defaultValue>80</defaultValue>
+                </setting>
+
+                <setting name="speed" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.speed"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.speed.desc"/>
+                    </description>
+                    <option value="slow">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.speed.slow"/>
+                    </option>
+                    <option value="normal">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.speed.normal"/>
+                    </option>
+                    <option value="fast">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.speed.fast"/>
+                    </option>
+                    <defaultValue>normal</defaultValue>
+                </setting>
+
+                <setting name="textPosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.textPosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.textPosition.desc"/>
+                    </description>
+                    <option value="start">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.textPosition.start"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.textPosition.center"/>
+                    </option>
+                    <option value="start-actionEnd">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.textPosition.startActionEnd"/>
+                    </option>
+                    <defaultValue>start</defaultValue>
+                </setting>
+
+                <setting name="imageMaxHeight" type="text">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.imageMaxHeight"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.imageMaxHeight.desc"/>
+                    </description>
+                </setting>
+
+                <setting name="imageFit" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.imageFit"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.imageFit.desc"/>
+                    </description>
+                    <option value="cover">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imageFit.cover"/>
+                    </option>
+                    <option value="contain">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imageFit.contain"/>
+                    </option>
+                    <defaultValue>cover</defaultValue>
+                </setting>
+
+                <setting name="imagePosition" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.imagePosition"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.imagePosition.desc"/>
+                    </description>
+                    <option value="left top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.leftTop"/>
+                    </option>
+                    <option value="top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.top"/>
+                    </option>
+                    <option value="right top">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.rightTop"/>
+                    </option>
+                    <option value="left">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.left"/>
+                    </option>
+                    <option value="center">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.center"/>
+                    </option>
+                    <option value="right">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.right"/>
+                    </option>
+                    <option value="left bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.leftBottom"/>
+                    </option>
+                    <option value="bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.bottom"/>
+                    </option>
+                    <option value="right bottom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="brick.scrollPinnedCards.entries.imagePosition.rightBottom"/>
+                    </option>
+                    <defaultValue>center</defaultValue>
+                </setting>
+
+                <setting name="showNumbers" type="checkbox">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.showNumbers"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.showNumbers.desc"/>
+                    </description>
+                    <defaultValue>1</defaultValue>
+                </setting>
+
+                <setting name="buttonSize" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.buttonSize"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.buttonSize.desc"/>
+                    </description>
+                    <option value="default">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.buttonSize.default"/>
+                    </option>
+                    <option value="sm">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.buttonSize.small"/>
+                    </option>
+                    <option value="lg">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.buttonSize.large"/>
+                    </option>
+                    <defaultValue>default</defaultValue>
+                </setting>
+
+                <setting name="counterMode" type="select"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.counterMode"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.counterMode.desc"/>
+                    </description>
+                    <option value="inline">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.counterMode.inline"/>
+                    </option>
+                    <option value="hidden">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.counterMode.hidden"/>
+                    </option>
+                    <option value="custom">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.counterMode.custom"/>
+                    </option>
+                    <defaultValue>inline</defaultValue>
+                </setting>
+
+                <setting name="counterTarget" type="text"
+                         data-dependency="counterMode"
+                         data-dependency-options="custom">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.counterTarget"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.counterTarget.desc"/>
+                    </description>
+                </setting>
+            </settings>
+        </brick>
     </bricks>
 </quiqqer>

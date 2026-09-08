@@ -1,0 +1,131 @@
+{*
+  Everything that has to stay visible while the section is pinned lives inside
+  the sticky viewport: the header zone (brick content + counter) and the card
+  track. The stage breaks out to the full width of the surrounding box, the
+  header gets the container width back through its own .qui-content-grid.
+*}
+<div class="quiqqer-presentationBricks-scrollPinnedCards__stage qui-content-full" data-name="stage">
+    <div class="quiqqer-presentationBricks-scrollPinnedCards__pinWrapper" data-name="pinWrapper">
+        <div class="quiqqer-presentationBricks-scrollPinnedCards__viewport" data-name="viewport">
+
+            <div class="quiqqer-presentationBricks-scrollPinnedCards__header qui-content-grid" data-name="header">
+                <div class="quiqqer-presentationBricks-scrollPinnedCards__headerInner">
+                    <div class="quiqqer-presentationBricks-scrollPinnedCards__headerContent">
+                        {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+                            <h2 class="control-header">{$this->getAttribute('frontendTitle')|escape:'html'}</h2>
+                        {/if}
+
+                        {if $this->getAttribute('content') != ""}
+                            <div class="control-content">
+                                {$this->getAttribute('content')}
+                            </div>
+                        {/if}
+                    </div>
+
+                    {if $showCounter}
+                        <p class="quiqqer-presentationBricks-scrollPinnedCards__counter" data-name="counter" hidden>
+                            <span aria-hidden="true">
+                                <span class="quiqqer-presentationBricks-scrollPinnedCards__counterCurrent"
+                                      data-name="counterCurrent">01</span>
+                                <span class="quiqqer-presentationBricks-scrollPinnedCards__counterSeparator">/</span>
+                                <span class="quiqqer-presentationBricks-scrollPinnedCards__counterTotal">{$counterTotal|escape:'html'}</span>
+                            </span>
+                            <span class="quiqqer-presentationBricks-scrollPinnedCards__srOnly"
+                                  data-name="counterLive"
+                                  aria-live="polite"></span>
+                        </p>
+                    {/if}
+                </div>
+            </div>
+
+            <ul class="quiqqer-presentationBricks-scrollPinnedCards__track" data-name="track">
+                {foreach $cards as $card}
+                    <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.hasButton} quiqqer-presentationBricks-scrollPinnedCards__card--interactive{/if}"
+                        data-name="card"{if $card.cardStyle != ''} style="{$card.cardStyle}"{/if}>
+
+                        {if $card.hasMedia}
+                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardMedia">
+                                {if $card.title != ''}
+                                    {image src=$card.image
+                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
+                                        alt="{$card.title|escape:'html'}"
+                                    }
+                                {else}
+                                    {image src=$card.image
+                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
+                                        alt=""
+                                    }
+                                {/if}
+                            </div>
+                        {/if}
+
+                        {if $card.hasText}
+                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBody">
+                                {if $card.showNumber}
+                                    <p class="quiqqer-presentationBricks-scrollPinnedCards__cardNumber"
+                                       aria-hidden="true">{$card.number|escape:'html'}</p>
+                                {/if}
+
+                                {if $card.eyebrow != ''}
+                                    <p class="overline quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow">{$card.eyebrow|escape:'html'}</p>
+                                {/if}
+
+                                {* icon and title share one row, the icon sits left of the
+                                   headline. Without a title the row carries the icon alone. *}
+                                {if $card.hasIcon || $card.title != ''}
+                                    <div class="quiqqer-presentationBricks-scrollPinnedCards__cardHeading">
+                                        {if $card.hasIcon}
+                                            {if $card.iconIsImage}
+                                                <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon">
+                                                    {image src=$card.icon
+                                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardIconImage"
+                                                        alt=""
+                                                    }
+                                                </span>
+                                            {else}
+                                                <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon {$card.icon|escape:'html'}"
+                                                      aria-hidden="true"></span>
+                                            {/if}
+                                        {/if}
+
+                                        {if $card.title != ''}
+                                            <h3 class="quiqqer-presentationBricks-scrollPinnedCards__cardTitle">{$card.title|escape:'html'}</h3>
+                                        {/if}
+                                    </div>
+                                {/if}
+
+                                {if $card.content != ''}
+                                    <div class="quiqqer-presentationBricks-scrollPinnedCards__cardContent">
+                                        {$card.content}
+                                    </div>
+                                {/if}
+
+                                {if $card.hasButton}
+                                    <p class="quiqqer-presentationBricks-scrollPinnedCards__cardAction">
+                                        <a class="{$card.buttonClass|escape:'html'}"
+                                           href="{$card.link|escape:'html'}"
+                                           {if $card.linkTarget == '_blank'}target="_blank"{/if}
+                                           {if $card.linkRel != ''}rel="{$card.linkRel|escape:'html'}"{/if}
+                                           {if $card.buttonAriaLabel != ''}aria-label="{$card.buttonAriaLabel|escape:'html'}"{/if}
+                                           {foreach $card.buttonDataAttributes as $dataAttribute}{$dataAttribute.name|escape:'html'}="{$dataAttribute.value|escape:'html'}" {/foreach}
+                                        >
+                                            {if $card.buttonIcon != '' && $card.buttonIconPosition == 'start'}
+                                                <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
+                                            {/if}
+
+                                            <span class="btn__text">{$card.buttonText|escape:'html'}</span>
+
+                                            {if $card.buttonIcon != '' && $card.buttonIconPosition == 'end'}
+                                                <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
+                                            {/if}
+                                        </a>
+                                    </p>
+                                {/if}
+                            </div>
+                        {/if}
+                    </li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+</div>

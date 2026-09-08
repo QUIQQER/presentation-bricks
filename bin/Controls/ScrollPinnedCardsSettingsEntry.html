@@ -1,0 +1,273 @@
+<form name="quiqqer-presentationBricks-scrollPinnedCards-settings-entry"
+      class="quiqqer-presentationBricks-scrollPinnedCards-settings-entry-form"
+>
+    <table class="data-table data-table-flexbox">
+        <tbody>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldActive}}</span>
+                    <div class="field-container-field" id="activeWrapper"></div>
+                </label>
+                <div class="field-container-item-desc">{{{fieldActiveDesc}}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldLayout}}</span>
+                    <select name="layout" class="field-container-field" data-name="layout">
+                        <option value="content">{{layoutContent}}</option>
+                        <option value="image">{{layoutImage}}</option>
+                        <option value="text-image">{{layoutTextImage}}</option>
+                        <option value="image-text">{{layoutImageText}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldLayoutDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="splitRatioRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldSplitRatio}}</span>
+                    <select name="splitRatio" class="field-container-field">
+                        <option value="50-50">50 / 50</option>
+                        <option value="60-40">60 / 40</option>
+                        <option value="40-60">40 / 60</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldSplitRatioDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="imageRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldImage}}</span>
+                    <input name="image"
+                           value="{{image}}"
+                           class="field-container-field"
+                           data-qui="controls/projects/project/media/Input"
+                           data-qui-options-mediabutton="1"
+                           data-qui-options-selectable_types="image"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImageDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="imageMaxHeightRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldImageMaxHeight}}</span>
+                    <input name="imageMaxHeight" value="{{imageMaxHeight}}" class="field-container-field"
+                           placeholder="z.B. 320"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImageMaxHeightDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="imageFitRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldImageFit}}</span>
+                    <select name="imageFit" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="cover">{{imageFitCover}}</option>
+                        <option value="contain">{{imageFitContain}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImageFitDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="imagePositionRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldImagePosition}}</span>
+                    <select name="imagePosition" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="left top">{{imagePositionLeftTop}}</option>
+                        <option value="top">{{imagePositionTop}}</option>
+                        <option value="right top">{{imagePositionRightTop}}</option>
+                        <option value="left">{{imagePositionLeft}}</option>
+                        <option value="center">{{imagePositionCenter}}</option>
+                        <option value="right">{{imagePositionRight}}</option>
+                        <option value="left bottom">{{imagePositionLeftBottom}}</option>
+                        <option value="bottom">{{imagePositionBottom}}</option>
+                        <option value="right bottom">{{imagePositionRightBottom}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImagePositionDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="iconRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldIcon}}</span>
+                    <input name="icon"
+                           value="{{icon}}"
+                           class="field-container-field"
+                           data-qui="controls/projects/project/media/Input"
+                           data-qui-options-cssclasses="1"
+                           data-qui-options-mediabutton="1"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldIconDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="eyebrowRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldEyebrow}}</span>
+                    <input name="eyebrow" value="{{eyebrow}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldEyebrowDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="titleRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldTitle}}</span>
+                    <input name="title" value="{{title}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldTitleDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="contentRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldContent}}</span>
+                    <input name="content"
+                           class="field-container-field field-content"
+                           data-qui="controls/editors/Input"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldContentDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="buttonTextRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldButtonText}}</span>
+                    <input name="buttonText" value="{{buttonText}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldButtonTextDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="linkRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldLink}}</span>
+                    <input name="link"
+                           value="{{link}}"
+                           class="field-container-field"
+                           data-qui="controls/projects/project/site/Input"
+                           data-external="1"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldLinkDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="linkTargetRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldLinkTarget}}</span>
+                    <select name="linkTarget" class="field-container-field">
+                        <option value="_self">{{linkTargetSelf}}</option>
+                        <option value="_blank">{{linkTargetBlank}}</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr data-name="linkNofollowRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldLinkNofollow}}</span>
+                    <div class="field-container-field" id="linkNofollowWrapper"></div>
+                </label>
+                <div class="field-container-item-desc">{{{fieldLinkNofollowDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="btnTypeRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldBtnType}}</span>
+                    <select name="btnType" class="field-container-field">
+                        <option value="primary">primary</option>
+                        <option value="primary-outline">primary-outline</option>
+                        <option value="secondary">secondary</option>
+                        <option value="secondary-outline">secondary-outline</option>
+                        <option value="success">success</option>
+                        <option value="success-outline">success-outline</option>
+                        <option value="danger">danger</option>
+                        <option value="danger-outline">danger-outline</option>
+                        <option value="warning">warning</option>
+                        <option value="warning-outline">warning-outline</option>
+                        <option value="info">info</option>
+                        <option value="info-outline">info-outline</option>
+                        <option value="dark">dark</option>
+                        <option value="dark-outline">dark-outline</option>
+                        <option value="light">light</option>
+                        <option value="light-outline">light-outline</option>
+                        <option value="white">white</option>
+                        <option value="white-outline">white-outline</option>
+                        <option value="link">link</option>
+                        <option value="link-body">link-body</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldBtnTypeDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="buttonIconRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldButtonIcon}}</span>
+                    <input name="iconClass"
+                           class="field-container-field"
+                           type="text"
+                           data-qui="controls/projects/project/media/Input"
+                           data-qui-options-cssclasses="1"
+                           data-qui-options-mediabutton="0"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldButtonIconDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="buttonIconPositionRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldButtonIconPosition}}</span>
+                    <select name="iconPosition" class="field-container-field">
+                        <option value="start">{{buttonIconPositionStart}}</option>
+                        <option value="end">{{buttonIconPositionEnd}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldButtonIconPositionDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="customClassRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldCustomClass}}</span>
+                    <input name="customClass" value="{{customClass}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldCustomClassDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="ariaLabelRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldAriaLabel}}</span>
+                    <input name="ariaLabel" value="{{ariaLabel}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldAriaLabelDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="dataAttributesRow">
+            <td>
+                <div class="field-container field-container--top">
+                    <span class="field-container-item">{{fieldDataAttributes}}</span>
+                    <div class="field-container-field">
+                        <input type="hidden"
+                               name="dataAttributes"
+                               data-qui="package/quiqqer/components/bin/Controls/DataAttributes"/>
+                    </div>
+                </div>
+                <div class="field-container-item-desc">{{{fieldDataAttributesDesc}}}</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
