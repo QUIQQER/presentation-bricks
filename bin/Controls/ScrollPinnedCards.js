@@ -21,6 +21,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
     const lg = 'quiqqer/presentation-bricks';
     const pinnedClass = 'quiqqer-presentationBricks-scrollPinnedCards--pinned';
+    const restoringClass = 'quiqqer-presentationBricks-scrollPinnedCards--restoring';
 
     // The scroll position is not written to the track directly. Per 60 Hz
     // frame the track covers this share of the distance that is still missing,
@@ -104,6 +105,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             window.addEventListener('resize', this.$onResize);
 
             this.$evaluateMode();
+
+            // whatever the mode turned out to be, the presentation is final
+            // now - the inline script may have held the track back until here
+            this.getElm().classList.remove(restoringClass);
         },
 
         /**
@@ -279,12 +284,21 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
         },
 
         $disablePin: function () {
+            /*
+             * The class is not owned by this control alone: the inline script
+             * in the brick markup already sets it while the document is
+             * parsed, so that a desktop paints the pinned presentation right
+             * away. Dropping it must therefore happen before the $isPinned
+             * guard - on a device that never pins, this method is the only
+             * thing that takes the class off again.
+             */
+            this.getElm().classList.remove(pinnedClass);
+
             if (!this.$isPinned) {
                 return;
             }
 
             this.$isPinned = false;
-            this.getElm().classList.remove(pinnedClass);
 
             if (this.$Counter) {
                 this.$Counter.setAttribute('hidden', 'hidden');

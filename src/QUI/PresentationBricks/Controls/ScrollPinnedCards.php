@@ -18,6 +18,16 @@ use QUI;
  * devices, on narrow viewports, with "prefers-reduced-motion" or with less
  * than two cards the very same markup renders as a plain stack of cards.
  *
+ * Four of those five conditions are answered before any script runs - the
+ * card count here, the three device conditions by the media query in the
+ * stylesheet - so the pinned presentation is already part of the first paint
+ * instead of replacing the stacked one. Only whether a card fits on the
+ * screen needs a measurement, which leaves the frontend control with a veto.
+ *
+ * A card is built from areas: one or two text areas and an image area. Which
+ * of them a card uses is decided by its layout, their inner spacing and
+ * vertical alignment by the section settings, which every card may override.
+ *
  * @package quiqqer/presentation-bricks
  */
 class ScrollPinnedCards extends QUI\Control
@@ -41,20 +51,38 @@ class ScrollPinnedCards extends QUI\Control
      */
     protected const CARD_WIDTH_PRESETS = [
         '60' => '0.6',
+        '65' => '0.65',
         '70' => '0.7',
+        '75' => '0.75',
         '80' => '0.8',
-        '90' => '0.9'
+        '85' => '0.85',
+        '90' => '0.9',
+        '95' => '0.95',
+        '100' => '1'
     ];
 
     /**
      * The preset keys above are numeric strings and therefore stored as
      * integer array keys, so the allowed values are listed separately.
      */
-    protected const CARD_WIDTHS = ['60', '70', '80', '90'];
+    protected const CARD_WIDTHS = ['60', '65', '70', '75', '80', '85', '90', '95', '100'];
 
-    protected const DEFAULT_CARD_WIDTH = '80';
+    protected const DEFAULT_CARD_WIDTH = '90';
 
-    protected const LAYOUTS = ['content', 'image', 'text-image', 'image-text'];
+    /**
+     * Composition of a card. "text" is a single text area, "text-text" two of
+     * them side by side, the remaining values combine a text area with the
+     * image area.
+     */
+    protected const LAYOUTS = ['text', 'image', 'text-image', 'image-text', 'text-text'];
+
+    protected const DEFAULT_LAYOUT = 'text';
+
+    /**
+     * Layouts that place two areas next to each other while the section is
+     * pinned and therefore use the split ratio.
+     */
+    protected const SPLIT_LAYOUTS = ['text-image', 'image-text', 'text-text'];
 
     protected const SPLIT_RATIOS = ['50-50', '60-40', '40-60'];
 
@@ -94,27 +122,64 @@ class ScrollPinnedCards extends QUI\Control
     protected const ICON_POSITIONS = ['start', 'end'];
 
     /**
-     * Where the text block sits inside a card. Only relevant while the section
-     * is pinned: there every card is as tall as the tallest one, so a short
-     * text has room left over.
+     * Where the content of an area sits inside it. Only relevant while the
+     * section is pinned: there every card is as tall as the tallest one, so a
+     * short text - or an image with a limited height - has room left over.
      *
-     * "start-actionEnd" is not a single alignment: the text stays at the top
-     * and only the button is pushed to the lower edge, which lines the buttons
-     * of all cards up. Every preset therefore maps to the two CSS variables
-     * that produce it: the alignment of the text column and the top margin of
-     * the button.
+     * The editor facing values follow the vocabulary of the MultiLayout brick
+     * in quiqqer/bricks, the mapped values are what CSS understands.
      *
-     * @var array<string, array{string, string}>
+     * @var array<string, string>
      */
-    protected const TEXT_POSITION_PRESETS = [
-        'start' => ['start', '0'],
-        'center' => ['center', '0'],
-        'start-actionEnd' => ['start', 'auto']
+    protected const VERTICAL_ALIGN_PRESETS = [
+        'top' => 'start',
+        'center' => 'center',
+        'bottom' => 'end'
     ];
 
-    protected const TEXT_POSITIONS = ['start', 'center', 'start-actionEnd'];
+    protected const VERTICAL_ALIGNS = ['top', 'center', 'bottom'];
 
-    protected const DEFAULT_TEXT_POSITION = 'start';
+    protected const DEFAULT_CONTENT_VERTICAL_ALIGN = 'top';
+
+    protected const DEFAULT_IMAGE_VERTICAL_ALIGN = 'center';
+
+    /**
+     * Vertical part of the object-position an image gets when it is not
+     * cropped: with "contain" nothing is cut off, so the only question left
+     * is where the letterboxed image sits inside its area.
+     *
+     * @var array<string, string>
+     */
+    protected const VERTICAL_ALIGN_OBJECT_POSITIONS = [
+        'top' => 'center top',
+        'center' => 'center center',
+        'bottom' => 'center bottom'
+    ];
+
+    /**
+     * Inner spacing of an area.
+     *
+     * The values grow with the width of the card (cqi - the card is a
+     * container) but are capped by the viewport height as well: while the
+     * section is pinned the padding is the first thing that may cost the
+     * content its space, and a card that outgrows the pinned screen turns the
+     * pin off completely.
+     *
+     * @var array<string, string>
+     */
+    protected const PADDING_PRESETS = [
+        'none' => '0',
+        'small' => 'clamp(0.5rem, min(2cqi, 2vh), 1.5rem)',
+        'normal' => 'clamp(1rem, min(4cqi, 4vh), 3rem)',
+        'large' => 'clamp(1.25rem, min(6cqi, 6vh), 4.5rem)',
+        'extraLarge' => 'clamp(1.5rem, min(8cqi, 8vh), 6rem)'
+    ];
+
+    protected const PADDINGS = ['none', 'small', 'normal', 'large', 'extraLarge'];
+
+    protected const DEFAULT_CONTENT_PADDING = 'normal';
+
+    protected const DEFAULT_IMAGE_PADDING = 'none';
 
     /**
      * How the image fills its area. "cover" crops, "contain" shows the
@@ -124,12 +189,13 @@ class ScrollPinnedCards extends QUI\Control
 
     protected const DEFAULT_IMAGE_FIT = 'cover';
 
-    protected const DEFAULT_IMAGE_POSITION = 'center';
+    protected const DEFAULT_IMAGE_CROP = 'center';
 
     /**
-     * Which part of the image stays visible when it is cropped.
+     * Which part of the image stays visible when it is cropped. Only used
+     * together with "cover" - see buildImageObjectPosition().
      */
-    protected const IMAGE_POSITIONS = [
+    protected const IMAGE_CROPS = [
         'left top',
         'top',
         'right top',
@@ -184,13 +250,17 @@ class ScrollPinnedCards extends QUI\Control
             'class' => 'quiqqer-presentationBricks-scrollPinnedCards qui-content-grid',
             'nodeName' => 'section',
             'entries' => [],
-            'cardWidth' => '80',
+            'cardWidth' => self::DEFAULT_CARD_WIDTH,
             'speed' => 'normal',
-            'textPosition' => self::DEFAULT_TEXT_POSITION,
+            'contentVerticalAlign' => self::DEFAULT_CONTENT_VERTICAL_ALIGN,
+            'contentPadding' => self::DEFAULT_CONTENT_PADDING,
+            'buttonsAligned' => false,
             'showNumbers' => true,
             'imageMaxHeight' => '',
             'imageFit' => self::DEFAULT_IMAGE_FIT,
-            'imagePosition' => self::DEFAULT_IMAGE_POSITION,
+            'imageCrop' => self::DEFAULT_IMAGE_CROP,
+            'imageVerticalAlign' => self::DEFAULT_IMAGE_VERTICAL_ALIGN,
+            'imagePadding' => self::DEFAULT_IMAGE_PADDING,
             'buttonSize' => self::DEFAULT_BUTTON_SIZE,
             'counterMode' => 'inline',
             'counterTarget' => ''
@@ -229,26 +299,41 @@ class ScrollPinnedCards extends QUI\Control
         $this->setCustomVariable('cardCount', (string)count($entries));
         $this->setCustomVariable('cardWidthFactor', self::CARD_WIDTH_PRESETS[$cardWidth]);
         $this->setCustomVariable('speed', self::SPEED_PRESETS[$speed]);
-        $textPosition = self::TEXT_POSITION_PRESETS[
-            $this->normalize('textPosition', self::TEXT_POSITIONS, self::DEFAULT_TEXT_POSITION)
-        ];
 
-        $this->setCustomVariable('textPosition', $textPosition[0]);
-        $this->setCustomVariable('actionMarginTop', $textPosition[1]);
+        // section wide area defaults; a card only overrides what it sets itself
+        $this->setCustomVariable(
+            'contentVerticalAlign',
+            self::VERTICAL_ALIGN_PRESETS[$this->getSectionContentVerticalAlign()]
+        );
+        $this->setCustomVariable(
+            'contentPadding',
+            self::PADDING_PRESETS[$this->getSectionContentPadding()]
+        );
+        $this->setCustomVariable(
+            'imageVerticalAlign',
+            self::VERTICAL_ALIGN_PRESETS[$this->getSectionImageVerticalAlign()]
+        );
+        $this->setCustomVariable(
+            'imagePadding',
+            self::PADDING_PRESETS[$this->getSectionImagePadding()]
+        );
 
-        // section wide image defaults; a card only overrides what it sets itself
+        /*
+         * "Buttons of all cards on one line" is a growing wrapper around the
+         * text: it eats the free space of the card and pushes the button to
+         * the lower edge. Switched off the wrapper keeps its content height
+         * and the button stays directly below the text.
+         */
+        $this->setCustomVariable(
+            'bodyGrow',
+            $this->getAttribute('buttonsAligned') ? '1' : '0'
+        );
+
         $this->setCustomVariable(
             'imageMaxHeight',
             $this->sanitizeCssLength((string)$this->getAttribute('imageMaxHeight'))
         );
-        $this->setCustomVariable(
-            'imageFit',
-            $this->normalize('imageFit', self::IMAGE_FITS, self::DEFAULT_IMAGE_FIT)
-        );
-        $this->setCustomVariable(
-            'imagePosition',
-            $this->normalize('imagePosition', self::IMAGE_POSITIONS, self::DEFAULT_IMAGE_POSITION)
-        );
+        $this->setCustomVariable('imageFit', $this->getSectionImageFit());
 
         $this->setJavaScriptControl('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards');
         $this->setJavaScriptControlOption('countermode', $counterMode);
@@ -262,6 +347,9 @@ class ScrollPinnedCards extends QUI\Control
             'this' => $this,
             'cards' => $this->buildCards($entries),
             'showCounter' => $counterMode !== 'hidden',
+            // the one pin condition the server can answer on its own; the
+            // template turns it into the class the stylesheet gates on
+            'mayPin' => count($entries) >= self::MIN_PIN_CARDS,
             'counterTotal' => $this->formatNumber(count($entries))
         ]);
 
@@ -307,38 +395,59 @@ class ScrollPinnedCards extends QUI\Control
      * coming from older or hand written data are normalized here as well,
      * the backend editor is not a trust boundary.
      *
+     * An empty string in one of the override fields means "use the section
+     * setting" - it is not a valid value of its own.
+     *
      * @param array<string, mixed> $entry
      *
      * @return array<string, mixed>
      */
     protected function normalizeEntry(array $entry): array
     {
-        $layout = (string)($entry['layout'] ?? 'content');
+        $layout = (string)($entry['layout'] ?? self::DEFAULT_LAYOUT);
         $splitRatio = (string)($entry['splitRatio'] ?? '50-50');
         $btnType = (string)($entry['btnType'] ?? 'primary');
         $linkTarget = (string)($entry['linkTarget'] ?? '_self');
-        $iconPosition = (string)($entry['iconPosition'] ?? 'start');
+        $buttonIconPosition = (string)($entry['buttonIconPosition'] ?? 'start');
         $imageFit = (string)($entry['imageFit'] ?? '');
-        $imagePosition = (string)($entry['imagePosition'] ?? '');
+        $imageCrop = (string)($entry['imageCrop'] ?? '');
+        $imageVerticalAlign = (string)($entry['imageVerticalAlign'] ?? '');
+        $imagePadding = (string)($entry['imagePadding'] ?? '');
+        $contentPrimaryPadding = (string)($entry['contentPrimaryPadding'] ?? '');
+        $contentSecondaryPadding = (string)($entry['contentSecondaryPadding'] ?? '');
 
         return [
-            'layout' => in_array($layout, self::LAYOUTS, true) ? $layout : 'content',
+            'layout' => in_array($layout, self::LAYOUTS, true) ? $layout : self::DEFAULT_LAYOUT,
             'splitRatio' => in_array($splitRatio, self::SPLIT_RATIOS, true) ? $splitRatio : '50-50',
-            'icon' => trim((string)($entry['icon'] ?? '')),
+            'cardIcon' => trim((string)($entry['cardIcon'] ?? '')),
             'eyebrow' => trim((string)($entry['eyebrow'] ?? '')),
             'title' => trim((string)($entry['title'] ?? '')),
             'image' => trim((string)($entry['image'] ?? '')),
             'imageMaxHeight' => $this->sanitizeCssLength((string)($entry['imageMaxHeight'] ?? '')),
             'imageFit' => in_array($imageFit, self::IMAGE_FITS, true) ? $imageFit : '',
-            'imagePosition' => in_array($imagePosition, self::IMAGE_POSITIONS, true) ? $imagePosition : '',
-            'content' => (string)($entry['content'] ?? ''),
+            'imageCrop' => in_array($imageCrop, self::IMAGE_CROPS, true) ? $imageCrop : '',
+            'imageVerticalAlign' => in_array($imageVerticalAlign, self::VERTICAL_ALIGNS, true)
+                ? $imageVerticalAlign
+                : '',
+            'imagePadding' => in_array($imagePadding, self::PADDINGS, true) ? $imagePadding : '',
+            'contentPrimary' => (string)($entry['contentPrimary'] ?? ''),
+            'contentSecondary' => (string)($entry['contentSecondary'] ?? ''),
+            'contentPrimaryPadding' => in_array($contentPrimaryPadding, self::PADDINGS, true)
+                ? $contentPrimaryPadding
+                : '',
+            'contentSecondaryPadding' => in_array($contentSecondaryPadding, self::PADDINGS, true)
+                ? $contentSecondaryPadding
+                : '',
             'buttonText' => trim((string)($entry['buttonText'] ?? '')),
             'btnType' => in_array($btnType, self::BUTTON_TYPES, true) ? $btnType : 'primary',
-            'iconClass' => trim((string)($entry['iconClass'] ?? '')),
-            'iconPosition' => in_array($iconPosition, self::ICON_POSITIONS, true) ? $iconPosition : 'start',
-            'customClass' => $this->normalizeCustomClass($entry['customClass'] ?? ''),
-            'ariaLabel' => trim((string)($entry['ariaLabel'] ?? '')),
-            'dataAttributes' => $this->normalizeDataAttributes($entry['dataAttributes'] ?? []),
+            'buttonIcon' => trim((string)($entry['buttonIcon'] ?? '')),
+            'buttonIconPosition' => in_array($buttonIconPosition, self::ICON_POSITIONS, true)
+                ? $buttonIconPosition
+                : 'start',
+            'buttonClass' => $this->normalizeCustomClass($entry['buttonClass'] ?? ''),
+            'cardClass' => $this->normalizeCustomClass($entry['cardClass'] ?? ''),
+            'buttonAriaLabel' => trim((string)($entry['buttonAriaLabel'] ?? '')),
+            'buttonDataAttributes' => $this->normalizeDataAttributes($entry['buttonDataAttributes'] ?? []),
             'link' => $this->normalizeLink($entry['link'] ?? ''),
             'linkTarget' => in_array($linkTarget, self::LINK_TARGETS, true) ? $linkTarget : '_self',
             'linkNofollow' => !empty($entry['linkNofollow'])
@@ -367,8 +476,10 @@ class ScrollPinnedCards extends QUI\Control
             $position++;
 
             $layout = (string)$entry['layout'];
-            $isSplit = $layout === 'text-image' || $layout === 'image-text';
-            $hasMedia = $entry['image'] !== '' && ($layout === 'image' || $isSplit);
+            $isSplit = in_array($layout, self::SPLIT_LAYOUTS, true);
+            $hasSecondary = $layout === 'text-text';
+            $hasMedia = $entry['image'] !== ''
+                && in_array($layout, ['image', 'text-image', 'image-text'], true);
             $hasText = $layout !== 'image';
             $hasLink = $entry['link'] !== '';
             $buttonText = $entry['buttonText'] !== '' ? $entry['buttonText'] : $defaultButtonText;
@@ -376,25 +487,37 @@ class ScrollPinnedCards extends QUI\Control
             $cards[] = [
                 'layout' => $layout,
                 'splitRatio' => $isSplit ? (string)$entry['splitRatio'] : '',
+                'cardClass' => $entry['cardClass'],
                 'number' => $this->formatNumber($position),
                 'showNumber' => $showNumbers && $hasText,
                 'hasMedia' => $hasMedia,
                 'image' => $entry['image'],
                 'cardStyle' => $this->buildCardStyle($entry),
+                'mediaStyle' => $this->buildAreaStyle('--_imagePadding', (string)$entry['imagePadding']),
                 'hasText' => $hasText,
-                'icon' => $entry['icon'],
-                'hasIcon' => $entry['icon'] !== '',
-                'iconIsImage' => QUI\Projects\Media\Utils::isMediaUrl($entry['icon']),
+                'primaryStyle' => $this->buildAreaStyle(
+                    '--_contentPadding',
+                    (string)$entry['contentPrimaryPadding']
+                ),
+                'hasSecondary' => $hasSecondary,
+                'contentSecondary' => $entry['contentSecondary'],
+                'secondaryStyle' => $this->buildAreaStyle(
+                    '--_contentPadding',
+                    (string)$entry['contentSecondaryPadding']
+                ),
+                'icon' => $entry['cardIcon'],
+                'hasIcon' => $entry['cardIcon'] !== '',
+                'iconIsImage' => QUI\Projects\Media\Utils::isMediaUrl($entry['cardIcon']),
                 'eyebrow' => $entry['eyebrow'],
                 'title' => $entry['title'],
-                'content' => $entry['content'],
+                'content' => $entry['contentPrimary'],
                 'hasButton' => $hasLink,
                 'buttonText' => $buttonText,
                 'buttonClass' => $this->buildButtonClass($entry),
-                'buttonIcon' => $entry['iconClass'],
-                'buttonIconPosition' => $entry['iconPosition'],
-                'buttonAriaLabel' => $entry['ariaLabel'],
-                'buttonDataAttributes' => $entry['dataAttributes'],
+                'buttonIcon' => $entry['buttonIcon'],
+                'buttonIconPosition' => $entry['buttonIconPosition'],
+                'buttonAriaLabel' => $entry['buttonAriaLabel'],
+                'buttonDataAttributes' => $entry['buttonDataAttributes'],
                 'link' => $entry['link'],
                 'linkTarget' => $entry['linkTarget'],
                 'linkRel' => $this->buildLinkRel($entry)
@@ -409,11 +532,15 @@ class ScrollPinnedCards extends QUI\Control
      * written as entry level CSS variables. Everything it leaves empty falls
      * through to the section wide setting in the stylesheet.
      *
+     * The object position is the exception: it is always written, because it
+     * is not a stored value but the result of fit, crop and alignment - see
+     * buildImageObjectPosition().
+     *
      * @param array<string, mixed> $entry
      */
     protected function buildCardStyle(array $entry): string
     {
-        $declarations = [];
+        $declarations = ['--_q-entry-imageObjectPosition: ' . $this->buildImageObjectPosition($entry)];
 
         if ($entry['imageMaxHeight'] !== '') {
             $declarations[] = '--_q-entry-imageMaxHeight: ' . $entry['imageMaxHeight'];
@@ -423,15 +550,91 @@ class ScrollPinnedCards extends QUI\Control
             $declarations[] = '--_q-entry-imageFit: ' . $entry['imageFit'];
         }
 
-        if ($entry['imagePosition'] !== '') {
-            $declarations[] = '--_q-entry-imagePosition: ' . $entry['imagePosition'];
-        }
-
-        if ($declarations === []) {
-            return '';
+        if ($entry['imageVerticalAlign'] !== '') {
+            $declarations[] = '--_q-entry-imageVerticalAlign: '
+                . self::VERTICAL_ALIGN_PRESETS[$entry['imageVerticalAlign']];
         }
 
         return htmlspecialchars(implode('; ', $declarations), ENT_QUOTES);
+    }
+
+    /**
+     * Inner spacing of a single area, written directly onto the area element:
+     * the two text areas of one card can differ, so the value cannot live on
+     * the card. An empty override produces no declaration at all and the
+     * area inherits the section setting from the card.
+     */
+    protected function buildAreaStyle(string $variable, string $padding): string
+    {
+        if ($padding === '' || !array_key_exists($padding, self::PADDING_PRESETS)) {
+            return '';
+        }
+
+        return htmlspecialchars($variable . ': ' . self::PADDING_PRESETS[$padding], ENT_QUOTES);
+    }
+
+    /**
+     * Vertical placement of the image inside its area.
+     *
+     * Both settings that could govern it own exactly one fit mode: with
+     * "cover" the image is cut off, so the crop decides which part survives.
+     * With "contain" nothing is cut off - the image is letterboxed inside the
+     * area, and the only open question is whether it sits at the top, in the
+     * middle or at the bottom, which is what the vertical alignment answers.
+     *
+     * @param array<string, mixed> $entry
+     */
+    protected function buildImageObjectPosition(array $entry): string
+    {
+        $fit = $entry['imageFit'] !== '' ? (string)$entry['imageFit'] : $this->getSectionImageFit();
+
+        if ($fit === 'contain') {
+            $align = $entry['imageVerticalAlign'] !== ''
+                ? (string)$entry['imageVerticalAlign']
+                : $this->getSectionImageVerticalAlign();
+
+            return self::VERTICAL_ALIGN_OBJECT_POSITIONS[$align];
+        }
+
+        return $entry['imageCrop'] !== '' ? (string)$entry['imageCrop'] : $this->getSectionImageCrop();
+    }
+
+    protected function getSectionImageFit(): string
+    {
+        return $this->normalize('imageFit', self::IMAGE_FITS, self::DEFAULT_IMAGE_FIT);
+    }
+
+    protected function getSectionImageCrop(): string
+    {
+        return $this->normalize('imageCrop', self::IMAGE_CROPS, self::DEFAULT_IMAGE_CROP);
+    }
+
+    protected function getSectionImageVerticalAlign(): string
+    {
+        return $this->normalize(
+            'imageVerticalAlign',
+            self::VERTICAL_ALIGNS,
+            self::DEFAULT_IMAGE_VERTICAL_ALIGN
+        );
+    }
+
+    protected function getSectionContentVerticalAlign(): string
+    {
+        return $this->normalize(
+            'contentVerticalAlign',
+            self::VERTICAL_ALIGNS,
+            self::DEFAULT_CONTENT_VERTICAL_ALIGN
+        );
+    }
+
+    protected function getSectionContentPadding(): string
+    {
+        return $this->normalize('contentPadding', self::PADDINGS, self::DEFAULT_CONTENT_PADDING);
+    }
+
+    protected function getSectionImagePadding(): string
+    {
+        return $this->normalize('imagePadding', self::PADDINGS, self::DEFAULT_IMAGE_PADDING);
     }
 
     /**
@@ -473,7 +676,7 @@ class ScrollPinnedCards extends QUI\Control
             'btn-' . $entry['btnType'],
             self::BUTTON_SIZES[$size],
             'quiqqer-presentationBricks-scrollPinnedCards__cardButton',
-            (string)$entry['customClass']
+            (string)$entry['buttonClass']
         ];
 
         return implode(' ', array_filter($classes, static fn(string $class): bool => $class !== ''));

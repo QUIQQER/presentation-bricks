@@ -31,12 +31,15 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
     const lg = 'quiqqer/presentation-bricks';
     const prefix = 'brick.scrollPinnedCards.entries.';
 
-    const layouts = ['content', 'image', 'text-image', 'image-text'];
-    const splitLayouts = ['text-image', 'image-text'];
+    const layouts = ['text', 'image', 'text-image', 'image-text', 'text-text'];
+    const splitLayouts = ['text-image', 'image-text', 'text-text'];
+    const imageLayouts = ['image', 'text-image', 'image-text'];
     const splitRatios = ['50-50', '60-40', '40-60'];
     const iconPositions = ['start', 'end'];
     const imageFits = ['cover', 'contain'];
-    const imagePositions = [
+    const verticalAligns = ['top', 'center', 'bottom'];
+    const paddings = ['none', 'small', 'normal', 'large', 'extraLarge'];
+    const imageCrops = [
         'left top',
         'top',
         'right top',
@@ -240,38 +243,23 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
             this.$data.each(function (entry, index) {
                 entry = this.$normalizeEntry(entry);
 
-                data.push({
-                    disabledDisplay: new QUISwitch({
-                        status: !entry.disabled,
-                        name: index,
-                        uid: index,
-                        events: {
-                            onChange: this.$toggleEntryStatus
-                        }
-                    }),
-                    disabled: entry.disabled,
-                    layout: entry.layout,
-                    layoutDisplay: QUILocale.get(lg, prefix + 'layout.' + this.$layoutLocaleKey(entry.layout)),
-                    splitRatio: entry.splitRatio,
-                    icon: entry.icon,
-                    eyebrow: entry.eyebrow,
-                    title: entry.title,
-                    image: entry.image,
-                    content: entry.content,
-                    buttonText: entry.buttonText,
-                    link: entry.link,
-                    linkTarget: entry.linkTarget,
-                    linkNofollow: entry.linkNofollow,
-                    btnType: entry.btnType,
-                    imageMaxHeight: entry.imageMaxHeight,
-                    imageFit: entry.imageFit,
-                    imagePosition: entry.imagePosition,
-                    iconClass: entry.iconClass,
-                    iconPosition: entry.iconPosition,
-                    customClass: entry.customClass,
-                    ariaLabel: entry.ariaLabel,
-                    dataAttributes: entry.dataAttributes
+                const row = Object.merge({}, entry);
+
+                row.disabledDisplay = new QUISwitch({
+                    status: !entry.disabled,
+                    name: index,
+                    uid: index,
+                    events: {
+                        onChange: this.$toggleEntryStatus
+                    }
                 });
+
+                row.layoutDisplay = QUILocale.get(
+                    lg,
+                    prefix + 'layout.' + this.$layoutLocaleKey(entry.layout)
+                );
+
+                data.push(row);
             }.bind(this));
 
             this.$Grid.setData({
@@ -415,9 +403,22 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
             }.bind(this));
         },
 
+        /**
+         * A brand new card starts as text next to an image, split evenly -
+         * the most common composition. The fallback of $normalizeEntry stays
+         * the single text area: it has to be the most robust value, not the
+         * most frequent one.
+         */
+        $newEntryDefaults: function () {
+            return {
+                layout: 'text-image',
+                splitRatio: '50-50'
+            };
+        },
+
         $createDialog: function (initial) {
             const self = this;
-            const entry = this.$normalizeEntry(initial || {});
+            const entry = this.$normalizeEntry(initial || this.$newEntryDefaults());
 
             return Promise.resolve(new QUIConfirm({
                 title: QUILocale.get(lg, prefix + 'adddialog.title'),
@@ -438,10 +439,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                                 fieldActiveDesc: QUILocale.get(lg, prefix + 'active.desc'),
                                 fieldLayout: QUILocale.get(lg, prefix + 'layout'),
                                 fieldLayoutDesc: QUILocale.get(lg, prefix + 'layout.desc'),
-                                layoutContent: QUILocale.get(lg, prefix + 'layout.content'),
+                                layoutText: QUILocale.get(lg, prefix + 'layout.text'),
                                 layoutImage: QUILocale.get(lg, prefix + 'layout.image'),
                                 layoutTextImage: QUILocale.get(lg, prefix + 'layout.textImage'),
                                 layoutImageText: QUILocale.get(lg, prefix + 'layout.imageText'),
+                                layoutTextText: QUILocale.get(lg, prefix + 'layout.textText'),
                                 fieldSplitRatio: QUILocale.get(lg, prefix + 'splitRatio'),
                                 fieldSplitRatioDesc: QUILocale.get(lg, prefix + 'splitRatio.desc'),
                                 fieldImage: QUILocale.get(lg, prefix + 'image'),
@@ -453,25 +455,43 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                                 fieldImageFitDesc: QUILocale.get(lg, prefix + 'imageFit.desc'),
                                 imageFitCover: QUILocale.get(lg, prefix + 'imageFit.cover'),
                                 imageFitContain: QUILocale.get(lg, prefix + 'imageFit.contain'),
-                                fieldImagePosition: QUILocale.get(lg, prefix + 'imagePosition'),
-                                fieldImagePositionDesc: QUILocale.get(lg, prefix + 'imagePosition.desc'),
-                                imagePositionLeftTop: QUILocale.get(lg, prefix + 'imagePosition.leftTop'),
-                                imagePositionTop: QUILocale.get(lg, prefix + 'imagePosition.top'),
-                                imagePositionRightTop: QUILocale.get(lg, prefix + 'imagePosition.rightTop'),
-                                imagePositionLeft: QUILocale.get(lg, prefix + 'imagePosition.left'),
-                                imagePositionCenter: QUILocale.get(lg, prefix + 'imagePosition.center'),
-                                imagePositionRight: QUILocale.get(lg, prefix + 'imagePosition.right'),
-                                imagePositionLeftBottom: QUILocale.get(lg, prefix + 'imagePosition.leftBottom'),
-                                imagePositionBottom: QUILocale.get(lg, prefix + 'imagePosition.bottom'),
-                                imagePositionRightBottom: QUILocale.get(lg, prefix + 'imagePosition.rightBottom'),
-                                fieldIcon: QUILocale.get(lg, prefix + 'icon'),
-                                fieldIconDesc: QUILocale.get(lg, prefix + 'icon.desc'),
+                                fieldImageCrop: QUILocale.get(lg, prefix + 'imageCrop'),
+                                fieldImageCropDesc: QUILocale.get(lg, prefix + 'imageCrop.desc'),
+                                imageCropLeftTop: QUILocale.get(lg, prefix + 'imageCrop.leftTop'),
+                                imageCropTop: QUILocale.get(lg, prefix + 'imageCrop.top'),
+                                imageCropRightTop: QUILocale.get(lg, prefix + 'imageCrop.rightTop'),
+                                imageCropLeft: QUILocale.get(lg, prefix + 'imageCrop.left'),
+                                imageCropCenter: QUILocale.get(lg, prefix + 'imageCrop.center'),
+                                imageCropRight: QUILocale.get(lg, prefix + 'imageCrop.right'),
+                                imageCropLeftBottom: QUILocale.get(lg, prefix + 'imageCrop.leftBottom'),
+                                imageCropBottom: QUILocale.get(lg, prefix + 'imageCrop.bottom'),
+                                imageCropRightBottom: QUILocale.get(lg, prefix + 'imageCrop.rightBottom'),
+                                fieldImageVerticalAlign: QUILocale.get(lg, prefix + 'imageVerticalAlign'),
+                                fieldImageVerticalAlignDesc: QUILocale.get(lg, prefix + 'imageVerticalAlign.desc'),
+                                verticalAlignTop: QUILocale.get(lg, prefix + 'verticalAlign.top'),
+                                verticalAlignCenter: QUILocale.get(lg, prefix + 'verticalAlign.center'),
+                                verticalAlignBottom: QUILocale.get(lg, prefix + 'verticalAlign.bottom'),
+                                fieldImagePadding: QUILocale.get(lg, prefix + 'imagePadding'),
+                                fieldImagePaddingDesc: QUILocale.get(lg, prefix + 'imagePadding.desc'),
+                                paddingNone: QUILocale.get(lg, prefix + 'padding.none'),
+                                paddingSmall: QUILocale.get(lg, prefix + 'padding.small'),
+                                paddingNormal: QUILocale.get(lg, prefix + 'padding.normal'),
+                                paddingLarge: QUILocale.get(lg, prefix + 'padding.large'),
+                                paddingExtraLarge: QUILocale.get(lg, prefix + 'padding.extraLarge'),
+                                fieldCardIcon: QUILocale.get(lg, prefix + 'cardIcon'),
+                                fieldCardIconDesc: QUILocale.get(lg, prefix + 'cardIcon.desc'),
                                 fieldEyebrow: QUILocale.get(lg, prefix + 'eyebrow'),
                                 fieldEyebrowDesc: QUILocale.get(lg, prefix + 'eyebrow.desc'),
                                 fieldTitle: QUILocale.get(lg, prefix + 'title'),
                                 fieldTitleDesc: QUILocale.get(lg, prefix + 'title.desc'),
-                                fieldContent: QUILocale.get(lg, prefix + 'content'),
-                                fieldContentDesc: QUILocale.get(lg, prefix + 'content.desc'),
+                                fieldContentPrimary: QUILocale.get(lg, prefix + 'contentPrimary'),
+                                fieldContentPrimaryDesc: QUILocale.get(lg, prefix + 'contentPrimary.desc'),
+                                fieldContentPrimaryPadding: QUILocale.get(lg, prefix + 'contentPrimaryPadding'),
+                                fieldContentPrimaryPaddingDesc: QUILocale.get(lg, prefix + 'contentPrimaryPadding.desc'),
+                                fieldContentSecondary: QUILocale.get(lg, prefix + 'contentSecondary'),
+                                fieldContentSecondaryDesc: QUILocale.get(lg, prefix + 'contentSecondary.desc'),
+                                fieldContentSecondaryPadding: QUILocale.get(lg, prefix + 'contentSecondaryPadding'),
+                                fieldContentSecondaryPaddingDesc: QUILocale.get(lg, prefix + 'contentSecondaryPadding.desc'),
                                 fieldButtonText: QUILocale.get(lg, prefix + 'buttonText'),
                                 fieldButtonTextDesc: QUILocale.get(lg, prefix + 'buttonText.desc'),
                                 fieldLink: QUILocale.get(lg, prefix + 'link'),
@@ -489,17 +509,20 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                                 fieldButtonIconPositionDesc: QUILocale.get(lg, prefix + 'buttonIconPosition.desc'),
                                 buttonIconPositionStart: QUILocale.get(lg, prefix + 'buttonIconPosition.start'),
                                 buttonIconPositionEnd: QUILocale.get(lg, prefix + 'buttonIconPosition.end'),
-                                fieldCustomClass: QUILocale.get(lg, prefix + 'customClass'),
-                                fieldCustomClassDesc: QUILocale.get(lg, prefix + 'customClass.desc'),
-                                fieldAriaLabel: QUILocale.get(lg, prefix + 'ariaLabel'),
-                                fieldAriaLabelDesc: QUILocale.get(lg, prefix + 'ariaLabel.desc'),
-                                fieldDataAttributes: QUILocale.get(lg, prefix + 'dataAttributes'),
-                                fieldDataAttributesDesc: QUILocale.get(lg, prefix + 'dataAttributes.desc'),
+                                fieldCardClass: QUILocale.get(lg, prefix + 'cardClass'),
+                                fieldCardClassDesc: QUILocale.get(lg, prefix + 'cardClass.desc'),
+                                fieldButtonClass: QUILocale.get(lg, prefix + 'buttonClass'),
+                                fieldButtonClassDesc: QUILocale.get(lg, prefix + 'buttonClass.desc'),
+                                fieldButtonAriaLabel: QUILocale.get(lg, prefix + 'buttonAriaLabel'),
+                                fieldButtonAriaLabelDesc: QUILocale.get(lg, prefix + 'buttonAriaLabel.desc'),
+                                fieldButtonDataAttributes: QUILocale.get(lg, prefix + 'buttonDataAttributes'),
+                                fieldButtonDataAttributesDesc: QUILocale.get(lg, prefix + 'buttonDataAttributes.desc'),
                                 image: entry.image,
                                 imageMaxHeight: entry.imageMaxHeight,
-                                icon: entry.icon,
-                                customClass: entry.customClass,
-                                ariaLabel: entry.ariaLabel,
+                                cardIcon: entry.cardIcon,
+                                cardClass: entry.cardClass,
+                                buttonClass: entry.buttonClass,
+                                buttonAriaLabel: entry.buttonAriaLabel,
                                 eyebrow: entry.eyebrow,
                                 title: entry.title,
                                 buttonText: entry.buttonText,
@@ -513,14 +536,21 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                         Form.elements.splitRatio.value = entry.splitRatio;
                         Form.elements.linkTarget.value = entry.linkTarget;
                         Form.elements.btnType.value = entry.btnType;
-                        Form.elements.content.value = entry.content;
+                        Form.elements.contentPrimary.value = entry.contentPrimary;
+                        Form.elements.contentSecondary.value = entry.contentSecondary;
+                        Form.elements.contentPrimaryPadding.value = entry.contentPrimaryPadding;
+                        Form.elements.contentSecondaryPadding.value = entry.contentSecondaryPadding;
                         Form.elements.imageFit.value = entry.imageFit;
-                        Form.elements.imagePosition.value = entry.imagePosition;
-                        Form.elements.iconClass.value = entry.iconClass;
-                        Form.elements.iconPosition.value = entry.iconPosition;
+                        Form.elements.imageCrop.value = entry.imageCrop;
+                        Form.elements.imageVerticalAlign.value = entry.imageVerticalAlign;
+                        Form.elements.imagePadding.value = entry.imagePadding;
+                        Form.elements.buttonIcon.value = entry.buttonIcon;
+                        Form.elements.buttonIconPosition.value = entry.buttonIconPosition;
 
-                        Container.getElement('.field-content').getParent().setStyles({
-                            height: 260
+                        Container.getElements('.field-content').each(function (Field) {
+                            Field.getParent().setStyles({
+                                height: 260
+                            });
                         });
 
                         Win.ActiveSwitch = new QUISwitch({
@@ -542,12 +572,13 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                                 }
                             });
 
-                            Form.elements.content.fireEvent('change');
+                            Form.elements.contentPrimary.fireEvent('change');
+                            Form.elements.contentSecondary.fireEvent('change');
 
                             const DataAttributes = self.$getDataAttributesControl(Container);
 
                             if (DataAttributes) {
-                                DataAttributes.setValue(entry.dataAttributes);
+                                DataAttributes.setValue(entry.buttonDataAttributes);
                             }
 
                             self.$bindDialogBehavior(Container);
@@ -568,20 +599,36 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
             const updateVisibility = function () {
                 const layout = LayoutField.value;
                 const hasText = layout !== 'image';
-                const hasImage = layout !== 'content';
+                const hasImage = imageLayouts.contains(layout);
+                const hasSecondary = layout === 'text-text';
                 const isSplit = splitLayouts.contains(layout);
 
                 this.$toggleRow(Container, 'splitRatioRow', isSplit);
 
-                ['imageRow', 'imageMaxHeightRow', 'imageFitRow', 'imagePositionRow'].forEach(function (name) {
+                [
+                    'imageRow',
+                    'imageMaxHeightRow',
+                    'imageFitRow',
+                    'imageCropRow',
+                    'imageVerticalAlignRow',
+                    'imagePaddingRow'
+                ].forEach(function (name) {
                     this.$toggleRow(Container, name, hasImage);
                 }.bind(this));
 
                 [
-                    'iconRow',
+                    'contentSecondaryRow',
+                    'contentSecondaryPaddingRow'
+                ].forEach(function (name) {
+                    this.$toggleRow(Container, name, hasSecondary);
+                }.bind(this));
+
+                [
+                    'cardIconRow',
                     'eyebrowRow',
                     'titleRow',
-                    'contentRow',
+                    'contentPrimaryRow',
+                    'contentPrimaryPaddingRow',
                     'buttonTextRow',
                     'linkRow',
                     'linkTargetRow',
@@ -589,9 +636,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                     'btnTypeRow',
                     'buttonIconRow',
                     'buttonIconPositionRow',
-                    'customClassRow',
-                    'ariaLabelRow',
-                    'dataAttributesRow'
+                    'buttonClassRow',
+                    'buttonAriaLabelRow',
+                    'buttonDataAttributesRow'
                 ].forEach(function (name) {
                     this.$toggleRow(Container, name, hasText);
                 }.bind(this));
@@ -622,21 +669,27 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                 image: Form.elements.image.value,
                 imageMaxHeight: Form.elements.imageMaxHeight.value,
                 imageFit: Form.elements.imageFit.value,
-                imagePosition: Form.elements.imagePosition.value,
-                icon: Form.elements.icon.value,
+                imageCrop: Form.elements.imageCrop.value,
+                imageVerticalAlign: Form.elements.imageVerticalAlign.value,
+                imagePadding: Form.elements.imagePadding.value,
+                cardIcon: Form.elements.cardIcon.value,
                 eyebrow: Form.elements.eyebrow.value,
                 title: Form.elements.title.value,
-                content: Form.elements.content.value,
+                contentPrimary: Form.elements.contentPrimary.value,
+                contentPrimaryPadding: Form.elements.contentPrimaryPadding.value,
+                contentSecondary: Form.elements.contentSecondary.value,
+                contentSecondaryPadding: Form.elements.contentSecondaryPadding.value,
                 buttonText: Form.elements.buttonText.value,
                 link: Form.elements.link.value,
                 linkTarget: Form.elements.linkTarget.value,
                 linkNofollow: Dialog.NofollowSwitch.getStatus(),
                 btnType: Form.elements.btnType.value,
-                iconClass: Form.elements.iconClass.value,
-                iconPosition: Form.elements.iconPosition.value,
-                customClass: Form.elements.customClass.value,
-                ariaLabel: Form.elements.ariaLabel.value,
-                dataAttributes: DataAttributes ? DataAttributes.getValue() : []
+                buttonIcon: Form.elements.buttonIcon.value,
+                buttonIconPosition: Form.elements.buttonIconPosition.value,
+                cardClass: Form.elements.cardClass.value,
+                buttonClass: Form.elements.buttonClass.value,
+                buttonAriaLabel: Form.elements.buttonAriaLabel.value,
+                buttonDataAttributes: DataAttributes ? DataAttributes.getValue() : []
             };
         },
 
@@ -654,34 +707,54 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
         },
 
         /**
-         * Recover from empty, partial and legacy entry data. The same schema
-         * is normalized again in PHP.
+         * Recover from empty and partial entry data. The same schema is
+         * normalized again in PHP.
+         *
+         * An empty string in one of the override fields means "use the
+         * section setting", so it is kept as is instead of being replaced by
+         * a default.
          */
         $normalizeEntry: function (entry) {
             entry = entry || {};
 
             return {
                 disabled: !!(entry.disabled || entry.isDisabled),
-                layout: layouts.contains(entry.layout) ? entry.layout : 'content',
+                layout: layouts.contains(entry.layout) ? entry.layout : 'text',
                 splitRatio: splitRatios.contains(entry.splitRatio) ? entry.splitRatio : '50-50',
                 image: entry.image || '',
                 imageMaxHeight: entry.imageMaxHeight || '',
                 imageFit: imageFits.contains(entry.imageFit) ? entry.imageFit : '',
-                imagePosition: imagePositions.contains(entry.imagePosition) ? entry.imagePosition : '',
-                icon: entry.icon || '',
+                imageCrop: imageCrops.contains(entry.imageCrop) ? entry.imageCrop : '',
+                imageVerticalAlign: verticalAligns.contains(entry.imageVerticalAlign)
+                    ? entry.imageVerticalAlign
+                    : '',
+                imagePadding: paddings.contains(entry.imagePadding) ? entry.imagePadding : '',
+                cardIcon: entry.cardIcon || '',
                 eyebrow: entry.eyebrow || '',
                 title: entry.title || '',
-                content: entry.content || '',
+                contentPrimary: entry.contentPrimary || '',
+                contentPrimaryPadding: paddings.contains(entry.contentPrimaryPadding)
+                    ? entry.contentPrimaryPadding
+                    : '',
+                contentSecondary: entry.contentSecondary || '',
+                contentSecondaryPadding: paddings.contains(entry.contentSecondaryPadding)
+                    ? entry.contentSecondaryPadding
+                    : '',
                 buttonText: entry.buttonText || '',
                 link: entry.link || '',
                 linkTarget: entry.linkTarget === '_blank' ? '_blank' : '_self',
                 linkNofollow: !!entry.linkNofollow,
                 btnType: buttonTypes.contains(entry.btnType) ? entry.btnType : 'primary',
-                iconClass: entry.iconClass || '',
-                iconPosition: iconPositions.contains(entry.iconPosition) ? entry.iconPosition : 'start',
-                customClass: entry.customClass || '',
-                ariaLabel: entry.ariaLabel || '',
-                dataAttributes: Array.isArray(entry.dataAttributes) ? entry.dataAttributes : []
+                buttonIcon: entry.buttonIcon || '',
+                buttonIconPosition: iconPositions.contains(entry.buttonIconPosition)
+                    ? entry.buttonIconPosition
+                    : 'start',
+                cardClass: entry.cardClass || '',
+                buttonClass: entry.buttonClass || '',
+                buttonAriaLabel: entry.buttonAriaLabel || '',
+                buttonDataAttributes: Array.isArray(entry.buttonDataAttributes)
+                    ? entry.buttonDataAttributes
+                    : []
             };
         },
 
@@ -696,8 +769,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCardsSettin
                 case 'image-text':
                     return 'imageText';
 
+                case 'text-text':
+                    return 'textText';
+
                 default:
-                    return 'content';
+                    return 'text';
             }
         },
 

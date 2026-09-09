@@ -23,7 +23,7 @@
                     </div>
 
                     {if $showCounter}
-                        <p class="quiqqer-presentationBricks-scrollPinnedCards__counter" data-name="counter" hidden>
+                        <p class="quiqqer-presentationBricks-scrollPinnedCards__counter" data-name="counter">
                             <span aria-hidden="true">
                                 <span class="quiqqer-presentationBricks-scrollPinnedCards__counterCurrent"
                                       data-name="counterCurrent">01</span>
@@ -40,11 +40,12 @@
 
             <ul class="quiqqer-presentationBricks-scrollPinnedCards__track" data-name="track">
                 {foreach $cards as $card}
-                    <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.hasButton} quiqqer-presentationBricks-scrollPinnedCards__card--interactive{/if}"
+                    <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.hasButton} quiqqer-presentationBricks-scrollPinnedCards__card--interactive{/if}{if $card.cardClass != ''} {$card.cardClass}{/if}"
                         data-name="card"{if $card.cardStyle != ''} style="{$card.cardStyle}"{/if}>
 
                         {if $card.hasMedia}
-                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardMedia">
+                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardMedia"
+                                 {if $card.mediaStyle != ''}style="{$card.mediaStyle}"{/if}>
                                 {if $card.title != ''}
                                     {image src=$card.image
                                         class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
@@ -60,45 +61,56 @@
                         {/if}
 
                         {if $card.hasText}
-                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBody">
-                                {if $card.showNumber}
-                                    <p class="quiqqer-presentationBricks-scrollPinnedCards__cardNumber"
-                                       aria-hidden="true">{$card.number|escape:'html'}</p>
-                                {/if}
+                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBody"
+                                 {if $card.primaryStyle != ''}style="{$card.primaryStyle}"{/if}>
+                                {*
+                                  The text block is a growing wrapper: with "buttons on one
+                                  line" it eats the free space of the card and pushes the
+                                  button to the lower edge, otherwise it keeps its content
+                                  height. Either way the vertical alignment applies - inside
+                                  the wrapper when it grows, to the whole group when it does
+                                  not.
+                                *}
+                                <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodyContent">
+                                    {if $card.showNumber}
+                                        <p class="quiqqer-presentationBricks-scrollPinnedCards__cardNumber"
+                                           aria-hidden="true">{$card.number|escape:'html'}</p>
+                                    {/if}
 
-                                {if $card.eyebrow != ''}
-                                    <p class="overline quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow">{$card.eyebrow|escape:'html'}</p>
-                                {/if}
+                                    {if $card.eyebrow != ''}
+                                        <p class="overline quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow">{$card.eyebrow|escape:'html'}</p>
+                                    {/if}
 
-                                {* icon and title share one row, the icon sits left of the
-                                   headline. Without a title the row carries the icon alone. *}
-                                {if $card.hasIcon || $card.title != ''}
-                                    <div class="quiqqer-presentationBricks-scrollPinnedCards__cardHeading">
-                                        {if $card.hasIcon}
-                                            {if $card.iconIsImage}
-                                                <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon">
-                                                    {image src=$card.icon
-                                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardIconImage"
-                                                        alt=""
-                                                    }
-                                                </span>
-                                            {else}
-                                                <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon {$card.icon|escape:'html'}"
-                                                      aria-hidden="true"></span>
+                                    {* icon and title share one row, the icon sits left of the
+                                       headline. Without a title the row carries the icon alone. *}
+                                    {if $card.hasIcon || $card.title != ''}
+                                        <div class="quiqqer-presentationBricks-scrollPinnedCards__cardHeading">
+                                            {if $card.hasIcon}
+                                                {if $card.iconIsImage}
+                                                    <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon">
+                                                        {image src=$card.icon
+                                                            class="quiqqer-presentationBricks-scrollPinnedCards__cardIconImage"
+                                                            alt=""
+                                                        }
+                                                    </span>
+                                                {else}
+                                                    <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon {$card.icon|escape:'html'}"
+                                                          aria-hidden="true"></span>
+                                                {/if}
                                             {/if}
-                                        {/if}
 
-                                        {if $card.title != ''}
-                                            <h3 class="quiqqer-presentationBricks-scrollPinnedCards__cardTitle">{$card.title|escape:'html'}</h3>
-                                        {/if}
-                                    </div>
-                                {/if}
+                                            {if $card.title != ''}
+                                                <h3 class="quiqqer-presentationBricks-scrollPinnedCards__cardTitle">{$card.title|escape:'html'}</h3>
+                                            {/if}
+                                        </div>
+                                    {/if}
 
-                                {if $card.content != ''}
-                                    <div class="quiqqer-presentationBricks-scrollPinnedCards__cardContent">
-                                        {$card.content}
-                                    </div>
-                                {/if}
+                                    {if $card.content != ''}
+                                        <div class="quiqqer-presentationBricks-scrollPinnedCards__cardContent">
+                                            {$card.content}
+                                        </div>
+                                    {/if}
+                                </div>
 
                                 {if $card.hasButton}
                                     <p class="quiqqer-presentationBricks-scrollPinnedCards__cardAction">
@@ -123,9 +135,70 @@
                                 {/if}
                             </div>
                         {/if}
+
+                        {*
+                          The second text area carries nothing but its content: no number,
+                          no headline, no button. That keeps it predictable to style with
+                          own CSS, which is what it exists for.
+                        *}
+                        {if $card.hasSecondary}
+                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary"
+                                 {if $card.secondaryStyle != ''}style="{$card.secondaryStyle}"{/if}>
+                                {$card.contentSecondary}
+                            </div>
+                        {/if}
                     </li>
                 {/foreach}
             </ul>
         </div>
     </div>
 </div>
+
+{if $mayPin}
+    {*
+      The last of the five pin conditions that is still open at this point:
+      does JavaScript exist at all. The device conditions are media queries in
+      the stylesheet, the number of cards was decided in PHP - this line only
+      contributes the class they all hang on.
+
+      It is deliberately inline and classic: it runs while the document is
+      parsed, so the pinned presentation is part of the first paint instead of
+      replacing the stacked one a moment later. Without JavaScript the class
+      never appears and the cards stay stacked, which is the fallback the
+      whole control is built on.
+    *}
+    {literal}
+        <script>(function () {
+            var Section = document.currentScript.closest('.quiqqer-presentationBricks-scrollPinnedCards');
+
+            if (!Section) {
+                return;
+            }
+
+            Section.classList.add('quiqqer-presentationBricks-scrollPinnedCards--pinned');
+
+            // A reload or a back/forward navigation can restore a scroll
+            // position inside the pinned range. Where the track has to sit
+            // then follows from that offset, so unlike the layout it cannot
+            // be part of the first paint - the first card would show and be
+            // corrected a moment later.
+            //
+            // The offset itself is no use as a signal this early: the browser
+            // restores it while loading, so it is often still zero while this
+            // runs. The navigation type is already final here, and on a fresh
+            // navigation the page starts at the top - then nothing has to be
+            // held back, which keeps the normal visit untouched.
+            var navigation = performance.getEntriesByType('navigation')[0];
+
+            if (!navigation || navigation.type === 'navigate') {
+                return;
+            }
+
+            Section.classList.add('quiqqer-presentationBricks-scrollPinnedCards--restoring');
+
+            window.setTimeout(function () {
+                Section.classList.remove('quiqqer-presentationBricks-scrollPinnedCards--restoring');
+            }, 2000);
+        })();</script>
+    {/literal}
+{/if}

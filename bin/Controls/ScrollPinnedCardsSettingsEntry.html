@@ -17,10 +17,11 @@
                 <label class="field-container">
                     <span class="field-container-item">{{fieldLayout}}</span>
                     <select name="layout" class="field-container-field" data-name="layout">
-                        <option value="content">{{layoutContent}}</option>
+                        <option value="text">{{layoutText}}</option>
                         <option value="image">{{layoutImage}}</option>
                         <option value="text-image">{{layoutTextImage}}</option>
                         <option value="image-text">{{layoutImageText}}</option>
+                        <option value="text-text">{{layoutTextText}}</option>
                     </select>
                 </label>
                 <div class="field-container-item-desc">{{{fieldLayoutDesc}}}</div>
@@ -76,38 +77,68 @@
                 <div class="field-container-item-desc">{{{fieldImageFitDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="imagePositionRow">
+        <tr data-name="imageCropRow">
             <td>
                 <label class="field-container">
-                    <span class="field-container-item">{{fieldImagePosition}}</span>
-                    <select name="imagePosition" class="field-container-field">
+                    <span class="field-container-item">{{fieldImageCrop}}</span>
+                    <select name="imageCrop" class="field-container-field">
                         <option value="">{{useGlobal}}</option>
-                        <option value="left top">{{imagePositionLeftTop}}</option>
-                        <option value="top">{{imagePositionTop}}</option>
-                        <option value="right top">{{imagePositionRightTop}}</option>
-                        <option value="left">{{imagePositionLeft}}</option>
-                        <option value="center">{{imagePositionCenter}}</option>
-                        <option value="right">{{imagePositionRight}}</option>
-                        <option value="left bottom">{{imagePositionLeftBottom}}</option>
-                        <option value="bottom">{{imagePositionBottom}}</option>
-                        <option value="right bottom">{{imagePositionRightBottom}}</option>
+                        <option value="left top">{{imageCropLeftTop}}</option>
+                        <option value="top">{{imageCropTop}}</option>
+                        <option value="right top">{{imageCropRightTop}}</option>
+                        <option value="left">{{imageCropLeft}}</option>
+                        <option value="center">{{imageCropCenter}}</option>
+                        <option value="right">{{imageCropRight}}</option>
+                        <option value="left bottom">{{imageCropLeftBottom}}</option>
+                        <option value="bottom">{{imageCropBottom}}</option>
+                        <option value="right bottom">{{imageCropRightBottom}}</option>
                     </select>
                 </label>
-                <div class="field-container-item-desc">{{{fieldImagePositionDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldImageCropDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="iconRow">
+        <tr data-name="imageVerticalAlignRow">
             <td>
                 <label class="field-container">
-                    <span class="field-container-item">{{fieldIcon}}</span>
-                    <input name="icon"
-                           value="{{icon}}"
+                    <span class="field-container-item">{{fieldImageVerticalAlign}}</span>
+                    <select name="imageVerticalAlign" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="top">{{verticalAlignTop}}</option>
+                        <option value="center">{{verticalAlignCenter}}</option>
+                        <option value="bottom">{{verticalAlignBottom}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImageVerticalAlignDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="imagePaddingRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldImagePadding}}</span>
+                    <select name="imagePadding" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="none">{{paddingNone}}</option>
+                        <option value="small">{{paddingSmall}}</option>
+                        <option value="normal">{{paddingNormal}}</option>
+                        <option value="large">{{paddingLarge}}</option>
+                        <option value="extraLarge">{{paddingExtraLarge}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldImagePaddingDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="cardIconRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldCardIcon}}</span>
+                    <input name="cardIcon"
+                           value="{{cardIcon}}"
                            class="field-container-field"
                            data-qui="controls/projects/project/media/Input"
                            data-qui-options-cssclasses="1"
                            data-qui-options-mediabutton="1"/>
                 </label>
-                <div class="field-container-item-desc">{{{fieldIconDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldCardIconDesc}}}</div>
             </td>
         </tr>
         <tr data-name="eyebrowRow">
@@ -128,15 +159,58 @@
                 <div class="field-container-item-desc">{{{fieldTitleDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="contentRow">
+        <tr data-name="contentPrimaryRow">
             <td>
                 <label class="field-container">
-                    <span class="field-container-item">{{fieldContent}}</span>
-                    <input name="content"
+                    <span class="field-container-item">{{fieldContentPrimary}}</span>
+                    <input name="contentPrimary"
                            class="field-container-field field-content"
                            data-qui="controls/editors/Input"/>
                 </label>
-                <div class="field-container-item-desc">{{{fieldContentDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldContentPrimaryDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="contentPrimaryPaddingRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldContentPrimaryPadding}}</span>
+                    <select name="contentPrimaryPadding" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="none">{{paddingNone}}</option>
+                        <option value="small">{{paddingSmall}}</option>
+                        <option value="normal">{{paddingNormal}}</option>
+                        <option value="large">{{paddingLarge}}</option>
+                        <option value="extraLarge">{{paddingExtraLarge}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldContentPrimaryPaddingDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="contentSecondaryRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldContentSecondary}}</span>
+                    <input name="contentSecondary"
+                           class="field-container-field field-content"
+                           data-qui="controls/editors/Input"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldContentSecondaryDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="contentSecondaryPaddingRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldContentSecondaryPadding}}</span>
+                    <select name="contentSecondaryPadding" class="field-container-field">
+                        <option value="">{{useGlobal}}</option>
+                        <option value="none">{{paddingNone}}</option>
+                        <option value="small">{{paddingSmall}}</option>
+                        <option value="normal">{{paddingNormal}}</option>
+                        <option value="large">{{paddingLarge}}</option>
+                        <option value="extraLarge">{{paddingExtraLarge}}</option>
+                    </select>
+                </label>
+                <div class="field-container-item-desc">{{{fieldContentSecondaryPaddingDesc}}}</div>
             </td>
         </tr>
         <tr data-name="buttonTextRow">
@@ -215,7 +289,7 @@
             <td>
                 <label class="field-container">
                     <span class="field-container-item">{{fieldButtonIcon}}</span>
-                    <input name="iconClass"
+                    <input name="buttonIcon"
                            class="field-container-field"
                            type="text"
                            data-qui="controls/projects/project/media/Input"
@@ -229,7 +303,7 @@
             <td>
                 <label class="field-container">
                     <span class="field-container-item">{{fieldButtonIconPosition}}</span>
-                    <select name="iconPosition" class="field-container-field">
+                    <select name="buttonIconPosition" class="field-container-field">
                         <option value="start">{{buttonIconPositionStart}}</option>
                         <option value="end">{{buttonIconPositionEnd}}</option>
                     </select>
@@ -237,35 +311,44 @@
                 <div class="field-container-item-desc">{{{fieldButtonIconPositionDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="customClassRow">
+        <tr data-name="cardClassRow">
             <td>
                 <label class="field-container">
-                    <span class="field-container-item">{{fieldCustomClass}}</span>
-                    <input name="customClass" value="{{customClass}}" class="field-container-field"/>
+                    <span class="field-container-item">{{fieldCardClass}}</span>
+                    <input name="cardClass" value="{{cardClass}}" class="field-container-field"/>
                 </label>
-                <div class="field-container-item-desc">{{{fieldCustomClassDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldCardClassDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="ariaLabelRow">
+        <tr data-name="buttonClassRow">
             <td>
                 <label class="field-container">
-                    <span class="field-container-item">{{fieldAriaLabel}}</span>
-                    <input name="ariaLabel" value="{{ariaLabel}}" class="field-container-field"/>
+                    <span class="field-container-item">{{fieldButtonClass}}</span>
+                    <input name="buttonClass" value="{{buttonClass}}" class="field-container-field"/>
                 </label>
-                <div class="field-container-item-desc">{{{fieldAriaLabelDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldButtonClassDesc}}}</div>
             </td>
         </tr>
-        <tr data-name="dataAttributesRow">
+        <tr data-name="buttonAriaLabelRow">
+            <td>
+                <label class="field-container">
+                    <span class="field-container-item">{{fieldButtonAriaLabel}}</span>
+                    <input name="buttonAriaLabel" value="{{buttonAriaLabel}}" class="field-container-field"/>
+                </label>
+                <div class="field-container-item-desc">{{{fieldButtonAriaLabelDesc}}}</div>
+            </td>
+        </tr>
+        <tr data-name="buttonDataAttributesRow">
             <td>
                 <div class="field-container field-container--top">
-                    <span class="field-container-item">{{fieldDataAttributes}}</span>
+                    <span class="field-container-item">{{fieldButtonDataAttributes}}</span>
                     <div class="field-container-field">
                         <input type="hidden"
-                               name="dataAttributes"
+                               name="buttonDataAttributes"
                                data-qui="package/quiqqer/components/bin/Controls/DataAttributes"/>
                     </div>
                 </div>
-                <div class="field-container-item-desc">{{{fieldDataAttributesDesc}}}</div>
+                <div class="field-container-item-desc">{{{fieldButtonDataAttributesDesc}}}</div>
             </td>
         </tr>
         </tbody>
