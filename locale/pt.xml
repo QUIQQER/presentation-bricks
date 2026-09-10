@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/presentation-bricks" datatype="php,js">
+
+        <locale name="package.title">
+<pt><![CDATA[Blocos de apresentação]]></pt>
+        </locale>
+        <locale name="package.description">
+<pt><![CDATA[Este pacote inclui blocos para apresentar aplicações ou programas no teu site.]]></pt>
+        </locale>
+
+<!-- before/after image comparison -->
+        <locale name="control.ImageCompare.title">
+<pt><![CDATA[Comparação de imagens (antes/depois)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.description">
+<pt><![CDATA[<p>Este bloco sobrepõe duas imagens e permite aos visitantes passar de «antes» para «depois» arrastando um controlo. As alterações tornam-se imediatamente visíveis: ideal para remodelações, retoques, reabilitações ou comparações de produtos.</p><ul><li><strong>Utilização intuitiva:</strong> arrasta com o rato ou o dedo, clica para saltar para uma posição ou ajusta com precisão pelo teclado, tanto no computador como no telemóvel.</li><li><strong>Chama a atenção ao percorrer a página:</strong> uma animação inicial discreta indica que o controlo se pode mover quando aparece no ecrã.</li><li><strong>Adapta-se ao teu design:</strong> configura a orientação, o estilo do controlo e das legendas, as cores (cor da marca, branco ou preto) e os cantos arredondados.</li><li><strong>Acessível:</strong> permite utilização pelo teclado e está preparado para leitores de ecrã.</li></ul><p>Assim podes mostrar a diferença entre dois estados com um único bloco, diretamente no editor e sem escrever código.</p>]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.imageBefore">
+<pt><![CDATA[Imagem «antes» (obrigatória)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.imageAfter">
+<pt><![CDATA[Imagem «depois» (obrigatória)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeMode">
+<pt><![CDATA[Legenda «antes»]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeText">
+<pt><![CDATA[Texto personalizado «antes»]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterMode">
+<pt><![CDATA[Legenda «depois»]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterText">
+<pt><![CDATA[Texto personalizado «depois»]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelBeforeMode.default">
+<pt><![CDATA[Texto predefinido («Antes»)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelAfterMode.default">
+<pt><![CDATA[Texto predefinido («Depois»)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.desc">
+<pt><![CDATA[Controla a legenda deste lado: «Texto predefinido» apresenta a legenda padrão do site; «Texto personalizado» permite introduzir uma legenda própria; «Ocultar» não apresenta nenhuma legenda.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.custom">
+<pt><![CDATA[Texto personalizado]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelMode.hidden">
+<pt><![CDATA[Ocultar]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition">
+<pt><![CDATA[Posição da legenda]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.center">
+<pt><![CDATA[Centrado]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle">
+<pt><![CDATA[Estilo da legenda]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.box">
+<pt><![CDATA[Caixa (clara)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.pill">
+<pt><![CDATA[Cápsula (escura)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.plain">
+<pt><![CDATA[Apenas texto]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle">
+<pt><![CDATA[Estilo do controlo]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.circle">
+<pt><![CDATA[Círculo com setas]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.line">
+<pt><![CDATA[Linha com pega]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.orientation">
+<pt><![CDATA[Orientação]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.orientation.horizontal">
+<pt><![CDATA[Horizontal]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.orientation.vertical">
+<pt><![CDATA[Vertical]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.startPosition">
+<pt><![CDATA[Posição inicial do controlo (%)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio">
+<pt><![CDATA[Proporção]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio.auto">
+<pt><![CDATA[Automática (a partir da imagem)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelPosition.desc">
+<pt><![CDATA[Define onde ficam as legendas: em cima, ao centro ou em baixo; na orientação vertical, à esquerda, ao centro ou à direita.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.labelStyle.desc">
+<pt><![CDATA[Estilo visual da legenda: «Caixa» (fundo claro semitransparente com texto escuro), «Cápsula» (fundo escuro muito arredondado com texto branco) ou «Apenas texto» com uma sombra discreta.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleStyle.desc">
+<pt><![CDATA[Aspeto do controlo na linha divisória: «Círculo com setas» ou uma linha simples com uma pequena pega ao centro.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.orientation.desc">
+<pt><![CDATA[Direção da comparação: «Horizontal» permite passar da esquerda para a direita; «Vertical», de cima para baixo.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.startPosition.desc">
+<pt><![CDATA[Posição inicial do controlo em percentagem (0–100): 0 apresenta apenas a imagem «depois»; 100, apenas «antes»; 50 divide a imagem a meio.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.aspectRatio.desc">
+<pt><![CDATA[Proporção da área de comparação. «Automática» utiliza a proporção da imagem «depois»; os valores fixos (16:9, 4:3, 1:1) impõem o formato e recortam as imagens ao centro (object-fit: cover). Para um bom resultado, carrega ambas as imagens com o mesmo tamanho.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.maxWidth">
+<pt><![CDATA[Largura máxima]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.maxWidth.desc">
+<pt><![CDATA[Limita a largura da área de comparação e centra-a. Deixa vazio para ocupar toda a largura (100%). Introduz um comprimento CSS, como 600px, 80% ou 40rem; um número sem unidade é interpretado como píxeis.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.label.before.default">
+<pt><![CDATA[Antes]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.label.after.default">
+<pt><![CDATA[Depois]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleColor">
+<pt><![CDATA[Cor do controlo e da linha]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.desc">
+<pt><![CDATA[Esquema de cores da linha divisória e do controlo. «Cor da marca» utiliza a cor principal do projeto; «Branco» e «Preto» são variantes neutras com ligeira transparência. O ícone do controlo utiliza a cor de contraste correspondente.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.brand">
+<pt><![CDATA[Cor da marca (color primary)]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.white">
+<pt><![CDATA[Branco]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.handleColor.black">
+<pt><![CDATA[Preto]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.introAnimation">
+<pt><![CDATA[Animação inicial]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.introAnimation.desc">
+<pt><![CDATA[Se estiver ativa, o controlo move-se brevemente para a esquerda e para a direita e regressa à posição inicial quando o bloco aparece pela primeira vez. Assim indica discretamente que pode ser movido. Ativa por predefinição.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.borderRadius">
+<pt><![CDATA[Cantos arredondados]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.borderRadius.desc">
+<pt><![CDATA[Arredonda os cantos da área da imagem. Ativo por predefinição.]]></pt>
+        </locale>
+        <locale name="control.ImageCompare.slider.ariaLabel">
+<pt><![CDATA[Comparação de imagens]]></pt>
+        </locale>
+
+<!-- wallpaper with text and an arrow -->
+        <locale name="control.WallpaperTextArrow.title">
+<pt><![CDATA[Imagem de fundo com texto e seta]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.description">
+<pt><![CDATA[Apresenta texto sobre uma imagem de fundo e inclui uma seta para avançar para a secção seguinte.]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.image-background">
+<pt><![CDATA[Imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading">
+<pt><![CDATA[Carregamento da imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.desc">
+<pt><![CDATA[Utiliza «Diferido» apenas em blocos abaixo da área inicialmente visível. Nos blocos do cabeçalho, mantém «Imediato».]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.eager">
+<pt><![CDATA[Imediato (prioridade elevada)]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.imageLoading.lazy">
+<pt><![CDATA[Diferido (carregamento diferido)]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.image-background-fixed">
+<pt><![CDATA[Fixar a imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperTextArrow.image">
+<pt><![CDATA[Imagem à direita]]></pt>
+        </locale>
+
+        <locale name="control.WallpaperTextArrow.arrow-type">
+<pt><![CDATA[Tipo de seta]]></pt>
+        </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.hide">
+<pt><![CDATA[Desativado: sem seta]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-down">
+<pt><![CDATA[Arrow Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-down">
+<pt><![CDATA[Arrow Circle Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.arrow-circle-o-down">
+<pt><![CDATA[Arrow Circle O Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.angle-down">
+<pt><![CDATA[Angle Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.long-arrow-down">
+<pt><![CDATA[Long Arrow Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.caret-down">
+<pt><![CDATA[Caret Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.chevron-down">
+<pt><![CDATA[Chevron Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.chevron-circle-down">
+<pt><![CDATA[Chevron Circle Down]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.arrow-type.angle-double-down">
+<pt><![CDATA[Angle Double Down]]></pt>
+            </locale>
+        <locale name="control.WallpaperTextArrow.effect">
+<pt><![CDATA[Efeito da seta]]></pt>
+        </locale>
+            <locale name="control.WallpaperTextArrow.effect.scale">
+<pt><![CDATA[Alteração de tamanho]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.scale-bounce">
+<pt><![CDATA[Alteração de tamanho com ressalto]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.ball-bounce-hover">
+<pt><![CDATA[Ressalto (ao passar o rato)]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.ball-bounce-always">
+<pt><![CDATA[Ressalto (contínuo)]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.opacity-to-transparent">
+<pt><![CDATA[Tornar transparente]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.opacity-from-transparent">
+<pt><![CDATA[Tornar opaco]]></pt>
+            </locale>
+            <locale name="control.WallpaperTextArrow.effect.no-effect">
+<pt><![CDATA[Sem efeito]]></pt>
+            </locale>
+
+<!-- wallpaper with text -->
+        <locale name="control.WallpaperText.title">
+<pt><![CDATA[Imagem de fundo com texto]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.description">
+<pt><![CDATA[Cria rapidamente um banner com este bloco. Escolhe uma imagem ou uma cor para o fundo do texto.]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.minHeight">
+<pt><![CDATA[Altura mínima]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.minHeight.desc">
+<pt><![CDATA[Introduz um valor com uma unidade CSS válida, por exemplo, 500px ou 80vh.]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.image-background">
+<pt><![CDATA[Imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.imageBackgroundPos">
+<pt><![CDATA[Posição da imagem de fundo]]></pt>
+        </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.top">
+<pt><![CDATA[Em cima]]></pt>
+            </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.center">
+<pt><![CDATA[Centro]]></pt>
+            </locale>
+            <locale name="control.WallpaperText.imageBackgroundPos.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+            </locale>
+        <locale name="control.WallpaperText.image-background-fixed">
+<pt><![CDATA[Fixar a imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.bg-color">
+<pt><![CDATA[Cor de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading">
+<pt><![CDATA[Carregamento da imagem de fundo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.desc">
+<pt><![CDATA[Utiliza «Diferido» apenas em blocos abaixo da área inicialmente visível. Nos blocos do cabeçalho, mantém «Imediato».]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.eager">
+<pt><![CDATA[Imediato (prioridade elevada)]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.imageLoading.lazy">
+<pt><![CDATA[Diferido (carregamento diferido)]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.borderRadius">
+<pt><![CDATA[Arredondar os cantos]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.borderRadius.desc">
+<pt><![CDATA[Arredonda os cantos do bloco. A forma e o grau de arredondamento dependem do modelo ativo; nem todos os modelos suportam cantos arredondados. Recomenda-se desativar esta opção nos blocos que ocupam toda a largura.]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.content-position">
+<pt><![CDATA[Alinhamento]]></pt>
+        </locale>
+            <locale name="control.WallpaperText.content-position.left">
+<pt><![CDATA[esquerda]]></pt>
+            </locale>
+            <locale name="control.WallpaperText.content-position.center">
+<pt><![CDATA[centro]]></pt>
+            </locale>
+            <locale name="control.WallpaperText.content-position.right">
+<pt><![CDATA[direita]]></pt>
+            </locale>
+        <locale name="control.WallpaperText.contentMaxWidth">
+<pt><![CDATA[Largura máxima do conteúdo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.fontColor">
+<pt><![CDATA[Cor do conteúdo]]></pt>
+        </locale>
+        <locale name="control.WallpaperText.fontColor.desc">
+<pt><![CDATA[Aqui podes alterar a cor predefinida do conteúdo para a adaptar a um fundo escuro. Consoante o modelo, os títulos (h1, h2, etc.) podem ter uma cor definida separadamente.]]></pt>
+        </locale>
+
+
+<!-- sticky content -->
+        <locale name="control.StickyContent.title">
+<pt><![CDATA[Conteúdo fixo ao percorrer a página]]></pt>
+        </locale>
+        <locale name="control.StickyContent.description">
+<pt><![CDATA[Enquanto uma área acompanha o deslocamento da página, a outra permanece fixa no topo até ao fim do bloco.]]></pt>
+        </locale>
+
+<!-- template -->
+        <locale name="control.StickyContent.template">
+<pt><![CDATA[Modelo]]></pt>
+        </locale>
+            <locale name="control.StickyContent.template.simple">
+<pt><![CDATA[Simples]]></pt>
+            </locale>
+            <locale name="control.StickyContent.template.mockup">
+<pt><![CDATA[Mockup]]></pt>
+            </locale>
+
+<!-- image mockup -->
+        <locale name="control.StickyContent.imgagMockup" html="true">
+<pt><![CDATA[Imagem do mockup<br />Aplica-se ao modelo de mockup]]></pt>
+        </locale>
+            <locale name="control.StickyContent.imgagMockup.imac-glossy">
+<pt><![CDATA[iMac com ecrã brilhante]]></pt>
+            </locale>
+            <locale name="control.StickyContent.imgagMockup.imac-without-logo">
+<pt><![CDATA[iMac sem logótipo]]></pt>
+            </locale>
+
+
+
+<!-- count up basic -->
+        <locale name="control.countUpBasic.title">
+<pt><![CDATA[Count Up Basic]]></pt>
+        </locale>
+        <locale name="control.countUpBasic.description">
+<pt><![CDATA[Apresenta contadores animados com prefixo, sufixo, título, texto e ícone opcional.]]></pt>
+        </locale>
+
+<!-- settings -->
+
+        <locale name="control.CountUpBasic.iconTop">
+<pt><![CDATA[Mostrar o ícone acima do contador]]></pt>
+        </locale>
+
+        <locale name="CountUpBasic.entries">
+<pt><![CDATA[Entradas do contador]]></pt>
+        </locale>
+
+<!-- count up basic - JS control settings -->
+        <locale name="CountUpBasicSettings.entries.button.text">
+<pt><![CDATA[Adicionar entrada]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue">
+<pt><![CDATA[Contador]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue.prefix">
+<pt><![CDATA[Prefixo do contador]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.counterValue.suffix">
+<pt><![CDATA[Sufixo do contador]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.icon">
+<pt><![CDATA[Ícone]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.title">
+<pt><![CDATA[Título]]></pt>
+        </locale>
+        <locale name="CountUpBasicSettings.entries.entry.content">
+<pt><![CDATA[Descrição breve]]></pt>
+        </locale>
+
+<!-- counter -->
+        <locale name="control.counter.title">
+<pt><![CDATA[Contador]]></pt>
+        </locale>
+        <locale name="control.counter.description" html="true">
+<pt><![CDATA[Apresenta indicadores, estatísticas ou marcos com contadores animados. Cada entrada permite definir os valores inicial e final e pode contar de forma crescente ou decrescente. Adapta a apresentação ao conteúdo e à disposição.<ul><li><em>Disposição</em>: em linha à esquerda, em linha centrada, empilhada à esquerda, empilhada centrada ou horizontal</li><li><em>Duração</em>: duração da animação de todos os contadores em milissegundos</li><li><em>Começar em 0</em>: ignora os valores iniciais individuais e começa sempre em zero</li><li><em>Ícone em cima</em>: apresenta o ícone da entrada acima do valor</li><li><em>Entradas</em>: qualquer número de valores com prefixo, sufixo, título, texto e ícone opcional</li></ul>]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template">
+<pt><![CDATA[Disposição]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineLeft">
+<pt><![CDATA[Em linha à esquerda]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template.inlineCenter">
+<pt><![CDATA[Em linha centrada]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedLeft">
+<pt><![CDATA[Empilhada à esquerda]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template.stackedCenter">
+<pt><![CDATA[Empilhada centrada]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.template.horizontal">
+<pt><![CDATA[Horizontal]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.duration">
+<pt><![CDATA[Duração da animação (ms)]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.duration.desc">
+<pt><![CDATA[Duração da animação do contador em milissegundos. Valor predefinido: 2500.]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.columns">
+<pt><![CDATA[Colunas]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth">
+<pt><![CDATA[Largura máxima]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.maxWidth.desc">
+<pt><![CDATA[Limita a largura do bloco de contadores ou da área de entradas. Aceita qualquer unidade CSS, por exemplo, <code>900px</code>, <code>60rem</code> ou <code>100%</code>. Um número sem unidade é interpretado como píxeis. Vazio = sem limite.]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth">
+<pt><![CDATA[Largura máxima por entrada]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.itemMaxWidth.desc">
+<pt><![CDATA[Limita a largura de cada entrada do contador. Exemplos: <code>18rem</code>, <code>22rem</code>, <code>320px</code>, <code>28ch</code>. Um número sem unidade é interpretado como píxeis. Vazio = sem limite.]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap">
+<pt><![CDATA[Espaçamento entre entradas]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.none">
+<pt><![CDATA[Nenhum]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.xs">
+<pt><![CDATA[XS]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.s">
+<pt><![CDATA[S]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.normal">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.large">
+<pt><![CDATA[Grande]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.gap.extraLarge">
+<pt><![CDATA[Muito grande]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.numberSize">
+<pt><![CDATA[Tamanho dos algarismos]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.small">
+<pt><![CDATA[Pequeno]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.normal">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.large">
+<pt><![CDATA[Grande]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.numberSize.xlarge">
+<pt><![CDATA[Muito grande]]></pt>
+        </locale>
+        <locale name="brick.setting.counter.accentColor">
+<pt><![CDATA[Cor de destaque]]></pt>
+        </locale>
+        <locale name="brick.counter.settings.entries">
+<pt><![CDATA[Entradas do contador]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.column.status">
+<pt><![CDATA[Estado]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.disabled">
+<pt><![CDATA[Desativar]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.startValue">
+<pt><![CDATA[Valor inicial]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.endValue">
+<pt><![CDATA[Valor final]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.endValue.desc">
+<pt><![CDATA[Valor de destino do contador. Se o valor final for inferior ao inicial, o contador faz uma contagem decrescente.]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.prefix">
+<pt><![CDATA[Prefixo]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.prefix.desc">
+<pt><![CDATA[Texto imediatamente antes do contador. Em muitos modelos é mais pequeno do que o número. Exemplos: + antes de 100 resulta em +100; «cerca de» antes de 250 resulta em «cerca de 250».]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.numberAddon">
+<pt><![CDATA[Complemento do número]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.numberAddon.desc">
+<pt><![CDATA[Complemento breve colocado diretamente junto ao número. Aceita abreviaturas como <code>k</code>, <code>M</code> ou <code>mn</code>. Exemplo: <code>10</code> com o complemento <code>k</code> passa a <code>10k</code>. Se quiseres incluir um espaço, introduz esse espaço no próprio complemento, por exemplo, <code> M</code> para <code>2.5 M</code>. Para caracteres posteriores com espaçamento próprio, como <code>+</code> ou <code>%</code>, utiliza o campo do sufixo.]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.suffix">
+<pt><![CDATA[Sufixo]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.suffix.desc">
+<pt><![CDATA[Texto imediatamente depois do contador. Em muitos modelos é mais pequeno do que o número. Exemplos: «anos» depois de 15 resulta em «15 anos»; % depois de 80 resulta em 80%.]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.icon">
+<pt><![CDATA[Ícone]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.title">
+<pt><![CDATA[Título]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.title.desc">
+<pt><![CDATA[Título breve do contador. É apresentado abaixo ou junto ao número, num tamanho mais pequeno.]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.content">
+<pt><![CDATA[Descrição breve]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.content.desc">
+<pt><![CDATA[Texto explicativo breve e opcional do contador. É apresentado de forma mais pequena e discreta do que o título e o número.]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.adddialog.title">
+<pt><![CDATA[Adicionar entrada do contador]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.editdialog.title">
+<pt><![CDATA[Editar entrada do contador]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.delete.title">
+<pt><![CDATA[Queres mesmo remover esta entrada do contador?]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.delete.text">
+<pt><![CDATA[Queres mesmo remover esta entrada do contador?]]></pt>
+        </locale>
+        <locale name="brick.counter.entries.delete.information">
+<pt><![CDATA[As entradas do contador não podem ser recuperadas.]]></pt>
+        </locale>
+
+<!-- progressbar -->
+        <locale name="control.progressbar.title">
+<pt><![CDATA[Barra de progresso]]></pt>
+        </locale>
+        <locale name="control.progressbar.description" html="true">
+<pt><![CDATA[Apresenta progressos, valores ou proporções de forma clara através de barras. Ideal para competências, estados de projetos, cargas de trabalho ou indicadores. Adapta a apresentação ao conteúdo, à disposição e ao estilo visual.<ul><li>Qualquer número de entradas com título e percentagem</li><li>Cor personalizada opcional para cada barra</li><li>Área de texto adicional acima, abaixo, à esquerda ou à direita das barras</li><li>Posição do texto independente para telemóveis</li><li>Várias disposições de barra: predefinida, larga ou sobreposta com texto dentro da barra</li><li>Animação desativada, uma única vez ao entrar no ecrã ou ligada ao deslocamento</li><li>Largura máxima configurável para as barras e para toda a área da disposição</li></ul>]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth">
+<pt><![CDATA[Largura máxima das barras]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.maxWidth.desc">
+<pt><![CDATA[Aceita qualquer unidade CSS, por exemplo, <code>600px</code>, <code>40rem</code> ou <code>80%</code>. Um número sem unidade é interpretado como píxeis. Vazio = sem limite.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth">
+<pt><![CDATA[Largura máxima do contentor]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.containerMaxWidth.desc">
+<pt><![CDATA[Limita a largura de toda a área da disposição (texto e barras). Não altera o cabeçalho nem o conteúdo do bloco. Aceita qualquer unidade CSS; vazio = largura total.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalText">
+<pt><![CDATA[Texto adicional]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.additionalText.desc">
+<pt><![CDATA[O texto pode ser apresentado <em>acima</em>, <em>abaixo</em>, <em>à esquerda</em> ou <em>à direita</em> das barras. Não substitui o conteúdo habitual do bloco. Quando existe texto adicional, aplicam-se as definições <em>Posição do texto adicional</em>, <em>Distribuição das colunas</em> e <em>Alinhamento vertical</em>.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition">
+<pt><![CDATA[Posição do texto adicional]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.left">
+<pt><![CDATA[Esquerda]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textPosition.right">
+<pt><![CDATA[Direita]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth">
+<pt><![CDATA[Distribuição das colunas]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.textColumnWidth.desc">
+<pt><![CDATA[Proporção entre a coluna de texto e a de barras. Só se aplica se o texto estiver <em>à esquerda</em> ou <em>à direita</em>.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign">
+<pt><![CDATA[Alinhamento vertical]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.desc">
+<pt><![CDATA[Alinhamento vertical do texto em relação às barras. Só se aplica se o texto estiver <em>à esquerda</em> ou <em>à direita</em>.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.center">
+<pt><![CDATA[Centro]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.verticalAlign.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition">
+<pt><![CDATA[Posição do texto adicional (telemóvel)]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.desc">
+<pt><![CDATA[Em ecrãs estreitos, com um contentor de largura inferior a 45rem, a disposição passa sempre a uma coluna. Escolhe se o texto é apresentado acima ou abaixo das barras.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.mobileTextPosition.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout">
+<pt><![CDATA[Disposição das barras]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.desc">
+<pt><![CDATA[Estilo visual das barras. <em>Predefinido</em>: barra fina com a legenda por cima. <em>Largo</em>: barra mais grossa. <em>Sobreposto</em>: legenda diretamente sobre a barra.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.default">
+<pt><![CDATA[Predefinido]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.wide">
+<pt><![CDATA[Largo]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.barLayout.overlay">
+<pt><![CDATA[Sobreposto: texto sobre a barra]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.animation">
+<pt><![CDATA[Animação]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.desc">
+<pt><![CDATA[<em>Nenhum</em>: as barras são apresentadas preenchidas imediatamente. <em>Uma vez ao entrar no ecrã</em>: preenchem-se uma única vez quando o bloco entra na área visível. <em>Ligada ao deslocamento</em>: o preenchimento acompanha a posição de deslocamento (apenas em navegadores modernos; nos restantes são apresentadas preenchidas). Se o utilizador tiver ativado a redução de movimento, não é utilizada nenhuma animação.]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.none">
+<pt><![CDATA[Nenhum]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.once">
+<pt><![CDATA[Uma vez ao entrar no ecrã]]></pt>
+        </locale>
+        <locale name="brick.setting.progressbar.animation.scroll">
+<pt><![CDATA[Ligada ao deslocamento]]></pt>
+        </locale>
+        <locale name="brick.progressbar.settings.entries">
+<pt><![CDATA[Entradas]]></pt>
+        </locale>
+
+<!-- progressbar settings entry -->
+        <locale name="brick.progressbar.entries.adddialog.title">
+<pt><![CDATA[Entrada da barra de progresso]]></pt>
+        </locale>
+
+        <locale name="bricks.progressbar.settings.createPopup.title">
+<pt><![CDATA[Título]]></pt>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.percent">
+<pt><![CDATA[Percentagem (mín. 0 / máx. 100)]]></pt>
+        </locale>
+        <locale name="brick.progressbar.settings.add.percent">
+<pt><![CDATA[Percentagem]]></pt>
+        </locale>
+        <locale name="brick.progressbar.entries.column.color">
+<pt><![CDATA[Cor]]></pt>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.setColor">
+<pt><![CDATA[Definir cor personalizada]]></pt>
+        </locale>
+        <locale name="bricks.progressbar.settings.createPopup.color">
+<pt><![CDATA[Cor de preenchimento]]></pt>
+        </locale>
+        <locale name="brick.progressbar.entries.editdialog.title">
+<pt><![CDATA[Editar entrada da barra de progresso]]></pt>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.title">
+<pt><![CDATA[Queres mesmo remover esta entrada da barra de progresso?]]></pt>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.text">
+<pt><![CDATA[Queres mesmo remover esta entrada da barra de progresso?]]></pt>
+        </locale>
+        <locale name="brick.progressbar.entries.delete.information">
+<pt><![CDATA[As entradas da barra de progresso não podem ser recuperadas.]]></pt>
+        </locale>
+
+
+<!-- Background video -->
+        <locale name="control.backgroundVideo.title">
+<pt><![CDATA[Vídeo de fundo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.description">
+<pt><![CDATA[Bloco para apresentar um vídeo de fundo.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.video">
+<pt><![CDATA[Vídeo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.video.desc">
+<pt><![CDATA[Vídeo completo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.poster">
+<pt><![CDATA[Imagem de capa]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.poster.desc">
+<pt><![CDATA[Imagem apresentada enquanto o vídeo carrega ou até o utilizador premir o botão de reprodução.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.borderRadius">
+<pt><![CDATA[Arredondar os cantos]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.borderRadius.desc">
+<pt><![CDATA[Arredonda os cantos do bloco. A forma e o grau de arredondamento dependem do modelo ativo; nem todos os modelos suportam cantos arredondados. Recomenda-se desativar esta opção nos blocos que ocupam toda a largura.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading">
+<pt><![CDATA[Carregamento da imagem de capa]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.desc">
+<pt><![CDATA[Utiliza «Diferido» apenas se o bloco estiver abaixo da área inicialmente visível. Nos blocos do cabeçalho, mantém «Imediato».]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.eager">
+<pt><![CDATA[Imediato (prioridade elevada)]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.imageLoading.lazy">
+<pt><![CDATA[Diferido (carregamento diferido)]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundColor">
+<pt><![CDATA[Cor de fundo do bloco]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo">
+<pt><![CDATA[Vídeo abreviado]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.shortVideo.desc">
+<pt><![CDATA[Se selecionado, este vídeo é carregado como fundo. A versão completa pode ser aberta numa janela (consulta as definições seguintes).]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode">
+<pt><![CDATA[Carregamento do vídeo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.desc" html="true">
+<pt><![CDATA[Por predefinição, o vídeo é preparado depois de a página carregar por completo. Para isso, deve ser definida uma imagem de capa. Sem imagem de capa, o vídeo continua a carregar imediatamente.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.immediate">
+<pt><![CDATA[Carregar imediatamente]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.lazyLoadMode.afterWindowLoad">
+<pt><![CDATA[Carregar após o carregamento completo da página]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay">
+<pt><![CDATA[Reprodução automática]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.autoplay.desc">
+<pt><![CDATA[O vídeo começa a ser reproduzido automaticamente assim que o pode fazer sem parar para carregar mais dados. Em alguns navegadores (por exemplo, Chrome 70.0), a reprodução automática não funciona se a opção «Silenciar» não estiver ativa.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.muted">
+<pt><![CDATA[Silenciar]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.muted.desc">
+<pt><![CDATA[O vídeo começa sem som.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.loop">
+<pt><![CDATA[Repetir em ciclo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.loop.desc">
+<pt><![CDATA[Se estiver ativa, o navegador regressa automaticamente ao início quando o vídeo termina.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline">
+<pt><![CDATA[Reproduzir o vídeo na página (playsinline)]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.playsinline.desc" html="true">
+<pt><![CDATA[Se estiver ativa, o vídeo é reproduzido na sua área dentro da página. A ausência deste atributo não implica que o vídeo seja sempre reproduzido em ecrã inteiro. Mais informações em <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView">
+<pt><![CDATA[Reproduzir quando estiver visível]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.playIfInView.desc">
+<pt><![CDATA[O vídeo só é reproduzido quando está na área visível. Caso contrário, é colocado em pausa, por exemplo, quando o utilizador continua a percorrer a página.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness">
+<pt><![CDATA[Brilho do vídeo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.backgroundVideoBrightness.desc" html="true">
+<pt><![CDATA[Esta opção permite escurecer o vídeo de fundo para tornar o texto mais legível. Introduz um valor entre <strong>0 e 100</strong>.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.fontColor">
+<pt><![CDATA[Cor do texto]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.contentMaxWidth">
+<pt><![CDATA[Largura máxima do conteúdo (em píxeis)]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition">
+<pt><![CDATA[Posição do conteúdo]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.center">
+<pt><![CDATA[Centro]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.contentPosition.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+
+        <locale name="control.backgroundVideo.openVideoInPopup">
+<pt><![CDATA[Abrir o vídeo numa janela]]></pt>
+        </locale>
+
+        <locale name="control.backgroundVideo.openVideoInPopup.desc" html="true">
+<pt><![CDATA[Esta opção é útil se estiver a ser reproduzido um vídeo abreviado em fundo. O utilizador pode ver a versão completa numa janela. Podes utilizar o botão integrado ou um botão próprio. O botão integrado aparece abaixo do conteúdo. Para utilizar um botão próprio, adiciona-lhe o atributo <code>data-js="openVideoInPopupBtn"</code>.]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnDefaultButton">
+<pt><![CDATA[Abrir o vídeo numa janela ao clicar no botão integrado]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopup.clickOnOwnButton">
+<pt><![CDATA[Abrir o vídeo numa janela ao clicar num botão próprio]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.openVideoInPopup.noButton">
+<pt><![CDATA[Não abrir nenhuma janela]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition">
+<pt><![CDATA[Posição do botão integrado]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.left">
+<pt><![CDATA[Esquerda]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.center">
+<pt><![CDATA[Centro]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.defaultButtonPosition.right">
+<pt><![CDATA[Direita]]></pt>
+        </locale>
+        <locale name="control.backgroundVideo.btnText">
+<pt><![CDATA[Ver o vídeo]]></pt>
+        </locale>
+
+<!-- Video -->
+        <locale name="control.video.title">
+<pt><![CDATA[Vídeo]]></pt>
+        </locale>
+        <locale name="control.video.description">
+<pt><![CDATA[Este bloco permite colocar um vídeo no teu site.]]></pt>
+        </locale>
+        <locale name="control.video.video">
+<pt><![CDATA[Vídeo]]></pt>
+        </locale>
+        <locale name="control.video.video.desc">
+<pt><![CDATA[Vídeo completo]]></pt>
+        </locale>
+        <locale name="control.video.poster">
+<pt><![CDATA[Imagem de capa]]></pt>
+        </locale>
+        <locale name="control.video.poster.desc">
+<pt><![CDATA[Imagem apresentada enquanto o vídeo carrega ou até o utilizador premir o botão de reprodução.]]></pt>
+        </locale>
+        <locale name="control.video.borderRadius">
+<pt><![CDATA[Arredondar os cantos]]></pt>
+        </locale>
+        <locale name="control.video.borderRadius.desc">
+<pt><![CDATA[Arredonda os cantos do bloco. A forma e o grau de arredondamento dependem do modelo ativo; nem todos os modelos suportam cantos arredondados. Recomenda-se desativar esta opção nos blocos que ocupam toda a largura.]]></pt>
+        </locale>
+        <locale name="control.video.shortVideo">
+<pt><![CDATA[Vídeo abreviado]]></pt>
+        </locale>
+        <locale name="control.video.shortVideo.desc">
+<pt><![CDATA[Se selecionado, este vídeo é carregado como fundo. A versão completa pode ser aberta numa janela (consulta as definições seguintes).]]></pt>
+        </locale>
+        <locale name="control.video.lazyLoadMode">
+<pt><![CDATA[Carregamento do vídeo]]></pt>
+        </locale>
+        <locale name="control.video.lazyLoadMode.desc" html="true">
+<pt><![CDATA[Por predefinição, o vídeo é preparado depois de a página carregar por completo. Para isso, deve ser definida uma imagem de capa. Sem imagem de capa, o vídeo continua a carregar imediatamente.]]></pt>
+        </locale>
+        <locale name="control.video.lazyLoadMode.immediate">
+<pt><![CDATA[Carregar imediatamente]]></pt>
+        </locale>
+        <locale name="control.video.lazyLoadMode.afterWindowLoad">
+<pt><![CDATA[Carregar após o carregamento completo da página]]></pt>
+        </locale>
+        <locale name="control.video.playIfInView">
+<pt><![CDATA[Reproduzir quando estiver visível]]></pt>
+        </locale>
+        <locale name="control.video.playIfInView.desc">
+<pt><![CDATA[O vídeo só é reproduzido quando está na área visível. Caso contrário, é colocado em pausa, por exemplo, quando o utilizador continua a percorrer a página.]]></pt>
+        </locale>
+        <locale name="control.video.autoplay">
+<pt><![CDATA[Reprodução automática]]></pt>
+        </locale>
+        <locale name="control.video.autoplay.desc">
+<pt><![CDATA[O vídeo começa a ser reproduzido automaticamente assim que o pode fazer sem parar para carregar mais dados. Em alguns navegadores (por exemplo, Chrome 70.0), a reprodução automática não funciona se a opção «Silenciar» não estiver ativa.]]></pt>
+        </locale>
+        <locale name="control.video.muted">
+<pt><![CDATA[Silenciar]]></pt>
+        </locale>
+        <locale name="control.video.muted.desc">
+<pt><![CDATA[O vídeo começa sem som.]]></pt>
+        </locale>
+        <locale name="control.video.loop">
+<pt><![CDATA[Repetir em ciclo]]></pt>
+        </locale>
+        <locale name="control.video.loop.desc">
+<pt><![CDATA[Se estiver ativa, o navegador regressa automaticamente ao início quando o vídeo termina.]]></pt>
+        </locale>
+        <locale name="control.video.playsinline">
+<pt><![CDATA[Reproduzir o vídeo na página (playsinline)]]></pt>
+        </locale>
+        <locale name="control.video.playsinline.desc" html="true">
+<pt><![CDATA[Se estiver ativa, o vídeo é reproduzido na sua área dentro da página. A ausência deste atributo não implica que o vídeo seja sempre reproduzido em ecrã inteiro. Mais informações em <a href="https://css-tricks.com/what-does-playsinline-mean-in-web-video/" target="_blank">What Does `playsinline` Mean in Web Video?</a>.]]></pt>
+        </locale>
+        <locale name="control.video.brightness">
+<pt><![CDATA[Brilho do vídeo]]></pt>
+        </locale>
+        <locale name="control.video.videoButton">
+<pt><![CDATA[Botão de vídeo]]></pt>
+        </locale>
+        <locale name="control.video.videoButton.desc" html="true">
+<pt><![CDATA[Define como é apresentado o botão de vídeo ou permite ocultá-lo. Para utilizar um botão próprio, atribui a um elemento a classe CSS <code>videoButtonAction</code>.]]></pt>
+        </locale>
+        <locale name="control.video.videoButton.showPermanent">
+<pt><![CDATA[Mostrar sempre o botão]]></pt>
+        </locale>
+        <locale name="control.video.videoButton.showOnMouseEnter">
+<pt><![CDATA[Mostrar o botão apenas ao passar o rato]]></pt>
+        </locale>
+        <locale name="control.video.videoButton.disable">
+<pt><![CDATA[Desativar o botão de vídeo]]></pt>
+        </locale>
+        <locale name="control.video.videoButtonAction">
+<pt><![CDATA[Ação do botão de vídeo]]></pt>
+        </locale>
+        <locale name="control.video.videoButtonAction.openInPopup">
+<pt><![CDATA[Abrir o vídeo numa janela]]></pt>
+        </locale>
+        <locale name="control.video.videoButtonAction.playInWebsite">
+<pt><![CDATA[Reproduzir o vídeo diretamente na página]]></pt>
+        </locale>
+        <locale name="control.video.brightness.desc" html="true">
+<pt><![CDATA[Esta opção permite escurecer o vídeo de fundo para tornar o texto mais legível. Introduz um valor entre <strong>0 e 100</strong>.]]></pt>
+        </locale>
+        <locale name="control.video.maxVideoWidth">
+<pt><![CDATA[Largura máxima do vídeo]]></pt>
+        </locale>
+        <locale name="control.video.maxVideoWidth.desc" html="true">
+<pt><![CDATA[Não afeta a visualização do vídeo numa janela quando está selecionada a opção «Abrir o vídeo numa janela». Introduz o valor em píxeis.]]></pt>
+        </locale>
+        <locale name="control.video.maxContentWidth">
+<pt><![CDATA[Largura máxima do conteúdo]]></pt>
+        </locale>
+        <locale name="control.video.maxContentWidth.desc" html="true">
+<pt><![CDATA[Introduz o valor em píxeis.]]></pt>
+        </locale>
+        <locale name="control.video.btn.title">
+<pt><![CDATA[Reproduzir vídeo]]></pt>
+        </locale>
+
+<!-- scroll pinned cards -->
+        <locale name="control.ScrollPinnedCards.title">
+<pt><![CDATA[Cartões ao percorrer a página (secção fixa)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.description" html="true">
+<pt><![CDATA[<p>Este bloco mantém uma secção fixa ao percorrer a página e move cartões grandes suavemente na horizontal. Transforma uma lista simples numa apresentação visual, ideal para serviços, etapas de um processo, vantagens de produtos ou projetos.</p><ul><li><strong>Movimento ao ritmo do deslocamento:</strong> os cartões acompanham exatamente o avanço da página, sem animação independente, solavancos ou movimento residual.</li><li><strong>Cartões com conteúdo:</strong> cada cartão permite uma imagem, texto ou ambos lado a lado, além de um antetítulo, numeração automática, um ícone e um botão que torna todo o cartão clicável.</li><li><strong>Contador em tempo real:</strong> apresenta «01 / 03», integrado em cima à direita, oculto ou numa posição à tua escolha dentro do conteúdo.</li><li><strong>Disponível em qualquer dispositivo:</strong> em ecrãs táteis, janelas estreitas, sem JavaScript ou com movimento reduzido, os mesmos cartões aparecem uns por baixo dos outros.</li></ul><p>Assim dás destaque ao conteúdo sem que os visitantes com dispositivos pequenos ou definições de acessibilidade percam informação.</p>]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.entries">
+<pt><![CDATA[Cartões]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.entries.desc">
+<pt><![CDATA[Cartões da secção, pela ordem em que se deslocam. Nos computadores, o efeito é ativado a partir de dois cartões; com menos cartões, aparecem uns por baixo dos outros. Todos têm a altura do mais alto: mantém o conteúdo com comprimento semelhante e suficientemente curto para caber no ecrã.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardWidth">
+<pt><![CDATA[Largura dos cartões]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardWidth.desc">
+<pt><![CDATA[Largura do cartão ativo e centrado, relativa à largura do conteúdo da página. Quanto mais estreito for, maior será a parte visível dos cartões anterior e seguinte.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.speed">
+<pt><![CDATA[Velocidade]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.desc">
+<pt><![CDATA[Distância de deslocamento dedicada a cada cartão. «Lenta» mantém a secção fixa durante mais tempo para facilitar a leitura; «Rápida» faz avançar os cartões mais depressa. A distância total é calculada automaticamente a partir do número de cartões.]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.slow">
+<pt><![CDATA[Lenta (mais tempo por cartão)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.normal">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.speed.fast">
+<pt><![CDATA[Rápida (percurso curto)]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.contentVerticalAlign">
+<pt><![CDATA[Alinhamento vertical das áreas de texto]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.contentVerticalAlign.desc">
+<pt><![CDATA[Todos os cartões têm a altura do mais alto. Esta definição determina onde fica um texto mais curto dentro dessa altura. Aplica-se a todos os cartões e a ambas as áreas de texto para manter uma apresentação uniforme. Se um texto ultrapassar a altura do ecrã, começa sempre em cima para que nada fique fora do limite superior.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.showNumbers">
+<pt><![CDATA[Mostrar números nos cartões]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.showNumbers.desc">
+<pt><![CDATA[Apresenta um número sequencial (01, 02, 03…) em cada cartão. O número é calculado automaticamente a partir da ordem dos cartões.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counterMode">
+<pt><![CDATA[Posição do contador]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.desc">
+<pt><![CDATA[O contador («01 / 03») indica qual o cartão visível. Só aparece enquanto a secção permanece fixa; na apresentação empilhada fica oculto.]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.inline">
+<pt><![CDATA[Integrado, em cima à direita junto ao conteúdo]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.hidden">
+<pt><![CDATA[Oculto (sem contador)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterMode.custom">
+<pt><![CDATA[Posição personalizada no conteúdo]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counterTarget">
+<pt><![CDATA[Nome do contentor do contador]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.counterTarget.desc" html="true">
+<pt><![CDATA[Adiciona um marcador vazio ao conteúdo do bloco, por exemplo, <code>&lt;div data-name="cardCounter"&gt;&lt;/div&gt;</code>, e introduz aqui exatamente esse nome (<code>cardCounter</code>). O contador será colocado aí. Se o marcador não for encontrado, permanecerá na posição integrada em cima à direita.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.counter.label">
+<pt><![CDATA[Cartão [current] de [total]]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.button.default">
+<pt><![CDATA[Saber mais]]></pt>
+        </locale>
+
+<!-- scroll pinned cards: card editor -->
+        <locale name="brick.scrollPinnedCards.entries.column.status">
+<pt><![CDATA[Ativo]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.adddialog.title">
+<pt><![CDATA[Adicionar cartão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.editdialog.title">
+<pt><![CDATA[Editar cartão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.title">
+<pt><![CDATA[Eliminar cartão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.text">
+<pt><![CDATA[Queres mesmo eliminar este cartão?]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.delete.information">
+<pt><![CDATA[O cartão selecionado é removido da secção. Só podes anular esta ação cancelando a edição do bloco.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.active">
+<pt><![CDATA[Cartão ativo]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.active.desc">
+<pt><![CDATA[Um cartão inativo continua guardado, mas não é apresentado nem incluído na contagem.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.layout">
+<pt><![CDATA[Disposição do cartão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.desc">
+<pt><![CDATA[Define as áreas utilizadas pelo cartão. Nas variantes divididas, ambas as áreas aparecem lado a lado nos computadores. Quando os cartões são apresentados uns por baixo dos outros, as suas áreas também ficam empilhadas; se houver uma imagem, esta aparece em cima.]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.text">
+<pt><![CDATA[Apenas conteúdo (sem imagem)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.image">
+<pt><![CDATA[Apenas imagem (preenche o cartão)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.textImage">
+<pt><![CDATA[Texto à esquerda · imagem à direita]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.layout.imageText">
+<pt><![CDATA[Imagem à esquerda · texto à direita]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.splitRatio">
+<pt><![CDATA[Proporção das colunas]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.splitRatio.desc" html="true">
+<pt><![CDATA[Proporção entre a largura da coluna esquerda e da direita. Por exemplo, «60 / 40» significa 60 % para a esquerda e 40 % para a direita. Só se aplica às disposições divididas.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.image">
+<pt><![CDATA[Imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.image.desc">
+<pt><![CDATA[Imagem do cartão. Preenche completamente a sua coluna, por isso escolhe uma imagem que possa ser recortada nas margens.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.cardIcon">
+<pt><![CDATA[Ícone]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.cardIcon.desc" html="true">
+<pt><![CDATA[Ícone pequeno acima do título. O habitual é indicar uma classe FontAwesome, por exemplo, «fa-solid fa-rocket»; também podes escolher uma imagem do gestor multimédia.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.eyebrow">
+<pt><![CDATA[Antetítulo]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.eyebrow.desc" html="true">
+<pt><![CDATA[Linha breve acima do título que contextualiza o cartão, por exemplo, «Passo 1» ou «Consultoria». É apresentada com o estilo de antetítulo do modelo.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.title">
+<pt><![CDATA[Título]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.title.desc">
+<pt><![CDATA[Título do cartão. Também é utilizado como texto alternativo da imagem.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.contentPrimary">
+<pt><![CDATA[Conteúdo (área de texto)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.contentPrimary.desc">
+<pt><![CDATA[Texto do cartão. Mantém-no breve: o efeito de deslocamento exige que os cartões caibam por inteiro no ecrã. Se o cartão mais alto não couber, a secção apresenta os cartões uns por baixo dos outros para evitar cortar conteúdo.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.buttonText">
+<pt><![CDATA[Texto do botão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonText.desc">
+<pt><![CDATA[Texto do botão. Se ficar vazio e existir um destino definido, é utilizado «Saber mais».]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.link">
+<pt><![CDATA[Destino do botão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.link.desc">
+<pt><![CDATA[Página interna ou endereço externo. Sem destino, o botão não é apresentado. Se houver um destino, todo o cartão também fica clicável.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.linkTarget">
+<pt><![CDATA[Abrir em]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkTarget.self">
+<pt><![CDATA[Mesma janela]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkTarget.blank">
+<pt><![CDATA[Novo separador]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.linkNofollow">
+<pt><![CDATA[Marcar a ligação como «nofollow»]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.linkNofollow.desc">
+<pt><![CDATA[Indica aos motores de pesquisa que não sigam a ligação. Útil para destinos pagos ou de terceiros; não é necessário em ligações internas habituais.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.btnType">
+<pt><![CDATA[Tipo de botão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.btnType.desc">
+<pt><![CDATA[Variante de cor do botão do sistema de design do modelo, com as mesmas opções do bloco de botões. «primary» corresponde à ação principal.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.buttonSize">
+<pt><![CDATA[Tamanho do botão]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.desc">
+<pt><![CDATA[Aplica-se aos botões de todos os cartões para manter uma apresentação uniforme.]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.default">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.small">
+<pt><![CDATA[Pequeno]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonSize.large">
+<pt><![CDATA[Grande]]></pt>
+        </locale>
+
+<!-- scroll pinned cards: image options per card -->
+        <locale name="brick.scrollPinnedCards.entries.imageMaxHeight">
+<pt><![CDATA[Altura máxima da imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageMaxHeight.desc" html="true">
+<pt><![CDATA[Limita a altura da imagem apenas neste cartão; por exemplo, «320» equivale a 320 píxeis. Um número sem unidade é interpretado como píxeis; também são aceites valores como «50vh» ou «20rem». <strong>Deixa vazio para utilizar a definição global do bloco.</strong>]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imageFit">
+<pt><![CDATA[Ajuste da imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.desc">
+<pt><![CDATA[Define como a imagem ocupa o espaço. «Preencher a área» cobre toda a superfície e recorta as margens, ideal para fotografias. «Mostrar por inteiro» reduz a imagem até ficar toda visível e pode deixar espaço livre, ideal para logótipos, capturas de ecrã ou gráficos que devam ser vistos na íntegra. «Utilizar a definição global» aplica a definição do bloco.]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.cover">
+<pt><![CDATA[Preencher a área (as margens são recortadas)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageFit.contain">
+<pt><![CDATA[Mostrar por inteiro (pode deixar espaço livre)]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imageCrop">
+<pt><![CDATA[Zona visível da imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.desc">
+<pt><![CDATA[Parte da imagem que permanece visível ao recortá-la. Por exemplo, num retrato, escolhe «Em cima» para evitar cortar a cabeça. Só se aplica com «Preencher a área». «Utilizar a definição global» aplica a definição do bloco.]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.leftTop">
+<pt><![CDATA[Em cima à esquerda]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.rightTop">
+<pt><![CDATA[Em cima à direita]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.left">
+<pt><![CDATA[Esquerda]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.center">
+<pt><![CDATA[Centro]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.right">
+<pt><![CDATA[Direita]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.leftBottom">
+<pt><![CDATA[Em baixo à esquerda]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageCrop.rightBottom">
+<pt><![CDATA[Em baixo à direita]]></pt>
+        </locale>
+
+<!-- scroll pinned cards: further button options per card -->
+        <locale name="brick.scrollPinnedCards.entries.buttonIcon">
+<pt><![CDATA[Ícone do botão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIcon.desc" html="true">
+<pt><![CDATA[Classe FontAwesome para um ícone pequeno dentro do botão, por exemplo, «fa-solid fa-arrow-right». Deixa vazio para um botão sem ícone. É independente do ícone do cartão indicado acima.]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition">
+<pt><![CDATA[Posição do ícone do botão]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.desc">
+<pt><![CDATA[Indica se o ícone aparece antes ou depois do texto. As setas costumam ficar depois; os ícones explicativos, antes.]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.start">
+<pt><![CDATA[Antes do texto]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonIconPosition.end">
+<pt><![CDATA[Depois do texto]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.buttonClass">
+<pt><![CDATA[Classe CSS adicional]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonClass.desc">
+<pt><![CDATA[Classes personalizadas do botão, separadas por espaços, para aplicar CSS próprio ou utilizar em scripts. Só são permitidas letras, algarismos, hífenes e sublinhados.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.buttonAriaLabel">
+<pt><![CDATA[Legenda para leitores de ecrã]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonAriaLabel.desc" html="true">
+<pt><![CDATA[Substitui o texto do botão lido pelos leitores de ecrã. Útil se o texto visível não for suficientemente claro; por exemplo, «Saber mais» pode passar a «Saber mais sobre SEO e visibilidade». Deixa vazio se o texto do botão já for inequívoco.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.buttonDataAttributes">
+<pt><![CDATA[Atributos data]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.buttonDataAttributes.desc" html="true">
+<pt><![CDATA[Atributos <code>data-</code> adicionais no botão, por exemplo, para monitorização ou scripts próprios. Os nomes têm de começar por <code>data-</code>.]]></pt>
+        </locale>
+
+<!-- scroll pinned cards: section wide image defaults -->
+        <locale name="control.ScrollPinnedCards.imageMaxHeight">
+<pt><![CDATA[Altura máxima das imagens (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageMaxHeight.desc">
+<pt><![CDATA[Limita a altura das imagens em todos os cartões; por exemplo, «320» equivale a 320 píxeis. Um número sem unidade é interpretado como píxeis; também são aceites valores como «50vh» ou «20rem». Cada cartão pode definir um valor diferente. Em dispositivos estreitos, a imagem também é limitada automaticamente a uma parte da altura do ecrã para não empurrar o texto para fora da área visível; não é necessário um valor específico para telemóveis.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imageFit">
+<pt><![CDATA[Ajuste das imagens (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageFit.desc">
+<pt><![CDATA[Define como as imagens ocupam o espaço em todos os cartões. «Preencher a área» cobre toda a superfície e recorta as margens, ideal para fotografias. «Mostrar por inteiro» reduz a imagem até ficar toda visível, ideal para logótipos ou gráficos. Cada cartão pode definir um ajuste diferente.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imageCrop">
+<pt><![CDATA[Zona visível das imagens (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageCrop.desc">
+<pt><![CDATA[Parte das imagens que permanece visível ao recortá-las. Só se aplica com «Preencher a área». Cada cartão pode definir um ajuste diferente.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.useGlobal">
+<pt><![CDATA[Utilizar a definição global]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.layout.textText">
+<pt><![CDATA[Texto à esquerda · texto à direita]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.contentSecondary">
+<pt><![CDATA[Conteúdo (segunda área de texto)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.contentSecondary.desc">
+<pt><![CDATA[Conteúdo da segunda área de texto. Esta área contém apenas o que introduzires, sem número, título nem botão. É adequada para HTML próprio com estilos definidos através do CSS do bloco. As duas áreas só aparecem lado a lado durante o efeito de deslocamento; quando os cartões ficam empilhados, esta área ocupa toda a largura abaixo da primeira.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.contentPrimaryPadding">
+<pt><![CDATA[Espaçamento interior da área de texto]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.contentPrimaryPadding.desc">
+<pt><![CDATA[Espaço entre o texto e a margem do cartão. «Nenhum» permite que o conteúdo chegue à margem, útil se a área contiver HTML próprio com o seu próprio espaçamento. «Utilizar a definição global» aplica a definição do bloco.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.contentSecondaryPadding">
+<pt><![CDATA[Espaçamento interior da segunda área de texto]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.contentSecondaryPadding.desc">
+<pt><![CDATA[Espaço entre o conteúdo da segunda área e a margem do cartão. «Utilizar a definição global» aplica a definição do bloco.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imageVerticalAlign">
+<pt><![CDATA[Posição vertical da imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imageVerticalAlign.desc">
+<pt><![CDATA[Posição da imagem na sua área: em cima, ao centro ou em baixo. Só se aplica se a imagem não preencher a área, ou seja, com «Mostrar por inteiro» ou se estiver definida uma altura máxima. Com «Preencher a área» e sem limite de altura não tem efeito; nesse caso é utilizada a zona visível da imagem.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.imagePadding">
+<pt><![CDATA[Espaçamento interior da área da imagem]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.imagePadding.desc">
+<pt><![CDATA[Espaço entre a imagem e a margem do cartão. Sem espaçamento interior, a imagem chega aos cantos, que é o comportamento habitual. Adiciona espaço se a imagem tiver o fundo removido e quiseres que a superfície do cartão fique visível à volta. «Utilizar a definição global» aplica a definição do bloco.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.cardClass">
+<pt><![CDATA[Classe CSS (cartão)]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.cardClass.desc">
+<pt><![CDATA[Classe CSS própria para todo o cartão. Permite aplicar estilos especificamente a este cartão através do CSS do bloco, incluindo as áreas internas, por exemplo, «.my-class .quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary». Separa várias classes com espaços.]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.verticalAlign.top">
+<pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.verticalAlign.center">
+<pt><![CDATA[Centro]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.verticalAlign.bottom">
+<pt><![CDATA[Em baixo]]></pt>
+        </locale>
+
+        <locale name="brick.scrollPinnedCards.entries.padding.none">
+<pt><![CDATA[Nenhum]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.padding.small">
+<pt><![CDATA[Pequeno]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.padding.normal">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.padding.large">
+<pt><![CDATA[Grande]]></pt>
+        </locale>
+        <locale name="brick.scrollPinnedCards.entries.padding.extraLarge">
+<pt><![CDATA[Muito grande]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.contentPadding">
+<pt><![CDATA[Espaçamento interior das áreas de texto (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.contentPadding.desc">
+<pt><![CDATA[Espaço entre o texto e a margem do cartão. Aumenta com a largura do cartão e diminui em janelas de pouca altura para deixar espaço ao conteúdo. Cada cartão pode definir um valor diferente.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.buttonsAligned">
+<pt><![CDATA[Alinhar os botões de todos os cartões]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.buttonsAligned.desc">
+<pt><![CDATA[Coloca o botão na margem inferior do cartão para que os botões de todos os cartões fiquem à mesma altura. O texto mantém o seu alinhamento vertical. Só se aplica durante o efeito de deslocamento; quando os cartões ficam empilhados, não há espaço livre para distribuir no seu interior.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imageVerticalAlign">
+<pt><![CDATA[Posição vertical das imagens (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imageVerticalAlign.desc">
+<pt><![CDATA[Posição das imagens na sua área. Só se aplica se uma imagem não preencher a área, ou seja, com «Mostrar por inteiro» ou se estiver definida uma altura máxima. Cada cartão pode definir um ajuste diferente.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.imagePadding">
+<pt><![CDATA[Espaçamento interior da área da imagem (todos os cartões)]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.imagePadding.desc">
+<pt><![CDATA[Espaço entre a imagem e a margem do cartão. Sem espaçamento interior, as imagens chegam aos cantos. Cada cartão pode definir um valor diferente.]]></pt>
+        </locale>
+
+    </groups>
+</locales>

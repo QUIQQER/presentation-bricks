@@ -1,0 +1,45 @@
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+    <h2 class="control-header">{$this->getAttribute('frontendTitle')}</h2>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+    <div class="control-content">
+        {$this->getAttribute('content')}
+    </div>
+{/if}
+
+<div class="quiqqer-presentationBricks-imageCompare__frame">
+    {image src=$imageAfter width=1600 loading="eager" fetchpriority="high" class="quiqqer-presentationBricks-imageCompare__img quiqqer-presentationBricks-imageCompare__img--after"}
+
+    <div class="quiqqer-presentationBricks-imageCompare__overlay" aria-hidden="true">
+        {image src=$imageBefore width=1600 loading="eager" fetchpriority="high" class="quiqqer-presentationBricks-imageCompare__img quiqqer-presentationBricks-imageCompare__img--before"}
+    </div>
+
+    {if $showBeforeLabel}
+        <span class="quiqqer-presentationBricks-imageCompare__label quiqqer-presentationBricks-imageCompare__label--before">{$beforeLabel|escape:'html'}</span>
+    {/if}
+    {if $showAfterLabel}
+        <span class="quiqqer-presentationBricks-imageCompare__label quiqqer-presentationBricks-imageCompare__label--after">{$afterLabel|escape:'html'}</span>
+    {/if}
+
+    <div class="quiqqer-presentationBricks-imageCompare__handle"
+         role="slider"
+         tabindex="0"
+         aria-label="{$sliderLabel|escape:'html'}"
+         aria-orientation="{if $orientation == 'vertical'}vertical{else}horizontal{/if}"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="{$startPosition}"
+         aria-valuetext="{$startPosition} %">
+        <span class="quiqqer-presentationBricks-imageCompare__line" aria-hidden="true"></span>
+
+        {if $handleStyle == 'circle'}
+            <span class="quiqqer-presentationBricks-imageCompare__knob" aria-hidden="true">
+                <span class="quiqqer-presentationBricks-imageCompare__chevron fa-solid {if $orientation == 'vertical'}fa-chevron-up{else}fa-chevron-left{/if}"></span>
+                <span class="quiqqer-presentationBricks-imageCompare__chevron fa-solid {if $orientation == 'vertical'}fa-chevron-down{else}fa-chevron-right{/if}"></span>
+            </span>
+        {else}
+            <span class="quiqqer-presentationBricks-imageCompare__grip fa-solid {if $orientation == 'vertical'}fa-grip-lines{else}fa-grip-lines-vertical{/if}" aria-hidden="true"></span>
+        {/if}
+    </div>
+</div>
