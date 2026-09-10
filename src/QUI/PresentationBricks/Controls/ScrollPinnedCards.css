@@ -1,0 +1,478 @@
+/**
+ * ScrollPinnedCards - section that pins while scrolling and moves large
+ * cards horizontally.
+ *
+ * The stacked presentation is the default and every fallback path - not least
+ * "no JavaScript" - renders the cards below each other.
+ *
+ * The pin is decided in three places, so that it does not have to replace the
+ * stacked presentation after the first paint: PHP knows the number of cards,
+ * the media query around the pinned block knows the device, and an inline
+ * script in the markup contributes the class - and with it the fact that
+ * JavaScript exists. The control only vetoes afterwards, when a card turns
+ * out to be taller than the pinned viewport.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards {
+    /* config layer: long themeable variable > control config > fallback */
+    --_cardCount: var(--_q-controlConf-cardCount, 1);
+    --_cardWidthFactor: var(--quiqqer-presentationBricks-scrollPinnedCards-cardWidthFactor, var(--_q-controlConf-cardWidthFactor, 0.8));
+    --_speed: var(--quiqqer-presentationBricks-scrollPinnedCards-speed, var(--_q-controlConf-speed, 75vh));
+
+    /* pure theming variables (geometry and rhythm, not from settings) */
+    /* the card is sized from the content width, never wider than the window;
+       subtracting the page padding also absorbs the scrollbar */
+    --_cardWidth: var(--quiqqer-presentationBricks-scrollPinnedCards-cardWidth, min(
+        calc(var(--qui-page-contentSize, 1200px) * var(--_cardWidthFactor)),
+        calc(100vw - 2 * var(--qui-page-padding, 20px))
+    ));
+    --_gap: var(--quiqqer-presentationBricks-scrollPinnedCards-gap, var(--qui-page-padding, 20px));
+    --_headerGap: var(--quiqqer-presentationBricks-scrollPinnedCards-headerGap, var(--qui-spacing-lg, 1.5rem));
+    --_stagePadding: var(--quiqqer-presentationBricks-scrollPinnedCards-stagePadding, var(--qui-spacing-xl, 2rem));
+    /*
+     * Keeps the pinned header clear of a navigation bar that overlays the
+     * page. --qui-scroll-padding is the template's own answer to "how much of
+     * the screen does the nav cover": it carries the nav height for the fixed
+     * and auto-hide modes and is 0 when the nav scrolls away with the page.
+     * Templates without that token fall back to 0.
+     */
+    --_pinOffset: var(--quiqqer-presentationBricks-scrollPinnedCards-pinOffset, var(--qui-scroll-padding, 0px));
+    --_cardRadius: var(--quiqqer-presentationBricks-scrollPinnedCards-cardRadius, var(--qui-radius-section, 1.5rem));
+    --_cardSurface: var(--quiqqer-presentationBricks-scrollPinnedCards-cardSurface, var(--qui-colors-surface-card-subtle, #f5f5f5));
+    --_cardSplitGap: var(--quiqqer-presentationBricks-scrollPinnedCards-cardSplitGap, var(--qui-layout-gap, clamp(1.5rem, 0.5rem + 3cqi, 3rem)));
+    --_transition: var(--quiqqer-presentationBricks-scrollPinnedCards-transition, var(--qui-transition-duration, 0.15s) var(--qui-transition-timing-function, ease));
+
+    /* inline padding that lines the stacked cards up with the page container */
+    --_containerPadding: max(var(--qui-page-padding, 20px), calc((100% - var(--qui-page-contentSize, 1200px)) / 2));
+
+    /* split columns, overridden by the ratio modifiers */
+    --_splitA: 1fr;
+    --_splitB: 1fr;
+}
+
+/* ---------------------------------------------------------------- header */
+
+.quiqqer-presentationBricks-scrollPinnedCards__header {
+    margin-bottom: var(--_headerGap);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__headerInner {
+    align-items: flex-end;
+    display: flex;
+    gap: var(--_headerGap);
+    justify-content: space-between;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__headerContent {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__headerContent:empty {
+    display: none;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__counter {
+    display: none;
+    flex: 0 0 auto;
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__counter[hidden] {
+    display: none;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__counterCurrent {
+    font-size: var(--qui-fs-lg, 1.125rem);
+    font-weight: 700;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__counterSeparator,
+.quiqqer-presentationBricks-scrollPinnedCards__counterTotal {
+    color: var(--qui-colors-text-muted, inherit);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__srOnly {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* ------------------------------------------------- stage: stacked default */
+
+.quiqqer-presentationBricks-scrollPinnedCards__track {
+    display: grid;
+    gap: var(--_gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-inline: var(--_containerPadding);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__card {
+    /*
+     * Area options, resolved from outside to inside:
+     * theming > this card's own setting > the section wide setting > fallback.
+     * A card that leaves an option empty simply gets no --_q-entry-* variable,
+     * so it falls through to the section setting on its own.
+     *
+     * The two inner spacings are the exception: the two text areas of one card
+     * can differ, so an override is written directly onto the area element and
+     * shadows the value defined here for that subtree.
+     */
+    --_contentVerticalAlign: var(--quiqqer-presentationBricks-scrollPinnedCards-contentVerticalAlign, var(--_q-controlConf-contentVerticalAlign, start));
+    --_contentPadding: var(--quiqqer-presentationBricks-scrollPinnedCards-contentPadding, var(--_q-controlConf-contentPadding, clamp(1rem, min(4cqi, 4vh), 3rem)));
+    --_imageVerticalAlign: var(--quiqqer-presentationBricks-scrollPinnedCards-imageVerticalAlign, var(--_q-entry-imageVerticalAlign, var(--_q-controlConf-imageVerticalAlign, center)));
+    --_imagePadding: var(--quiqqer-presentationBricks-scrollPinnedCards-imagePadding, var(--_q-controlConf-imagePadding, 0));
+    /* 1 lets the text block eat the free space and pushes the button to the
+       lower edge, 0 keeps it directly below the text */
+    --_bodyGrow: var(--_q-controlConf-bodyGrow, 0);
+
+    /* "no limit" has to be expressed as a length so it can go into min() below */
+    --_imageMaxHeight: var(--quiqqer-presentationBricks-scrollPinnedCards-imageMaxHeight, var(--_q-entry-imageMaxHeight, var(--_q-controlConf-imageMaxHeight, 100vh)));
+    /* Safety net for the stacked view: whatever height is configured, an image
+       never eats more than this share of the screen. That keeps a portrait
+       photo from pushing the text out of view on a phone - without asking the
+       editor for a second, mobile only height. */
+    --_imageMaxHeightCap: var(--quiqqer-presentationBricks-scrollPinnedCards-imageMaxHeightCap, 60vh);
+    --_imageFit: var(--quiqqer-presentationBricks-scrollPinnedCards-imageFit, var(--_q-entry-imageFit, var(--_q-controlConf-imageFit, cover)));
+    /* not a stored value: PHP resolves it from fit, crop and alignment, so
+       that each of those settings owns exactly one fit mode */
+    --_imageObjectPosition: var(--quiqqer-presentationBricks-scrollPinnedCards-imageObjectPosition, var(--_q-entry-imageObjectPosition, center center));
+
+    background-color: var(--_cardSurface);
+    border-radius: var(--_cardRadius);
+    container-type: inline-size;
+    display: grid;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+/*
+ * A column, not a grid: only in a flex container does an auto margin absorb
+ * the free space that is left over in the card. The text block below is what
+ * carries the alignment, this element only distributes what is left when the
+ * text block does not grow.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards__cardBody {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--qui-spacing, 1rem);
+    justify-content: safe var(--_contentVerticalAlign);
+    min-width: 0;
+    padding: var(--_contentPadding);
+}
+
+/*
+ * The text block. With "buttons of all cards on one line" it grows and fills
+ * the card, which pushes the button to the lower edge; without it the block
+ * keeps its content height and the button follows directly below. The
+ * alignment applies in both cases - inside this block when it grows, to the
+ * whole group in .cardBody when it does not.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards__cardBodyContent {
+    align-items: start;
+    display: flex;
+    flex: var(--_bodyGrow) 1 auto;
+    flex-direction: column;
+    gap: var(--qui-spacing, 1rem);
+    justify-content: safe var(--_contentVerticalAlign);
+    min-height: 0;
+}
+
+/*
+ * The second text area carries nothing the control writes itself, so its own
+ * CSS decides everything inside it.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary {
+    min-width: 0;
+    padding: var(--_contentPadding);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardMedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--_imageVerticalAlign);
+    min-height: 0;
+    min-width: 0;
+    padding: var(--_imagePadding);
+}
+
+/*
+ * The {image} helper does not emit a bare image, it wraps it:
+ * <picture><img class="__cardImage"></picture>. The wrapper is therefore the
+ * flex item of the media area, and it has to carry the same column layout and
+ * the same alignment - otherwise the alignment would position the wrapper at
+ * its own height and the image inside would never see the free space.
+ *
+ * The child selector keeps this from reaching an image inside the content of
+ * a text area.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards__cardMedia > picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--_imageVerticalAlign);
+    min-height: 0;
+    min-width: 0;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+    display: block;
+    height: auto;
+    max-height: min(var(--_imageMaxHeight), var(--_imageMaxHeightCap));
+    object-fit: var(--_imageFit);
+    object-position: var(--_imageObjectPosition);
+    width: 100%;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardNumber,
+.quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow,
+.quiqqer-presentationBricks-scrollPinnedCards__cardTitle,
+.quiqqer-presentationBricks-scrollPinnedCards__cardAction {
+    margin: 0;
+}
+
+/* the button keeps its content width instead of filling the stretched column */
+.quiqqer-presentationBricks-scrollPinnedCards__cardAction {
+    align-self: start;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardNumber {
+    color: var(--qui-colors-text-muted, inherit);
+    font-size: var(--qui-fs-sm, 0.875rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* icon left of the headline. Nowrap keeps the two side by side, the title
+   wraps its own text instead of dropping below the icon. */
+.quiqqer-presentationBricks-scrollPinnedCards__cardHeading {
+    align-items: center;
+    display: flex;
+    gap: var(--qui-spacing-sm, 0.5rem);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardHeading .quiqqer-presentationBricks-scrollPinnedCards__cardTitle {
+    min-width: 0;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardIcon {
+    flex: 0 0 auto;
+    font-size: var(--qui-fs-2xl, 1.75rem);
+    line-height: 1;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__cardIconImage {
+    display: block;
+    height: auto;
+    max-width: 3rem;
+}
+
+/* the whole card is a link target; everything else in the card has to stay
+   above that overlay, otherwise the overlay swallows links in the body */
+.quiqqer-presentationBricks-scrollPinnedCards__card--interactive .quiqqer-presentationBricks-scrollPinnedCards__cardContent a,
+.quiqqer-presentationBricks-scrollPinnedCards__card--interactive .quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary a,
+.quiqqer-presentationBricks-scrollPinnedCards__cardButton .btn__text,
+.quiqqer-presentationBricks-scrollPinnedCards__cardButton .btn__icon {
+    position: relative;
+    z-index: 1;
+}
+
+@media (hover: hover) {
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive {
+        cursor: pointer;
+        transition: transform var(--_transition);
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards__cardButton::after {
+        content: "";
+        inset: 0;
+        position: absolute;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:hover,
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:focus-within {
+        transform: translateY(-2px);
+    }
+}
+
+/* ------------------------------------------------------ split card layouts */
+
+.quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image,
+.quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text,
+.quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text {
+    align-items: stretch;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__card--split-60-40 {
+    --_splitA: 3fr;
+    --_splitB: 2fr;
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__card--split-40-60 {
+    --_splitA: 2fr;
+    --_splitB: 3fr;
+}
+
+/* --------------------------------------------------------- pinned variant */
+
+/*
+ * Four of the five conditions for the pin need no JavaScript at all: the
+ * device conditions are media queries, and the number of cards is known while
+ * rendering - PHP only emits the class setting script from two cards upwards.
+ * That script runs while the document is parsed, so a desktop paints the
+ * pinned presentation right away instead of showing the stacked one first and
+ * jumping. Without JavaScript the class never appears and the stacked
+ * presentation stays, which is what keeps the fallback promise of this file.
+ *
+ * Only "does the content survive this screen" needs a measurement, so the
+ * control is left with a veto: it removes the class again when a card turns
+ * out to be taller than the pinned viewport.
+ *
+ * The breakpoint is repeated here from ScrollPinnedCards::PIN_BREAKPOINT - a
+ * media query cannot read a custom property, so the constant in the control
+ * stays the source that has to be kept in sync.
+ */
+@media (min-width: 1024px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+
+    /* the counter belongs to the pinned presentation; the control still sets
+       the hidden attribute when it vetoes mid-flight */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__counter:not([hidden]) {
+        display: block;
+    }
+
+    /*
+     * Held back only while a reload lands inside the pinned range: the track
+     * position depends on the scroll offset and can therefore not be part of
+     * the first paint. "visibility" instead of "opacity" or "display" keeps
+     * the geometry intact, so nothing shifts when it appears - and the whole
+     * state lasts no longer than it takes the control to measure.
+     */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned.quiqqer-presentationBricks-scrollPinnedCards--restoring .quiqqer-presentationBricks-scrollPinnedCards__track,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned.quiqqer-presentationBricks-scrollPinnedCards--restoring .quiqqer-presentationBricks-scrollPinnedCards__counter {
+        visibility: hidden;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__pinWrapper {
+        height: calc(100vh + (var(--_cardCount) - 1) * var(--_speed));
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__viewport {
+        display: flex;
+        flex-direction: column;
+        gap: var(--_headerGap);
+        height: 100vh;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding-block: var(--_stagePadding);
+        position: sticky;
+        top: 0;
+    }
+
+    /*
+     * The header keeps its natural height, the track takes the rest of the screen.
+     * The nav offset sits on the header alone, not in the viewport padding above:
+     * should the token behind it ever resolve to something that is not a length,
+     * only this one declaration is dropped instead of the whole padding.
+     */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__header {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+        padding-top: var(--_pinOffset);
+    }
+
+    /*
+     * The track keeps its content height instead of filling the screen. That is
+     * what gives every card the same height: align-items: stretch (the flex
+     * default) sizes all cards to the tallest one, and the tallest one is decided
+     * by its content - no fixed height anywhere. max-height keeps a card with an
+     * oversized image from pushing the row past the pinned screen.
+     */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__track {
+        align-items: stretch;
+        align-self: flex-start;
+        display: flex;
+        flex: 0 1 auto;
+        /* auto margins swallow the free space below the header, so the cards sit
+           in the middle of the remaining screen while the header stays on top.
+           With too little space they resolve to 0 and the track shrinks instead. */
+        margin-block: auto;
+        min-height: 0;
+        padding-inline: calc((100% - var(--_cardWidth)) / 2);
+        width: max-content;
+        will-change: transform;
+    }
+
+    /* no height here on purpose - the stretch of the track sets it.
+       The inner spacing needs no pinned override: every preset caps itself by
+       the viewport height, so on a short window the padding gives way before the
+       content does. */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card {
+        flex: 0 0 auto;
+        width: var(--_cardWidth);
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text {
+        gap: var(--_cardSplitGap);
+        grid-template-columns: var(--_splitA) var(--_splitB);
+    }
+
+    /*
+     * Inside the pinned viewport the card has a fixed height, so the image fills
+     * its area instead of dictating the card height. That fill comes from the
+     * flex growth, not from a percentage height: as a flex item the image would
+     * resolve "height: 100%" against an indefinite height and fall back to its
+     * own aspect ratio.
+     *
+     * Growing and the vertical alignment are not in conflict, they hand over to
+     * each other: without a height limit the image eats the whole area and there
+     * is nothing left to align. Only "imageMaxHeight" caps it - flex clamps a
+     * grown item to its max-height - and the free space that appears below the
+     * cap is what the alignment then distributes.
+     *
+     * The screen share cap of the stacked view stays out of it here: the card is
+     * already bounded by the screen and by the fit check, so it would only leave
+     * a gap under the image.
+     */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardMedia > picture,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+        flex: 1 1 auto;
+        min-height: 0;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+        max-height: var(--_imageMaxHeight);
+    }
+
+    /* the media always comes first in the DOM, which is also the stacked order
+       ("image on top"). On the pinned desktop view the text-image layout moves
+       it into the second column. */
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image .quiqqer-presentationBricks-scrollPinnedCards__cardMedia {
+        order: 2;
+    }
+}
+
+/* -------------------------------------------------------- reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive {
+        transition: none;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:hover,
+    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:focus-within {
+        transform: none;
+    }
+}
