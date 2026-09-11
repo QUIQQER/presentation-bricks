@@ -43,110 +43,112 @@
                     <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.hasButton} quiqqer-presentationBricks-scrollPinnedCards__card--interactive{/if}{if $card.cardClass != ''} {$card.cardClass}{/if}"
                         data-name="card"{if $card.cardStyle != ''} style="{$card.cardStyle}"{/if}>
 
-                        {if $card.hasMedia}
-                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardMedia"
-                                 {if $card.mediaStyle != ''}style="{$card.mediaStyle}"{/if}>
-                                {if $card.title != ''}
-                                    {image src=$card.image
-                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
-                                        alt="{$card.title|escape:'html'}"
-                                    }
-                                {else}
-                                    {image src=$card.image
-                                        class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
-                                        alt=""
-                                    }
-                                {/if}
-                            </div>
-                        {/if}
-
-                        {if $card.hasText}
-                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBody"
-                                 {if $card.primaryStyle != ''}style="{$card.primaryStyle}"{/if}>
-                                {*
-                                  The text block is a growing wrapper: with "buttons on one
-                                  line" it eats the free space of the card and pushes the
-                                  button to the lower edge, otherwise it keeps its content
-                                  height. Either way the vertical alignment applies - inside
-                                  the wrapper when it grows, to the whole group when it does
-                                  not.
-                                *}
-                                <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodyContent">
-                                    {if $card.showNumber}
-                                        <p class="quiqqer-presentationBricks-scrollPinnedCards__cardNumber"
-                                           aria-hidden="true">{$card.number|escape:'html'}</p>
-                                    {/if}
-
-                                    {if $card.eyebrow != ''}
-                                        <p class="overline quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow">{$card.eyebrow|escape:'html'}</p>
-                                    {/if}
-
-                                    {* icon and title share one row, the icon sits left of the
-                                       headline. Without a title the row carries the icon alone. *}
-                                    {if $card.hasIcon || $card.title != ''}
-                                        <div class="quiqqer-presentationBricks-scrollPinnedCards__cardHeading">
-                                            {if $card.hasIcon}
-                                                {if $card.iconIsImage}
-                                                    <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon">
-                                                        {image src=$card.icon
-                                                            class="quiqqer-presentationBricks-scrollPinnedCards__cardIconImage"
-                                                            alt=""
-                                                        }
-                                                    </span>
-                                                {else}
-                                                    <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon {$card.icon|escape:'html'}"
-                                                          aria-hidden="true"></span>
-                                                {/if}
-                                            {/if}
-
-                                            {if $card.title != ''}
-                                                <h3 class="quiqqer-presentationBricks-scrollPinnedCards__cardTitle">{$card.title|escape:'html'}</h3>
-                                            {/if}
-                                        </div>
-                                    {/if}
-
-                                    {if $card.content != ''}
-                                        <div class="quiqqer-presentationBricks-scrollPinnedCards__cardContent">
-                                            {$card.content}
-                                        </div>
+                        <div class="quiqqer-presentationBricks-scrollPinnedCards__cardInner" data-name="cardInner">
+                            {if $card.hasMedia}
+                                <div class="quiqqer-presentationBricks-scrollPinnedCards__cardMedia"
+                                     {if $card.mediaStyle != ''}style="{$card.mediaStyle}"{/if}>
+                                    {if $card.title != ''}
+                                        {image src=$card.image
+                                            class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
+                                            alt="{$card.title|escape:'html'}"
+                                        }
+                                    {else}
+                                        {image src=$card.image
+                                            class="quiqqer-presentationBricks-scrollPinnedCards__cardImage"
+                                            alt=""
+                                        }
                                     {/if}
                                 </div>
+                            {/if}
 
-                                {if $card.hasButton}
-                                    <p class="quiqqer-presentationBricks-scrollPinnedCards__cardAction">
-                                        <a class="{$card.buttonClass|escape:'html'}"
-                                           href="{$card.link|escape:'html'}"
-                                           {if $card.linkTarget == '_blank'}target="_blank"{/if}
-                                           {if $card.linkRel != ''}rel="{$card.linkRel|escape:'html'}"{/if}
-                                           {if $card.buttonAriaLabel != ''}aria-label="{$card.buttonAriaLabel|escape:'html'}"{/if}
-                                           {foreach $card.buttonDataAttributes as $dataAttribute}{$dataAttribute.name|escape:'html'}="{$dataAttribute.value|escape:'html'}" {/foreach}
-                                        >
-                                            {if $card.buttonIcon != '' && $card.buttonIconPosition == 'start'}
-                                                <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
-                                            {/if}
+                            {if $card.hasText}
+                                <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBody"
+                                     {if $card.primaryStyle != ''}style="{$card.primaryStyle}"{/if}>
+                                    {*
+                                      The text block is a growing wrapper: with "buttons on one
+                                      line" it eats the free space of the card and pushes the
+                                      button to the lower edge, otherwise it keeps its content
+                                      height. Either way the vertical alignment applies - inside
+                                      the wrapper when it grows, to the whole group when it does
+                                      not.
+                                    *}
+                                    <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodyContent">
+                                        {if $card.showNumber}
+                                            <p class="quiqqer-presentationBricks-scrollPinnedCards__cardNumber"
+                                               aria-hidden="true">{$card.number|escape:'html'}</p>
+                                        {/if}
 
-                                            <span class="btn__text">{$card.buttonText|escape:'html'}</span>
+                                        {if $card.eyebrow != ''}
+                                            <p class="overline quiqqer-presentationBricks-scrollPinnedCards__cardEyebrow">{$card.eyebrow|escape:'html'}</p>
+                                        {/if}
 
-                                            {if $card.buttonIcon != '' && $card.buttonIconPosition == 'end'}
-                                                <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
-                                            {/if}
-                                        </a>
-                                    </p>
-                                {/if}
-                            </div>
-                        {/if}
+                                        {* icon and title share one row, the icon sits left of the
+                                           headline. Without a title the row carries the icon alone. *}
+                                        {if $card.hasIcon || $card.title != ''}
+                                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardHeading">
+                                                {if $card.hasIcon}
+                                                    {if $card.iconIsImage}
+                                                        <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon">
+                                                            {image src=$card.icon
+                                                                class="quiqqer-presentationBricks-scrollPinnedCards__cardIconImage"
+                                                                alt=""
+                                                            }
+                                                        </span>
+                                                    {else}
+                                                        <span class="quiqqer-presentationBricks-scrollPinnedCards__cardIcon {$card.icon|escape:'html'}"
+                                                              aria-hidden="true"></span>
+                                                    {/if}
+                                                {/if}
 
-                        {*
-                          The second text area carries nothing but its content: no number,
-                          no headline, no button. That keeps it predictable to style with
-                          own CSS, which is what it exists for.
-                        *}
-                        {if $card.hasSecondary}
-                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary"
-                                 {if $card.secondaryStyle != ''}style="{$card.secondaryStyle}"{/if}>
-                                {$card.contentSecondary}
-                            </div>
-                        {/if}
+                                                {if $card.title != ''}
+                                                    <h3 class="quiqqer-presentationBricks-scrollPinnedCards__cardTitle">{$card.title|escape:'html'}</h3>
+                                                {/if}
+                                            </div>
+                                        {/if}
+
+                                        {if $card.content != ''}
+                                            <div class="quiqqer-presentationBricks-scrollPinnedCards__cardContent">
+                                                {$card.content}
+                                            </div>
+                                        {/if}
+                                    </div>
+
+                                    {if $card.hasButton}
+                                        <p class="quiqqer-presentationBricks-scrollPinnedCards__cardAction">
+                                            <a class="{$card.buttonClass|escape:'html'}"
+                                               href="{$card.link|escape:'html'}"
+                                               {if $card.linkTarget == '_blank'}target="_blank"{/if}
+                                               {if $card.linkRel != ''}rel="{$card.linkRel|escape:'html'}"{/if}
+                                               {if $card.buttonAriaLabel != ''}aria-label="{$card.buttonAriaLabel|escape:'html'}"{/if}
+                                               {foreach $card.buttonDataAttributes as $dataAttribute}{$dataAttribute.name|escape:'html'}="{$dataAttribute.value|escape:'html'}" {/foreach}
+                                            >
+                                                {if $card.buttonIcon != '' && $card.buttonIconPosition == 'start'}
+                                                    <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
+                                                {/if}
+
+                                                <span class="btn__text">{$card.buttonText|escape:'html'}</span>
+
+                                                {if $card.buttonIcon != '' && $card.buttonIconPosition == 'end'}
+                                                    <span class="{$card.buttonIcon|escape:'html'} btn__icon" aria-hidden="true"></span>
+                                                {/if}
+                                            </a>
+                                        </p>
+                                    {/if}
+                                </div>
+                            {/if}
+
+                            {*
+                              The second text area carries nothing but its content: no number,
+                              no headline, no button. That keeps it predictable to style with
+                              own CSS, which is what it exists for.
+                            *}
+                            {if $card.hasSecondary}
+                                <div class="quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary"
+                                     {if $card.secondaryStyle != ''}style="{$card.secondaryStyle}"{/if}>
+                                    {$card.contentSecondary}
+                                </div>
+                            {/if}
+                        </div>
                     </li>
                 {/foreach}
             </ul>

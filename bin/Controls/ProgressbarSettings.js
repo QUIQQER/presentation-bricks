@@ -116,7 +116,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     }, {
                         name: 'add',
                         textimage: 'fa fa-plus',
-                        text: QUILocale.get('quiqqer/quiqqer', 'add'),
+                        text: QUILocale.get('quiqqer/core', 'add'),
                         events: {
                             onClick: this.$openAddDialog
                         }
@@ -125,7 +125,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     }, {
                         name: 'edit',
                         textimage: 'fa fa-edit',
-                        text: QUILocale.get('quiqqer/quiqqer', 'edit'),
+                        text: QUILocale.get('quiqqer/core', 'edit'),
                         disabled: true,
                         events: {
                             onClick: this.$openEditDialog
@@ -133,7 +133,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     }, {
                         name: 'delete',
                         textimage: 'fa fa-trash',
-                        text: QUILocale.get('quiqqer/quiqqer', 'delete'),
+                        text: QUILocale.get('quiqqer/core', 'delete'),
                         disabled: true,
                         events: {
                             onClick: this.$openDeleteDialog
@@ -141,7 +141,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                     }
                 ],
                 columnModel: [{
-                    header: QUILocale.get('quiqqer/quiqqer', 'title'),
+                    header: QUILocale.get('quiqqer/core', 'title'),
                     dataIndex: 'title',
                     dataType: 'string',
                     width: 250
@@ -479,7 +479,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ProgressbarSettings', [
                 maxWidth: 600,
                 maxHeight: 400,
                 ok_button: {
-                    text: QUILocale.get('quiqqer/quiqqer', 'delete'),
+                    text: QUILocale.get('quiqqer/core', 'delete'),
                     textimage: 'fa fa-trash'
                 },
                 events: {

@@ -230,7 +230,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
          */
         $cardsFit: function () {
             return !this.$cards.some(function (Card) {
-                return Card.scrollHeight > Card.clientHeight + 1;
+                // The shell may carry overflowing decorative pseudo-elements.
+                // Fall back to the card for markup from an older page cache.
+                const Content = Card.querySelector('[data-name="cardInner"]') || Card;
+
+                return Content.scrollHeight > Content.clientHeight + 1;
             });
         },
 
