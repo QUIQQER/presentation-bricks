@@ -151,9 +151,24 @@
     border-radius: var(--_cardRadius);
     container-type: inline-size;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 0;
     overflow: hidden;
     position: relative;
     padding: 0;
+}
+
+/* Keep content overflow separate from decoration on the card shell. The
+   zero minimums also allow shrinking when a theme makes the shell overflow
+   visible; otherwise its content could grow beyond the pinned viewport. */
+.quiqqer-presentationBricks-scrollPinnedCards__cardInner {
+    border-radius: inherit;
+    display: grid;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
 }
 
 /*
@@ -426,6 +441,12 @@
     .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text,
     .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text {
         gap: var(--_cardSplitGap);
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner {
+        gap: inherit;
         grid-template-columns: var(--_splitA) var(--_splitB);
     }
 
