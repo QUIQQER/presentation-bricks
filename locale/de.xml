@@ -972,7 +972,7 @@
 <de><![CDATA[<p>Mit diesem Baustein bleibt eine Sektion beim Scrollen stehen und zieht dabei große Karten flüssig seitwärts durchs Bild. Aus einer normalen Liste wird so eine kleine Inszenierung – ideal für Leistungen, Prozessschritte, Produktvorteile oder Referenzen.</p>
 <ul>
     <li><strong>Bewegung, die zum Scrollen passt:</strong> Die Karten folgen exakt dem Scroll-Fortschritt, nicht einer eigenen Animation – kein Ruckeln, kein Weiterlaufen.</li>
-    <li><strong>Karten mit Substanz:</strong> Je Karte Bild, Text oder beides nebeneinander, dazu Overline, automatische Nummerierung, Icon und ein Button, der die ganze Karte klickbar macht.</li>
+    <li><strong>Karten mit Substanz:</strong> Je Karte Bild, Text oder beides nebeneinander, dazu Overline, automatische Nummerierung, Icon und ein optionaler Button für weiterführende Inhalte.</li>
     <li><strong>Live-Zähler:</strong> Zeigt „01 / 03“ an – eingebaut oben rechts, versteckt oder an einer selbst gewählten Stelle im Inhalt.</li>
     <li><strong>Überall benutzbar:</strong> Auf Touch-Geräten, schmalen Fenstern, ohne JavaScript und bei reduzierter Bewegung erscheinen dieselben Karten einfach untereinander.</li>
 </ul>
@@ -1152,7 +1152,7 @@
 <de><![CDATA[Ziel des Buttons]]></de>
         </locale>
         <locale name="brick.scrollPinnedCards.entries.link.desc">
-<de><![CDATA[Interne Seite oder externe Adresse. Ohne Ziel erscheint kein Button. Ist ein Ziel gesetzt, wird zusätzlich die gesamte Karte klickbar.]]></de>
+<de><![CDATA[Interne Seite oder externe Adresse für den Button. Ohne Ziel erscheint kein Button.]]></de>
         </locale>
 
         <locale name="brick.scrollPinnedCards.entries.linkTarget">

@@ -40,7 +40,7 @@
 
             <ul class="quiqqer-presentationBricks-scrollPinnedCards__track" data-name="track">
                 {foreach $cards as $card}
-                    <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.hasButton} quiqqer-presentationBricks-scrollPinnedCards__card--interactive{/if}{if $card.cardClass != ''} {$card.cardClass}{/if}"
+                    <li class="quiqqer-presentationBricks-scrollPinnedCards__card quiqqer-presentationBricks-scrollPinnedCards__card--layout-{$card.layout}{if $card.splitRatio != ''} quiqqer-presentationBricks-scrollPinnedCards__card--split-{$card.splitRatio}{/if}{if $card.cardClass != ''} {$card.cardClass}{/if}"
                         data-name="card"{if $card.cardStyle != ''} style="{$card.cardStyle}"{/if}>
 
                         <div class="quiqqer-presentationBricks-scrollPinnedCards__cardInner" data-name="cardInner">

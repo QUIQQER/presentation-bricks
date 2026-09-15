@@ -972,7 +972,7 @@
 <en><![CDATA[<p>With this brick a section stays in place while scrolling and moves large cards smoothly sideways across the screen. A plain list turns into a small staging – ideal for services, process steps, product benefits or references.</p>
 <ul>
     <li><strong>Motion that matches the scroll:</strong> The cards follow the scroll progress exactly instead of running their own animation – no stutter, no overshoot.</li>
-    <li><strong>Cards with substance:</strong> Per card an image, text or both side by side, plus an overline, automatic numbering, an icon and a button that makes the whole card clickable.</li>
+    <li><strong>Cards with substance:</strong> Per card an image, text or both side by side, plus an overline, automatic numbering, an icon and an optional button for further information.</li>
     <li><strong>Live counter:</strong> Shows "01 / 03" – built in at the top right, hidden, or at a position of your choice inside the content.</li>
     <li><strong>Usable everywhere:</strong> On touch devices, in narrow windows, without JavaScript and with reduced motion the very same cards simply appear below each other.</li>
 </ul>
@@ -1152,7 +1152,7 @@
 <en><![CDATA[Button target]]></en>
         </locale>
         <locale name="brick.scrollPinnedCards.entries.link.desc">
-<en><![CDATA[Internal page or external address. Without a target no button is shown. With a target the whole card becomes clickable as well.]]></en>
+<en><![CDATA[Internal page or external address for the button. Without a target no button is shown.]]></en>
         </locale>
 
         <locale name="brick.scrollPinnedCards.entries.linkTarget">
