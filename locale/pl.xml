@@ -968,7 +968,7 @@
 <pl><![CDATA[Karty]]></pl>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<pl><![CDATA[Karty sekcji w kolejności przewijania. Na komputerach efekt działa od dwóch kart; przy mniejszej liczbie karty są wyświetlane jedna pod drugą. Wszystkie mają wysokość najwyższej karty, dlatego treść każdej powinna mieć podobną długość i mieścić się na ekranie.]]></pl>
+<pl><![CDATA[Karty są wyświetlane w podanej kolejności. Przy co najmniej dwóch kartach sekcja pozostaje przypięta podczas przewijania na obsługiwanych urządzeniach od szerokości 768 px. Jeśli treść przekracza dostępną wysokość okna, automatycznie pojawia się karuzela ze strzałkami. W obu trybach wszystkie karty mają wysokość najwyższej karty. Na urządzeniach mobilnych i dotykowych oraz przy ograniczonym ruchu karty pozostają jedna pod drugą.]]></pl>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -976,6 +976,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <pl><![CDATA[Szerokość aktywnej, wyśrodkowanej karty względem szerokości treści strony. Im węższa karta, tym większa część poprzedniej i następnej karty jest widoczna.]]></pl>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<pl><![CDATA[Odstęp między kartami]]></pl>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<pl><![CDATA[Poziomy odstęp między kartami w przypiętej sekcji i w karuzeli. Dostosowuje się do dostępnej szerokości. Pionowy odstęp między kartami ułożonymi jedna pod drugą pozostaje bez zmian.]]></pl>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<pl><![CDATA[Mały]]></pl>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<pl><![CDATA[Normalny]]></pl>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<pl><![CDATA[Duży]]></pl>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1012,7 +1028,7 @@
 <pl><![CDATA[Położenie licznika]]></pl>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<pl><![CDATA[Licznik („01 / 03”) wskazuje aktualnie widoczną kartę. Pojawia się tylko wtedy, gdy sekcja jest przyklejona; w układzie pionowym jest ukryty.]]></pl>
+<pl><![CDATA[Licznik („01 / 03”) wskazuje aktywną kartę podczas przewijania przypiętej sekcji i w karuzeli. Strzałki karuzeli pojawiają się obok licznika. Po ukryciu licznika strzałki pozostają widoczne w domyślnym miejscu. W układzie pionowym licznik i strzałki są ukryte.]]></pl>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <pl><![CDATA[Wbudowany, u góry po prawej obok treści]]></pl>

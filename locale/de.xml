@@ -983,7 +983,7 @@
 <de><![CDATA[Karten]]></de>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<de><![CDATA[Die Karten der Sektion in der Reihenfolge, in der sie durchgezogen werden. Ab zwei Karten wird auf dem Desktop gescrollt, darunter erscheinen die Karten untereinander. Alle Karten sind so hoch wie die höchste – halte den Inhalt je Karte daher ähnlich lang und kurz genug, dass er auf den Bildschirm passt.]]></de>
+<de><![CDATA[Die Karten erscheinen in der angegebenen Reihenfolge. Ab zwei Karten wird die Sektion auf geeigneten Geräten ab 768 px beim Scrollen festgehalten. Passt der Inhalt nicht in die Fensterhöhe, erscheint automatisch ein Slider mit Pfeilen. In beiden Darstellungen richtet sich die gemeinsame Kartenhöhe nach der höchsten Karte. Auf Mobil- und Touchgeräten sowie bei reduzierter Bewegung bleiben die Karten untereinander.]]></de>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -991,6 +991,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <de><![CDATA[Breite der aktiven, mittig stehenden Karte – bezogen auf die Inhaltsbreite der Seite, nicht auf den Bildschirm. Je schmaler die Karte, desto mehr sieht man von der vorherigen und der nächsten Karte.]]></de>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<de><![CDATA[Kartenabstand]]></de>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<de><![CDATA[Horizontaler Abstand zwischen den Karten beim Scroll-Pinning und im Slider. Der Abstand passt sich der verfügbaren Breite an. Der vertikale Abstand gestapelter Karten bleibt unverändert.]]></de>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<de><![CDATA[Klein]]></de>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<de><![CDATA[Normal]]></de>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<de><![CDATA[Groß]]></de>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1027,7 +1043,7 @@
 <de><![CDATA[Position des Zählers]]></de>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<de><![CDATA[Der Zähler („01 / 03“) zeigt, welche Karte gerade sichtbar ist. Er erscheint nur, solange die Sektion tatsächlich steht – in der gestapelten Darstellung wird er ausgeblendet.]]></de>
+<de><![CDATA[Der Zähler („01 / 03“) zeigt die aktive Karte beim Scroll-Pinning und im Slider. Im Slider stehen die Pfeile daneben. Bei ausgeblendetem Zähler bleiben die Pfeile an der Standardposition sichtbar. In der gestapelten Darstellung entfallen Zähler und Pfeile.]]></de>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <de><![CDATA[Eingebaut, oben rechts neben dem Inhalt]]></de>
