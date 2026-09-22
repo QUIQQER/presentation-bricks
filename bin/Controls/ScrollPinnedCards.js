@@ -45,6 +45,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             '$onResize',
             '$onSliderSelect',
             '$onFocusIn',
+            '$onFocusOut',
             '$evaluateMode',
             '$update',
             '$tick'
@@ -83,6 +84,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             this.$Carousel = null;
             this.$isSlider = false;
             this.$destroyed = false;
+            this.$FocusedElement = null;
 
             this.addEvents({
                 onImport: this.$onImport,
@@ -400,6 +402,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             window.addEventListener('scroll', this.$onScroll, {passive: true});
             this.$Track.addEventListener('focusin', this.$onFocusIn);
+            this.$Track.addEventListener('focusout', this.$onFocusOut);
 
             this.$measure();
         },
@@ -427,6 +430,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             window.removeEventListener('scroll', this.$onScroll);
             this.$Track.removeEventListener('focusin', this.$onFocusIn);
+            this.$Track.removeEventListener('focusout', this.$onFocusOut);
+            this.$FocusedElement = null;
 
             if (this.$frame) {
                 window.cancelAnimationFrame(this.$frame);
@@ -516,6 +521,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 return;
             }
 
+            // Restoring browser focus is not navigation to another card.
+            const restoredFocus = event.target === this.$FocusedElement && event.relatedTarget === null;
+            this.$FocusedElement = event.target;
+
+            if (restoredFocus) {
+                return;
+            }
+
             const index = this.$cards.findIndex(function (Card) {
                 return Card.contains(event.target);
             });
@@ -534,6 +547,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 top: top + this.$travel * (index / (this.$cards.length - 1)),
                 behavior: 'auto'
             });
+        },
+
+        $onFocusOut: function () {
+            // Keep the element while focus leaves the browser, but forget it
+            // after a real focus change or an explicit blur within the page.
+            if (document.hasFocus()) {
+                this.$FocusedElement = null;
+            }
         },
 
         /**
