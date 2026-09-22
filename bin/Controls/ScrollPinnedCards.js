@@ -6,7 +6,8 @@
  * The pin is a progressive enhancement. It is only switched on when every
  * condition holds: a fine pointer, a desktop sized viewport, no
  * "prefers-reduced-motion" and at least two cards. In every other case the
- * PHP rendered stack of cards stays untouched.
+ * PHP rendered stack of cards stays untouched. Eligible screens with oversized
+ * content use the shared Carousel instead of pinning.
  *
  * @author www.pcsg.de (Michael Danielczok)
  * @module package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards
@@ -14,13 +15,15 @@
 define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
     'qui/controls/Control',
-    'Locale'
+    'Locale',
+    'package/quiqqer/slider/bin/Carousel'
 
-], function (QUIControl, QUILocale) {
+], function (QUIControl, QUILocale, Carousel) {
     "use strict";
 
     const lg = 'quiqqer/presentation-bricks';
     const pinnedClass = 'quiqqer-presentationBricks-scrollPinnedCards--pinned';
+    const sliderClass = 'quiqqer-presentationBricks-scrollPinnedCards--slider';
     const restoringClass = 'quiqqer-presentationBricks-scrollPinnedCards--restoring';
 
     // The scroll position is not written to the track directly. Per 60 Hz
@@ -40,8 +43,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             '$onDestroy',
             '$onScroll',
             '$onResize',
-            '$onTrackResize',
+            '$onSliderSelect',
             '$onFocusIn',
+            '$onFocusOut',
             '$evaluateMode',
             '$update',
             '$tick'
@@ -50,7 +54,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
         options: {
             countermode: 'inline',
             countertarget: '',
-            breakpoint: 1024,
+            breakpoint: 768,
             mincards: 2
         },
 
@@ -76,6 +80,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             this.$resizeFrame = null;
             this.$queries = [];
             this.$Observer = null;
+            this.$ContentObserver = null;
+            this.$Carousel = null;
+            this.$isSlider = false;
+            this.$destroyed = false;
+            this.$FocusedElement = null;
 
             this.addEvents({
                 onImport: this.$onImport,
@@ -90,7 +99,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             const Elm = this.getElm();
 
             this.$PinWrapper = Elm.querySelector('[data-name="pinWrapper"]');
-            this.$Viewport = Elm.querySelector('[data-name="viewport"]');
+            this.$Viewport = Elm.querySelector('[data-name="pinViewport"]') || Elm.querySelector('[data-name="viewport"]');
             this.$Track = Elm.querySelector('[data-name="track"]');
 
             if (!this.$PinWrapper || !this.$Viewport || !this.$Track) {
@@ -105,6 +114,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             window.addEventListener('resize', this.$onResize);
 
             this.$evaluateMode();
+            this.$watchContent();
 
             // whatever the mode turned out to be, the presentation is final
             // now - the inline script may have held the track back until here
@@ -115,7 +125,18 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
          * event : on destroy
          */
         $onDestroy: function () {
+            this.$destroyed = true;
             this.$disablePin();
+            this.$disableSlider();
+
+            if (this.$Carousel) {
+                this.$Carousel.Embla.destroy();
+            }
+
+            this.$Observer?.disconnect();
+            this.$ContentObserver?.disconnect();
+            this.getElm().removeEventListener('load', this.$onResize, true);
+            document.fonts?.removeEventListener('loadingdone', this.$onResize);
             window.removeEventListener('resize', this.$onResize);
 
             if (this.$resizeFrame) {
@@ -170,7 +191,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 return;
             }
 
-            Target.appendChild(this.$Counter);
+            Target.appendChild(Elm.querySelector('[data-name="navigation"]') || this.$Counter);
         },
 
         /**
@@ -203,9 +224,23 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
         },
 
         /**
-         * Switch between the pinned and the stacked presentation.
+         * Measure in the pinned layout, then hand oversized cards to Carousel.
+         * A temporary measurement must not change the active card or scroll position.
          */
         $evaluateMode: function () {
+            if (this.$destroyed) {
+                return;
+            }
+
+            const wasPinned = this.$isPinned;
+            const wasSlider = this.$isSlider;
+            const index = this.$index;
+            const rect = this.$PinWrapper.getBoundingClientRect();
+            const top = rect.top + window.scrollY;
+            const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+            this.$disableSlider();
+
             if (!this.$mayPin()) {
                 this.$disablePin();
                 return;
@@ -213,18 +248,109 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             this.$enablePin();
 
-            // Only now, with the pinned layout applied, can the decisive
-            // question be answered: does the content survive this screen?
             if (!this.$cardsFit()) {
                 this.$disablePin();
+                this.$enableSlider(index);
+
+                // Removing the tall pin wrapper must not skip the section that
+                // was being read. Changes elsewhere on the page do not move it.
+                if (wasPinned && rect.top <= 0 && rect.bottom >= window.innerHeight) {
+                    window.scrollTo({top: top, behavior: 'instant'});
+                }
+
+                return;
+            }
+
+            if (wasSlider && inView && this.$travel > 0) {
+                window.scrollTo({
+                    top: top + this.$travel * (index / (this.$cards.length - 1)),
+                    behavior: 'instant'
+                });
+            }
+
+            this.$update();
+        },
+
+        /**
+         * Use the shared carousel for dragging, focus handling and arrow state.
+         * Keep its instance between modes; inactive Embla releases DOM styles,
+         * observers and input handlers before the pin owns the track again.
+         */
+        $enableSlider: function (index) {
+            // Cached markup from before the carousel viewport was introduced
+            // still has a safe stacked fallback.
+            if (!this.$Viewport.querySelector('[data-name="viewport"]')) {
+                return;
+            }
+
+            this.getElm().classList.add(sliderClass);
+            this.$isSlider = true;
+            this.$Counter?.removeAttribute('hidden');
+
+            if (!this.$Carousel) {
+                this.$Carousel = new Carousel({
+                    align: 'center',
+                    containscroll: '',
+                    startindex: index,
+                    loop: 0,
+                    slidestoscroll: 1
+                });
+                this.$Carousel.imports(this.$Viewport);
+                this.$Carousel.Embla.on('select', this.$onSliderSelect);
+            } else {
+                this.$Carousel.Embla.reInit({active: true, startIndex: index});
+            }
+
+            this.$onSliderSelect();
+        },
+
+        $disableSlider: function () {
+            if (!this.$isSlider) {
+                return;
+            }
+
+            this.$isSlider = false;
+            this.$Carousel.Embla.reInit({active: false});
+            this.getElm().classList.remove(sliderClass);
+            this.$Counter?.setAttribute('hidden', 'hidden');
+        },
+
+        $onSliderSelect: function () {
+            if (this.$isSlider) {
+                this.$setIndex(this.$Carousel.Embla.selectedScrollSnap());
             }
         },
 
         /**
-         * A pinned card must not scroll on its own - an inner scroll container
-         * would swallow the wheel events the pin lives on. So when a card is
-         * taller than the pinned screen, the stacked presentation is the
-         * honest answer instead of silently cutting the content off.
+         * Content can change after import (images, fonts, dynamic text). Observe
+         * final box sizes and actual content, never the animated track styles.
+         */
+        $watchContent: function () {
+            const Elm = this.getElm();
+            Elm.addEventListener('load', this.$onResize, true);
+            document.fonts?.addEventListener('loadingdone', this.$onResize);
+
+            if ('ResizeObserver' in window) {
+                this.$Observer = new ResizeObserver(this.$onResize);
+                this.$Observer.observe(this.$Track);
+                const Header = Elm.querySelector('[data-name="header"]');
+
+                if (Header) {
+                    this.$Observer.observe(Header);
+                }
+
+                this.$cards.forEach((Card) => {
+                    const Inner = Card.querySelector('[data-name="cardInner"]') || Card;
+                    Array.from(Inner.children).forEach((Child) => this.$Observer.observe(Child));
+                });
+            }
+
+            this.$ContentObserver = new MutationObserver(this.$onResize);
+            this.$ContentObserver.observe(this.$Track, {childList: true, characterData: true, subtree: true});
+        },
+
+        /**
+         * Measure content only; decorative overflow on the shell does not veto pinning.
          *
          * @return {boolean}
          */
@@ -264,7 +390,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
         $enablePin: function () {
             if (this.$isPinned) {
                 this.$measure();
-                this.$update();
                 return;
             }
 
@@ -277,14 +402,9 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             window.addEventListener('scroll', this.$onScroll, {passive: true});
             this.$Track.addEventListener('focusin', this.$onFocusIn);
-
-            if ('ResizeObserver' in window) {
-                this.$Observer = new ResizeObserver(this.$onTrackResize);
-                this.$Observer.observe(this.$Track);
-            }
+            this.$Track.addEventListener('focusout', this.$onFocusOut);
 
             this.$measure();
-            this.$update();
         },
 
         $disablePin: function () {
@@ -310,11 +430,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             window.removeEventListener('scroll', this.$onScroll);
             this.$Track.removeEventListener('focusin', this.$onFocusIn);
-
-            if (this.$Observer) {
-                this.$Observer.disconnect();
-                this.$Observer = null;
-            }
+            this.$Track.removeEventListener('focusout', this.$onFocusOut);
+            this.$FocusedElement = null;
 
             if (this.$frame) {
                 window.cancelAnimationFrame(this.$frame);
@@ -377,12 +494,11 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
         },
 
         /**
-         * A changed window can flip every gate condition, so the whole mode is
-         * re-evaluated. The track observer below only re-measures, which keeps
-         * the class toggling out of the observer and avoids a feedback loop.
+         * Batch viewport and content changes. Measurement and restoration finish
+         * in the same frame, so observers only see the final layout.
          */
         $onResize: function () {
-            if (this.$resizeFrame) {
+            if (this.$destroyed || this.$resizeFrame) {
                 return;
             }
 
@@ -390,11 +506,6 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 this.$resizeFrame = null;
                 this.$evaluateMode();
             }.bind(this));
-        },
-
-        $onTrackResize: function () {
-            this.$measure();
-            this.$update();
         },
 
         /**
@@ -407,6 +518,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
          */
         $onFocusIn: function (event) {
             if (!this.$isPinned || this.$cards.length < 2) {
+                return;
+            }
+
+            // Restoring browser focus is not navigation to another card.
+            const restoredFocus = event.target === this.$FocusedElement && event.relatedTarget === null;
+            this.$FocusedElement = event.target;
+
+            if (restoredFocus) {
                 return;
             }
 
@@ -428,6 +547,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 top: top + this.$travel * (index / (this.$cards.length - 1)),
                 behavior: 'auto'
             });
+        },
+
+        $onFocusOut: function () {
+            // Keep the element while focus leaves the browser, but forget it
+            // after a real focus change or an explicit blur within the page.
+            if (document.hasFocus()) {
+                this.$FocusedElement = null;
+            }
         },
 
         /**

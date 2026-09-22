@@ -968,7 +968,7 @@
 <pt><![CDATA[Cartões]]></pt>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<pt><![CDATA[Cartões da secção, pela ordem em que se deslocam. Nos computadores, o efeito é ativado a partir de dois cartões; com menos cartões, aparecem uns por baixo dos outros. Todos têm a altura do mais alto: mantém o conteúdo com comprimento semelhante e suficientemente curto para caber no ecrã.]]></pt>
+<pt><![CDATA[Os cartões seguem a ordem indicada. Com pelo menos dois cartões, a secção fica fixa durante a deslocação em dispositivos compatíveis a partir de 768 px. Se o conteúdo exceder a altura disponível, é apresentado automaticamente um carrossel com setas. Nos dois modos, todos os cartões têm a altura do mais alto. Em dispositivos móveis e táteis e com movimento reduzido, permanecem empilhados.]]></pt>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -976,6 +976,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <pt><![CDATA[Largura do cartão ativo e centrado, relativa à largura do conteúdo da página. Quanto mais estreito for, maior será a parte visível dos cartões anterior e seguinte.]]></pt>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<pt><![CDATA[Espaçamento dos cartões]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<pt><![CDATA[Espaçamento horizontal entre cartões durante a deslocação fixa e no carrossel. Adapta-se à largura disponível. O espaçamento vertical dos cartões empilhados permanece inalterado.]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<pt><![CDATA[Pequeno]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<pt><![CDATA[Normal]]></pt>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<pt><![CDATA[Grande]]></pt>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1012,7 +1028,7 @@
 <pt><![CDATA[Posição do contador]]></pt>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<pt><![CDATA[O contador («01 / 03») indica qual o cartão visível. Só aparece enquanto a secção permanece fixa; na apresentação empilhada fica oculto.]]></pt>
+<pt><![CDATA[O contador («01 / 03») mostra o cartão ativo durante a deslocação fixa e no carrossel. As setas aparecem ao lado do contador. Se o contador estiver oculto, as setas continuam visíveis na posição predefinida. A vista empilhada não mostra contador nem setas.]]></pt>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <pt><![CDATA[Integrado, em cima à direita junto ao conteúdo]]></pt>

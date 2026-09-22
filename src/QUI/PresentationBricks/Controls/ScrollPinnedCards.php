@@ -22,7 +22,7 @@ use QUI;
  * card count here, the three device conditions by the media query in the
  * stylesheet - so the pinned presentation is already part of the first paint
  * instead of replacing the stacked one. Only whether a card fits on the
- * screen needs a measurement, which leaves the frontend control with a veto.
+ * screen needs a measurement; oversized content uses the shared carousel.
  *
  * A card is built from areas: one or two text areas and an image area. Which
  * of them a card uses is decided by its layout, their inner spacing and
@@ -68,6 +68,14 @@ class ScrollPinnedCards extends QUI\Control
     protected const CARD_WIDTHS = ['60', '65', '70', '75', '80', '85', '90', '95', '100'];
 
     protected const DEFAULT_CARD_WIDTH = '90';
+
+    protected const CARD_GAP_PRESETS = [
+        'small' => 'clamp(1rem, 2cqi, 1.5rem)',
+        'normal' => 'clamp(1.5rem, 3.5cqi, 3rem)',
+        'large' => 'clamp(2rem, 5cqi, 4.5rem)'
+    ];
+
+    protected const DEFAULT_CARD_GAP = 'normal';
 
     /**
      * Composition of a card. "text" is a single text area, "text-text" two of
@@ -235,9 +243,9 @@ class ScrollPinnedCards extends QUI\Control
 
     /**
      * Viewport width (px) from which the pin may become active. Matches the
-     * desktop breakpoint of quiqqer/template-presentation.
+     * mobile breakpoint of quiqqer/template-presentation.
      */
-    protected const PIN_BREAKPOINT = 1024;
+    protected const PIN_BREAKPOINT = 768;
 
     /**
      * constructor
@@ -251,6 +259,7 @@ class ScrollPinnedCards extends QUI\Control
             'nodeName' => 'section',
             'entries' => [],
             'cardWidth' => self::DEFAULT_CARD_WIDTH,
+            'cardGap' => self::DEFAULT_CARD_GAP,
             'speed' => 'normal',
             'contentVerticalAlign' => self::DEFAULT_CONTENT_VERTICAL_ALIGN,
             'contentPadding' => self::DEFAULT_CONTENT_PADDING,
@@ -268,6 +277,7 @@ class ScrollPinnedCards extends QUI\Control
 
         parent::__construct($attributes);
 
+        $this->addCSSFiles((new QUI\Slider\Controls\Carousel())->getCSSFiles());
         $this->addCSSFile(dirname(__FILE__) . '/ScrollPinnedCards.css');
     }
 
@@ -298,6 +308,10 @@ class ScrollPinnedCards extends QUI\Control
 
         $this->setCustomVariable('cardCount', (string)count($entries));
         $this->setCustomVariable('cardWidthFactor', self::CARD_WIDTH_PRESETS[$cardWidth]);
+        $this->setCustomVariable(
+            'cardGap',
+            self::CARD_GAP_PRESETS[$this->normalize('cardGap', array_keys(self::CARD_GAP_PRESETS), self::DEFAULT_CARD_GAP)]
+        );
         $this->setCustomVariable('speed', self::SPEED_PRESETS[$speed]);
 
         // section wide area defaults; a card only overrides what it sets itself
