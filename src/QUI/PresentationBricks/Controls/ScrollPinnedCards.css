@@ -42,6 +42,10 @@
     --_cardSplitGap: var(--quiqqer-presentationBricks-scrollPinnedCards-cardSplitGap, var(--qui-layout-gap, clamp(1.5rem, 0.5rem + 3cqi, 3rem)));
 
     --_navigationGap: var(--quiqqer-presentationBricks-scrollPinnedCards-navigationGap, var(--qui-spacing, 1rem));
+    /* The text color and not --qui-colors-focus-ring: that token is a light
+       halo meant to sit next to a border and almost vanishes on the card
+       surface. The text color keeps its contrast on every card background. */
+    --_focusRing: var(--quiqqer-presentationBricks-scrollPinnedCards-focusRing, currentColor);
 
     /* inline padding that lines the stacked cards up with the page container */
     --_containerPadding: max(var(--qui-page-padding, 20px), calc((100% - var(--qui-page-contentSize, 1200px)) / 2));
@@ -159,6 +163,17 @@
     overflow: hidden;
     position: relative;
     padding: 0;
+}
+
+/*
+ * The card is a tab stop only while pinned or in the slider, the control sets
+ * the tabindex (see $setCardsFocusable). The ring sits outside the card. Both
+ * viewports clip everything that leaves them, but neither lets a card touch
+ * its edge: the pinned one has its stage padding, the slider leaves a small
+ * gap above and below the cards. That is enough room for the ring.
+ */
+.quiqqer-presentationBricks-scrollPinnedCards__card:focus-visible {
+    outline: 3px solid var(--_focusRing);
 }
 
 /* Keep content overflow separate from decoration on the card shell. The

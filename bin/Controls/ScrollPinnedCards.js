@@ -46,6 +46,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             '$onSliderSelect',
             '$onFocusIn',
             '$onFocusOut',
+            '$resetViewportScroll',
             '$evaluateMode',
             '$update',
             '$tick'
@@ -83,6 +84,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             this.$ContentObserver = null;
             this.$Carousel = null;
             this.$isSlider = false;
+            this.$cardsFocusable = false;
             this.$destroyed = false;
             this.$FocusedElement = null;
 
@@ -243,6 +245,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
 
             if (!this.$mayPin()) {
                 this.$disablePin();
+                this.$setCardsFocusable(false);
                 return;
             }
 
@@ -258,6 +261,8 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                     window.scrollTo({top: top, behavior: 'instant'});
                 }
 
+                // $enableSlider falls back to the stack for old cached markup
+                this.$setCardsFocusable(this.$isSlider);
                 return;
             }
 
@@ -268,7 +273,52 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 });
             }
 
+            this.$setCardsFocusable(true);
             this.$update();
+        },
+
+        /**
+         * Make every card a tab stop while pin or slider show one card at a
+         * time. Otherwise a card without a link or button can not be reached
+         * by keyboard at all - Tab would jump straight past it. $onFocusIn
+         * (pin) and Embla (slider) then bring the focused card into view.
+         *
+         * Stacked cards need no stop of their own: they are all visible, and
+         * a focusable element without a function is a dead stop in the tab
+         * order. That is also why this lives in JavaScript and not in the
+         * template.
+         *
+         * Only the final mode of $evaluateMode is written here, never the
+         * temporary pin used for measuring: removing the tabindex from the
+         * focused card would drop the focus on every resize.
+         *
+         * @param {boolean} focusable
+         */
+        $setCardsFocusable: function (focusable) {
+            if (this.$cardsFocusable === focusable) {
+                return;
+            }
+
+            this.$cardsFocusable = focusable;
+
+            const total = this.$cards.length;
+
+            this.$cards.forEach(function (Card, index) {
+                if (!focusable) {
+                    Card.removeAttribute('tabindex');
+                    Card.removeAttribute('aria-label');
+                    return;
+                }
+
+                // The card stays a list item: a role like "group" would break
+                // the list semantics of the track. The label names the stop
+                // on focus, the content stays readable inside it.
+                Card.setAttribute('tabindex', '0');
+                Card.setAttribute('aria-label', QUILocale.get(lg, 'control.ScrollPinnedCards.counter.label', {
+                    current: index + 1,
+                    total: total
+                }));
+            });
         },
 
         /**
@@ -401,6 +451,7 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             }
 
             window.addEventListener('scroll', this.$onScroll, {passive: true});
+            this.$Viewport.addEventListener('scroll', this.$resetViewportScroll, {passive: true});
             this.$Track.addEventListener('focusin', this.$onFocusIn);
             this.$Track.addEventListener('focusout', this.$onFocusOut);
 
@@ -429,9 +480,14 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
             }
 
             window.removeEventListener('scroll', this.$onScroll);
+            this.$Viewport.removeEventListener('scroll', this.$resetViewportScroll);
             this.$Track.removeEventListener('focusin', this.$onFocusIn);
             this.$Track.removeEventListener('focusout', this.$onFocusOut);
             this.$FocusedElement = null;
+
+            // the stacked and the slider presentation get the box as they
+            // expect it, whatever a focus left behind here
+            this.$resetViewportScroll();
 
             if (this.$frame) {
                 window.cancelAnimationFrame(this.$frame);
@@ -521,6 +577,10 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 return;
             }
 
+            // Undo what the browser scrolled to reach the element before
+            // anything else measures or paints - see $resetViewportScroll.
+            this.$resetViewportScroll();
+
             // Restoring browser focus is not navigation to another card.
             const restoredFocus = event.target === this.$FocusedElement && event.relatedTarget === null;
             this.$FocusedElement = event.target;
@@ -529,24 +589,80 @@ define('package/quiqqer/presentation-bricks/bin/Controls/ScrollPinnedCards', [
                 return;
             }
 
+            /*
+             * Only the keyboard navigates. A click already points at the card
+             * it means, and moving the track out from under the pointer
+             * between mousedown and mouseup would swallow the click that is
+             * still to come.
+             */
+            if (!this.$isKeyboardFocus(event.target)) {
+                return;
+            }
+
             const index = this.$cards.findIndex(function (Card) {
                 return Card.contains(event.target);
             });
 
-            if (index < 0 || index === this.$index) {
+            if (index < 0 || this.$travel <= 0) {
                 return;
             }
 
-            if (this.$travel <= 0) {
-                return;
-            }
-
+            /*
+             * Also when the focused card is the active one already: the index
+             * is rounded, so it does not say that the track sits on that card
+             * exactly. Between two cards the focused element hangs over the
+             * edge of the viewport - which is what made the browser scroll the
+             * viewport in the first place.
+             */
             const top = this.$PinWrapper.getBoundingClientRect().top + window.scrollY;
 
             window.scrollTo({
                 top: top + this.$travel * (index / (this.$cards.length - 1)),
-                behavior: 'auto'
+                behavior: 'instant'
             });
+
+            // The page now sits where the focused card is the active one, so
+            // the track belongs there too. Easing towards it would slide the
+            // element the user just reached out from under the focus ring.
+            this.$update();
+        },
+
+        /**
+         * Did the focus come from the keyboard? ":focus-visible" is the
+         * browser's own answer to that question, and it covers more than
+         * tabbing: a text field keeps it when clicked, which is right - typing
+         * there needs the card in view.
+         *
+         * @param {Element} Target
+         * @return {boolean}
+         */
+        $isKeyboardFocus: function (Target) {
+            try {
+                return Target.matches(':focus-visible');
+            } catch (e) {
+                // a browser that does not know the selector cannot tell the
+                // two apart - navigating too often beats not navigating
+                return true;
+            }
+        },
+
+        /**
+         * The pinned viewport clips header and track with "overflow: hidden",
+         * while the track is positioned with a transform. When the browser
+         * focuses an element in a card that is off screen it cannot move that
+         * transform, so it scrolls the clipping box instead - which shifts the
+         * whole section including the header, and nothing ever puts it back,
+         * not even a resize. The pin owns the position of the track, so this
+         * box stays at zero.
+         */
+        $resetViewportScroll: function () {
+            if (this.$Viewport.scrollLeft !== 0) {
+                this.$Viewport.scrollLeft = 0;
+            }
+
+            if (this.$Viewport.scrollTop !== 0) {
+                this.$Viewport.scrollTop = 0;
+            }
         },
 
         $onFocusOut: function () {
