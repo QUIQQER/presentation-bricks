@@ -95,4 +95,26 @@ class ScrollPinnedCardsTest extends TestCase
         $this->assertStringContainsString('&lt;First&gt;', $html);
         $this->assertSame(2, substr_count($html, 'data-name="card"'));
     }
+
+    public function testCardListIsNamedByTheFrontendTitleOrAFallback(): void
+    {
+        $entries = [['title' => 'First'], ['title' => 'Second']];
+
+        $titled = new ScrollPinnedCards([
+            'frontendTitle' => '<Our services>',
+            'entries' => $entries
+        ]);
+
+        $this->assertMatchesRegularExpression(
+            '/data-name="track"\s+aria-label="&lt;Our services&gt;"/',
+            $titled->create()
+        );
+
+        $untitled = new ScrollPinnedCards(['entries' => $entries]);
+
+        $this->assertMatchesRegularExpression(
+            '/data-name="track"\s+aria-label="[^"]+"/',
+            $untitled->create()
+        );
+    }
 }

@@ -355,11 +355,24 @@ class ScrollPinnedCards extends QUI\Control
         $this->setJavaScriptControlOption('breakpoint', self::PIN_BREAKPOINT);
         $this->setJavaScriptControlOption('mincards', self::MIN_PIN_CARDS);
 
+        // Names the card list for assistive technology. The visible heading
+        // lives in the editor content and can not be referenced reliably, so
+        // the frontend title is used where the editor set one.
+        $cardsLabel = trim((string)$this->getAttribute('frontendTitle'));
+
+        if ($cardsLabel === '') {
+            $cardsLabel = QUI::getLocale()->get(
+                'quiqqer/presentation-bricks',
+                'control.ScrollPinnedCards.cards.label'
+            );
+        }
+
         $Engine = QUI::getTemplateManager()->getEngine();
 
         $Engine->assign([
             'this' => $this,
             'cards' => $this->buildCards($entries),
+            'cardsLabel' => $cardsLabel,
             'showCounter' => $counterMode !== 'hidden',
             // the one pin condition the server can answer on its own; the
             // template turns it into the class the stylesheet gates on
