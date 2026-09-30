@@ -1050,6 +1050,9 @@
         <locale name="control.ScrollPinnedCards.counter.label">
 <fr><![CDATA[Carte [current] sur [total]]]></fr>
         </locale>
+        <locale name="control.ScrollPinnedCards.cards.label">
+<fr><![CDATA[Cartes]]></fr>
+        </locale>
         <locale name="control.ScrollPinnedCards.button.default">
 <fr><![CDATA[En savoir plus]]></fr>
         </locale>
