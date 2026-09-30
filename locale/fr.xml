@@ -968,7 +968,7 @@
 <fr><![CDATA[Cartes]]></fr>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<fr><![CDATA[Cartes de la section, dans leur ordre de défilement. Sur ordinateur, l’effet s’active à partir de deux cartes ; en dessous, elles s’affichent les unes sous les autres. Toutes ont la hauteur de la plus grande : gardez donc des contenus de longueur similaire et assez courts pour tenir à l’écran.]]></fr>
+<fr><![CDATA[Les cartes suivent l’ordre indiqué. À partir de deux cartes, la section reste fixe pendant le défilement sur les appareils compatibles dès 768 px. Si le contenu dépasse la hauteur disponible, un carrousel avec flèches apparaît automatiquement. Dans les deux modes, toutes les cartes prennent la hauteur de la plus grande. Sur mobile, sur les appareils tactiles et avec la réduction des animations, elles restent empilées.]]></fr>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -976,6 +976,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <fr><![CDATA[Largeur de la carte active et centrée, relative à la largeur du contenu de la page. Plus elle est étroite, plus les cartes précédente et suivante sont visibles.]]></fr>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<fr><![CDATA[Espacement des cartes]]></fr>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<fr><![CDATA[Espacement horizontal entre les cartes dans la section fixe et le carrousel. Il s’adapte à la largeur disponible. L’espacement vertical des cartes empilées reste inchangé.]]></fr>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<fr><![CDATA[Petit]]></fr>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<fr><![CDATA[Normal]]></fr>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<fr><![CDATA[Grand]]></fr>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1012,7 +1028,7 @@
 <fr><![CDATA[Position du compteur]]></fr>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<fr><![CDATA[Le compteur (« 01 / 03 ») indique la carte actuellement visible. Il apparaît uniquement lorsque la section est fixe ; il est masqué dans la présentation empilée.]]></fr>
+<fr><![CDATA[Le compteur (« 01 / 03 ») indique la carte active pendant le défilement fixe et dans le carrousel. Les flèches du carrousel apparaissent à côté. Si le compteur est masqué, les flèches restent visibles à la position par défaut. La présentation empilée masque le compteur et les flèches.]]></fr>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <fr><![CDATA[Intégré, en haut à droite à côté du contenu]]></fr>

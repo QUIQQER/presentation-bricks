@@ -1355,6 +1355,28 @@
                     <defaultValue>90</defaultValue>
                 </setting>
 
+                <setting name="cardGap" type="select">
+                    <locale group="quiqqer/presentation-bricks"
+                            var="control.ScrollPinnedCards.cardGap"/>
+                    <description>
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.cardGap.desc"/>
+                    </description>
+                    <option value="small">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.cardGap.small"/>
+                    </option>
+                    <option value="normal">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.cardGap.normal"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/presentation-bricks"
+                                var="control.ScrollPinnedCards.cardGap.large"/>
+                    </option>
+                    <defaultValue>normal</defaultValue>
+                </setting>
+
                 <setting name="speed" type="select">
                     <locale group="quiqqer/presentation-bricks"
                             var="control.ScrollPinnedCards.speed"/>

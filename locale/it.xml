@@ -968,7 +968,7 @@
 <it><![CDATA[Schede]]></it>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<it><![CDATA[Schede della sezione, nell’ordine in cui scorrono. Su computer, l’effetto si attiva a partire da due schede; con meno schede vengono mostrate una sotto l’altra. Tutte hanno l’altezza della più alta: mantieni quindi contenuti di lunghezza simile e abbastanza brevi da stare nello schermo.]]></it>
+<it><![CDATA[Le schede seguono l’ordine indicato. Con almeno due schede, la sezione resta fissa durante lo scorrimento sui dispositivi compatibili da 768 px. Se il contenuto supera l’altezza disponibile, viene mostrato automaticamente un carosello con frecce. In entrambe le modalità, tutte le schede hanno l’altezza della più alta. Su dispositivi mobili e touch e con movimento ridotto, restano impilate.]]></it>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -976,6 +976,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <it><![CDATA[Larghezza della scheda attiva e centrata, relativa alla larghezza del contenuto della pagina. Più è stretta, maggiore è la parte visibile delle schede precedente e successiva.]]></it>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<it><![CDATA[Distanza tra le schede]]></it>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<it><![CDATA[Distanza orizzontale tra le schede durante lo scorrimento fisso e nel carosello. Si adatta alla larghezza disponibile. La distanza verticale tra le schede impilate resta invariata.]]></it>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<it><![CDATA[Piccola]]></it>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<it><![CDATA[Normale]]></it>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<it><![CDATA[Grande]]></it>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1012,7 +1028,7 @@
 <it><![CDATA[Posizione del contatore]]></it>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<it><![CDATA[Il contatore («01 / 03») indica la scheda attualmente visibile. Appare solo mentre la sezione è fissa; nella presentazione impilata viene nascosto.]]></it>
+<it><![CDATA[Il contatore («01 / 03») mostra la scheda attiva durante lo scorrimento fisso e nel carosello. Le frecce compaiono accanto al contatore. Se il contatore è nascosto, le frecce restano visibili nella posizione predefinita. La vista impilata non mostra né contatore né frecce.]]></it>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <it><![CDATA[Integrato, in alto a destra accanto al contenuto]]></it>

@@ -968,7 +968,7 @@
 <es><![CDATA[Tarjetas]]></es>
         </locale>
         <locale name="control.ScrollPinnedCards.entries.desc">
-<es><![CDATA[Tarjetas de la sección, en el orden en que se desplazan. En ordenadores, el efecto se activa a partir de dos tarjetas; con menos tarjetas se muestran una debajo de otra. Todas tienen la altura de la más alta: procura que el contenido tenga una longitud similar y que quepa en pantalla.]]></es>
+<es><![CDATA[Las tarjetas aparecen en el orden indicado. A partir de dos tarjetas, la sección queda fija al desplazarse en dispositivos compatibles desde 768 px. Si el contenido supera la altura disponible, se convierte automáticamente en un carrusel con flechas. En ambos modos, todas las tarjetas tienen la altura de la más alta. En móviles, dispositivos táctiles y con movimiento reducido, permanecen apiladas.]]></es>
         </locale>
 
         <locale name="control.ScrollPinnedCards.cardWidth">
@@ -976,6 +976,22 @@
         </locale>
         <locale name="control.ScrollPinnedCards.cardWidth.desc">
 <es><![CDATA[Ancho de la tarjeta activa y centrada, relativo al ancho del contenido de la página. Cuanto más estrecha sea, mayor parte de las tarjetas anterior y siguiente será visible.]]></es>
+        </locale>
+
+        <locale name="control.ScrollPinnedCards.cardGap">
+<es><![CDATA[Separación entre tarjetas]]></es>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.desc">
+<es><![CDATA[Separación horizontal entre las tarjetas durante el desplazamiento fijo y en el carrusel. Se adapta al ancho disponible. La separación vertical de las tarjetas apiladas no cambia.]]></es>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.small">
+<es><![CDATA[Pequeña]]></es>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.normal">
+<es><![CDATA[Normal]]></es>
+        </locale>
+        <locale name="control.ScrollPinnedCards.cardGap.large">
+<es><![CDATA[Grande]]></es>
         </locale>
 
         <locale name="control.ScrollPinnedCards.speed">
@@ -1012,7 +1028,7 @@
 <es><![CDATA[Posición del contador]]></es>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.desc">
-<es><![CDATA[El contador («01 / 03») indica qué tarjeta está visible. Solo aparece mientras la sección permanece fija; en la presentación apilada se oculta.]]></es>
+<es><![CDATA[El contador («01 / 03») muestra la tarjeta activa durante el desplazamiento fijo y en el carrusel. Las flechas aparecen a su lado. Si el contador está oculto, las flechas siguen visibles en la posición predeterminada. La vista apilada no muestra contador ni flechas.]]></es>
         </locale>
         <locale name="control.ScrollPinnedCards.counterMode.inline">
 <es><![CDATA[Integrado, arriba a la derecha junto al contenido]]></es>

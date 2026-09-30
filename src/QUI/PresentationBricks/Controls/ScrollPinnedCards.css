@@ -2,8 +2,8 @@
  * ScrollPinnedCards - section that pins while scrolling and moves large
  * cards horizontally.
  *
- * The stacked presentation is the default and every fallback path - not least
- * "no JavaScript" - renders the cards below each other.
+ * The stacked presentation is the default on mobile and without JavaScript.
+ * On larger fine-pointer screens, oversized content uses a carousel.
  *
  * The pin is decided in three places, so that it does not have to replace the
  * stacked presentation after the first paint: PHP knows the number of cards,
@@ -26,6 +26,7 @@
         calc(100vw - 2 * var(--qui-page-padding, 20px))
     ));
     --_gap: var(--quiqqer-presentationBricks-scrollPinnedCards-gap, var(--qui-page-padding, 20px));
+    --_horizontalGap: var(--quiqqer-presentationBricks-scrollPinnedCards-gap, var(--_q-controlConf-cardGap, clamp(1.5rem, 3.5cqi, 3rem)));
     --_headerGap: var(--quiqqer-presentationBricks-scrollPinnedCards-headerGap, var(--qui-spacing-lg, 1.5rem));
     --_stagePadding: var(--quiqqer-presentationBricks-scrollPinnedCards-stagePadding, var(--qui-spacing-xl, 2rem));
     /*
@@ -39,7 +40,8 @@
     --_cardRadius: var(--quiqqer-presentationBricks-scrollPinnedCards-cardRadius, var(--qui-radius-section, 1.5rem));
     --_cardSurface: var(--quiqqer-presentationBricks-scrollPinnedCards-cardSurface, var(--qui-colors-surface-card-subtle, #f5f5f5));
     --_cardSplitGap: var(--quiqqer-presentationBricks-scrollPinnedCards-cardSplitGap, var(--qui-layout-gap, clamp(1.5rem, 0.5rem + 3cqi, 3rem)));
-    --_transition: var(--quiqqer-presentationBricks-scrollPinnedCards-transition, var(--qui-transition-duration, 0.15s) var(--qui-transition-timing-function, ease));
+
+    --_navigationGap: var(--quiqqer-presentationBricks-scrollPinnedCards-navigationGap, var(--qui-spacing, 1rem));
 
     /* inline padding that lines the stacked cards up with the page container */
     --_containerPadding: max(var(--qui-page-padding, 20px), calc((100% - var(--qui-page-contentSize, 1200px)) / 2));
@@ -293,34 +295,6 @@
     max-width: 3rem;
 }
 
-/* the whole card is a link target; everything else in the card has to stay
-   above that overlay, otherwise the overlay swallows links in the body */
-.quiqqer-presentationBricks-scrollPinnedCards__card--interactive .quiqqer-presentationBricks-scrollPinnedCards__cardContent a,
-.quiqqer-presentationBricks-scrollPinnedCards__card--interactive .quiqqer-presentationBricks-scrollPinnedCards__cardBodySecondary a,
-.quiqqer-presentationBricks-scrollPinnedCards__cardButton .btn__text,
-.quiqqer-presentationBricks-scrollPinnedCards__cardButton .btn__icon {
-    position: relative;
-    z-index: 1;
-}
-
-@media (hover: hover) {
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive {
-        cursor: pointer;
-        transition: transform var(--_transition);
-    }
-
-    .quiqqer-presentationBricks-scrollPinnedCards__cardButton::after {
-        content: "";
-        inset: 0;
-        position: absolute;
-    }
-
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:hover,
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:focus-within {
-        transform: translateY(-2px);
-    }
-}
-
 /* ------------------------------------------------------ split card layouts */
 
 .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image,
@@ -351,14 +325,17 @@
  * presentation stays, which is what keeps the fallback promise of this file.
  *
  * Only "does the content survive this screen" needs a measurement, so the
- * control is left with a veto: it removes the class again when a card turns
- * out to be taller than the pinned viewport.
+ * control switches to a carousel when a card is taller than the pinned viewport.
  *
  * The breakpoint is repeated here from ScrollPinnedCards::PIN_BREAKPOINT - a
  * media query cannot read a custom property, so the constant in the control
  * stays the source that has to be kept in sync.
  */
-@media (min-width: 1024px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 768px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__track {
+        column-gap: var(--_horizontalGap);
+    }
 
     /* the counter belongs to the pinned presentation; the control still sets
        the hidden attribute when it vetoes mid-flight */
@@ -437,22 +414,22 @@
         width: var(--_cardWidth);
     }
 
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image,
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text,
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text {
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image,
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text,
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text {
         gap: var(--_cardSplitGap);
     }
 
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner {
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-image-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner,
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-text > .quiqqer-presentationBricks-scrollPinnedCards__cardInner {
         gap: inherit;
         grid-template-columns: var(--_splitA) var(--_splitB);
     }
 
     /*
-     * Inside the pinned viewport the card has a fixed height, so the image fills
-     * its area instead of dictating the card height. That fill comes from the
+     * Both horizontal layouts stretch cards to a shared height. The image fills
+     * its area unless an explicit maximum height limits it. That fill comes from the
      * flex growth, not from a percentage height: as a flex item the image would
      * resolve "height: 100%" against an indefinite height and fall back to its
      * own aspect ratio.
@@ -463,37 +440,79 @@
      * grown item to its max-height - and the free space that appears below the
      * cap is what the alignment then distributes.
      *
-     * The screen share cap of the stacked view stays out of it here: the card is
-     * already bounded by the screen and by the fit check, so it would only leave
-     * a gap under the image.
+     * The mobile screen-share cap does not apply to either horizontal layout.
      */
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardMedia > picture,
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__cardMedia > picture,
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
         flex: 1 1 auto;
         min-height: 0;
     }
 
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
         max-height: var(--_imageMaxHeight);
     }
 
     /* the media always comes first in the DOM, which is also the stacked order
        ("image on top"). On the pinned desktop view the text-image layout moves
        it into the second column. */
-    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image .quiqqer-presentationBricks-scrollPinnedCards__cardMedia {
+    :is(.quiqqer-presentationBricks-scrollPinnedCards--pinned, .quiqqer-presentationBricks-scrollPinnedCards--slider) .quiqqer-presentationBricks-scrollPinnedCards__card--layout-text-image .quiqqer-presentationBricks-scrollPinnedCards__cardMedia {
         order: 2;
     }
 }
 
-/* -------------------------------------------------------- reduced motion */
+/* The extra viewport is only a box while Embla owns the track. */
+.quiqqer-presentationBricks-scrollPinnedCards__cardViewport {
+    display: contents;
+}
 
-@media (prefers-reduced-motion: reduce) {
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive {
-        transition: none;
+.quiqqer-presentationBricks-scrollPinnedCards__navigation {
+    align-items: center;
+    display: none;
+    flex: 0 0 auto;
+    gap: var(--_navigationGap);
+}
+
+.quiqqer-presentationBricks-scrollPinnedCards__arrows {
+    display: none;
+}
+
+@media (min-width: 768px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .quiqqer-presentationBricks-scrollPinnedCards--pinned .quiqqer-presentationBricks-scrollPinnedCards__navigation:has(.quiqqer-presentationBricks-scrollPinnedCards__counter),
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__navigation {
+        display: flex;
     }
 
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:hover,
-    .quiqqer-presentationBricks-scrollPinnedCards__card--interactive:focus-within {
-        transform: none;
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__arrows,
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__counter:not([hidden]) {
+        display: block;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__cardViewport {
+        display: block;
+        overflow: hidden;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__track {
+        align-items: stretch;
+        display: flex;
+        padding: 0;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__card {
+        /* A slider card can exceed the viewport; only an explicit image limit applies. */
+        --_imageMaxHeight: var(--quiqqer-presentationBricks-scrollPinnedCards-imageMaxHeight, var(--_q-entry-imageMaxHeight, var(--_q-controlConf-imageMaxHeight, none)));
+        flex: 0 0 var(--_cardWidth);
+        min-width: 0;
+    }
+
+    .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__cardImage {
+        -webkit-user-drag: none;
+    }
+
+    @supports (flex-basis: round(nearest, 1px, 1px)) {
+        .quiqqer-presentationBricks-scrollPinnedCards--slider .quiqqer-presentationBricks-scrollPinnedCards__card {
+            flex-basis: round(nearest, var(--_cardWidth), 1px);
+        }
     }
 }
