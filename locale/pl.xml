@@ -176,9 +176,6 @@
         <locale name="control.WallpaperTextArrow.imageLoading.lazy" context="administration">
 <pl><![CDATA[Odroczone (leniwe ładowanie)]]></pl>
         </locale>
-        <locale name="control.WallpaperTextArrow.image-background-fixed">
-<pl><![CDATA[Unieruchom obraz tła]]></pl>
-        </locale>
         <locale name="control.WallpaperTextArrow.image" context="administration">
 <pl><![CDATA[Obraz po prawej]]></pl>
         </locale>
@@ -668,9 +665,6 @@
         <locale name="control.backgroundVideo.fontColor" context="administration">
 <pl><![CDATA[Kolor tekstu]]></pl>
         </locale>
-        <locale name="control.backgroundVideo.contentMaxWidth">
-<pl><![CDATA[Maksymalna szerokość treści (w pikselach)]]></pl>
-        </locale>
         <locale name="control.backgroundVideo.contentPosition" context="administration">
 <pl><![CDATA[Położenie treści]]></pl>
         </locale>
@@ -791,9 +785,6 @@
         </locale>
         <locale name="control.video.videoButton" context="administration">
 <pl><![CDATA[Przycisk wideo]]></pl>
-        </locale>
-        <locale name="control.video.videoButton.desc" html="true">
-<pl><![CDATA[Określa sposób wyświetlania przycisku wideo lub pozwala go ukryć. Aby użyć własnego przycisku, przypisz elementowi klasę CSS <code>videoButtonAction</code>.]]></pl>
         </locale>
         <locale name="control.video.videoButton.showPermanent" context="administration">
 <pl><![CDATA[Zawsze pokazuj przycisk]]></pl>

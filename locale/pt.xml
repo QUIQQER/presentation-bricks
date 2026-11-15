@@ -176,9 +176,6 @@
         <locale name="control.WallpaperTextArrow.imageLoading.lazy" context="administration">
 <pt><![CDATA[Diferido (carregamento diferido)]]></pt>
         </locale>
-        <locale name="control.WallpaperTextArrow.image-background-fixed">
-<pt><![CDATA[Fixar a imagem de fundo]]></pt>
-        </locale>
         <locale name="control.WallpaperTextArrow.image" context="administration">
 <pt><![CDATA[Imagem à direita]]></pt>
         </locale>
@@ -668,9 +665,6 @@
         <locale name="control.backgroundVideo.fontColor" context="administration">
 <pt><![CDATA[Cor do texto]]></pt>
         </locale>
-        <locale name="control.backgroundVideo.contentMaxWidth">
-<pt><![CDATA[Largura máxima do conteúdo (em píxeis)]]></pt>
-        </locale>
         <locale name="control.backgroundVideo.contentPosition" context="administration">
 <pt><![CDATA[Posição do conteúdo]]></pt>
         </locale>
@@ -791,9 +785,6 @@
         </locale>
         <locale name="control.video.videoButton" context="administration">
 <pt><![CDATA[Botão de vídeo]]></pt>
-        </locale>
-        <locale name="control.video.videoButton.desc" html="true">
-<pt><![CDATA[Define como é apresentado o botão de vídeo ou permite ocultá-lo. Para utilizar um botão próprio, atribui a um elemento a classe CSS <code>videoButtonAction</code>.]]></pt>
         </locale>
         <locale name="control.video.videoButton.showPermanent" context="administration">
 <pt><![CDATA[Mostrar sempre o botão]]></pt>

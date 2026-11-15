@@ -176,9 +176,6 @@
         <locale name="control.WallpaperTextArrow.imageLoading.lazy" context="administration">
 <it><![CDATA[Differito (caricamento differito)]]></it>
         </locale>
-        <locale name="control.WallpaperTextArrow.image-background-fixed">
-<it><![CDATA[Fissa l’immagine di sfondo]]></it>
-        </locale>
         <locale name="control.WallpaperTextArrow.image" context="administration">
 <it><![CDATA[Immagine a destra]]></it>
         </locale>
@@ -668,9 +665,6 @@
         <locale name="control.backgroundVideo.fontColor" context="administration">
 <it><![CDATA[Colore del testo]]></it>
         </locale>
-        <locale name="control.backgroundVideo.contentMaxWidth">
-<it><![CDATA[Larghezza massima del contenuto (in pixel)]]></it>
-        </locale>
         <locale name="control.backgroundVideo.contentPosition" context="administration">
 <it><![CDATA[Posizione del contenuto]]></it>
         </locale>
@@ -791,9 +785,6 @@
         </locale>
         <locale name="control.video.videoButton" context="administration">
 <it><![CDATA[Pulsante video]]></it>
-        </locale>
-        <locale name="control.video.videoButton.desc" html="true">
-<it><![CDATA[Definisce come mostrare il pulsante video o permette di nasconderlo. Per usare un pulsante tuo, assegna a un elemento la classe CSS <code>videoButtonAction</code>.]]></it>
         </locale>
         <locale name="control.video.videoButton.showPermanent" context="administration">
 <it><![CDATA[Mostra sempre il pulsante]]></it>

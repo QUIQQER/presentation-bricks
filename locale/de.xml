@@ -183,9 +183,6 @@
         <locale name="control.WallpaperTextArrow.imageLoading.lazy" context="administration">
 <de><![CDATA[Verzögert (Lazy Loading)]]></de>
         </locale>
-        <locale name="control.WallpaperTextArrow.image-background-fixed">
-<de><![CDATA[Hintergrundbild fixieren]]></de>
-        </locale>
         <locale name="control.WallpaperTextArrow.image" context="administration">
 <de><![CDATA[Bild auf der rechten Seite]]></de>
         </locale>
@@ -676,9 +673,6 @@
         <locale name="control.backgroundVideo.fontColor" context="administration">
 <de><![CDATA[Schriftfarbe]]></de>
         </locale>
-        <locale name="control.backgroundVideo.contentMaxWidth">
-<de><![CDATA[Maximale Breite des Inhalts (in Pixel)]]></de>
-        </locale>
         <locale name="control.backgroundVideo.contentPosition" context="administration">
 <de><![CDATA[Inhalt Ausrichtung]]></de>
         </locale>
@@ -799,9 +793,6 @@
         </locale>
         <locale name="control.video.videoButton" context="administration">
 <de><![CDATA[Video Button]]></de>
-        </locale>
-        <locale name="control.video.videoButton.desc" html="true">
-<de><![CDATA[Bestimmt, wie der Video-Button angezeigt oder ausgeblendet wird. Wenn du einen eigenen Button verwenden möchtest, musst du einem Element die CSS-Klasse <code>videoButtonAction</code> geben.]]></de>
         </locale>
         <locale name="control.video.videoButton.showPermanent" context="administration">
 <de><![CDATA[Button immer anzeigen]]></de>
