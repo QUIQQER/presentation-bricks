@@ -485,6 +485,9 @@
         <locale name="brick.setting.progressbar.textPosition" context="administration">
 <it><![CDATA[Posizione del testo aggiuntivo]]></it>
         </locale>
+        <locale name="brick.setting.progressbar.textPosition.desc" context="administration">
+<it><![CDATA[Determina se il testo aggiuntivo appare sopra, sotto, a sinistra o a destra delle barre. Sugli schermi stretti si applica invece l’impostazione della posizione del testo aggiuntivo per dispositivi mobili. Questa impostazione non ha effetto se non è presente un testo aggiuntivo.]]></it>
+        </locale>
         <locale name="brick.setting.progressbar.textPosition.top" context="administration">
 <it><![CDATA[In alto]]></it>
         </locale>

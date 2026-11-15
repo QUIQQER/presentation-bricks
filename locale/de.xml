@@ -493,6 +493,9 @@
         <locale name="brick.setting.progressbar.textPosition" context="administration">
 <de><![CDATA[Zusatztext-Position]]></de>
         </locale>
+        <locale name="brick.setting.progressbar.textPosition.desc" context="administration">
+<de><![CDATA[Legt fest, ob der Zusatztext über, unter, links oder rechts neben den Balken erscheint. Auf schmalen Bildschirmen gilt stattdessen die Einstellung „Zusatztext-Position (mobil)“. Ohne Zusatztext hat diese Einstellung keine Wirkung.]]></de>
+        </locale>
         <locale name="brick.setting.progressbar.textPosition.top" context="administration">
 <de><![CDATA[Oben]]></de>
         </locale>
